@@ -6,8 +6,9 @@ import pytest
 
 from dubber import media
 from dubber.masks import Mask, build_video_filter, clamp, parse_mask
-from dubber.pipeline import Config, preview_frame, render
-from dubber.segments import Segment, format_timestamp, load_segments, save_segments, to_srt
+from dubber.pipeline import Config, output_paths, preview_frame, render, write_texts
+from dubber.segments import (Segment, format_timestamp, load_segments, save_segments, to_srt,
+                             to_transcript)
 
 
 def test_timestamp():
@@ -92,6 +93,7 @@ def test_render_end_to_end(tmp_path, background):
     cfg.workdir.mkdir()
     cfg.output.parent.mkdir()
     audio = media.extract_audio(video, cfg.workdir / "original.wav")
+    write_texts(cfg, segs)
     out = render(cfg, segs, audio if background != "none" else None,
                  media.duration(video), synthesize=_fake_tts)
 
@@ -100,6 +102,9 @@ def test_render_end_to_end(tmp_path, background):
     assert media.has_audio(out)
     assert abs(media.duration(out) - 4.0) < 0.3
     assert "Muy bien: gracias" in (tmp_path / "out" / "final.srt").read_text(encoding="utf-8")
+    assert "二" in (tmp_path / "out" / "final_original.srt").read_text(encoding="utf-8")
+    mp3 = tmp_path / "out" / "final.mp3"
+    assert mp3.exists() and abs(media.duration(mp3) - 4.0) < 0.3
 
 
 def test_preview_frame(tmp_path):
@@ -112,3 +117,39 @@ def test_cli_help():
     r = subprocess.run(["python3", "-m", "dubber", "run", "--help"], capture_output=True, text=True,
                        cwd=Path(__file__).parent.parent)
     assert r.returncode == 0 and "--mask" in r.stdout
+
+
+def test_transcript_and_original_srt():
+    segs = [Segment(1, 2, "你好", "Hola")]
+    assert to_transcript(segs) == "[00:00:01] 你好\n           Hola\n"
+    assert "你好" in to_srt(segs, field="source")
+
+
+def test_output_paths(tmp_path):
+    cfg = Config(input=tmp_path / "a.mp4", output=tmp_path / "a_es.mp4", workdir=tmp_path)
+    p = output_paths(cfg)
+    assert p["video"].name == "a_es.mp4" and p["audio"].name == "a_es.mp3"
+    assert p["transcript"].name == "a_es.txt" and p["srt_original"].name == "a_es_original.srt"
+    cfg.output = tmp_path / "b_es.mp3"
+    assert output_paths(cfg)["video"] is None
+
+
+def test_audio_only_with_cover_art(tmp_path):
+    cover = tmp_path / "cover.png"
+    media.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "color=red:size=64x64", "-frames:v", "1", cover])
+    song = tmp_path / "song.mp3"
+    media.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "sine=frequency=300:duration=3", "-i", cover,
+               "-map", "0:a", "-map", "1:v", "-c:a", "libmp3lame", "-c:v", "png",
+               "-disposition:v", "attached_pic", song])
+    assert media.has_audio(song) and not media.has_video(song)
+
+    cfg = Config(input=song, output=tmp_path / "song_es.mp3", workdir=tmp_path / "work",
+                 masks=[parse_mask("blur:0,0,10,10")])
+    cfg.workdir.mkdir()
+    audio = media.extract_audio(song, cfg.workdir / "original.wav")
+    segs = [Segment(0.5, 2.5, "一", "Hola")]
+    write_texts(cfg, segs)
+    out = render(cfg, segs, audio, media.duration(song), synthesize=_fake_tts)
+    assert out == cfg.output and out.exists()
+    assert not media.has_video(out)
+    assert (tmp_path / "song_es.txt").exists()

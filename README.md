@@ -1,10 +1,16 @@
-# Doblaje automático de vídeos (chino → español)
+# Transcripción, traducción y doblaje (chino → español)
 
-Toma un vídeo en chino y genera:
+Acepta **vídeos** (mp4, mov…) y **audios** (mp3, wav, m4a…) en chino y genera:
 
-- **Doblaje en español** con voz neuronal, sincronizado con cada frase del original.
-- **Subtítulos en español**, quemados en el vídeo y también como archivo `.srt`.
-- **Zonas tapadas**: difumina o cubre logos, marcas de agua o subtítulos incrustados.
+| Archivo | Contenido |
+|---|---|
+| `nombre_es.txt` | Transcripción bilingüe con tiempos: cada frase en chino y su traducción. |
+| `nombre_es_original.srt` | Subtítulos en chino. |
+| `nombre_es.srt` | Subtítulos en español. |
+| `nombre_es.mp3` | Audio doblado al español, con voz neuronal sincronizada con el original. |
+| `nombre_es.mp4` | Solo con vídeos: vídeo doblado, con subtítulos quemados y las zonas que elijas tapadas. |
+
+Para obtener solo los textos, sin doblar, añade `--text-only`.
 
 Todo es gratis: no necesita claves de API.
 
@@ -45,14 +51,14 @@ uv pip install -r requirements.txt
 
 `git clone` pide usuario y contraseña. Como contraseña usa un [token de GitHub](https://github.com/settings/tokens): GitHub no acepta la contraseña normal.
 
-Para doblar un vídeo, copia el archivo a `C:\videos` y ejecuta:
+Para procesar un vídeo o audio, cópialo a `C:\videos` y ejecuta:
 
 ```bash
 cd ~/doblaje && source venv/bin/activate
 python -m dubber run /mnt/c/videos/clip.mp4 --background separate
 ```
 
-El resultado (`clip_es.mp4` y `clip_es.srt`) aparece en la misma carpeta de Windows.
+Los resultados (`clip_es.mp4`, `.mp3`, `.txt` y `.srt`) aparecen en la misma carpeta de Windows.
 
 - Cierra Fooocus u otros programas que usen la GPU antes de doblar.
 - Con 8 GB de RAM, si se cierra a mitad, usa `--whisper-model medium`.
@@ -65,8 +71,14 @@ pip install -r requirements.txt   # necesita también ffmpeg instalado
 # Todo de una vez
 python -m dubber run video.mp4 --mask "blur:20,20,220,80" --background separate
 
+# Un audio: genera textos y mp3 doblado
+python -m dubber run entrevista.m4a
+
+# Solo transcribir y traducir (txt + srt), sin doblar
+python -m dubber run entrevista.m4a --text-only
+
 # En dos fases, revisando la traducción
-python -m dubber run video.mp4 --stop-after-translate        # crea video_work/segments.json
+python -m dubber run video.mp4 --text-only                   # crea los textos y video_work/segments.json
 python -m dubber run video.mp4 --segments video_work/segments.json --voice es-MX-JorgeNeural
 
 # Probar las zonas en un fotograma antes de renderizar
@@ -88,7 +100,7 @@ python -m dubber preview video.mp4 --at 3 --mask "box:0,620,1280,100" -o preview
 | `--font-size 16` | Tamaño de los subtítulos quemados. |
 | `--whisper-model` | `large-v3` (mejor), `medium` o `small` (más rápido). |
 
-Salida: `video_es.mp4` y `video_es.srt` junto al original. Los archivos intermedios quedan en `video_work/`.
+Los resultados se guardan junto al original y los archivos intermedios en `nombre_work/`.
 
 ## Consejos
 
