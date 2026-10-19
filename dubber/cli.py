@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from . import media
 from .masks import DEFAULT_SUB_STYLE, parse_mask
 from .pipeline import Config, preview_frame, run
 from .translate import DEFAULT_MODEL
@@ -12,12 +13,12 @@ from .tts import DEFAULT_VOICE
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="dubber", description="Doblaje automático de vídeos.")
+    p = argparse.ArgumentParser(prog="dubber", description="Transcripción, traducción y doblaje de vídeos y audios.")
     sub = p.add_subparsers(dest="command", required=True)
 
-    r = sub.add_parser("run", help="Doblar un vídeo")
+    r = sub.add_parser("run", help="Transcribir, traducir y doblar un vídeo o audio")
     r.add_argument("input", type=Path)
-    r.add_argument("-o", "--output", type=Path, help="Vídeo de salida (por defecto <nombre>_es.mp4)")
+    r.add_argument("-o", "--output", type=Path, help="Salida (por defecto <nombre>_es.mp4 para vídeos, <nombre>_es.mp3 para audios)")
     r.add_argument("--workdir", type=Path, help="Carpeta de trabajo (por defecto <nombre>_work)")
     r.add_argument("--src-lang", default="zh")
     r.add_argument("--tgt-lang", default="es")
@@ -38,8 +39,9 @@ def build_parser() -> argparse.ArgumentParser:
     r.add_argument("--no-burn", action="store_true", help="Generar .srt aparte sin quemarlo en el vídeo")
     r.add_argument("--font-size", type=int, default=16)
     r.add_argument("--segments", type=Path, help="JSON de segmentos ya revisado (salta Whisper y traducción)")
-    r.add_argument("--stop-after-translate", action="store_true",
-                   help="Solo transcribir y traducir, para revisar el JSON antes de doblar")
+    r.add_argument("--text-only", "--stop-after-translate", dest="stop_after_translate",
+                   action="store_true",
+                   help="Solo transcribir y traducir (genera .txt y .srt, sin doblar)")
 
     v = sub.add_parser("preview", help="Fotograma con las zonas tapadas para ajustar coordenadas")
     v.add_argument("input", type=Path)
@@ -59,10 +61,11 @@ def main(argv: list[str] | None = None) -> None:
         return
 
     stem = args.input.with_suffix("")
+    ext = ".mp4" if media.has_video(args.input) else ".mp3"
     style = DEFAULT_SUB_STYLE.replace("FontSize=16", f"FontSize={args.font_size}")
     cfg = Config(
         input=args.input,
-        output=args.output or Path(f"{stem}_{args.tgt_lang}.mp4"),
+        output=args.output or Path(f"{stem}_{args.tgt_lang}{ext}"),
         workdir=args.workdir or Path(f"{stem}_work"),
         src_lang=args.src_lang,
         tgt_lang=args.tgt_lang,

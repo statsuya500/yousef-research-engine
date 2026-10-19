@@ -2,16 +2,17 @@
 
 from __future__ import annotations
 
-import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
 from . import audio_mix, media
 from .masks import DEFAULT_SUB_STYLE, Mask, build_video_filter
-from .segments import Segment, load_segments, save_segments, to_srt
+from .segments import Segment, load_segments, save_segments, to_srt, to_transcript
 from .translate import DEFAULT_MODEL
 from .tts import DEFAULT_VOICE
+
+AUDIO_EXTS = {".mp3", ".wav", ".m4a", ".aac", ".flac", ".ogg", ".opus"}
 
 
 @dataclass
@@ -53,6 +54,42 @@ def prepare_segments(cfg: Config, audio: Path | None) -> list[Segment]:
     return segments
 
 
+def output_paths(cfg: Config) -> dict[str, Path]:
+    """Archivos de salida, todos junto a cfg.output con el mismo nombre base."""
+    base = cfg.output.with_suffix("")
+    is_audio_out = cfg.output.suffix.lower() in AUDIO_EXTS
+    return {
+        "video": None if is_audio_out else cfg.output,
+        "audio": cfg.output if is_audio_out else base.with_suffix(".mp3"),
+        "srt": base.with_suffix(".srt"),
+        "srt_original": base.parent / f"{base.name}_original.srt",
+        "transcript": base.with_suffix(".txt"),
+    }
+
+
+def write_texts(cfg: Config, segments: list[Segment]) -> None:
+    paths = output_paths(cfg)
+    paths["transcript"].write_text(to_transcript(segments), encoding="utf-8")
+    paths["srt_original"].write_text(to_srt(segments, field="source"), encoding="utf-8")
+    paths["srt"].write_text(to_srt(segments), encoding="utf-8")
+    print(f"[texto] {paths['transcript']}, {paths['srt']}, {paths['srt_original']}")
+
+
+def mix_audio(cfg: Config, voice: Path, background: Path | None) -> Path:
+    if background is None:
+        return voice
+    bg_vol = 1.0 if cfg.background == "separate" else cfg.bg_volume
+    out = cfg.workdir / "mix.wav"
+    media.run([
+        "ffmpeg", "-y", "-i", voice, "-i", background, "-filter_complex",
+        "[0:a]aformat=channel_layouts=stereo[vo];"
+        f"[1:a]volume={bg_vol},aformat=channel_layouts=stereo[bg];"
+        "[vo][bg]amix=inputs=2:duration=first:dropout_transition=0,volume=2",
+        "-ar", media.SAMPLE_RATE, out,
+    ])
+    return out
+
+
 def render(
     cfg: Config,
     segments: list[Segment],
@@ -61,6 +98,7 @@ def render(
     synthesize: Callable[..., list[Path | None]] | None = None,
 ) -> Path:
     work = cfg.workdir
+    paths = output_paths(cfg)
     if synthesize is None:
         from .tts import synthesize
     clips = synthesize(segments, work / "tts", voice=cfg.voice, rate=cfg.rate)
@@ -73,50 +111,48 @@ def render(
             background = audio_mix.separate_background(original_audio, work)
         else:
             background = original_audio
+    mix = mix_audio(cfg, voice, background)
+
+    media.run(["ffmpeg", "-y", "-i", mix, "-c:a", "libmp3lame", "-q:a", "2", paths["audio"]])
+    print(f"[audio] {paths['audio']}")
+
+    if paths["video"] is None or not media.has_video(cfg.input):
+        return paths["audio"]
 
     srt_name = None
-    if cfg.subtitles:
+    if cfg.subtitles and cfg.burn_subtitles:
         srt = work / "subtitles.srt"
         srt.write_text(to_srt(segments), encoding="utf-8")
-        shutil.copy(srt, cfg.output.with_suffix(".srt"))
-        srt_name = srt.name if cfg.burn_subtitles else None
+        srt_name = srt.name
 
     width, height = media.video_size(cfg.input)
     vfilter = build_video_filter(cfg.masks, width, height, srt_name, cfg.sub_style)
 
-    cmd: list = ["ffmpeg", "-y", "-i", cfg.input.resolve(), "-i", voice.resolve()]
-    graph = [vfilter] if vfilter else []
-    if background is not None:
-        cmd += ["-i", background.resolve()]
-        bg_vol = 1.0 if cfg.background == "separate" else cfg.bg_volume
-        graph.append(
-            "[1:a]aformat=channel_layouts=stereo[vo];"
-            f"[2:a]volume={bg_vol},aformat=channel_layouts=stereo[bg];"
-            "[vo][bg]amix=inputs=2:duration=first:dropout_transition=0,volume=2[aout]"
-        )
-        audio_map = "[aout]"
+    cmd: list = ["ffmpeg", "-y", "-i", cfg.input.resolve(), "-i", mix.resolve()]
+    if vfilter:
+        cmd += ["-filter_complex", vfilter, "-map", "[vout]",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "20"]
     else:
-        audio_map = "1:a"
-    if graph:
-        cmd += ["-filter_complex", ";".join(graph)]
-    cmd += ["-map", "[vout]" if vfilter else "0:v", "-map", audio_map]
-    cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20"] if vfilter else ["-c:v", "copy"]
-    cmd += ["-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
-            cfg.output.resolve()]
+        cmd += ["-map", "0:v", "-c:v", "copy"]
+    cmd += ["-map", "1:a", "-c:a", "aac", "-b:a", "192k", "-shortest",
+            "-movflags", "+faststart", paths["video"].resolve()]
     print("[vídeo] renderizando…")
     media.run(cmd, cwd=work)
-    print(f"[listo] {cfg.output}")
-    return cfg.output
+    print(f"[listo] {paths['video']}")
+    return paths["video"]
 
 
 def run(cfg: Config) -> Path | None:
     cfg.workdir.mkdir(parents=True, exist_ok=True)
     cfg.output.parent.mkdir(parents=True, exist_ok=True)
+    if not media.has_video(cfg.input) and cfg.masks:
+        print("[aviso] la entrada es solo audio: se ignoran las zonas a tapar")
     total = media.duration(cfg.input)
     audio = None
     if media.has_audio(cfg.input):
         audio = media.extract_audio(cfg.input, cfg.workdir / "original.wav")
     segments = prepare_segments(cfg, audio)
+    write_texts(cfg, segments)
     if cfg.stop_after_translate:
         return None
     return render(cfg, segments, audio, total)

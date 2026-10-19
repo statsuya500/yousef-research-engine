@@ -38,13 +38,23 @@ def format_timestamp(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def to_srt(segments: list[Segment], width: int = 42) -> str:
+def to_srt(segments: list[Segment], width: int = 42, field: str = "text") -> str:
+    """SRT de la traducción (field="text") o del texto original (field="source")."""
     blocks = []
-    for i, seg in enumerate((s for s in segments if s.text.strip()), start=1):
-        lines = textwrap.wrap(seg.text.strip(), width)
+    for i, seg in enumerate((s for s in segments if getattr(s, field).strip()), start=1):
+        lines = textwrap.wrap(getattr(seg, field).strip(), width)
         blocks.append(
             f"{i}\n{format_timestamp(seg.start)} --> {format_timestamp(seg.end)}\n"
             + "\n".join(lines)
             + "\n"
         )
     return "\n".join(blocks)
+
+
+def to_transcript(segments: list[Segment]) -> str:
+    """Transcripción bilingüe legible: tiempo, original y traducción."""
+    blocks = []
+    for seg in segments:
+        stamp = format_timestamp(seg.start)[:-4]
+        blocks.append(f"[{stamp}] {seg.source.strip()}\n           {seg.text.strip()}")
+    return "\n\n".join(blocks) + "\n"

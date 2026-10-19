@@ -23,7 +23,7 @@ def run(cmd: list[str], cwd: Path | None = None) -> bytes:
 def probe(path: Path) -> dict:
     out = run([
         "ffprobe", "-v", "error",
-        "-show_entries", "format=duration:stream=codec_type,width,height",
+        "-show_entries", "format=duration:stream=codec_type,width,height:stream_disposition=attached_pic",
         "-of", "json", path,
     ])
     return json.loads(out)
@@ -33,11 +33,23 @@ def duration(path: Path) -> float:
     return float(probe(path)["format"]["duration"])
 
 
+def _video_streams(path: Path) -> list[dict]:
+    # Las carátulas de los mp3/m4a aparecen como "vídeo"; no cuentan.
+    return [
+        s for s in probe(path).get("streams", [])
+        if s.get("codec_type") == "video" and not s.get("disposition", {}).get("attached_pic")
+    ]
+
+
+def has_video(path: Path) -> bool:
+    return bool(_video_streams(path))
+
+
 def video_size(path: Path) -> tuple[int, int]:
-    for stream in probe(path).get("streams", []):
-        if stream.get("codec_type") == "video":
-            return int(stream["width"]), int(stream["height"])
-    raise ValueError(f"No hay pista de vídeo en {path}")
+    streams = _video_streams(path)
+    if not streams:
+        raise ValueError(f"No hay pista de vídeo en {path}")
+    return int(streams[0]["width"]), int(streams[0]["height"])
 
 
 def has_audio(path: Path) -> bool:
