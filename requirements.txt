@@ -1,0 +1,8 @@
+faster-whisper>=1.0
+transformers>=4.40
+sentencepiece
+torch
+edge-tts>=6.1
+numpy
+# Opcional: separar música y voz (--background separate)
+demucs

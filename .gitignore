@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*_work/
+*.mp4
+*.srt
+*.wav
+*.mp3
+preview.png
