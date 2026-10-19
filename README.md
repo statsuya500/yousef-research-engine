@@ -29,6 +29,34 @@ El notebook hace todo en dos fases:
 1. **Transcribir y traducir.** Te muestra una tabla con el texto chino y la traducción, y puedes corregirla en `segments.json`.
 2. **Doblar y renderizar.** Genera la voz, mezcla el audio, tapa las zonas, quema los subtítulos y descarga el resultado.
 
+## Uso en tu PC (Windows con WSL Ubuntu y GPU NVIDIA)
+
+Instalación, una sola vez:
+
+```bash
+sudo apt update && sudo apt install -y ffmpeg git
+curl -LsSf https://astral.sh/uv/install.sh | sh && source ~/.bashrc
+git clone https://github.com/statsuya500/yousef-research-engine.git ~/doblaje
+cd ~/doblaje
+uv venv -p 3.11 venv && source venv/bin/activate
+uv pip install torch --index-url https://download.pytorch.org/whl/cu128
+uv pip install -r requirements.txt
+```
+
+`git clone` pide usuario y contraseña. Como contraseña usa un [token de GitHub](https://github.com/settings/tokens): GitHub no acepta la contraseña normal.
+
+Para doblar un vídeo, copia el archivo a `C:\videos` y ejecuta:
+
+```bash
+cd ~/doblaje && source venv/bin/activate
+python -m dubber run /mnt/c/videos/clip.mp4 --background separate
+```
+
+El resultado (`clip_es.mp4` y `clip_es.srt`) aparece en la misma carpeta de Windows.
+
+- Cierra Fooocus u otros programas que usen la GPU antes de doblar.
+- Con 8 GB de RAM, si se cierra a mitad, usa `--whisper-model medium`.
+
 ## Uso por línea de comandos
 
 ```bash
