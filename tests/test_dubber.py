@@ -167,3 +167,40 @@ def test_voice_track_never_overlaps(tmp_path):
     # la segunda frase se desplaza hasta después de la primera
     sr = media.SAMPLE_RATE
     assert abs(track[int(2.45 * sr):int(2.55 * sr)]).max() > 0.05
+
+
+def test_script_roundtrip_and_formats(tmp_path):
+    from dubber.script import apply_translation, export_script, parse_script
+
+    segs = [Segment(0, 1, "你好"), Segment(1, 2, "朋友们"), Segment(2, 3, "再见")]
+    zh = export_script(segs, tmp_path / "g_zh.txt", "v.mp4")
+    assert "[001] 你好" in zh.read_text(encoding="utf-8")
+    assert parse_script(zh.read_text(encoding="utf-8")) == {1: "你好", 2: "朋友们", 3: "再见"}
+    # Formatos que suelen devolver los traductores
+    assert parse_script("[001] Hola\n2. Amigos\n003) Adiós") == {1: "Hola", 2: "Amigos", 3: "Adiós"}
+
+    es = tmp_path / "g_es.txt"
+    es.write_text("# comentario\n[001] Hola\n[002] Amigos\n[003] Adiós\n", encoding="utf-8")
+    assert [s.text for s in apply_translation(segs, es)] == ["Hola", "Amigos", "Adiós"]
+
+    es.write_text("[001] Hola\n[003] Adiós\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="Faltan 1 de 3"):
+        apply_translation(segs, es)
+
+
+def test_translation_flow_text_only(tmp_path):
+    from dubber.pipeline import run
+
+    video = _make_video(tmp_path / "v.mp4", 3)
+    work = tmp_path / "v_work"
+    work.mkdir()
+    save_segments([Segment(0.2, 1.0, "你好"), Segment(1.2, 2.5, "再见")], work / "segments.json")
+    es = tmp_path / "v_guion_es.txt"
+    es.write_text("[001] Hola\n[002] Adiós\n", encoding="utf-8")
+
+    cfg = Config(input=video, output=tmp_path / "v_es.mp4", workdir=work,
+                 translation_file=es, stop_after_translate=True)
+    assert run(cfg) is None
+    transcript = (tmp_path / "v_es.txt").read_text(encoding="utf-8")
+    assert "你好" in transcript and "Hola" in transcript and "Adiós" in transcript
+    assert [s.text for s in load_segments(work / "segments.json")] == ["Hola", "Adiós"]
