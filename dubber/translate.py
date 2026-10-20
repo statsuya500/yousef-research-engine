@@ -45,7 +45,7 @@ def translate_segments(
         enc = enc.to(device)
         with torch.no_grad():
             generated = model.generate(
-                **enc, forced_bos_token_id=target_id, max_new_tokens=256, num_beams=4
+                **enc, forced_bos_token_id=target_id, max_length=256, num_beams=4
             )
         outputs += tokenizer.batch_decode(generated, skip_special_tokens=True)
 

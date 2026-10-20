@@ -22,8 +22,8 @@ def _preload_cuda_libs() -> None:
         return
     libs = []
     for base in nvidia.__path__:
-        for pattern in ("cublas/lib/libcublas*.so.*", "cudnn/lib/libcudnn*.so.*"):
-            libs += sorted(glob.glob(os.path.join(base, pattern)))
+        for pattern in ("**/libcublas*.so.*", "**/libcudnn*.so.*"):
+            libs += sorted(glob.glob(os.path.join(base, pattern), recursive=True))
     # Dos pasadas: algunas librerías de cuDNN dependen de otras.
     for _ in range(2):
         for lib in libs:
