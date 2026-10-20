@@ -4,5 +4,8 @@ sentencepiece
 torch
 edge-tts>=6.1
 numpy
+# Librerías de GPU que necesita faster-whisper (CUDA 12 + cuDNN 9)
+nvidia-cublas-cu12; sys_platform == "linux"
+nvidia-cudnn-cu12>=9,<10; sys_platform == "linux"
 # Opcional: separar música y voz (--background separate)
 demucs

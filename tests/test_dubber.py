@@ -153,3 +153,17 @@ def test_audio_only_with_cover_art(tmp_path):
     assert out == cfg.output and out.exists()
     assert not media.has_video(out)
     assert (tmp_path / "song_es.txt").exists()
+
+
+def test_voice_track_never_overlaps(tmp_path):
+    from dubber.audio_mix import build_voice_track
+
+    segs = [Segment(0.5, 1.0, "一", "uno"), Segment(1.0, 1.5, "二", "dos")]
+    clips = _fake_tts(segs, tmp_path / "tts")  # 1.8 s cada una, huecos de 0.5 s
+    out = build_voice_track(segs, clips, 6.0, tmp_path / "v.wav", max_speed=1.0)
+    track = media.decode_mono(out)
+    # sine de ffmpeg tiene amplitud 1/8: si dos voces se sumaran, superaría ese valor
+    assert abs(track).max() < 0.13
+    # la segunda frase se desplaza hasta después de la primera
+    sr = media.SAMPLE_RATE
+    assert abs(track[int(2.45 * sr):int(2.55 * sr)]).max() > 0.05

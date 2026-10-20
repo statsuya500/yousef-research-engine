@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import threading
 from pathlib import Path
 
@@ -35,9 +36,16 @@ def synthesize(
     import edge_tts
 
     workdir.mkdir(parents=True, exist_ok=True)
+    def clip_path(i: int, text: str) -> Path:
+        key = hashlib.sha1(f"{voice}|{rate}|{text}".encode()).hexdigest()[:10]
+        return workdir / f"tts_{i:04d}_{key}.mp3"
+
     paths: list[Path | None] = [
-        workdir / f"tts_{i:04d}.mp3" if s.text.strip() else None for i, s in enumerate(segments)
+        clip_path(i, s.text) if s.text.strip() else None for i, s in enumerate(segments)
     ]
+    # Solo se generan las frases nuevas o cambiadas; el resto se reutiliza.
+    todo = [(s, p) for s, p in zip(segments, paths) if p is not None and not p.exists()]
+
     async def one(text: str, path: Path, sem: asyncio.Semaphore) -> None:
         async with sem:
             for attempt in range(retries):
@@ -51,10 +59,9 @@ def synthesize(
 
     async def all_jobs() -> None:
         sem = asyncio.Semaphore(concurrency)
-        await asyncio.gather(
-            *(one(s.text, p, sem) for s, p in zip(segments, paths) if p is not None)
-        )
+        await asyncio.gather(*(one(s.text, p, sem) for s, p in todo))
 
-    print(f"[voz] {sum(p is not None for p in paths)} frases con {voice}")
+    total = sum(p is not None for p in paths)
+    print(f"[voz] {len(todo)} frases nuevas de {total} con {voice}")
     _run_async(all_jobs())
     return paths
