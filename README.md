@@ -63,6 +63,22 @@ Los resultados (`clip_es.mp4`, `.mp3`, `.txt` y `.srt`) aparecen en la misma car
 - Cierra Fooocus u otros programas que usen la GPU antes de doblar.
 - Con 8 GB de RAM, si se cierra a mitad, usa `--whisper-model medium`.
 
+## Traducción de mejor calidad (guion → traducir → transcript)
+
+La traducción automática traduce frase a frase sin contexto y a veces falla. Para un resultado mejor, traduce el guion completo con ChatGPT, Claude o DeepL:
+
+```bash
+# 1. Transcribe y saca el guion chino numerado, sin tiempos
+python -m dubber guion /mnt/c/videos/clip.mp4        # crea clip_guion_zh.txt
+
+# 2. Traduce clip_guion_zh.txt (manteniendo los números [001]…) y guárdalo como clip_guion_es.txt
+
+# 3. Junta la traducción con los tiempos: transcript, subtítulos y doblaje
+python -m dubber run /mnt/c/videos/clip.mp4 --translation /mnt/c/videos/clip_guion_es.txt
+```
+
+Añade `--text-only` en el paso 3 si solo quieres el transcript (`.txt`) y los subtítulos, sin doblaje.
+
 ## Uso por línea de comandos
 
 ```bash

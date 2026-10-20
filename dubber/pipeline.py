@@ -34,24 +34,65 @@ class Config:
     burn_subtitles: bool = True
     sub_style: str = DEFAULT_SUB_STYLE
     segments_file: Path | None = None
+    translation_file: Path | None = None
     stop_after_translate: bool = False
+
+
+def transcribe_only(cfg: Config, audio: Path | None) -> list[Segment]:
+    """Transcribe sin traducir, o reutiliza la transcripción guardada en la carpeta de trabajo."""
+    path = cfg.workdir / "segments.json"
+    if path.exists():
+        print(f"[segmentos] reutilizando la transcripción de {path}")
+        return load_segments(path)
+    if audio is None:
+        raise ValueError("El archivo no tiene audio que transcribir")
+    from .transcribe import transcribe
+
+    segments = transcribe(audio, cfg.src_lang, cfg.whisper_model)
+    save_segments(segments, path)
+    return segments
 
 
 def prepare_segments(cfg: Config, audio: Path | None) -> list[Segment]:
     if cfg.segments_file:
         print(f"[segmentos] usando {cfg.segments_file}")
-        return load_segments(cfg.segments_file)
-    if audio is None:
-        raise ValueError("El vídeo no tiene audio que transcribir; pasa --segments")
-    from .transcribe import transcribe
-    from .translate import translate_segments
+        segments = load_segments(cfg.segments_file)
+    elif cfg.translation_file:
+        segments = transcribe_only(cfg, audio)
+    else:
+        if audio is None:
+            raise ValueError("El archivo no tiene audio que transcribir; pasa --segments")
+        from .transcribe import transcribe
+        from .translate import translate_segments
 
-    segments = transcribe(audio, cfg.src_lang, cfg.whisper_model)
-    segments = translate_segments(segments, cfg.src_lang, cfg.tgt_lang, cfg.translator_model)
+        segments = transcribe(audio, cfg.src_lang, cfg.whisper_model)
+        segments = translate_segments(segments, cfg.src_lang, cfg.tgt_lang, cfg.translator_model)
+
+    if cfg.translation_file:
+        from .script import apply_translation
+
+        segments = apply_translation(segments, cfg.translation_file)
+
     path = cfg.workdir / "segments.json"
-    save_segments(segments, path)
-    print(f"[segmentos] guardados en {path} (puedes editar las traducciones y relanzar con --segments)")
+    if not cfg.segments_file or cfg.segments_file.resolve() != path.resolve():
+        save_segments(segments, path)
+        print(f"[segmentos] guardados en {path}")
     return segments
+
+
+def export_script_for(cfg: Config) -> Path:
+    """Paso 1 del flujo con traducción externa: guion numerado sin tiempos."""
+    from .script import export_script
+
+    cfg.workdir.mkdir(parents=True, exist_ok=True)
+    audio = None
+    if media.has_audio(cfg.input):
+        audio = media.extract_audio(cfg.input, cfg.workdir / "original.wav")
+    segments = transcribe_only(cfg, audio)
+    out = cfg.input.with_suffix("").parent / f"{cfg.input.stem}_guion_{cfg.src_lang}.txt"
+    export_script(segments, out, cfg.input.name)
+    print(f"[guion] {out} ({len(segments)} líneas). Tradúcelo y pásalo con --translation")
+    return out
 
 
 def output_paths(cfg: Config) -> dict[str, Path]:
