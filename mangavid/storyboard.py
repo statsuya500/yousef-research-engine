@@ -16,6 +16,7 @@ class Scene:
     number: int
     image: str  # descripción de la imagen con los @personajes ya sustituidos
     narration: str
+    characters: list[str] = field(default_factory=list)  # @personajes en orden de aparición
 
 
 @dataclass
@@ -57,8 +58,9 @@ def parse(text: str) -> Storyboard:
         if number in seen:
             raise ValueError(f"La escena [{number:03d}] está repetida")
         seen.add(number)
+        cast = list(dict.fromkeys(m.lower() for m in _MENTION.findall(image)))
         board.scenes.append(
-            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip())
+            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip(), cast)
         )
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
