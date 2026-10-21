@@ -9,6 +9,7 @@ from pathlib import Path
 _SCENE = re.compile(r"^\[(\d{1,5})\]\s*(.*)$")
 _DIRECTIVE = re.compile(r"^@([\w-]+)\s*:\s*(.*)$")
 _MENTION = re.compile(r"@([\w-]+)")
+_REROLL = re.compile(r"\{semilla=(\d+)\}")
 
 
 @dataclass
@@ -17,6 +18,7 @@ class Scene:
     image: str  # descripción de la imagen con los @personajes ya sustituidos
     narration: str
     characters: list[str] = field(default_factory=list)  # @personajes en orden de aparición
+    reroll: int = 0  # {semilla=N} en la escena: otra versión de la imagen con la misma descripción
 
 
 @dataclass
@@ -58,9 +60,13 @@ def parse(text: str) -> Storyboard:
         if number in seen:
             raise ValueError(f"La escena [{number:03d}] está repetida")
         seen.add(number)
+        reroll = 0
+        if m := _REROLL.search(image):
+            reroll = int(m.group(1))
+            image = _REROLL.sub("", image).strip().rstrip(",").strip()
         cast = list(dict.fromkeys(m.lower() for m in _MENTION.findall(image)))
         board.scenes.append(
-            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip(), cast)
+            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip(), cast, reroll)
         )
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")

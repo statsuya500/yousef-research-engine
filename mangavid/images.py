@@ -81,9 +81,10 @@ def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, mod
                 "Ejecuta primero: python -m mangavid personajes <historia.txt>"
             )
         prompt = board.prompt(s)
-        key = _hash(model, prompt, board.negative, seed + s.number, STEPS, GUIDANCE, IP_SCALE,
+        scene_seed = seed + s.number + 100_003 * s.reroll
+        key = _hash(model, prompt, board.negative, scene_seed, STEPS, GUIDANCE, IP_SCALE,
                     *(_file_hash(f) for f in faces))
-        jobs.append(Job(prompt, seed + s.number, workdir / f"img_{s.number:04d}_{key}.png",
+        jobs.append(Job(prompt, scene_seed, workdir / f"img_{s.number:04d}_{key}.png",
                         (WIDTH, HEIGHT), faces))
     return jobs
 
