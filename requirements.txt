@@ -9,3 +9,7 @@ nvidia-cublas-cu12; sys_platform == "linux"
 nvidia-cudnn-cu12>=9,<10; sys_platform == "linux"
 # Opcional: separar música y voz (--background separate)
 demucs
+# mangavid: generación de imágenes (SDXL)
+diffusers>=0.30
+accelerate
+safetensors

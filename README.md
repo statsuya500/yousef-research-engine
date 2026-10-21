@@ -124,6 +124,35 @@ Los resultados se guardan junto al original y los archivos intermedios en `nombr
 - Para tapar subtítulos chinos incrustados, cubre la franja inferior con `box` o `blur`. Los subtítulos en español se dibujan encima.
 - `delogo` funciona mejor con logos pequeños y fondos sencillos. Para zonas grandes usa `blur`.
 
+## Vídeos estilo manhwa desde una historia (`mangavid`)
+
+Convierte un guion de escenas en un vídeo narrado: una imagen por escena generada en tu GPU
+(Animagine XL 4.0, ~11 s por imagen con 8 GB de VRAM), voz con Edge-TTS, movimiento suave,
+subtítulos de 2 líneas como máximo y un `.srt` completo para YouTube.
+
+```text
+@estilo: masterpiece, high score, great score, absurdres, manhwa style, detailed background
+@negativo: lowres, bad anatomy, bad hands, text, watermark, blurry
+@elena: young woman, long straight black hair, red eyes, gold hair ornament
+
+[001] 1girl, solo, @elena, black dress, kneeling, crying, burning mansion, night
+La noche en que Elena Vargas murió, la mansión de su familia ardía como una antorcha.
+```
+
+```bash
+python -m mangavid run historia.txt                 # historia.mp4 + historia.srt
+python -m mangavid run historia.txt --only-images   # solo imágenes, para revisarlas
+python -m mangavid run historia.txt --music musica.mp3 --voice es-MX-JorgeNeural
+```
+
+Todo se guarda en `historia_work/` con un hash por escena: si se corta o cambias una escena,
+al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.
+
+Consejos para las imágenes:
+- Evita colores en accesorios que puedan contagiarse al pelo (p. ej. `red hair ornament` tiñe el pelo de rojo).
+- Las escenas con dos personajes pueden mezclar rasgos (color de ojos o pelo). Si importa, usa planos de un solo personaje.
+- Para rehacer una imagen concreta, cambia algo de su descripción; para rehacerlas todas, usa `--seed`.
+
 ## Pruebas
 
 ```bash
