@@ -38,16 +38,30 @@ def format_timestamp(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def to_srt(segments: list[Segment], width: int = 42, field: str = "text") -> str:
-    """SRT de la traducción (field="text") o del texto original (field="source")."""
+def to_srt(
+    segments: list[Segment], width: int = 42, field: str = "text", max_lines: int = 2
+) -> str:
+    """SRT de la traducción (field="text") o del texto original (field="source").
+
+    Si una frase ocupa más de `max_lines` líneas, se parte en varios subtítulos
+    seguidos y el tiempo del segmento se reparte según los caracteres de cada uno.
+    """
     blocks = []
-    for i, seg in enumerate((s for s in segments if getattr(s, field).strip()), start=1):
+    for seg in segments:
         lines = textwrap.wrap(getattr(seg, field).strip(), width)
-        blocks.append(
-            f"{i}\n{format_timestamp(seg.start)} --> {format_timestamp(seg.end)}\n"
-            + "\n".join(lines)
-            + "\n"
-        )
+        if not lines:
+            continue
+        chunks = [lines[k : k + max_lines] for k in range(0, len(lines), max_lines)]
+        total = sum(len(" ".join(c)) for c in chunks)
+        t = seg.start
+        for chunk in chunks:
+            end = t + (seg.end - seg.start) * len(" ".join(chunk)) / total
+            blocks.append(
+                f"{len(blocks) + 1}\n{format_timestamp(t)} --> {format_timestamp(end)}\n"
+                + "\n".join(chunk)
+                + "\n"
+            )
+            t = end
     return "\n".join(blocks)
 
 

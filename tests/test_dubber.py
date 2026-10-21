@@ -21,8 +21,19 @@ def test_srt_skips_empty_and_wraps():
             Segment(3, 6, "y", "palabra " * 12)]
     srt = to_srt(segs, width=42)
     assert srt.startswith("1\n00:00:00,000 --> 00:00:01,500\nHola\n")
-    assert "\n2\n00:00:03,000 --> 00:00:06,000\n" in srt
+    assert "\n2\n00:00:03,000 --> " in srt
     assert all(len(line) <= 42 for line in srt.splitlines())
+
+
+def test_srt_splits_long_text_into_two_line_blocks():
+    srt = to_srt([Segment(10, 20, "", "palabra " * 30)], width=42)
+    blocks = [b.splitlines() for b in srt.strip().split("\n\n")]
+    assert len(blocks) == 3
+    assert all(len(b) - 2 <= 2 for b in blocks)  # número, tiempos y como mucho 2 líneas
+    assert blocks[0][1].startswith("00:00:10,000 --> ")
+    assert blocks[-1][1].endswith(" --> 00:00:20,000")
+    # cada bloque empieza donde acaba el anterior
+    assert blocks[0][1].split(" --> ")[1] == blocks[1][1].split(" --> ")[0]
 
 
 def test_segments_roundtrip(tmp_path):
@@ -178,6 +189,8 @@ def test_script_roundtrip_and_formats(tmp_path):
     assert parse_script(zh.read_text(encoding="utf-8")) == {1: "你好", 2: "朋友们", 3: "再见"}
     # Formatos que suelen devolver los traductores
     assert parse_script("[001] Hola\n2. Amigos\n003) Adiós") == {1: "Hola", 2: "Amigos", 3: "Adiós"}
+    # Los puntos suspensivos del principio no se confunden con «2.»
+    assert parse_script("[001] ...y se fue\n2. ...vale") == {1: "...y se fue", 2: "...vale"}
 
     es = tmp_path / "g_es.txt"
     es.write_text("# comentario\n[001] Hola\n[002] Amigos\n[003] Adiós\n", encoding="utf-8")

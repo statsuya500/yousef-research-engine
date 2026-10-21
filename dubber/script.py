@@ -18,7 +18,7 @@ HEADER = """\
 # Las líneas que empiezan por # se ignoran.
 """
 
-_LINE = re.compile(r"^\s*\[?\s*(\d{1,5})\s*\]?\s*[.):\-]?\s*(.*?)\s*$")
+_LINE = re.compile(r"^\s*\[?\s*(\d{1,5})\s*\]?\s*(?:[.):\-](?!\.))?\s*(.*?)\s*$")
 
 
 def export_script(segments: list[Segment], path: Path, name: str) -> Path:
