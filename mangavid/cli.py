@@ -47,8 +47,8 @@ def cmd_personajes(args) -> None:
             if name in redo:
                 seed = random.randint(0, 2**31 - 1000)
             wanted = {"prompt": options[0].prompt, "seed": seed, "opciones": args.opciones,
-                      "base": _base_hash(options[0].faces)}
-            if {"base": None, **state.get(name, {})} != wanted:
+                      "base": _base_hash(options[0].faces), "escala": options[0].ip_scale}
+            if {"base": None, "escala": 0.6, **state.get(name, {})} != wanted:
                 for old in folder.glob(f"{name}_*.png"):
                     old.unlink()
                 state[name] = wanted

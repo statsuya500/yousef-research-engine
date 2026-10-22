@@ -8,9 +8,10 @@ from pathlib import Path
 
 _SCENE = re.compile(r"^\[(\d{1,5})\]\s*(.*)$")
 _DIRECTIVE = re.compile(r"^@([\w-]+)\s*:\s*(.*)$")
-_MENTION = re.compile(r"@([\w-]+)")
+_MENTION = re.compile(r"@([\w-]+)(?:\[([^\]]*)\])?")
 _REROLL = re.compile(r"\{semilla=(\d+)\}")
 _AVOID = re.compile(r"\{evitar=([^}]*)\}")
+_LIKENESS = re.compile(r"\{parecido=([0-9.]+)\}")
 
 
 @dataclass
@@ -22,6 +23,8 @@ class Scene:
     reroll: int = 0  # {semilla=N} en la escena: otra versión de la imagen con la misma descripción
     avoid: str = ""  # {evitar=...} en la escena: se añade al negativo solo en esta escena
     action: str = ""  # la descripción sin los @personajes: acción, expresión, encuadre y lugar
+    likeness: float | None = None  # {parecido=0.6}: peso de la cara del retrato solo en esta escena
+    outfits: dict[str, str] = field(default_factory=dict)  # @sara[simple dress]: ropa de ese personaje
 
 
 @dataclass
@@ -42,7 +45,8 @@ class Storyboard:
         Los modelos de imagen dan más peso a lo que va al principio, y la ficha de un personaje
         puede ocupar 40 tokens: si fuera delante, la acción quedaría relegada al final.
         """
-        cast = [self.characters[c] for c in scene.characters]
+        cast = [", ".join(p for p in (self.characters[c], scene.outfits.get(c, "")) if p)
+                for c in scene.characters]
         return ", ".join(p for p in (scene.action or scene.image, *cast, self.style) if p)
 
     def negative_for(self, scene: Scene) -> str:
@@ -79,7 +83,7 @@ def parse(text: str) -> Storyboard:
 
     raw_characters = dict(board.characters)
     for name, tags in raw_characters.items():
-        refs = [r.lower() for r in _MENTION.findall(tags)]
+        refs = [m.group(1).lower() for m in _MENTION.finditer(tags)]
         if refs:
             board.bases[name] = refs[0]
         board.characters[name] = _expand_character(name, raw_characters, [])
@@ -97,10 +101,15 @@ def parse(text: str) -> Storyboard:
         if m := _AVOID.search(image):
             avoid = m.group(1).strip()
             image = _AVOID.sub("", image).strip().rstrip(",").strip()
-        cast = list(dict.fromkeys(m.lower() for m in _MENTION.findall(image)))
+        likeness = None
+        if m := _LIKENESS.search(image):
+            likeness = float(m.group(1))
+            image = _LIKENESS.sub("", image).strip().rstrip(",").strip()
+        cast = list(dict.fromkeys(m.group(1).lower() for m in _MENTION.finditer(image)))
+        outfits = {m.group(1).lower(): m.group(2).strip() for m in _MENTION.finditer(image) if m.group(2)}
         action = re.sub(r"\s*,\s*(,\s*)+", ", ", _MENTION.sub("", image)).strip(" ,")
         board.scenes.append(Scene(number, _expand(image, board.characters, number),
-                                  " ".join(lines).strip(), cast, reroll, avoid, action))
+                                  " ".join(lines).strip(), cast, reroll, avoid, action, likeness, outfits))
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
     return board
@@ -124,7 +133,7 @@ def _expand(image: str, characters: dict[str, str], number: int) -> str:
         name = m.group(1).lower()
         if name not in characters:
             raise ValueError(f"Escena [{number:03d}]: el personaje @{name} no está definido")
-        return characters[name]
+        return ", ".join(p for p in (characters[name], m.group(2)) if p)
 
     return _MENTION.sub(sub, image)
 

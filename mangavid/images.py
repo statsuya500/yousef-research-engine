@@ -29,6 +29,7 @@ IP_WEIGHTS = "ip-adapter-plus-face_sdxl_vit-h.safetensors"
 IP_SCALE = 0.6  # cuánto se impone la cara de la ficha frente a la descripción (@parecido)
 ENCODER_VERSION = 2  # 2: descripciones largas por trozos de 75 tokens en vez de cortarlas
 CHUNK_TOKENS = 75
+DERIVED_SCALE = 0.35  # peso de la cara base al generar el retrato de un personaje derivado
 WIDTH, HEIGHT = 1344, 768  # 16:9 aproximado, tamaño nativo de SDXL
 PORTRAIT = (896, 1152)  # fichas de personaje en vertical
 STEPS = 28
@@ -63,8 +64,10 @@ def portrait_jobs(board: Storyboard, folder: Path, options: int, seed: int) -> d
     for k, (name, tags) in enumerate(board.characters.items()):
         prompt = ", ".join(p for p in (tags, PORTRAIT_TAGS, board.style) if p)
         faces = [chosen_portrait(folder, board.bases[name])] if name in board.bases else []
+        # Un derivado (más mayor, con barba…) toma la cara del base con poco peso,
+        # o la cara joven se impone y borra los cambios.
         jobs[name] = [
-            Job(prompt, seed + 1000 * k + i, folder / f"{name}_{i}.png", PORTRAIT, faces)
+            Job(prompt, seed + 1000 * k + i, folder / f"{name}_{i}.png", PORTRAIT, faces, None, DERIVED_SCALE if faces else IP_SCALE)
             for i in range(1, options + 1)
         ]
     return jobs
@@ -89,7 +92,7 @@ def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, mod
         prompt = board.prompt(s)
         negative = board.negative_for(s)
         scene_seed = seed + s.number + 100_003 * s.reroll
-        scale = IP_SCALE if board.likeness is None else board.likeness
+        scale = next(v for v in (s.likeness, board.likeness, IP_SCALE) if v is not None)
         key = _hash(model, prompt, negative, scene_seed, STEPS, GUIDANCE, scale, ENCODER_VERSION,
                     *(_file_hash(f) for f in faces))
         jobs.append(Job(prompt, scene_seed, workdir / f"img_{s.number:04d}_{key}.png",

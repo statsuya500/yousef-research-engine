@@ -73,3 +73,10 @@ def test_likeness_and_cast_order():
     board = parse("@a: young man\n@b: young woman\n@parecido: 0.4\n[001] 1boy, 1girl, @b, @a, hug\nX")
     assert board.likeness == 0.4
     assert board.prompt(board.scenes[0]) == "1boy, 1girl, hug, young woman, young man"
+
+
+def test_outfit_and_scene_likeness():
+    board = parse("@a: young man\n@b: young woman\n[001] 1boy, 1girl, @a[overalls], @b[white dress], {parecido=0.6}\nX")
+    s = board.scenes[0]
+    assert s.characters == ["a", "b"] and s.likeness == 0.6
+    assert board.prompt(s) == "1boy, 1girl, young man, overalls, young woman, white dress"
