@@ -158,3 +158,20 @@ Consejos para las imágenes:
 ```bash
 pip install pytest && python -m pytest -q
 ```
+
+## Skills de YouTube para Claude
+
+En `.claude/skills/` están las 11 skills de [youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) (licencia MIT). Funcionan solas al abrir Claude Code en esta carpeta, en tu PC o en la nube:
+
+| Orden | Para qué |
+|---|---|
+| `/yt-package` | Título y texto de miniatura, revisados juntos |
+| `/yt-seo` | Descripción y etiquetas |
+| `/yt-chapters` | Capítulos a partir del `.srt` que genera el doblaje |
+| `/yt-shorts` | Shorts que se pueden sacar del vídeo largo |
+| `/yt-script` | Guion con gancho puntuado |
+| `/yt-edit`, `/yt-retention`, `/yt-comment`, `/yt-plan`, `/yt-viral`, `/yt-audit` | Edición, retención, comentarios, planificación, tendencias y auditoría del canal |
+
+Las skills leen tu perfil de voz en `~/.claude/youtube/voice.md`. Hay una plantilla en `templates/youtube-voice.md`.
+
+Ejemplo con un vídeo doblado: `python3 .claude/skills/yt-chapters/chapters.py /mnt/c/videos/clip_es.srt`
