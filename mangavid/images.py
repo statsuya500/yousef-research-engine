@@ -41,6 +41,7 @@ class Job:
     out: Path
     size: tuple[int, int]
     faces: list[Path]  # fichas de los personajes que salen, en orden
+    negative: str | None = None  # None: el negativo general de la historia
 
 
 def _hash(*parts: object) -> str:
@@ -83,11 +84,12 @@ def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, mod
                 "Ejecuta primero: python -m mangavid personajes <historia.txt>"
             )
         prompt = board.prompt(s)
+        negative = board.negative_for(s)
         scene_seed = seed + s.number + 100_003 * s.reroll
-        key = _hash(model, prompt, board.negative, scene_seed, STEPS, GUIDANCE, IP_SCALE,
+        key = _hash(model, prompt, negative, scene_seed, STEPS, GUIDANCE, IP_SCALE,
                     *(_file_hash(f) for f in faces))
         jobs.append(Job(prompt, scene_seed, workdir / f"img_{s.number:04d}_{key}.png",
-                        (WIDTH, HEIGHT), faces))
+                        (WIDTH, HEIGHT), faces, negative))
     return jobs
 
 
@@ -123,7 +125,7 @@ def _encode_texts(todo: list[Job], negative: str, model: str, torch) -> list[Pat
         with torch.no_grad():
             for job, path in missing:
                 tensors = pipe.encode_prompt(
-                    prompt=job.prompt, negative_prompt=negative, device="cuda",
+                    prompt=job.prompt, negative_prompt=job.negative or negative, device="cuda",
                     num_images_per_prompt=1, do_classifier_free_guidance=True,
                 )
                 torch.save([t.cpu() for t in tensors], path)

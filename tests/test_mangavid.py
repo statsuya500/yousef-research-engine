@@ -52,3 +52,17 @@ def test_derived_characters():
     assert board.bases == {"a5": "a"}
     assert board.scenes[0].characters == ["a5"]
     assert board.scenes[1].reroll == 2 and "{semilla" not in board.scenes[1].image
+
+
+def test_negative_solo_only_for_solo_scenes():
+    board = parse("@negativo: lowres\n@negativo_solo: 2boys, clone\n[001] 1boy, solo, sad\nA\n[002] 1boy, 1girl\nB")
+    assert board.negative_for(board.scenes[0]) == "lowres, 2boys, clone"
+    assert board.negative_for(board.scenes[1]) == "lowres"
+
+
+def test_avoid_per_scene():
+    board = parse("@negativo: lowres\n[001] 1boy, solo, sad, {evitar=clone, 2boys}, {semilla=2}\nA\n[002] city\nB")
+    s = board.scenes[0]
+    assert s.avoid == "clone, 2boys" and s.reroll == 2 and "{" not in s.image
+    assert board.negative_for(s) == "lowres, clone, 2boys"
+    assert board.negative_for(board.scenes[1]) == "lowres"

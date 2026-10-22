@@ -10,6 +10,7 @@ _SCENE = re.compile(r"^\[(\d{1,5})\]\s*(.*)$")
 _DIRECTIVE = re.compile(r"^@([\w-]+)\s*:\s*(.*)$")
 _MENTION = re.compile(r"@([\w-]+)")
 _REROLL = re.compile(r"\{semilla=(\d+)\}")
+_AVOID = re.compile(r"\{evitar=([^}]*)\}")
 
 
 @dataclass
@@ -19,12 +20,14 @@ class Scene:
     narration: str
     characters: list[str] = field(default_factory=list)  # @personajes en orden de aparición
     reroll: int = 0  # {semilla=N} en la escena: otra versión de la imagen con la misma descripción
+    avoid: str = ""  # {evitar=...} en la escena: se añade al negativo solo en esta escena
 
 
 @dataclass
 class Storyboard:
     style: str = ""
     negative: str = ""
+    negative_solo: str = ""  # se añade al negativo en escenas «solo» (evita personajes clonados)
     characters: dict[str, str] = field(default_factory=dict)  # etiquetas ya expandidas
     # Personaje derivado -> personaje base (p. ej. «@alex5: @alex, stubble» -> alex5: alex).
     # El retrato del derivado se genera con la cara del retrato elegido del base.
@@ -33,6 +36,10 @@ class Storyboard:
 
     def prompt(self, scene: Scene) -> str:
         return ", ".join(p for p in (scene.image, self.style) if p)
+
+    def negative_for(self, scene: Scene) -> str:
+        solo = self.negative_solo if re.search(r"\bsolo\b", scene.image) else ""
+        return ", ".join(p for p in (self.negative, solo, scene.avoid) if p)
 
 
 def parse(text: str) -> Storyboard:
@@ -51,6 +58,8 @@ def parse(text: str) -> Storyboard:
                 board.style = value
             elif name == "negativo":
                 board.negative = value
+            elif name == "negativo_solo":
+                board.negative_solo = value
             else:
                 board.characters[name] = value
         elif raw_scenes:
@@ -74,9 +83,13 @@ def parse(text: str) -> Storyboard:
         if m := _REROLL.search(image):
             reroll = int(m.group(1))
             image = _REROLL.sub("", image).strip().rstrip(",").strip()
+        avoid = ""
+        if m := _AVOID.search(image):
+            avoid = m.group(1).strip()
+            image = _AVOID.sub("", image).strip().rstrip(",").strip()
         cast = list(dict.fromkeys(m.lower() for m in _MENTION.findall(image)))
         board.scenes.append(
-            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip(), cast, reroll)
+            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip(), cast, reroll, avoid)
         )
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")

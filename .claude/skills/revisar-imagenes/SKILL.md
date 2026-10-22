@@ -40,7 +40,14 @@ Para cada escena, compara con su descripción y narración en el guion:
 Cambia SOLO las escenas con fallo en el guion; el resto se reutiliza de la caché.
 
 - **Descripción bien pero imagen mala:** añade `{semilla=1}` al final de la descripción (luego 2, 3…).
-- **Duplicados en «solo»:** añade `male focus` / `single person`; si persiste, `{semilla=N}`.
+- **Duplicados en «solo»:** añade `{evitar=multiple boys, 2boys, clone, duplicate, twins, extra person, reflection}`
+  (solo esa escena) y `{semilla=N}`. Si a la tercera sigue, haz un primer plano («close-up, upper body»).
+  En historias nuevas, pon `@negativo_solo:` con esa lista en la cabecera y te ahorras la mayoría.
+- **Clon que no se va con nada:** escribe los rasgos del personaje con palabras en lugar de `@personaje`
+  (sin la cara del retrato la imagen no se duplica).
+- **Documentos o grabadoras que salen como un ojo gigante:** «paper document lying on desk, top-down view,
+  no humans» + `{evitar=eye, eyes, face, close-up of eye}`.
+- **El detector cuenta caras que son legítimas** (gente al fondo en una plaza, una foto en la mano): no lo arregles.
 - **Dos personajes que interactúan (uno tumbado, abrazos, rescates):** el IP-Adapter pone la misma cara a los dos.
   Deja solo un `@personaje` y describe al otro con palabras sin `@` (p. ej. «man lying face down, face not visible»).
 - **Fundido con objetos:** separa a la persona del objeto («standing next to car with open hood») o usa un plano de manos («close-up of hands, no face»).
