@@ -25,7 +25,10 @@ class Scene:
 class Storyboard:
     style: str = ""
     negative: str = ""
-    characters: dict[str, str] = field(default_factory=dict)
+    characters: dict[str, str] = field(default_factory=dict)  # etiquetas ya expandidas
+    # Personaje derivado -> personaje base (p. ej. «@alex5: @alex, stubble» -> alex5: alex).
+    # El retrato del derivado se genera con la cara del retrato elegido del base.
+    bases: dict[str, str] = field(default_factory=dict)
     scenes: list[Scene] = field(default_factory=list)
 
     def prompt(self, scene: Scene) -> str:
@@ -55,6 +58,13 @@ def parse(text: str) -> Storyboard:
         else:
             raise ValueError(f"Línea {lineno}: no sé qué hacer con «{line[:60]}»")
 
+    raw_characters = dict(board.characters)
+    for name, tags in raw_characters.items():
+        refs = [r.lower() for r in _MENTION.findall(tags)]
+        if refs:
+            board.bases[name] = refs[0]
+        board.characters[name] = _expand_character(name, raw_characters, [])
+
     seen: set[int] = set()
     for number, image, lines in raw_scenes:
         if number in seen:
@@ -71,6 +81,19 @@ def parse(text: str) -> Storyboard:
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
     return board
+
+
+def _expand_character(name: str, raw: dict[str, str], chain: list[str]) -> str:
+    if name in chain:
+        raise ValueError(f"Personajes que se definen en círculo: {' -> '.join('@' + c for c in chain + [name])}")
+
+    def sub(m: re.Match) -> str:
+        ref = m.group(1).lower()
+        if ref not in raw:
+            raise ValueError(f"@{name} usa @{ref}, que no está definido")
+        return _expand_character(ref, raw, chain + [name])
+
+    return _MENTION.sub(sub, raw[name])
 
 
 def _expand(image: str, characters: dict[str, str], number: int) -> str:

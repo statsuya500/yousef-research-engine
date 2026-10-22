@@ -13,3 +13,6 @@ demucs
 diffusers>=0.30
 accelerate
 safetensors
+# mangavid revisar: detector de caras y cabezas anime
+dghs-imgutils
+onnxruntime

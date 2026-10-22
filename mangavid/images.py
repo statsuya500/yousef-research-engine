@@ -54,11 +54,13 @@ def _file_hash(path: Path) -> str:
 # --- Fichas de personaje -----------------------------------------------------------
 
 def portrait_jobs(board: Storyboard, folder: Path, options: int, seed: int) -> dict[str, list[Job]]:
+    """Opciones de retrato por personaje. Los derivados usan la cara del retrato elegido de su base."""
     jobs = {}
     for k, (name, tags) in enumerate(board.characters.items()):
         prompt = ", ".join(p for p in (tags, PORTRAIT_TAGS, board.style) if p)
+        faces = [chosen_portrait(folder, board.bases[name])] if name in board.bases else []
         jobs[name] = [
-            Job(prompt, seed + 1000 * k + i, folder / f"{name}_{i}.png", PORTRAIT, [])
+            Job(prompt, seed + 1000 * k + i, folder / f"{name}_{i}.png", PORTRAIT, faces)
             for i in range(1, options + 1)
         ]
     return jobs

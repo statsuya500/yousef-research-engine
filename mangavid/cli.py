@@ -35,31 +35,48 @@ def cmd_personajes(args) -> None:
     if unknown:
         raise SystemExit(f"Personajes desconocidos: {', '.join(sorted(unknown))}")
 
-    jobs = []
-    for name, options in images.portrait_jobs(board, folder, args.opciones, args.seed).items():
-        seed = state.get(name, {}).get("seed", options[0].seed)
-        if name in redo:
-            seed = random.randint(0, 2**31 - 1000)
-        prompt = options[0].prompt
-        if state.get(name) != {"prompt": prompt, "seed": seed, "opciones": args.opciones}:
-            for old in folder.glob(f"{name}_*.png"):
-                old.unlink()
-            state[name] = {"prompt": prompt, "seed": seed, "opciones": args.opciones}
-        for i, job in enumerate(options):
-            job.seed = seed + i
-        jobs += options
+    all_jobs = images.portrait_jobs(board, folder, args.opciones, args.seed)
+    # Primero los personajes base y después los derivados (necesitan la cara ya elegida de su base).
+    derived_depth = {n: _depth(n, board.bases) for n in board.characters}
+    for depth in sorted(set(derived_depth.values())):
+        jobs = []
+        for name, options in all_jobs.items():
+            if derived_depth[name] != depth:
+                continue
+            seed = state.get(name, {}).get("seed", options[0].seed)
+            if name in redo:
+                seed = random.randint(0, 2**31 - 1000)
+            wanted = {"prompt": options[0].prompt, "seed": seed, "opciones": args.opciones,
+                      "base": _base_hash(options[0].faces)}
+            if {"base": None, **state.get(name, {})} != wanted:
+                for old in folder.glob(f"{name}_*.png"):
+                    old.unlink()
+                state[name] = wanted
+            for i, job in enumerate(options):
+                job.seed = seed + i
+            jobs += options
 
-    images.generate(jobs, board.negative, args.model)
-    state_file.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    for name in board.characters:
-        chosen = images.chosen_portrait(folder, name)
-        if not chosen.exists():
-            shutil.copyfile(folder / f"{name}_1.png", chosen)
-            print(f"[personajes] {name}: elegida la opción 1 por defecto")
+        images.generate(jobs, board.negative, args.model)
+        state_file.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+        for name in board.characters:
+            chosen = images.chosen_portrait(folder, name)
+            if derived_depth[name] == depth and not chosen.exists():
+                shutil.copyfile(folder / f"{name}_1.png", chosen)
+                print(f"[personajes] {name}: elegida la opción 1 por defecto")
     print(f"[personajes] revisa {folder} y cambia la que no te guste con:\n"
           f"  python -m mangavid elegir {args.story} <personaje> <número>\n"
           f"  o rehaz sus opciones con: python -m mangavid personajes {args.story} --rehacer <personaje>")
+
+
+def _depth(name: str, bases: dict[str, str]) -> int:
+    depth = 0
+    while name in bases:
+        name, depth = bases[name], depth + 1
+    return depth
+
+
+def _base_hash(faces: list[Path]) -> str | None:
+    return images._file_hash(faces[0]) if faces else None
 
 
 def cmd_elegir(args) -> None:
@@ -94,6 +111,25 @@ def cmd_run(args) -> None:
     render.render(board, pics, voices, work / "segments", output, args.music, args.music_volume, args.font_size)
 
 
+def cmd_revisar(args) -> None:
+    from . import review
+
+    board = storyboard.load(args.story)
+    work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
+    jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), args.seed, images.DEFAULT_MODEL)
+    missing = [j.out.name for j in jobs if not j.out.exists()]
+    if missing:
+        raise SystemExit(f"Faltan {len(missing)} imágenes por generar. Ejecuta antes: "
+                         f"python -m mangavid run {args.story} --only-images")
+    checks = review.check(board, [j.out for j in jobs])
+    folder = work / "revision"
+    sheets = review.contact_sheets(checks, folder)
+    text = review.report(checks)
+    (folder / "informe.txt").write_text(text + "\n", encoding="utf-8")
+    print(text)
+    print(f"[revisión] {len(sheets)} hojas en {folder}")
+
+
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="mangavid", description="Historia en texto → vídeo estilo manhwa narrado")
     sub = p.add_subparsers(dest="command", required=True)
@@ -125,6 +161,12 @@ def main(argv: list[str] | None = None) -> None:
     r.add_argument("--font-size", type=int, default=16)
     r.add_argument("--only-images", action="store_true", help="Generar solo las imágenes para revisarlas")
     r.set_defaults(func=cmd_run)
+
+    v = sub.add_parser("revisar", help="Detectar personajes duplicados y preparar hojas de revisión")
+    v.add_argument("story", type=Path)
+    v.add_argument("--workdir", type=Path)
+    v.add_argument("--seed", type=int, default=1234)
+    v.set_defaults(func=cmd_revisar)
 
     args = p.parse_args(argv)
     args.func(args)
