@@ -21,6 +21,7 @@ class Scene:
     characters: list[str] = field(default_factory=list)  # @personajes en orden de aparición
     reroll: int = 0  # {semilla=N} en la escena: otra versión de la imagen con la misma descripción
     avoid: str = ""  # {evitar=...} en la escena: se añade al negativo solo en esta escena
+    action: str = ""  # la descripción sin los @personajes: acción, expresión, encuadre y lugar
 
 
 @dataclass
@@ -28,6 +29,7 @@ class Storyboard:
     style: str = ""
     negative: str = ""
     negative_solo: str = ""  # se añade al negativo en escenas «solo» (evita personajes clonados)
+    likeness: float | None = None  # @parecido: cuánto se impone la cara del retrato (0-1)
     characters: dict[str, str] = field(default_factory=dict)  # etiquetas ya expandidas
     # Personaje derivado -> personaje base (p. ej. «@alex5: @alex, stubble» -> alex5: alex).
     # El retrato del derivado se genera con la cara del retrato elegido del base.
@@ -35,7 +37,13 @@ class Storyboard:
     scenes: list[Scene] = field(default_factory=list)
 
     def prompt(self, scene: Scene) -> str:
-        return ", ".join(p for p in (scene.image, self.style) if p)
+        """Acción y expresión primero, después los rasgos de los personajes y al final el estilo.
+
+        Los modelos de imagen dan más peso a lo que va al principio, y la ficha de un personaje
+        puede ocupar 40 tokens: si fuera delante, la acción quedaría relegada al final.
+        """
+        cast = [self.characters[c] for c in scene.characters]
+        return ", ".join(p for p in (scene.action or scene.image, *cast, self.style) if p)
 
     def negative_for(self, scene: Scene) -> str:
         solo = self.negative_solo if re.search(r"\bsolo\b", scene.image) else ""
@@ -60,6 +68,8 @@ def parse(text: str) -> Storyboard:
                 board.negative = value
             elif name == "negativo_solo":
                 board.negative_solo = value
+            elif name == "parecido":
+                board.likeness = float(value)
             else:
                 board.characters[name] = value
         elif raw_scenes:
@@ -88,9 +98,9 @@ def parse(text: str) -> Storyboard:
             avoid = m.group(1).strip()
             image = _AVOID.sub("", image).strip().rstrip(",").strip()
         cast = list(dict.fromkeys(m.lower() for m in _MENTION.findall(image)))
-        board.scenes.append(
-            Scene(number, _expand(image, board.characters, number), " ".join(lines).strip(), cast, reroll, avoid)
-        )
+        action = re.sub(r"\s*,\s*(,\s*)+", ", ", _MENTION.sub("", image)).strip(" ,")
+        board.scenes.append(Scene(number, _expand(image, board.characters, number),
+                                  " ".join(lines).strip(), cast, reroll, avoid, action))
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
     return board

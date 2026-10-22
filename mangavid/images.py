@@ -26,7 +26,9 @@ DEFAULT_MODEL = "cagliostrolab/animagine-xl-4.0"
 FP16_VAE = "madebyollin/sdxl-vae-fp16-fix"
 IP_ADAPTER = "h94/IP-Adapter"
 IP_WEIGHTS = "ip-adapter-plus-face_sdxl_vit-h.safetensors"
-IP_SCALE = 0.6  # cuánto se impone la cara de la ficha frente a la descripción
+IP_SCALE = 0.6  # cuánto se impone la cara de la ficha frente a la descripción (@parecido)
+ENCODER_VERSION = 2  # 2: descripciones largas por trozos de 75 tokens en vez de cortarlas
+CHUNK_TOKENS = 75
 WIDTH, HEIGHT = 1344, 768  # 16:9 aproximado, tamaño nativo de SDXL
 PORTRAIT = (896, 1152)  # fichas de personaje en vertical
 STEPS = 28
@@ -42,6 +44,7 @@ class Job:
     size: tuple[int, int]
     faces: list[Path]  # fichas de los personajes que salen, en orden
     negative: str | None = None  # None: el negativo general de la historia
+    ip_scale: float = 0.6  # peso de la cara del retrato
 
 
 def _hash(*parts: object) -> str:
@@ -86,10 +89,11 @@ def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, mod
         prompt = board.prompt(s)
         negative = board.negative_for(s)
         scene_seed = seed + s.number + 100_003 * s.reroll
-        key = _hash(model, prompt, negative, scene_seed, STEPS, GUIDANCE, IP_SCALE,
+        scale = IP_SCALE if board.likeness is None else board.likeness
+        key = _hash(model, prompt, negative, scene_seed, STEPS, GUIDANCE, scale, ENCODER_VERSION,
                     *(_file_hash(f) for f in faces))
         jobs.append(Job(prompt, scene_seed, workdir / f"img_{s.number:04d}_{key}.png",
-                        (WIDTH, HEIGHT), faces, negative))
+                        (WIDTH, HEIGHT), faces, negative, scale))
     return jobs
 
 
@@ -124,15 +128,52 @@ def _encode_texts(todo: list[Job], negative: str, model: str, torch) -> list[Pat
         pipe = StableDiffusionXLPipeline.from_pretrained(model, unet=None, vae=None, dtype=torch.float16).to("cuda")
         with torch.no_grad():
             for job, path in missing:
-                tensors = pipe.encode_prompt(
-                    prompt=job.prompt, negative_prompt=job.negative or negative, device="cuda",
-                    num_images_per_prompt=1, do_classifier_free_guidance=True,
-                )
+                tensors = _encode_long(pipe, job.prompt, job.negative or negative, torch)
                 torch.save([t.cpu() for t in tensors], path)
         del pipe
         _free(torch)
         print(f"[imágenes] {len(missing)} descripciones codificadas en {time.time() - t0:.0f}s")
     return paths
+
+
+def _chunks(pipe, text: str) -> list[str]:
+    """Parte la descripción por comas en trozos de hasta 75 tokens, sin cortar etiquetas."""
+    tags = [t.strip() for t in text.split(",") if t.strip()]
+    chunks, current = [], []
+    for tag in tags:
+        candidate = ", ".join(current + [tag])
+        if current and len(pipe.tokenizer(candidate).input_ids) - 2 > CHUNK_TOKENS:
+            chunks.append(", ".join(current))
+            current = [tag]
+        else:
+            current.append(tag)
+    if current:
+        chunks.append(", ".join(current))
+    return chunks or [""]
+
+
+def _encode_long(pipe, prompt: str, negative: str, torch):
+    """Como encode_prompt, pero sin el límite de 77 tokens de CLIP.
+
+    Cada trozo se codifica por separado y se concatenan en la dimensión de la secuencia,
+    como hacen A1111 o compel. El vector global (pooled) es el del primer trozo, que lleva
+    la acción y la expresión.
+    """
+    pos_chunks, neg_chunks = _chunks(pipe, prompt), _chunks(pipe, negative)
+    n = max(len(pos_chunks), len(neg_chunks))
+    pos_chunks += [""] * (n - len(pos_chunks))
+    neg_chunks += [""] * (n - len(neg_chunks))
+    pos, neg, pooled, neg_pooled = [], [], None, None
+    for p, q in zip(pos_chunks, neg_chunks):
+        e, ne, pe, npe = pipe.encode_prompt(
+            prompt=p, negative_prompt=q, device="cuda",
+            num_images_per_prompt=1, do_classifier_free_guidance=True,
+        )
+        pos.append(e)
+        neg.append(ne)
+        if pooled is None:
+            pooled, neg_pooled = pe, npe
+    return torch.cat(pos, dim=1), torch.cat(neg, dim=1), pooled, neg_pooled
 
 
 def _encode_faces(todo: list[Job], torch) -> dict[Path, object]:
@@ -202,7 +243,7 @@ def _draw(todo: list[Job], text: list[Path], faces: dict, model: str, torch) -> 
             if job.faces:
                 # (2, n, 257, 1280): negativas y positivas de los n personajes
                 stack = torch.stack([faces[f] for f in job.faces], dim=1).to("cuda")
-                pipe.set_ip_adapter_scale(IP_SCALE)
+                pipe.set_ip_adapter_scale(job.ip_scale)
                 extra["ip_adapter_image_embeds"] = [stack]
                 if len(job.faces) > 1:
                     extra["cross_attention_kwargs"] = {"ip_adapter_masks": _masks(len(job.faces), w, h)}

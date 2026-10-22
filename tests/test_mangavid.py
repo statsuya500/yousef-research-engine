@@ -22,7 +22,8 @@ def test_parse_storyboard():
     assert board.negative == "lowres"
     assert [s.number for s in board.scenes] == [1, 2]
     assert board.scenes[0].narration == "Ana sonrió. Y se fue."
-    assert board.prompt(board.scenes[0]) == "1girl, solo, young woman, black hair, smiling, manhwa style"
+    # la acción va delante de los rasgos del personaje
+    assert board.prompt(board.scenes[0]) == "1girl, solo, smiling, young woman, black hair, manhwa style"
 
 
 def test_unknown_character_fails():
@@ -66,3 +67,9 @@ def test_avoid_per_scene():
     assert s.avoid == "clone, 2boys" and s.reroll == 2 and "{" not in s.image
     assert board.negative_for(s) == "lowres, clone, 2boys"
     assert board.negative_for(board.scenes[1]) == "lowres"
+
+
+def test_likeness_and_cast_order():
+    board = parse("@a: young man\n@b: young woman\n@parecido: 0.4\n[001] 1boy, 1girl, @b, @a, hug\nX")
+    assert board.likeness == 0.4
+    assert board.prompt(board.scenes[0]) == "1boy, 1girl, hug, young woman, young man"
