@@ -99,3 +99,17 @@ def test_compose_without_text_and_sheet(tmp_path):
     full = thumbnail.compose(base, "@leo=PROTA | @ana=HIJA | ¿?!", tmp_path / "f.jpg", ["leo", "ana"])
     assert Image.open(plain).size == thumbnail.SIZE
     assert thumbnail.contact_sheet([plain, full], tmp_path / "hoja.jpg").exists()
+
+
+def test_arrows_are_curved():
+    import math
+
+    pts = thumbnail._curve((100, 400), (500, 400))
+    assert pts[0] == (100, 400) and pts[-1] == (500, 400)
+    # el centro se separa de la línea recta y se abomba hacia arriba
+    mid = pts[len(pts) // 2]
+    assert mid[1] < 400 - 0.1 * 400
+    # casi vertical: se abomba hacia el borde más cercano (aquí, la izquierda)
+    pts = thumbnail._curve((300, 600), (310, 300))
+    assert min(p[0] for p in pts) < 300 - 30
+    assert all(math.isfinite(c) for p in pts for c in p)

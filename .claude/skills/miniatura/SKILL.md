@@ -7,7 +7,7 @@ description: Crea la miniatura de YouTube de una historia de mangavid al estilo 
 
 El estilo es el de canales como Yube Manhwa:
 - Imagen luminosa y colorida con **los dos personajes clave** de la historia.
-- **Etiquetas** amarillas inclinadas con flecha hacia cada personaje: quién es en la historia
+- **Etiquetas** amarillas inclinadas con flecha curva hacia cada personaje: quién es en la historia
   (`PROTA`, `HIJA`, `CEO`, `HERMANAS`, `ASESINO SECRETO DE RANGO SSS`).
 - **Una frase corta** que alguien dice en el momento clave (`¡NO SALTES!`, `TE PROTEGERÉ SIEMPRE`,
   `SOLO SON HERRAMIENTAS.`) o un rótulo como `?!?` o `-80 °C`.

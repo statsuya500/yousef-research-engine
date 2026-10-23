@@ -193,7 +193,7 @@ def _place(layer, avoid: list[Box], taken: list[Box], edges, around: Box | None)
     w, h = layer.size
     if around:
         cx, cy = (around[0] + around[2]) / 2, (around[1] + around[3]) / 2
-        r = max(around[2] - around[0], around[3] - around[1]) * 0.8 + max(w, h) * 0.5 + 50
+        r = max(around[2] - around[0], around[3] - around[1]) * 0.8 + max(w, h) * 0.5 + 85
         # Primero hacia fuera (el lado del borde más cercano), luego abajo y arriba.
         out = 180 if cx < SIZE[0] / 2 else 0
         sign = 1 if out == 180 else -1
@@ -218,23 +218,57 @@ def _place(layer, avoid: list[Box], taken: list[Box], edges, around: Box | None)
     return best
 
 
-def _arrow(draw, start, end, width: int) -> None:
-    """Flecha amarilla con borde negro, de `start` (el rótulo) a `end` (la cara)."""
-    ang = math.atan2(end[1] - start[1], end[0] - start[0])
+ARROW_BEND = 0.32  # curvatura de las flechas: desvío del centro en parte de su largo
+
+
+def _curve(start, end, bend: float = ARROW_BEND, steps: int = 40) -> list[tuple[float, float]]:
+    """Curva suave (Bézier cuadrática) de `start` a `end`, abombada hacia arriba,
+    o hacia el borde de la imagen si la flecha es casi vertical."""
+    dx, dy = end[0] - start[0], end[1] - start[1]
+    length = math.hypot(dx, dy) or 1.0
+    nx, ny = -dy / length, dx / length
+    mid = ((start[0] + end[0]) / 2, (start[1] + end[1]) / 2)
+    if abs(dx) > abs(dy) * 0.35:
+        sign = -1 if ny > 0 else 1  # el punto de control queda por encima
+    else:
+        sign = 1 if (nx > 0) == (mid[0] > SIZE[0] / 2) else -1  # hacia el borde más cercano
+    ctrl = (mid[0] + sign * nx * bend * length, mid[1] + sign * ny * bend * length)
+    pts = []
+    for i in range(steps + 1):
+        t = i / steps
+        pts.append(((1 - t) ** 2 * start[0] + 2 * (1 - t) * t * ctrl[0] + t * t * end[0],
+                    (1 - t) ** 2 * start[1] + 2 * (1 - t) * t * ctrl[1] + t * t * end[1]))
+    return pts
+
+
+def _arrow(draw, start, end, width: int) -> Box:
+    """Flecha curva amarilla con borde negro, de `start` (el rótulo) a `end` (la cara).
+    Devuelve el rectángulo que ocupa."""
+    pts = _curve(start, end)
     head = width * 2.6
-    base = (end[0] - head * math.cos(ang), end[1] - head * math.sin(ang))
+    # El cuerpo acaba donde empieza la punta; la punta sigue la dirección final de la curva.
+    shaft = [p for p in pts if math.hypot(end[0] - p[0], end[1] - p[1]) > head]
+    if len(shaft) < 2:
+        shaft = pts[:2]
+    base = shaft[-1]
+    ang = math.atan2(end[1] - base[1], end[0] - base[0])
 
     def tri(scale: float):
         side = head * 0.75 * scale
         tip = (end[0] + (scale - 1) * head * math.cos(ang), end[1] + (scale - 1) * head * math.sin(ang))
+        back = (end[0] - head * scale * math.cos(ang) + (scale - 1) * head * math.cos(ang),
+                end[1] - head * scale * math.sin(ang) + (scale - 1) * head * math.sin(ang))
         return [tip,
-                (base[0] + side * math.cos(ang + math.pi / 2), base[1] + side * math.sin(ang + math.pi / 2)),
-                (base[0] + side * math.cos(ang - math.pi / 2), base[1] + side * math.sin(ang - math.pi / 2))]
+                (back[0] + side * math.cos(ang + math.pi / 2), back[1] + side * math.sin(ang + math.pi / 2)),
+                (back[0] + side * math.cos(ang - math.pi / 2), back[1] + side * math.sin(ang - math.pi / 2))]
 
-    draw.line([start, base], fill=BLACK, width=width + 8)
-    draw.polygon(tri(1.35), fill=BLACK)
-    draw.line([start, base], fill=YELLOW, width=width)
-    draw.polygon(tri(1.0), fill=YELLOW)
+    for fill, w, scale in ((BLACK, width + 8, 1.35), (YELLOW, width, 1.0)):
+        draw.line(shaft, fill=fill, width=w, joint="curve")
+        r = w / 2
+        draw.ellipse([start[0] - r, start[1] - r, start[0] + r, start[1] + r], fill=fill)
+        draw.polygon(tri(scale), fill=fill)
+    xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+    return (min(xs) - 15, min(ys) - 15, max(xs) + 15, max(ys) + 15)
 
 
 def _edge_point(box: Box, toward: tuple[float, float]) -> tuple[float, float]:
@@ -293,9 +327,7 @@ def compose(base: Path, text: str, out: Path, characters: list[str] | None = Non
             dist = math.hypot(tcx - start[0], tcy - start[1])
             if dist > gap + 40:
                 end = (tcx - (tcx - start[0]) * gap / dist, tcy - (tcy - start[1]) * gap / dist)
-                _arrow(arrows, start, end, 9)
-                taken.append((min(start[0], end[0]) - 15, min(start[1], end[1]) - 15,
-                              max(start[0], end[0]) + 15, max(start[1], end[1]) + 15))
+                taken.append(_arrow(arrows, start, end, 9))
         canvas.alpha_composite(layer, (int(box[0]), int(box[1])))
     return save_jpeg(canvas.convert("RGB"), out)
 

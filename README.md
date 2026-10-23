@@ -150,7 +150,7 @@ al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.
 
 ### Miniaturas
 
-Al estilo de los canales de manhwa narrado: los personajes, una etiqueta amarilla con flecha hacia cada uno (`PROTA`, `HIJA`, `CEO`…) y una frase corta.
+Al estilo de los canales de manhwa narrado: los personajes, una etiqueta amarilla con flecha curva hacia cada uno (`PROTA`, `HIJA`, `CEO`…) y una frase corta.
 
 ```text
 @miniatura: 1boy, 1girl, @kai, @luna, kai grabbing her arm, she is crying, rooftop, blue sky
