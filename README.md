@@ -148,6 +148,21 @@ python -m mangavid run historia.txt --music musica.mp3 --voice es-MX-JorgeNeural
 Todo se guarda en `historia_work/` con un hash por escena: si se corta o cambias una escena,
 al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.
 
+### Miniaturas
+
+```text
+@miniatura: 1girl, solo, @elena[black dress], crying, angry, burning mansion, night
+@miniatura_texto: La *traición*
+```
+
+```bash
+python -m mangavid miniatura historia.txt                       # 4 opciones en historia_miniaturas/
+python -m mangavid miniatura historia.txt --texto "¡Me *engañó*!" # cambia solo el texto (segundos)
+python -m mangavid miniatura historia.txt --escena 12           # usa la imagen de la escena 12
+```
+
+Las miniaturas salen a 1280×720, con menos de 2 MB, como pide YouTube. Las imágenes usan las caras de las fichas y el texto grande va en el lado más despejado, con la palabra entre `*asteriscos*` en amarillo (sin asteriscos, la última). La skill `miniatura` hace que Claude proponga el texto y la escena leyendo el guion. Tipografía: Anton (licencia SIL OFL, en `mangavid/fonts/`).
+
 Consejos para las imágenes:
 - Evita colores en accesorios que puedan contagiarse al pelo (p. ej. `red hair ornament` tiñe el pelo de rojo).
 - Las escenas con dos personajes pueden mezclar rasgos (color de ojos o pelo). Si importa, usa planos de un solo personaje.
