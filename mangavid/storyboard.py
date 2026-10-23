@@ -38,6 +38,8 @@ class Storyboard:
     # El retrato del derivado se genera con la cara del retrato elegido del base.
     bases: dict[str, str] = field(default_factory=dict)
     scenes: list[Scene] = field(default_factory=list)
+    thumbnail: Scene | None = None  # @miniatura: imagen de la miniatura, con @personajes como una escena
+    thumbnail_text: str = ""  # @miniatura_texto: texto grande de la miniatura (*palabra* resaltada)
 
     def prompt(self, scene: Scene) -> str:
         """Acción y expresión primero, después los rasgos de los personajes y al final el estilo.
@@ -57,6 +59,7 @@ class Storyboard:
 def parse(text: str) -> Storyboard:
     board = Storyboard()
     raw_scenes: list[tuple[int, str, list[str]]] = []
+    raw_thumbnail = ""
 
     for lineno, raw in enumerate(text.splitlines(), start=1):
         line = raw.strip().lstrip("﻿")
@@ -74,6 +77,10 @@ def parse(text: str) -> Storyboard:
                 board.negative_solo = value
             elif name == "parecido":
                 board.likeness = float(value)
+            elif name == "miniatura":
+                raw_thumbnail = value
+            elif name == "miniatura_texto":
+                board.thumbnail_text = value
             else:
                 board.characters[name] = value
         elif raw_scenes:
@@ -93,26 +100,32 @@ def parse(text: str) -> Storyboard:
         if number in seen:
             raise ValueError(f"La escena [{number:03d}] está repetida")
         seen.add(number)
-        reroll = 0
-        if m := _REROLL.search(image):
-            reroll = int(m.group(1))
-            image = _REROLL.sub("", image).strip().rstrip(",").strip()
-        avoid = ""
-        if m := _AVOID.search(image):
-            avoid = m.group(1).strip()
-            image = _AVOID.sub("", image).strip().rstrip(",").strip()
-        likeness = None
-        if m := _LIKENESS.search(image):
-            likeness = float(m.group(1))
-            image = _LIKENESS.sub("", image).strip().rstrip(",").strip()
-        cast = list(dict.fromkeys(m.group(1).lower() for m in _MENTION.finditer(image)))
-        outfits = {m.group(1).lower(): m.group(2).strip() for m in _MENTION.finditer(image) if m.group(2)}
-        action = re.sub(r"\s*,\s*(,\s*)+", ", ", _MENTION.sub("", image)).strip(" ,")
-        board.scenes.append(Scene(number, _expand(image, board.characters, number),
-                                  " ".join(lines).strip(), cast, reroll, avoid, action, likeness, outfits))
+        board.scenes.append(_build_scene(number, image, " ".join(lines).strip(), board.characters))
+    if raw_thumbnail:
+        board.thumbnail = _build_scene(0, raw_thumbnail, "", board.characters)
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
     return board
+
+
+def _build_scene(number: int, image: str, narration: str, characters: dict[str, str]) -> Scene:
+    reroll = 0
+    if m := _REROLL.search(image):
+        reroll = int(m.group(1))
+        image = _REROLL.sub("", image).strip().rstrip(",").strip()
+    avoid = ""
+    if m := _AVOID.search(image):
+        avoid = m.group(1).strip()
+        image = _AVOID.sub("", image).strip().rstrip(",").strip()
+    likeness = None
+    if m := _LIKENESS.search(image):
+        likeness = float(m.group(1))
+        image = _LIKENESS.sub("", image).strip().rstrip(",").strip()
+    cast = list(dict.fromkeys(m.group(1).lower() for m in _MENTION.finditer(image)))
+    outfits = {m.group(1).lower(): m.group(2).strip() for m in _MENTION.finditer(image) if m.group(2)}
+    action = re.sub(r"\s*,\s*(,\s*)+", ", ", _MENTION.sub("", image)).strip(" ,")
+    return Scene(number, _expand(image, characters, number), narration, cast, reroll, avoid,
+                 action, likeness, outfits)
 
 
 def _expand_character(name: str, raw: dict[str, str], chain: list[str]) -> str:

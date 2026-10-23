@@ -3,6 +3,7 @@
     python -m mangavid personajes historia.txt        # 1) opciones de retrato por personaje
     python -m mangavid elegir historia.txt elena 3    # 2) fijar la opción que te guste
     python -m mangavid run historia.txt               # 3) escenas, voz y vídeo
+    python -m mangavid miniatura historia.txt         # 4) opciones de miniatura para YouTube
 """
 
 from __future__ import annotations
@@ -130,6 +131,34 @@ def cmd_revisar(args) -> None:
     print(f"[revisión] {len(sheets)} hojas en {folder}")
 
 
+def cmd_miniatura(args) -> None:
+    from . import thumbnail
+
+    board = storyboard.load(args.story)
+    folder = args.story.with_name(f"{args.story.stem}_miniaturas")
+    text = args.texto if args.texto is not None else board.thumbnail_text
+    if args.escena:
+        # Reutiliza la imagen ya generada de una escena del vídeo: no hace falta GPU.
+        work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
+        scene_jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), 1234, args.model)
+        bases = [j.out for j, s in zip(scene_jobs, board.scenes) if s.number in args.escena]
+        missing = [b.name for b in bases if not b.exists()]
+        if not bases or missing:
+            raise SystemExit(f"Esas escenas no tienen imagen generada todavía: {args.escena}")
+    else:
+        jobs = thumbnail.jobs(board, folder, _portraits_dir(args.story), args.opciones, args.seed, args.model)
+        images.generate(jobs, board.negative, args.model)
+        bases = [j.out for j in jobs]
+    for old in folder.glob("miniatura_*.jpg"):
+        old.unlink()
+    outs = [thumbnail.compose(b, text, folder / f"miniatura_{i}.jpg", args.lado)
+            for i, b in enumerate(bases, start=1)]
+    sheet = thumbnail.contact_sheet(outs, folder / "opciones.jpg")
+    print(f"[miniatura] texto: «{text or '(sin texto)'}»")
+    print(f"[miniatura] {len(outs)} opciones en {folder} (todas juntas en {sheet.name})")
+    print("[miniatura] para cambiar solo el texto, relanza con --texto: las imágenes no se regeneran")
+
+
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="mangavid", description="Historia en texto → vídeo estilo manhwa narrado")
     sub = p.add_subparsers(dest="command", required=True)
@@ -161,6 +190,19 @@ def main(argv: list[str] | None = None) -> None:
     r.add_argument("--font-size", type=int, default=16)
     r.add_argument("--only-images", action="store_true", help="Generar solo las imágenes para revisarlas")
     r.set_defaults(func=cmd_run)
+
+    m = sub.add_parser("miniatura", help="Opciones de miniatura de YouTube con texto grande")
+    m.add_argument("story", type=Path)
+    m.add_argument("--texto", help="Texto de la miniatura (2-3 palabras; *palabra* en amarillo). "
+                                   "Por defecto, el de @miniatura_texto")
+    m.add_argument("--opciones", type=int, default=4, help="Imágenes distintas a generar")
+    m.add_argument("--lado", choices=["auto", "izquierda", "derecha"], default="auto",
+                   help="Dónde va el texto (auto: el lado con menos detalle)")
+    m.add_argument("--escena", type=int, nargs="*", help="Usar la imagen ya generada de estas escenas")
+    m.add_argument("--workdir", type=Path)
+    m.add_argument("--seed", type=int, default=4242)
+    m.add_argument("--model", default=images.DEFAULT_MODEL)
+    m.set_defaults(func=cmd_miniatura)
 
     v = sub.add_parser("revisar", help="Detectar personajes duplicados y preparar hojas de revisión")
     v.add_argument("story", type=Path)

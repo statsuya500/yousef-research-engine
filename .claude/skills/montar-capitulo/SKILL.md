@@ -24,6 +24,7 @@ Los procesos largos, en segundo plano.
    Opciones: `--music musica.mp3`, `--voice es-MX-JorgeNeural`, `--rate +5%`.
 6. **Comprobar:** saca 2-3 fotogramas con ffmpeg y míralos (subtítulos legibles, imagen correcta).
    Dile al usuario la ruta de Windows del vídeo (`C:\videos\...`) y la duración.
+7. **Miniatura** con la skill `miniatura`. ⏸ Enseña las opciones y espera.
 
 Notas del equipo del usuario (8 GB de RAM, RTX 5060 Ti de 8 GB): no lances dos generaciones a la vez
 ni otro proceso pesado mientras se generan imágenes; Windows se queda sin memoria.
