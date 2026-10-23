@@ -46,10 +46,12 @@
 @tomas5: @tomas, older, deeper wrinkles
 @rata5: @rata, older, gaunt face, stubble
 
-# Miniatura (python -m mangavid miniatura historia.txt): Álex vuelve al pueblo con traje y
-# Carmen, que lo humilló, se queda helada. Álex a la izquierda, Carmen a la derecha.
-@miniatura: 1boy, 1girl, upper body, @alex5[elegant dark suit, white shirt], @carmen, he steps out of black luxury car with confident smirk, she is shocked with mouth wide open dropping shopping bag, oranges falling, village square, sunny, {evitar=3people, extra person, multiple boys, multiple girls}, {parecido=0.6}
-@miniatura_texto: @alex5=PROTA | @carmen=SUEGRA | ¡Era el heredero!
+# Miniatura (python -m mangavid miniatura historia.txt), para el título B «Lo dieron por muerto
+# en un río. Volvió 5 años después»: la junta (escenas 355-360). Álex, vivo y tranquilo, frente al
+# tío que lo mandó matar, blanco del susto. Dos hombres enfrentados: no se lee como pareja.
+# Álex a la izquierda, Ramiro a la derecha.
+@miniatura: 2boys, upper body, face to face confrontation, @alex5[dark suit, white shirt], @ramiro5, young man calm cold smirk, older man terrified, pale, sweat, wide-eyed, trembling, boardroom, cameras flashing, dramatic lighting, {evitar=1girl, multiple girls, 3boys, extra person, hug, holding hands, couple, romantic}, {parecido=0.6}
+@miniatura_texto: @alex5=PROTA | @ramiro5=TÍO | ¿Sigues vivo?
 
 # ================= GANCHO =================
 
