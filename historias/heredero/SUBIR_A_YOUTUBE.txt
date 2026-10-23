@@ -11,14 +11,13 @@ ARCHIVOS
 TÍTULO (elige uno)
 ---------------------------------------------------------------------
   A) Mecánico pobre durante 5 años: era el nieto de un millonario   (98/100)
-     (repite «era» con la miniatura: mejor B o C)
   B) Lo dieron por muerto en un río. Volvió 5 años después          (98/100)  <- recomendado
   C) Su tío le cortó los frenos. 5 años después volvió por todo     (98/100)
 
 MINIATURA (estilo manhwa: etiquetas con flecha + frase)
-  Imagen:  Álex con traje bajando de un coche de lujo + Carmen boquiabierta
-           soltando la bolsa de la compra (escenas 389-391)
-  Rótulos: PROTA -> Álex · SUEGRA -> Carmen · ¡ERA EL HEREDERO!
+  Imagen:  la junta (escenas 355-360): Álex con traje, tranquilo, frente a su
+           tío Ramiro, blanco del susto al verlo vivo
+  Rótulos: PROTA -> Álex · TÍO -> Ramiro · ¿SIGUES VIVO?   (va con el título B)
   Generar: python -m mangavid miniatura C:\videos\heredero\historia.txt
            (en WSL: /mnt/c/videos/heredero/historia.txt)
 
