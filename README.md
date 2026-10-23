@@ -150,18 +150,24 @@ al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.
 
 ### Miniaturas
 
+Al estilo de los canales de manhwa narrado: los personajes, una etiqueta amarilla con flecha hacia cada uno (`PROTA`, `HIJA`, `CEO`…) y una frase corta.
+
 ```text
-@miniatura: 1girl, solo, @elena[black dress], crying, angry, burning mansion, night
-@miniatura_texto: La *traición*
+@miniatura: 1boy, 1girl, @kai, @luna, kai grabbing her arm, she is crying, rooftop, blue sky
+@miniatura_texto: @kai=PROTA | @luna=HIJA | ¡No saltes!
 ```
 
 ```bash
-python -m mangavid miniatura historia.txt                       # 4 opciones en historia_miniaturas/
-python -m mangavid miniatura historia.txt --texto "¡Me *engañó*!" # cambia solo el texto (segundos)
-python -m mangavid miniatura historia.txt --escena 12           # usa la imagen de la escena 12
+python -m mangavid miniatura historia.txt                           # 4 opciones en historia_miniaturas/
+python -m mangavid miniatura historia.txt --texto "@kai=PROTA | ?!?" # cambia solo los rótulos (segundos)
+python -m mangavid miniatura historia.txt --escena 12               # usa la imagen de la escena 12
 ```
 
-Las miniaturas salen a 1280×720, con menos de 2 MB, como pide YouTube. Las imágenes usan las caras de las fichas y el texto grande va en el lado más despejado, con la palabra entre `*asteriscos*` en amarillo (sin asteriscos, la última). La skill `miniatura` hace que Claude proponga el texto y la escena leyendo el guion. Tipografía: Anton (licencia SIL OFL, en `mangavid/fonts/`).
+- **Tamaño:** 1280×720 y menos de 2 MB, como pide YouTube.
+- **Personajes:** salen de izquierda a derecha en el orden de `@miniatura`, con las caras de sus fichas.
+- **Rótulos:** `@personaje=TEXTO` lleva flecha hacia su cabeza (detectada con `imgutils`). Un texto sin `@` va en el hueco más despejado.
+- **Skill `miniatura`:** hace que Claude proponga la imagen y los rótulos leyendo el guion.
+- **Tipografía:** Anton (licencia SIL OFL, en `mangavid/fonts/`).
 
 Consejos para las imágenes:
 - Evita colores en accesorios que puedan contagiarse al pelo (p. ej. `red hair ornament` tiñe el pelo de rojo).
