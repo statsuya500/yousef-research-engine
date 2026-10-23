@@ -1,0 +1,70 @@
+=====================================================================
+  EL HEREDERO QUE OLVIDÓ QUIÉN ERA — paquete para subir a YouTube
+=====================================================================
+
+ARCHIVOS
+  Vídeo:      C:\videos\heredero\historia.mp4      (1 h 22 min, 1080p)
+  Miniatura:  C:\videos\heredero\historia_miniaturas\miniatura_N.jpg  (1280x720, la que elijas)
+  Subtítulos: C:\videos\heredero\historia.srt      (Subtítulos → Subir archivo → Español)
+
+---------------------------------------------------------------------
+TÍTULO (elige uno)
+---------------------------------------------------------------------
+  A) Mecánico pobre durante 5 años: era el nieto de un millonario   (98/100)
+     (repite «era» con la miniatura: mejor B o C)
+  B) Lo dieron por muerto en un río. Volvió 5 años después          (98/100)  <- recomendado
+  C) Su tío le cortó los frenos. 5 años después volvió por todo     (98/100)
+
+MINIATURA (estilo manhwa: etiquetas con flecha + frase)
+  Imagen:  Álex con traje bajando de un coche de lujo + Carmen boquiabierta
+           soltando la bolsa de la compra (escenas 389-391)
+  Rótulos: PROTA -> Álex · SUEGRA -> Carmen · ¡ERA EL HEREDERO!
+  Generar: python -m mangavid miniatura C:\videos\heredero\historia.txt
+           (en WSL: /mnt/c/videos/heredero/historia.txt)
+
+---------------------------------------------------------------------
+DESCRIPCIÓN (copiar desde aquí)
+---------------------------------------------------------------------
+Su tío le cortó los frenos para quedarse con la herencia. Sobrevivió sin memoria y vivió cinco años como mecánico en un pueblo, sin saber que era el heredero de una de las mayores fortunas del país.
+
+Historia completa de venganza, amor y segunda oportunidad, narrada de principio a fin.
+
+⏱ CAPÍTULOS
+0:00 El anillo en la plaza
+1:18 La noche del río
+10:18 Cinco años después
+20:54 El Rata llega al pueblo
+31:26 Los frenos
+41:51 El que volvió del río
+51:56 La torre Montenegro
+1:02:34 La junta
+1:12:44 Lo que se paga
+
+Álex Montenegro lo tenía todo hasta la noche en que su coche cayó a un río. Cinco años después es «el chico del río», un mecánico sin papeles al que la madre de su prometida humilla delante de todo el pueblo. Pero un nuevo accidente con los frenos cortados le devuelve la memoria… y el hombre que intentó matarlo está más cerca de lo que cree.
+
+Bienvenido a Destino de Millones. Aquí encontrarás historias de traición, venganza, reencarnación, regresión, secretos familiares, amor, poder y riqueza. Cada historia es una nueva vida, una nueva decisión y un nuevo destino.
+
+🔔 Suscríbete y descubre cómo puede cambiar una vida… en un solo momento.
+
+Esta historia es ficción. Personajes, empresas y lugares son inventados; cualquier parecido con la realidad es coincidencia. Imágenes generadas con IA y narración con voz sintética.
+
+#historiasdevenganza #heredero #millonario
+---------------------------------------------------------------------
+
+ETIQUETAS (copiar)
+historias de venganza, heredero millonario, millonario escondido, historia narrada, manhwa narrado, historia completa, amnesia, mecánico millonario, venganza familiar, segunda oportunidad, historias de traición, audiolibro español, historia de amor y venganza, destino de millones
+
+---------------------------------------------------------------------
+AJUSTES AL SUBIR
+---------------------------------------------------------------------
+- Público: No, no es contenido creado para niños.
+- Contenido alterado o sintético: SÍ (imágenes y voz generadas con IA).
+  YouTube lo pide para contenido realista; marcarlo evita problemas.
+- Idioma del vídeo: Español.  Categoría: Entretenimiento.
+- Subtítulos: subir historia.srt (YouTube los muestra como subtítulos opcionales;
+  el vídeo ya los lleva grabados).
+
+LAS 3 BÚSQUEDAS QUE DEBERÍA GANAR
+  1. historia heredero millonario
+  2. mecánico era millonario historia
+  3. historia de venganza completa narrada
