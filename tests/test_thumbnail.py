@@ -113,3 +113,15 @@ def test_arrows_are_curved():
     pts = thumbnail._curve((300, 600), (310, 300))
     assert min(p[0] for p in pts) < 300 - 30
     assert all(math.isfinite(c) for p in pts for c in p)
+
+
+def test_cli_own_image(tmp_path):
+    from mangavid.cli import main
+
+    story = tmp_path / "h.txt"
+    story.write_text("@alex: man\n[001] city\nx\n", encoding="utf-8")
+    own = _two_people(tmp_path / "mia.png")
+    main(["miniatura", str(story), "--imagen", str(own), "--texto", "@alex=PROTA | @tio=TÍO | ?!?"])
+    out = tmp_path / "h_miniaturas" / "miniatura_1.jpg"
+    assert Image.open(out).size == thumbnail.SIZE
+    assert (tmp_path / "h_miniaturas" / "opciones.jpg").exists()

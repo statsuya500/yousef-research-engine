@@ -161,6 +161,8 @@ Al estilo de los canales de manhwa narrado: los personajes, una etiqueta amarill
 python -m mangavid miniatura historia.txt                           # 4 opciones en historia_miniaturas/
 python -m mangavid miniatura historia.txt --texto "@kai=PROTA | ?!?" # cambia solo los rótulos (segundos)
 python -m mangavid miniatura historia.txt --escena 12               # usa la imagen de la escena 12
+python -m mangavid miniatura historia.txt --imagen mia.png --texto "@alex=PROTA | @tio=TÍO | ¿Sigues vivo?"
+                                                                    # tu propia imagen: solo pone los rótulos
 ```
 
 - **Tamaño:** 1280×720 y menos de 2 MB, como pide YouTube.

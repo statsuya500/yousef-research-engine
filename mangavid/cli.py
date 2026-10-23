@@ -137,7 +137,15 @@ def cmd_miniatura(args) -> None:
     board = storyboard.load(args.story)
     folder = args.story.with_name(f"{args.story.stem}_miniaturas")
     text = args.texto if args.texto is not None else board.thumbnail_text
-    if args.escena:
+    if args.imagen:
+        # Imágenes hechas por el usuario (Fooocus, ChatGPT…): solo se les ponen los rótulos.
+        # Las flechas van a los personajes en el orden en que salen en el texto, de izquierda a derecha.
+        missing = [str(p) for p in args.imagen if not p.exists()]
+        if missing:
+            raise SystemExit(f"No encuentro: {', '.join(missing)}")
+        cast = list(dict.fromkeys(i.character for i in thumbnail.parse_text(text) if i.character))
+        picked = [(p, cast) for p in args.imagen]
+    elif args.escena:
         # Reutiliza la imagen ya generada de una escena del vídeo: no hace falta GPU.
         work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
         scene_jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), 1234, args.model)
@@ -198,6 +206,9 @@ def main(argv: list[str] | None = None) -> None:
                                    "Por defecto, el de @miniatura_texto")
     m.add_argument("--opciones", type=int, default=4, help="Imágenes distintas a generar")
     m.add_argument("--escena", type=int, nargs="*", help="Usar la imagen ya generada de estas escenas")
+    m.add_argument("--imagen", type=Path, nargs="*",
+                   help="Usar tus propias imágenes (Fooocus, ChatGPT…) y solo ponerles los rótulos. "
+                        "Escribe las etiquetas @personaje en orden de izquierda a derecha")
     m.add_argument("--workdir", type=Path)
     m.add_argument("--seed", type=int, default=4242)
     m.add_argument("--model", default=images.DEFAULT_MODEL)

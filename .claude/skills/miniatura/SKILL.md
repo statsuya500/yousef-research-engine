@@ -55,6 +55,8 @@ detector de `imgutils`. El resultado queda en `<historia>_miniaturas/`: `miniatu
 - Solo cambiar los rótulos: `--texto "@kai=PROTA | ?!?"`. No regenera las imágenes: tarda segundos.
 - Usar una imagen ya generada del vídeo, sin GPU: `--escena 12` (o varias: `--escena 12 30 41`).
 - Otras 4 imágenes distintas: `--seed 5000`.
+- Una imagen hecha por el usuario (Fooocus, ChatGPT…): `--imagen mia.png --texto "@a=PROTA | @b=TÍO | ¿…?"`.
+  Las etiquetas `@` van en orden de izquierda a derecha, según dónde estén los personajes en su imagen.
 
 ## 4. Revisar y recomendar ⏸
 
