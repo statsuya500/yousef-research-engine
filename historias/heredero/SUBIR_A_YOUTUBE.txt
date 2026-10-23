@@ -4,17 +4,23 @@
 
 ARCHIVOS
   Vídeo:      C:\videos\heredero\historia.mp4      (1 h 22 min, 1080p)
-  Miniatura:  C:\videos\heredero\miniatura.jpg     (1280x720)
+  Miniatura:  C:\videos\heredero\historia_miniaturas\miniatura_N.jpg  (1280x720, la que elijas)
   Subtítulos: C:\videos\heredero\historia.srt      (Subtítulos → Subir archivo → Español)
 
 ---------------------------------------------------------------------
 TÍTULO (elige uno)
 ---------------------------------------------------------------------
   A) Mecánico pobre durante 5 años: era el nieto de un millonario   (98/100)
-  B) Lo dieron por muerto en un río. Volvió 5 años después          (98/100)
+     (repite «era» con la miniatura: mejor B o C)
+  B) Lo dieron por muerto en un río. Volvió 5 años después          (98/100)  <- recomendado
   C) Su tío le cortó los frenos. 5 años después volvió por todo     (98/100)
 
-TEXTO DE LA MINIATURA:  ERA EL HEREDERO
+MINIATURA (estilo manhwa: etiquetas con flecha + frase)
+  Imagen:  Álex con traje bajando de un coche de lujo + Carmen boquiabierta
+           soltando la bolsa de la compra (escenas 389-391)
+  Rótulos: PROTA -> Álex · SUEGRA -> Carmen · ¡ERA EL HEREDERO!
+  Generar: python -m mangavid miniatura C:\videos\heredero\historia.txt
+           (en WSL: /mnt/c/videos/heredero/historia.txt)
 
 ---------------------------------------------------------------------
 DESCRIPCIÓN (copiar desde aquí)

@@ -46,6 +46,11 @@
 @tomas5: @tomas, older, deeper wrinkles
 @rata5: @rata, older, gaunt face, stubble
 
+# Miniatura (python -m mangavid miniatura historia.txt): Álex vuelve al pueblo con traje y
+# Carmen, que lo humilló, se queda helada. Álex a la izquierda, Carmen a la derecha.
+@miniatura: 1boy, 1girl, upper body, @alex5[elegant dark suit, white shirt], @carmen, he steps out of black luxury car with confident smirk, she is shocked with mouth wide open dropping shopping bag, oranges falling, village square, sunny, {evitar=3people, extra person, multiple boys, multiple girls}, {parecido=0.6}
+@miniatura_texto: @alex5=PROTA | @carmen=SUEGRA | ¡Era el heredero!
+
 # ================= GANCHO =================
 
 [001] 1girl, solo, upper body, @carmen, pointing finger, shouting, contemptuous expression, village square, crowd in background, daylight
