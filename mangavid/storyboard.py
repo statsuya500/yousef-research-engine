@@ -42,6 +42,7 @@ class Storyboard:
     scenes: list[Scene] = field(default_factory=list)
     thumbnail: Scene | None = None  # @miniatura: imagen de la miniatura, con @personajes como una escena
     thumbnail_text: str = ""  # @miniatura_texto: texto grande de la miniatura (*palabra* resaltada)
+    thumbnail_style: str = ""  # @miniatura_estilo: sustituye a @estilo solo en la miniatura
 
     def prompt(self, scene: Scene) -> str:
         """Acción y expresión primero, después los rasgos de los personajes y al final el estilo.
@@ -87,6 +88,8 @@ def parse(text: str) -> Storyboard:
                 raw_thumbnail = value
             elif name == "miniatura_texto":
                 board.thumbnail_text = value
+            elif name == "miniatura_estilo":
+                board.thumbnail_style = value
             else:
                 board.characters[name] = value
         elif raw_scenes:
