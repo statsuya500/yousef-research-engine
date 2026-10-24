@@ -1,5 +1,6 @@
-@estilo: masterpiece, high score, great score, absurdres, manhwa style, detailed background
-@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, muscular male, bodybuilder, abs, pectorals
+@estilo: masterpiece, high score, great score, absurdres, manhwa style, vibrant colors, saturated colors, cinematic lighting, highly detailed background, depth of field
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, muscular male, bodybuilder, abs, pectorals, monochrome, greyscale, pale colors, washed out, faded, sketch, white background, simple background
+@planos: 4
 @negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
 @hugo: 1boy, male focus, young man, 30 years old, short messy dark brown hair, brown eyes, average build, slim body, gentle face
 @lucia: 1girl, little girl, child, 6 years old, short black bob hair with bangs, big brown eyes, round cheeks

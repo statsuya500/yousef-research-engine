@@ -145,6 +145,11 @@ python -m mangavid run historia.txt --only-images   # solo imágenes, para revis
 python -m mangavid run historia.txt --music musica.mp3 --voice es-MX-JorgeNeural
 ```
 
+Con `@planos: 4` en la cabecera, cada escena tiene 4 imágenes (la descripción tal cual y tres
+encuadres más: primer plano, plano abierto, de lado…) que se reparten el tiempo de la narración.
+Así la imagen cambia cada 3-4 segundos, como en los canales de manhwa narrado. El plano principal
+es el mismo que sin `@planos`, así que no se pierde lo ya generado.
+
 Todo se guarda en `historia_work/` con un hash por escena: si se corta o cambias una escena,
 al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.
 

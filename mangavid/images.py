@@ -79,8 +79,19 @@ def chosen_portrait(folder: Path, name: str) -> Path:
 
 # --- Escenas -----------------------------------------------------------------------
 
+# Encuadres de los planos extra de una escena (@planos): el primero es la descripción tal cual.
+# Cambiar de plano cada pocos segundos es lo que da ritmo a los canales de manhwa narrado.
+SHOT_FRAMINGS = ["close-up", "wide shot, detailed background", "medium shot, from side", "dynamic angle, cowboy shot"]
+
+
 def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, model: str) -> list[Job]:
-    jobs = []
+    """El plano principal de cada escena."""
+    return [shots[0] for shots in scene_shots(board, workdir, portraits, seed, model)]
+
+
+def scene_shots(board: Storyboard, workdir: Path, portraits: Path, seed: int, model: str) -> list[list[Job]]:
+    """Todos los planos de cada escena: el principal y, con @planos: N, N-1 encuadres más."""
+    shots = []
     for s in board.scenes:
         faces = [chosen_portrait(portraits, c) for c in s.characters]
         missing = [f.name for f in faces if not f.exists()]
@@ -89,15 +100,20 @@ def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, mod
                 f"Escena [{s.number:03d}]: falta la ficha {', '.join(missing)} en {portraits}. "
                 "Ejecuta primero: python -m mangavid personajes <historia.txt>"
             )
-        prompt = board.prompt(s)
+        base = board.prompt(s)
         negative = board.negative_for(s)
-        scene_seed = seed + s.number + 100_003 * s.reroll
         scale = next(v for v in (s.likeness, board.likeness, IP_SCALE) if v is not None)
-        key = _hash(model, prompt, negative, scene_seed, STEPS, GUIDANCE, scale, ENCODER_VERSION,
-                    *(_file_hash(f) for f in faces))
-        jobs.append(Job(prompt, scene_seed, workdir / f"img_{s.number:04d}_{key}.png",
-                        (WIDTH, HEIGHT), faces, negative, scale))
-    return jobs
+        jobs = []
+        for k in range(board.shots):
+            prompt = base if k == 0 else f"{SHOT_FRAMINGS[(k - 1) % len(SHOT_FRAMINGS)]}, {base}"
+            shot_seed = seed + s.number + 100_003 * s.reroll + 7_919 * k
+            key = _hash(model, prompt, negative, shot_seed, STEPS, GUIDANCE, scale, ENCODER_VERSION,
+                        *(_file_hash(f) for f in faces))
+            suffix = "" if k == 0 else f"_{k}"
+            jobs.append(Job(prompt, shot_seed, workdir / f"img_{s.number:04d}{suffix}_{key}.png",
+                            (WIDTH, HEIGHT), faces, negative, scale))
+        shots.append(jobs)
+    return shots
 
 
 # --- Generación --------------------------------------------------------------------

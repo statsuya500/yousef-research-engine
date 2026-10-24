@@ -97,9 +97,9 @@ def cmd_run(args) -> None:
     output = args.output or args.story.with_suffix(".mp4")
     print(f"[guion] {len(board.scenes)} escenas, {len(board.characters)} personajes")
 
-    jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
-    images.generate(jobs, board.negative, args.model)
-    pics = [j.out for j in jobs]
+    shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
+    images.generate([j for js in shots for j in js], board.negative, args.model)
+    pics = [[j.out for j in js] for js in shots]
     if args.only_images:
         print(f"[imágenes] en {work / 'images'}")
         return
@@ -117,12 +117,12 @@ def cmd_revisar(args) -> None:
 
     board = storyboard.load(args.story)
     work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
-    jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), args.seed, images.DEFAULT_MODEL)
-    missing = [j.out.name for j in jobs if not j.out.exists()]
+    shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, images.DEFAULT_MODEL)
+    missing = [j.out.name for js in shots for j in js if not j.out.exists()]
     if missing:
         raise SystemExit(f"Faltan {len(missing)} imágenes por generar. Ejecuta antes: "
                          f"python -m mangavid run {args.story} --only-images")
-    checks = review.check(board, [j.out for j in jobs])
+    checks = review.check(board, [[j.out for j in js] for js in shots])
     folder = work / "revision"
     sheets = review.contact_sheets(checks, folder)
     text = review.report(checks)

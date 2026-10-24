@@ -80,3 +80,20 @@ def test_outfit_and_scene_likeness():
     s = board.scenes[0]
     assert s.characters == ["a", "b"] and s.likeness == 0.6
     assert board.prompt(s) == "1boy, 1girl, young man, overalls, young woman, white dress"
+
+
+def test_shots_per_scene(tmp_path):
+    from mangavid import images
+
+    board = parse("@planos: 3\n" + STORY)
+    assert board.shots == 3
+    (tmp_path / "ana.png").write_bytes(b"cara")
+    shots = images.scene_shots(board, tmp_path, tmp_path, 1234, "modelo")
+    assert [len(js) for js in shots] == [3, 3]
+    first, second, third = shots[0]
+    # el plano principal no cambia al añadir planos: se reutiliza la imagen ya generada
+    single = images.scene_shots(parse(STORY), tmp_path, tmp_path, 1234, "modelo")[0][0]
+    assert first.out == single.out and first.prompt == single.prompt
+    assert second.prompt.startswith("close-up, ") and second.out.name.startswith("img_0001_1_")
+    assert len({first.seed, second.seed, third.seed}) == 3
+    assert images.scene_jobs(board, tmp_path, tmp_path, 1234, "modelo")[1] == shots[1][0]

@@ -33,6 +33,7 @@ class Storyboard:
     negative: str = ""
     negative_solo: str = ""  # se añade al negativo en escenas «solo» (evita personajes clonados)
     likeness: float | None = None  # @parecido: cuánto se impone la cara del retrato (0-1)
+    shots: int = 1  # @planos: imágenes por escena, que se reparten el tiempo de la narración
     characters: dict[str, str] = field(default_factory=dict)  # etiquetas ya expandidas
     # Personaje derivado -> personaje base (p. ej. «@alex5: @alex, stubble» -> alex5: alex).
     # El retrato del derivado se genera con la cara del retrato elegido del base.
@@ -77,6 +78,8 @@ def parse(text: str) -> Storyboard:
                 board.negative_solo = value
             elif name == "parecido":
                 board.likeness = float(value)
+            elif name == "planos":
+                board.shots = max(1, int(value))
             elif name == "miniatura":
                 raw_thumbnail = value
             elif name == "miniatura_texto":
