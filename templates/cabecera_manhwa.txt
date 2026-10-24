@@ -1,0 +1,23 @@
+# Cabecera de partida para historias nuevas con el acabado de los canales de manhwa narrado.
+# Copia estas líneas al principio de historia.txt y añade debajo las fichas de TUS personajes.
+#
+# Datos medidos en el vídeo de referencia (Yube Manhwa, K0TpgpVEMd4, primeros 10 min):
+#   - una imagen nueva cada ~2,4 s (249 cambios en 10 min)  -> @planos: 4 y escenas de 2-3 frases
+#   - voz a ~197 palabras/min                                 -> run ... --rate +25%
+#   - saturación media 21/100, brillo 60/100, contraste 24/100 (colores suaves y luminosos,
+#     no chillones: WAI sin corregir da 33 de saturación, Animagine v2 daba 31)
+#   - luz cálida de ventana, destellos y partículas, fondo desenfocado y detallado
+#   - mucho plano de dos personajes (uno de espaldas o por encima del hombro)
+#   - cada personaje lleva siempre la misma ropa (ponla en su ficha)
+#
+# Modelo: WAI-Illustrious v15 (el que más se acerca). Lánzalo así:
+#   python -m mangavid personajes historia.txt --model John6666/wai-nsfw-illustrious-sdxl-v150-sdxl
+#   python -m mangavid run historia.txt --model John6666/wai-nsfw-illustrious-sdxl-v150-sdxl --rate +25%
+# Con modelos Illustrious/NoobAI la cara de la ficha a 0.6 estropea la imagen: usa @parecido: 0.3.
+
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, anime coloring, beautiful detailed eyes, glossy eyes, shiny hair, soft skin shading, soft lighting, sunlight through window, rim light, bloom, light particles, sparkle, bokeh, depth of field, highly detailed background, pastel colors, soft colors
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, bodybuilder, abs, chibi, nsfw, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow, beard, stubble, cleavage, large breasts
+@negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
+@parecido: 0.3
+@retoque: si
+@planos: 4
