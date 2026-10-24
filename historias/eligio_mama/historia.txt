@@ -1,10 +1,12 @@
-@estilo: masterpiece, high score, great score, absurdres, manhwa style, vibrant colors, saturated colors, cinematic lighting, highly detailed background, depth of field
-@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, muscular male, bodybuilder, abs, pectorals, monochrome, greyscale, pale colors, washed out, faded, sketch, white background, simple background
-@planos: 4
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, beautiful detailed eyes, shiny hair, anime key visual, cinematic lighting, lens flare, depth of field, dramatic composition
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, bodybuilder, abs, chibi, nsfw, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow, beard, stubble, cleavage, large breasts
 @negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
-@hugo: 1boy, male focus, young man, 30 years old, short messy dark brown hair, brown eyes, average build, slim body, gentle face
+@parecido: 0.3
+@retoque: si
+@planos: 4
+@hugo: 1boy, male focus, adult man, 30 years old, mature male, handsome, clean-shaven, sharp jawline, short messy dark brown hair, brown eyes, slim build, tall
 @lucia: 1girl, little girl, child, 6 years old, short black bob hair with bangs, big brown eyes, round cheeks
-@valeria: 1girl, young woman, long wavy chestnut hair, grey eyes, elegant, mature beauty
+@valeria: 1girl, beautiful young woman, 28 years old, long wavy dark brown hair, chestnut hair, grey eyes, elegant, small earrings, modest clothes
 @elvira: 1girl, old woman, 65 years old, grey hair in tight bun, stern face, wrinkles, pearl necklace, dark formal dress
 
 [001] solo, @lucia, sitting at small kitchen table, drawing with crayons, paper with three stick figures, small old apartment, warm lamp light, night
@@ -16,7 +18,7 @@ Tú eres Hugo Ferrer. Treinta años, cocinero, padre soltero. Y aquel dibujo te 
 [003] no humans, baby basket on doorstep, folded note on blanket, apartment door, rainy night, dim light
 Seis años atrás, una noche de lluvia, alguien dejó un capazo en la puerta de tu piso. Dentro había una recién nacida y una nota escrita a toda prisa: «Se llama Lucía. Cuídala. Es tuya.»
 
-[004] newborn baby sleeping, wrapped in white blanket, tiny hand visible, held in a young man's arms, close-up, no adult face, rain behind, night {evitar=adult face, multiple boys} {semilla=4}
+[004] newborn baby sleeping, wrapped in white blanket, tiny hand visible, held in a young man's arms, close-up, no adult face, rain behind, night {evitar=adult face, multiple boys}
 No había firma. No hacía falta. Solo una mujer en tu vida había escrito así, con esa letra inclinada. Pero esa mujer se había ido sin despedirse siete meses antes. Y nunca contestó a tus llamadas.
 
 [005] solo, @hugo, chef uniform, working at stove in small busy bar kitchen, steam, flames, focused, day
@@ -34,13 +36,13 @@ Aquel mes el bar cerró por obras. Y el alquiler no esperaba. Por eso, cuando la
 [009] luxury hotel exterior, grand entrance, golden lights, red carpet, black cars, night, no humans
 El Gran Hotel Altamira. Cinco estrellas, lámparas de cristal y una boda de compromiso con trescientos invitados. Iban a pagarte en una noche lo que ganabas en dos semanas.
 
-[010] solo, @hugo, chef uniform, kneeling to child height, hand on small shoulder, serious kind face, hotel staff corridor
+[010] solo, @hugo, chef uniform, kneeling to child height, serious kind face, hotel staff corridor {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person}
 El problema era Lucía. La vecina estaba enferma y no tenías con quién dejarla. «Te quedas en el vestuario, pintando. Sin moverte. ¿Me lo prometes?» Ella levantó el meñique. «Prometido, papá.»
 
 [011] large luxury hotel kitchen, many cooks in white uniforms, silver trays, steam, busy, night
 La cocina del Altamira era una guerra. Cuarenta cocineros, gritos, bandejas de plata. Y tú, el extra, en el puesto peor: el de las salsas, junto al fuego más fuerte.
 
-[012] solo, @hugo, chef uniform, tasting sauce with spoon, confident expression, luxury kitchen, steam
+[012] solo, @hugo, chef uniform, tasting sauce with spoon, confident expression, luxury kitchen, steam {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person}
 Pero a la media hora el jefe de cocina probó tu salsa y se quedó callado. «¿Dónde aprendiste esto?» No contestaste. Habías aprendido a cocinar así por una persona. Y no querías pensar en ella.
 
 [013] solo, @hugo, chef uniform, plating a dessert carefully with tweezers, luxury kitchen, golden light
@@ -58,10 +60,10 @@ En la terraza del último piso, lejos de la fiesta, había una mujer llorando. L
 [017] solo, @valeria, elegant white evening gown, close-up, tears on cheeks, looking at engagement ring, sad, night
 Se llamaba Valeria Altamira. Heredera del hotel. Y aquella noche su madre iba a anunciar su compromiso con un hombre al que no amaba. Lo había aceptado porque ya no le quedaba nada que perder.
 
-[018] close-up of female hands holding an empty thin cord, no face, terrace railing, city lights, night {semilla=1}
+[018] close-up of female hands holding an empty thin cord, no face, terrace railing, city lights, night
 En la mano apretaba un cordón vacío. Antes colgaba de él una media luna de plata. La había perdido hacía siete años, junto con todo lo que le importaba. Nunca se había atrevido a tirar el cordón.
 
-[019] solo, @lucia, holding out a wrapped candy with both hands, shy smile, looking up, hotel terrace, night
+[019] solo, @lucia, holding out a wrapped candy with both hands, shy smile, looking up, hotel terrace, night {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person}
 «¿Por qué lloras?» Valeria se giró. Una niña diminuta le ofrecía un caramelo con las dos manos. «Mi papá dice que con un caramelo las penas pesan menos.»
 
 [020] solo, @valeria, elegant white evening gown, crouching down, surprised soft smile, tears, hotel terrace, night
@@ -73,25 +75,25 @@ Valeria se agachó y, sin saber por qué, se rio entre lágrimas. Hacía años q
 [022] solo, @lucia, looking up with serious hopeful face, big eyes, close-up, night
 Entonces la miró muy seria. «Tú eres muy guapa y estás triste. Mi papá también está triste. ¿Quieres ser mi mamá?»
 
-[023] solo, @valeria, elegant white evening gown, upper body, sitting upright, laughing gently, hand over mouth, night {evitar=cleavage, off shoulder, lying, reclining} {semilla=2}
+[023] solo, @valeria, elegant white evening gown, upper body, sitting upright, laughing gently, hand over mouth, night {evitar=cleavage, off shoulder, lying, reclining}
 Valeria soltó una carcajada que le salió del alma. «Ay, cariño… no funciona así.» «¿Por qué no? Yo te elijo a ti.» Y por primera vez en toda la noche, Valeria dejó de llorar.
 
-[024] 1boy, wide shot, full body, single young man with short messy dark brown hair in white chef uniform running alone down an empty hotel corridor, panicked, night {evitar=multiple boys, 2boys, clone, duplicate, extra person, close-up} {semilla=2}
+[024] 1boy, wide shot, full body, single young man with short messy dark brown hair in white chef uniform running alone down an empty hotel corridor, panicked, night {evitar=multiple boys, 2boys, clone, duplicate, extra person, close-up}
 Abajo, tú abriste el vestuario y lo encontraste vacío. Se te paró el corazón. Dejaste el fuego encendido, la salsa y el trabajo. Corriste por todo el hotel gritando su nombre.
 
-[025] solo, @hugo, chef uniform, out of breath, standing in terrace doorway, frozen, wide eyes, night
+[025] solo, @hugo, chef uniform, out of breath, standing in terrace doorway, stunned, wide eyes, night
 Un camarero te dijo que había visto a una niña subir a la terraza. Subiste los escalones de tres en tres. Abriste la puerta. Y te quedaste helado.
 
-[026] solo, @valeria, elegant white evening gown with sleeves, standing, upper body, turning around, shocked face, night {evitar=bare back, off shoulder, cleavage} {semilla=1}
+[026] solo, @valeria, elegant white evening gown with sleeves, standing, upper body, turning around, shocked face, night {evitar=bare back, off shoulder, cleavage}
 Lucía estaba sentada, feliz, junto a una mujer de blanco. La mujer se giró hacia ti. Y el tiempo se detuvo. Siete años. Siete años sin ver esos ojos grises.
 
-[027] solo, @hugo, chef uniform, close-up, trembling lips, shocked, sad eyes, night {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, split screen} {semilla=1}
+[027] solo, @hugo, chef uniform, close-up, trembling lips, shocked, sad eyes, night {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, split screen}
 «¿Valeria?» Ella se puso pálida. Tú también. La última vez que la viste, ella tenía veintitrés años, sus manos olían a harina y te juraba que nunca se casaría con nadie más.
 
 [028] solo, @hugo, younger, cooking school uniform, laughing, small cooking classroom, flour on table, warm light, flashback, sepia
 Os conocisteis en la escuela de cocina. Ella era la alumna rica que nadie soportaba. Tú, el becado que le enseñó a hacer pan. Un año después, no podíais vivir el uno sin el otro.
 
-[029] solo, @elvira, sitting in luxury office, cold stare, holding a check, flashback, sepia
+[029] solo, @elvira, sitting in luxury office armchair, holding a paper bank check in her hand, cold stare, flashback
 Hasta que su madre, doña Elvira Altamira, te citó en su despacho. Puso un cheque sobre la mesa. «Desaparece de su vida. O me encargaré de que no vuelvas a trabajar en ninguna cocina de España.»
 
 [030] solo, @hugo, younger, tearing a check in half, angry face, luxury office, flashback, sepia
@@ -103,13 +105,13 @@ Ahora la tenías delante, con un anillo de otro en la mano. Y en su mirada no ha
 [032] solo, @hugo, chef uniform, shaking head, hurt expression, hands open, night
 «¿Que yo me fui? Valeria, rompí ese cheque en la cara de tu madre. Fuiste tú la que se marchó a Londres.» Ella dio un paso atrás. «Yo nunca fui a Londres, Hugo.»
 
-[033] solo, @lucia, upper body, looking up confused, hotel terrace, night {evitar=multiple girls, 2girls, clone, duplicate, thought bubble, inset, chibi inset} {semilla=3}
+[033] solo, @lucia, upper body, looking up confused, hotel terrace, night {evitar=multiple girls, 2girls, clone, duplicate, thought bubble, inset, chibi inset}
 Lucía os miraba a los dos, sin entender nada. Tiró de tu delantal. «Papá, ¿la conoces? ¡Yo la he elegido para mamá!»
 
 [034] solo, @valeria, elegant white evening gown, looking down at child, frozen, trembling hand, night
 Valeria miró a la niña. La miró de verdad, por primera vez. El pelo negro. La forma de los ojos. Y al cuello, colgando de un cordón, una media luna de plata.
 
-[035] close-up of small silver half moon pendant on a cord, little girl pink dress collar, no face, soft light {semilla=1}
+[035] close-up of small silver half moon pendant on a cord, little girl pink dress collar, no face, soft light
 Una media luna de plata que ella había comprado en un mercadillo de Toledo. Una para ella, otra para ti. Y la suya… la suya se la habían quitado en un hospital de Suiza, siete años atrás.
 
 [036] solo, @valeria, younger, lying in hospital bed, crying, pale, white room, flashback, sepia
@@ -118,16 +120,16 @@ Porque Valeria no se fue a Londres. Su madre la llevó a una clínica privada en
 [037] solo, @valeria, elegant white evening gown, kneeling, hand reaching toward something, tears, shaking, night
 «¿Cuántos años tienes, cariño?» preguntó con la voz rota. «Seis. Cumplí el catorce de marzo.» El catorce de marzo. El mismo día. El mismo día en que le dijeron que su hija había muerto.
 
-[038] solo, @hugo, chef uniform, confused, looking to the side, worried, upper body, night {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, split screen} {semilla=1}
+[038] solo, @hugo, chef uniform, confused, looking to the side, worried, upper body, night {evitar=multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, split screen}
 Tú no entendías por qué Valeria temblaba así. Por qué miraba a Lucía como si viera un fantasma. Diste un paso hacia ella. «Valeria, ¿qué te pasa?»
 
 [039] hotel terrace door opening, light from inside, shadow of guests, night, no humans
 Pero antes de que pudiera contestar, la puerta de la terraza se abrió de golpe. Música, flashes de cámaras y voces. La fiesta había venido a buscar a la novia.
 
-[040] solo, @elvira, standing in doorway, champagne glass in hand, cold smile, high-collar dark formal dress, long sleeves, night {evitar=cleavage, off shoulder} {semilla=1}
+[040] solo, @elvira, standing in doorway, champagne glass in hand, cold smile, high-collar dark formal dress, long sleeves, night {evitar=cleavage, off shoulder}
 Al frente iba doña Elvira Altamira, con una copa de champán y la sonrisa de quien lo controla todo. «Valeria, hija, todos te esperan. Tu prometido está…»
 
-[041] solo, @elvira, close-up, horrified face, mouth open, eyes wide, champagne glass slipping from hand, high-collar dark dress, night {evitar=smile, cleavage} {semilla=1}
+[041] solo, @elvira, close-up, horrified face, mouth open, eyes wide, champagne glass slipping from hand, high-collar dark dress, night {evitar=smile, cleavage}
 Entonces vio a la niña. La copa se le resbaló de los dedos y estalló contra el suelo en mil pedazos. Doña Elvira, la mujer que nunca perdía el control, se había quedado blanca.
 
 [042] solo, @valeria, elegant white evening gown, standing up slowly, turning to face her mother, cold furious eyes, night

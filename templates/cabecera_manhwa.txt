@@ -10,12 +10,13 @@
 #   - mucho plano de dos personajes (uno de espaldas o por encima del hombro)
 #   - cada personaje lleva siempre la misma ropa (ponla en su ficha)
 #
+# Estilo elegido (2026-10-25): «cine anime», el nº 3 de la prueba de 100 escenas (C:\videos\estilos_100).
 # Modelo: WAI-Illustrious v15 (el que más se acerca). Lánzalo así:
 #   python -m mangavid personajes historia.txt --model John6666/wai-nsfw-illustrious-sdxl-v150-sdxl
 #   python -m mangavid run historia.txt --model John6666/wai-nsfw-illustrious-sdxl-v150-sdxl --rate +25%
 # Con modelos Illustrious/NoobAI la cara de la ficha a 0.6 estropea la imagen: usa @parecido: 0.3.
 
-@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, anime coloring, beautiful detailed eyes, glossy eyes, shiny hair, soft skin shading, soft lighting, sunlight through window, rim light, bloom, light particles, sparkle, bokeh, depth of field, highly detailed background, pastel colors, soft colors
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, beautiful detailed eyes, shiny hair, anime key visual, cinematic lighting, lens flare, depth of field, dramatic composition
 @negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, bodybuilder, abs, chibi, nsfw, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow, beard, stubble, cleavage, large breasts
 @negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
 @parecido: 0.3
