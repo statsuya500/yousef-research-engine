@@ -34,7 +34,11 @@ WIDTH, HEIGHT = 1344, 768  # 16:9 aproximado, tamaño nativo de SDXL
 PORTRAIT = (896, 1152)  # fichas de personaje en vertical
 STEPS = 28
 GUIDANCE = 5.0
-PORTRAIT_TAGS = "solo, portrait, upper body, looking at viewer, simple background, white background"
+REFINE_SIZE = 1024  # cada cara se vuelve a dibujar a este tamaño y se pega en su sitio
+REFINE_STRENGTH = 0.35  # cuánto se redibuja: poco, para no cambiar la expresión ni la pose
+REFINE_MARGIN = 1.8  # recorte alrededor de la cara (pelo y cuello) respecto a su caja
+REFINE_VERSION = 1
+PORTRAIT_TAGS ="solo, portrait, upper body, looking at viewer, simple background, white background"
 
 
 @dataclass
@@ -46,6 +50,7 @@ class Job:
     faces: list[Path]  # fichas de los personajes que salen, en orden
     negative: str | None = None  # None: el negativo general de la historia
     ip_scale: float = 0.6  # peso de la cara del retrato
+    refine: bool = False  # @retoque: segunda pasada a más resolución sobre cada cara
 
 
 def _hash(*parts: object) -> str:
@@ -107,11 +112,13 @@ def scene_shots(board: Storyboard, workdir: Path, portraits: Path, seed: int, mo
         for k in range(board.shots):
             prompt = base if k == 0 else f"{SHOT_FRAMINGS[(k - 1) % len(SHOT_FRAMINGS)]}, {base}"
             shot_seed = seed + s.number + 100_003 * s.reroll + 7_919 * k
+            # El retoque solo entra en la clave si está activado: lo ya generado sin él se conserva.
+            refine = (f"retoque{REFINE_VERSION}",) if board.refine else ()
             key = _hash(model, prompt, negative, shot_seed, STEPS, GUIDANCE, scale, ENCODER_VERSION,
-                        *(_file_hash(f) for f in faces))
+                        *(_file_hash(f) for f in faces), *refine)
             suffix = "" if k == 0 else f"_{k}"
             jobs.append(Job(prompt, shot_seed, workdir / f"img_{s.number:04d}{suffix}_{key}.png",
-                            (WIDTH, HEIGHT), faces, negative, scale))
+                            (WIDTH, HEIGHT), faces, negative, scale, board.refine))
         shots.append(jobs)
     return shots
 
@@ -236,6 +243,37 @@ def _masks(count: int, width: int, height: int):
     return [masks.reshape(1, count, masks.shape[-2], masks.shape[-1])]
 
 
+def _refine_faces(pipe, image, embeds: dict, extra: dict, seed: int, torch):
+    """Como el «face detailer» de A1111: cada cara se recorta, se redibuja a REFINE_SIZE
+    con la misma descripción y se pega con bordes suaves. Es lo que deja los ojos nítidos."""
+    from diffusers import StableDiffusionXLImg2ImgPipeline
+    from imgutils.detect import detect_faces
+    from PIL import Image, ImageDraw, ImageFilter
+
+    boxes = [d[0] for d in detect_faces(image) if d[2] > 0.4]
+    if not boxes:
+        return image
+    img2img = StableDiffusionXLImg2ImgPipeline(**pipe.components)
+    img2img.set_progress_bar_config(disable=True)
+    for x0, y0, x1, y1 in boxes:
+        side = int(max(x1 - x0, y1 - y0) * REFINE_MARGIN)
+        if side >= min(image.size):
+            continue  # cara que ya ocupa casi todo el plano: no gana nada
+        cx, cy = (x0 + x1) // 2, (y0 + y1) // 2
+        left = min(max(cx - side // 2, 0), image.width - side)
+        top = min(max(cy - side // 2, 0), image.height - side)
+        crop = image.crop((left, top, left + side, top + side)).resize((REFINE_SIZE, REFINE_SIZE), Image.LANCZOS)
+        redone = img2img(
+            **embeds, image=crop, strength=REFINE_STRENGTH, num_inference_steps=STEPS,
+            guidance_scale=GUIDANCE, generator=torch.Generator("cuda").manual_seed(seed), **extra,
+        ).images[0].resize((side, side), Image.LANCZOS)
+        mask = Image.new("L", (side, side), 0)
+        edge = side // 8
+        ImageDraw.Draw(mask).ellipse([edge, edge, side - edge, side - edge], fill=255)
+        image.paste(redone, (left, top), mask.filter(ImageFilter.GaussianBlur(edge / 2)))
+    return image
+
+
 def _draw(todo: list[Job], text: list[Path], faces: dict, model: str, torch) -> None:
     from diffusers import AutoencoderKL, EulerAncestralDiscreteScheduler, StableDiffusionXLPipeline
 
@@ -270,12 +308,18 @@ def _draw(todo: list[Job], text: list[Path], faces: dict, model: str, torch) -> 
                 pipe.set_ip_adapter_scale(0.0)
                 extra["ip_adapter_image_embeds"] = [torch.zeros(2, 1, 257, 1280, dtype=torch.float16,
                                                                 device="cuda")]
+        embeds = dict(prompt_embeds=pos, negative_prompt_embeds=neg,
+                      pooled_prompt_embeds=pooled, negative_pooled_prompt_embeds=neg_pooled)
         image = pipe(
-            prompt_embeds=pos, negative_prompt_embeds=neg,
-            pooled_prompt_embeds=pooled, negative_pooled_prompt_embeds=neg_pooled,
-            width=w, height=h, num_inference_steps=STEPS, guidance_scale=GUIDANCE,
+            **embeds, width=w, height=h, num_inference_steps=STEPS, guidance_scale=GUIDANCE,
             generator=torch.Generator("cuda").manual_seed(job.seed), **extra,
         ).images[0]
+        if job.refine:
+            # Las máscaras por franjas son para la imagen entera: en un recorte de cara no sirven.
+            crop_extra = {k: v for k, v in extra.items() if k != "cross_attention_kwargs"}
+            if len(job.faces) > 1:
+                pipe.set_ip_adapter_scale(0.0)  # varias caras: no se sabe de quién es cada recorte
+            image = _refine_faces(pipe, image, embeds, crop_extra, job.seed, torch)
         image.save(job.out)
         text_path.unlink()
         left = (time.time() - t0) / k * (len(todo) - k)

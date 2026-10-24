@@ -97,3 +97,14 @@ def test_shots_per_scene(tmp_path):
     assert second.prompt.startswith("close-up, ") and second.out.name.startswith("img_0001_1_")
     assert len({first.seed, second.seed, third.seed}) == 3
     assert images.scene_jobs(board, tmp_path, tmp_path, 1234, "modelo")[1] == shots[1][0]
+
+
+def test_refine_changes_key_only_when_on(tmp_path):
+    from mangavid import images
+
+    (tmp_path / "ana.png").write_bytes(b"cara")
+    plain = images.scene_jobs(parse(STORY), tmp_path, tmp_path, 1234, "modelo")[0]
+    refined = images.scene_jobs(parse("@retoque: si\n" + STORY), tmp_path, tmp_path, 1234, "modelo")[0]
+    assert not plain.refine and refined.refine
+    assert plain.out != refined.out
+    assert parse("@retoque: no\n" + STORY).refine is False
