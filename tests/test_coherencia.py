@@ -234,3 +234,44 @@ b
     assert board.thumbnail.outfits["aurelio"] == "black coat"  # hereda su primera ropa
     without = co.preflight(board, faces, tag=None)
     assert ("aurelio", "rostro vs ficha", co.UNCHECKABLE) in {(r.character, r.attribute, r.level) for r in without}
+
+
+# Regresiones de la auditoría del commit 7821192 -----------------------------------------------------
+
+def _reviewed(tmp_path):
+    good, wrong = (0, 200, 0), (200, 0, 0)
+    board, faces, pics = _setup(tmp_path, [good, good, wrong, wrong])
+    folder = tmp_path / "revision"
+    co.write_report(co.check(board, pics, faces, _tools({good: GOOD, wrong: WRONG})), [], folder / "coherencia.json")
+    return folder, [p for ps in pics for p in ps]
+
+
+def test_regression_image_changed_after_report_is_blocked(tmp_path):
+    folder, flat = _reviewed(tmp_path)
+    image = flat[0]  # REVISAR: el número 10 no se puede verificar sin OCR
+    co.approve(folder, folder / "coherencia.json", ["001"])
+    assert co.blockers(folder / "coherencia.json", co.load_approvals(folder), [image]) == []
+    Image.new("RGB", (200, 300), (0, 0, 255)).save(image)  # mismo nombre, otro contenido
+    blocked = co.blockers(folder / "coherencia.json", co.load_approvals(folder), [image])
+    assert blocked == ["[001] modificada después del informe: vuelve a ejecutar «revisar»"]
+
+
+def test_regression_approval_is_per_file_and_content(tmp_path):
+    folder, flat = _reviewed(tmp_path)
+    co.approve(folder, folder / "coherencia.json", ["003"])
+    pending = co.blockers(folder / "coherencia.json", co.load_approvals(folder), flat)
+    assert not any("[003]" in p for p in pending)  # la aprobada pasa
+    assert any("[004]" in p for p in pending)  # la otra con error sigue bloqueada
+    # Retocar la imagen aprobada invalida la aprobación (y la revisión).
+    Image.new("RGB", (200, 300), (9, 9, 9)).save(flat[2])
+    pending = co.blockers(folder / "coherencia.json", co.load_approvals(folder), flat)
+    assert any("[003] modificada" in p for p in pending)
+    # Una aprobación del formato antiguo (solo el nombre) no vale.
+    old = {flat[3].name: "004"}
+    assert any("[004]" in p for p in co.blockers(folder / "coherencia.json", old, flat))
+
+
+def test_regression_preflight_text_has_no_image_summary():
+    pre = [co._r("clara", "peinado", "bob_cut", "-", co.POSSIBLE, 0.0, "bob_cut 0.00")]
+    text = co.report_text([], pre)
+    assert "Antes de producir" in text and "Coherencia:" not in text

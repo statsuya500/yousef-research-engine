@@ -30,6 +30,8 @@ Además, `revisar` comprueba la **coherencia visual** (`mangavid/coherencia.py`)
   Míralo a ojo.
 
 Después de mirar a ojo cada imagen marcada, apruébala: `python -m mangavid aprobar <historia.txt> 003b 004`.
+La aprobación vale solo para ese archivo con ese contenido: si la imagen se retoca o se regenera,
+`run` la bloquea como «modificada después del informe» hasta que vuelvas a ejecutar `revisar` y aprobarla.
 `run` no monta el vídeo si hay imágenes sin revisar o con fallos sin aprobar (solo con `--forzar`),
 y antes de generar comprueba fichas, rostros elegidos, vestuario y miniatura (`python -m mangavid comprobar`).
 

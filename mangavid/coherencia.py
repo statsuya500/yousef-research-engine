@@ -27,7 +27,7 @@ from typing import Callable
 from .storyboard import Scene, Storyboard
 
 OK, CONFIRMED, POSSIBLE, UNCHECKABLE = "OK", "CONFIRMED", "POSSIBLE", "NOT CHECKABLE"
-REPORT_VERSION = 1
+REPORT_VERSION = 2  # 2: el informe y las aprobaciones guardan el hash del contenido de cada imagen
 
 TAG_LOW = 0.35  # a partir de aquí el etiquetador «ve» algo
 TAG_HIGH = 0.6  # a partir de aquí lo ve con seguridad: puede confirmar un error
@@ -370,6 +370,7 @@ class ImageReport:
     image: str
     characters: list[str]
     results: list[Result]
+    sha256: str = ""  # contenido revisado: si el archivo cambia después, la revisión ya no vale
 
     @property
     def status(self) -> str:
@@ -424,7 +425,8 @@ def check(board: Storyboard, images: list[list[Path]], portraits: Path, tools: T
                 if not any(r.level == CONFIRMED for r in char_results):
                     last_valid[name] = (label, seen, crop)
                 results += char_results
-            reports.append(ImageReport(label, scene.number, k, path.name, list(scene.characters), results))
+            reports.append(ImageReport(label, scene.number, k, path.name, list(scene.characters), results,
+                                       file_hash(path)))
     return reports
 
 
@@ -506,6 +508,8 @@ def report_text(reports: list[ImageReport], pre: list[Result] | None = None) -> 
         lines.append(f"Antes de producir: {len(bad)} avisos.")
         lines += [f"  {r.level:13} @{r.character} {r.attribute}: espera {r.expected}, hay {r.detected} ({r.evidence})"
                   for r in bad]
+    if not reports:  # solo la comprobación previa: no se ha revisado ninguna imagen
+        return "\n".join(lines)
     counts = {s: sum(1 for r in reports if r.status == s) for s in ("OK", "REVISAR", "ERROR")}
     lines.append(f"Coherencia: {counts['ERROR']} con errores, {counts['REVISAR']} por revisar, {counts['OK']} correctas.")
     for rep in reports:
@@ -527,17 +531,26 @@ def load_approvals(folder: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
 
 
+def file_hash(path: Path) -> str:
+    import hashlib
+
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
 def approve(folder: Path, report_path: Path, labels: list[str]) -> list[str]:
-    """Marca como revisadas a ojo las imágenes de esas etiquetas del último informe."""
+    """Marca como revisadas a ojo las imágenes de esas etiquetas del último informe.
+
+    La aprobación vale solo para ese archivo con ese contenido: si la imagen se regenera o se
+    retoca, hay que revisarla y aprobarla otra vez."""
     data = json.loads(report_path.read_text(encoding="utf-8"))
-    by_label = {img["label"]: img["image"] for img in data["images"]}
+    by_label = {img["label"]: img for img in data["images"]}
     unknown = [l for l in labels if l not in by_label]
     if unknown:
         raise SystemExit(f"No están en el informe: {', '.join(unknown)}")
     approvals = load_approvals(folder)
-    approvals.update({by_label[l]: l for l in labels})
+    approvals.update({by_label[l]["image"]: {"label": l, "sha256": by_label[l]["sha256"]} for l in labels})
     (folder / "aprobadas.json").write_text(json.dumps(approvals, ensure_ascii=False, indent=2), encoding="utf-8")
-    return [by_label[l] for l in labels]
+    return [by_label[l]["image"] for l in labels]
 
 
 def blockers(report_path: Path, approvals: dict, images: list[Path]) -> list[str]:
@@ -547,13 +560,18 @@ def blockers(report_path: Path, approvals: dict, images: list[Path]) -> list[str
     data = json.loads(report_path.read_text(encoding="utf-8"))
     if data.get("version") != REPORT_VERSION:
         return ["el informe es de otra versión: vuelve a ejecutar «revisar»"]
-    status = {img["image"]: (img["label"], img["status"]) for img in data["images"]}
+    status = {img["image"]: img for img in data["images"]}
     out = []
     for path in images:
         if path.name not in status:
             out.append(f"{path.name}: sin revisar (nueva o regenerada después del informe)")
             continue
-        label, st = status[path.name]
-        if st != "OK" and path.name not in approvals:
+        img = status[path.name]
+        label, st, current = img["label"], img["status"], file_hash(path)
+        if current != img.get("sha256"):
+            out.append(f"[{label}] modificada después del informe: vuelve a ejecutar «revisar»")
+            continue
+        ok = approvals.get(path.name)
+        if st != "OK" and not (isinstance(ok, dict) and ok.get("sha256") == current):
             out.append(f"[{label}] {st}: falta aprobarla tras mirarla («aprobar» {label})")
     return out
