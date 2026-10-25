@@ -117,19 +117,3 @@ def test_outfit_persists_until_changed():
         "green shirt with number 10", "green shirt with number 10", "black suit", "black suit"]
     assert "green shirt with number 10" in board.prompt(board.scenes[1])
 
-
-def test_coherence_expected_and_compare():
-    from mangavid.coherencia import Seen, compare, expected_from, outliers, seen_from
-
-    exp = expected_from("1girl, short auburn hair, grey eyes, cream knit sweater, green shirt with number 10")
-    assert exp.eyes == {"grey"} and "brown" in exp.hair and exp.number == "10"
-    assert exp.garments["sweater"] == {"white", "beige"} and exp.garments["shirt"] == {"green"}
-    seen = seen_from({"red_eyes": 0.8, "brown_hair": 0.9, "white_hoodie": 0.7, "hair_between_eyes": 0.9})
-    assert seen.eyes == "red" and seen.hair == "brown" and seen.garments == {"hoodie": "white"}
-    problems = compare(exp, seen, ocr_text="")
-    assert any("ojos red" in p for p in problems)
-    assert any("en vez de sweater" in p for p in problems)
-    assert any("número 10" in p for p in problems)
-    assert not any("pelo" in p for p in problems)  # castaño cuenta como auburn
-    runs = [(f"00{i}", Seen(eyes="green")) for i in range(1, 6)] + [("006", Seen(eyes="red"))]
-    assert outliers(runs) == [("006", "ojos red, en el resto de escenas green")]

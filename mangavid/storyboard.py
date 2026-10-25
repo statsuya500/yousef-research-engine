@@ -107,16 +107,22 @@ def parse(text: str) -> Storyboard:
 
     seen: set[int] = set()
     wearing: dict[str, str] = {}  # la última ropa de cada personaje: sigue puesta hasta que el guion la cambie
+    first_outfit: dict[str, str] = {}
     for number, image, lines in raw_scenes:
         if number in seen:
             raise ValueError(f"La escena [{number:03d}] está repetida")
         seen.add(number)
         scene = _build_scene(number, image, " ".join(lines).strip(), board.characters)
+        for c, outfit in scene.outfits.items():
+            first_outfit.setdefault(c, outfit)
         wearing.update(scene.outfits)
         scene.outfits = {c: wearing[c] for c in scene.characters if c in wearing}
         board.scenes.append(scene)
     if raw_thumbnail:
         board.thumbnail = _build_scene(0, raw_thumbnail, "", board.characters)
+        # Sin [ropa] en @miniatura, cada personaje lleva la de su primera aparición en la historia.
+        board.thumbnail.outfits = {**{c: first_outfit[c] for c in board.thumbnail.characters if c in first_outfit},
+                                   **board.thumbnail.outfits}
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
     return board

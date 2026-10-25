@@ -151,8 +151,10 @@ Así la imagen cambia cada 3-4 segundos, como en los canales de manhwa narrado. 
 es el mismo que sin `@planos`, así que no se pierde lo ya generado.
 
 La ropa de un personaje (`@clara[green shirt with number 10]`) sigue puesta en las escenas siguientes
-hasta que otra escena la cambie. `python -m mangavid revisar historia.txt` comprueba después que cada
-personaje salga igual (ojos, pelo, ropa, número) que en su ficha y en el resto de escenas.
+hasta que otra escena la cambie. `python -m mangavid revisar historia.txt` comprueba después cada personaje
+(cara, ojos, pelo, edad, barba, accesorios, ropa) contra su ficha y su aparición anterior y deja
+`revision/coherencia.json`. `run` no monta el vídeo con imágenes sin revisar o con fallos sin aprobar
+(`python -m mangavid aprobar historia.txt 003b`), salvo con `--forzar`.
 
 Todo se guarda en `historia_work/` con un hash por escena: si se corta o cambias una escena,
 al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.

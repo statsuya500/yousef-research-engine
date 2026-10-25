@@ -97,12 +97,14 @@ def cmd_run(args) -> None:
     output = args.output or args.story.with_suffix(".mp4")
     print(f"[guion] {len(board.scenes)} escenas, {len(board.characters)} personajes")
 
+    _preflight_or_stop(board, args.story, args.forzar)
     shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
     images.generate([j for js in shots for j in js], board.negative, args.model)
     pics = [[j.out for j in js] for js in shots]
     if args.only_images:
         print(f"[imágenes] en {work / 'images'}")
         return
+    _review_gate_or_stop(work, [p for ps in pics for p in ps], args.forzar)
     voices = tts.synthesize(
         [Segment(0.0, 0.0, "", s.narration) for s in board.scenes], work / "voice", args.voice, args.rate
     )
@@ -130,10 +132,68 @@ def cmd_revisar(args) -> None:
     if not args.sin_coherencia:
         from . import coherencia
 
-        text += "\n" + coherencia.report(coherencia.check(board, pics, _portraits_dir(args.story)))
+        tools = coherencia.default_tools()
+        pre = coherencia.preflight(board, _portraits_dir(args.story), tools.tag)
+        reports = coherencia.check(board, pics, _portraits_dir(args.story), tools)
+        coherencia.write_report(reports, pre, folder / "coherencia.json")
+        text += "\n" + coherencia.report_text(reports, pre)
+        text += f"\nInforme para el programa: {folder / 'coherencia.json'}"
     (folder / "informe.txt").write_text(text + "\n", encoding="utf-8")
     print(text)
     print(f"[revisión] {len(sheets)} hojas en {folder}")
+
+
+def _preflight_or_stop(board, story: Path, force: bool) -> None:
+    """Antes de generar: ficha, rostro de referencia, vestuario y miniatura (comprobación 8)."""
+    from . import coherencia
+
+    try:
+        tag = coherencia.default_tools().tag
+    except Exception as e:  # sin imgutils: solo las comprobaciones de texto
+        print(f"[comprobar] sin etiquetador ({e}); el rostro de cada ficha no se compara")
+        tag = None
+    pre = coherencia.preflight(board, _portraits_dir(story), tag)
+    bad = [r for r in pre if r.level == coherencia.CONFIRMED]
+    if pre:
+        print(coherencia.report_text([], pre))
+    if bad and not force:
+        raise SystemExit(f"[comprobar] {len(bad)} errores confirmados antes de producir. "
+                         "Corrige las fichas o relanza con --forzar si lo has revisado.")
+
+
+def _review_gate_or_stop(work: Path, pics: list[Path], force: bool) -> None:
+    """Antes de montar: ninguna imagen sin revisar ni con fallos sin aprobar (comprobación 7)."""
+    from . import coherencia
+
+    folder = work / "revision"
+    pending = coherencia.blockers(folder / "coherencia.json", coherencia.load_approvals(folder), pics)
+    if not pending:
+        return
+    print("[montaje] imágenes que no pueden pasar al vídeo:")
+    for line in pending[:40]:
+        print("  " + line)
+    if len(pending) > 40:
+        print(f"  … y {len(pending) - 40} más")
+    if not force:
+        raise SystemExit("[montaje] parado. Revisa y aprueba esas imágenes, o relanza con --forzar.")
+    print("[montaje] --forzar: se monta igualmente.")
+
+
+def cmd_comprobar(args) -> None:
+    from . import coherencia
+
+    board = storyboard.load(args.story)
+    pre = coherencia.preflight(board, _portraits_dir(args.story), coherencia.default_tools().tag)
+    print(coherencia.report_text([], pre) if pre else "[comprobar] fichas, rostros, vestuario y miniatura: sin avisos")
+
+
+def cmd_aprobar(args) -> None:
+    from . import coherencia
+
+    work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
+    folder = work / "revision"
+    done = coherencia.approve(folder, folder / "coherencia.json", args.etiquetas)
+    print(f"[aprobar] {len(done)} imágenes marcadas como revisadas a ojo")
 
 
 def cmd_miniatura(args) -> None:
@@ -203,6 +263,8 @@ def main(argv: list[str] | None = None) -> None:
     r.add_argument("--music-volume", type=float, default=0.12)
     r.add_argument("--font-size", type=int, default=16)
     r.add_argument("--only-images", action="store_true", help="Generar solo las imágenes para revisarlas")
+    r.add_argument("--forzar", action="store_true",
+                   help="Producir aunque haya errores de coherencia confirmados o imágenes sin aprobar")
     r.set_defaults(func=cmd_run)
 
     m = sub.add_parser("miniatura", help="Opciones de miniatura de YouTube con texto grande")
@@ -227,6 +289,16 @@ def main(argv: list[str] | None = None) -> None:
     v.add_argument("--sin-coherencia", action="store_true",
                    help="No comprobar que cada personaje salga igual (ojos, pelo, ropa) en todas las escenas")
     v.set_defaults(func=cmd_revisar)
+
+    c2 = sub.add_parser("comprobar", help="Antes de producir: fichas, rostros elegidos, vestuario y miniatura")
+    c2.add_argument("story", type=Path)
+    c2.set_defaults(func=cmd_comprobar)
+
+    a = sub.add_parser("aprobar", help="Marcar imágenes como revisadas a ojo tras el informe de coherencia")
+    a.add_argument("story", type=Path)
+    a.add_argument("etiquetas", nargs="+", help="Etiquetas del informe, p. ej. 003b 004")
+    a.add_argument("--workdir", type=Path)
+    a.set_defaults(func=cmd_aprobar)
 
     args = p.parse_args(argv)
     args.func(args)
