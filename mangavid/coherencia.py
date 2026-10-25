@@ -346,10 +346,11 @@ class Tools:
     tag: Callable  # imagen -> {etiqueta: confianza}
     difference: Callable  # (imagen, imagen) -> diferencia CCIP
     ocr: Callable | None = None  # imagen -> texto; None si no hay modelo de OCR
+    faces: Callable | None = None  # imagen -> [(caja, confianza)] de caras (para medir los ojos)
 
 
 def default_tools() -> Tools:
-    from imgutils.detect import detect_person
+    from imgutils.detect import detect_faces, detect_person
     from imgutils.metrics import ccip_difference
     from imgutils.tagging import get_wd14_tags
 
@@ -359,7 +360,8 @@ def default_tools() -> Tools:
         return general
 
     return Tools(lambda im: [(b, s) for b, _, s in detect_person(im)], tag,
-                 lambda a, b: float(ccip_difference(a, b)), ocr=None)
+                 lambda a, b: float(ccip_difference(a, b)), ocr=None,
+                 faces=lambda im: [(b, s) for b, _, s in detect_faces(im)])
 
 
 @dataclass

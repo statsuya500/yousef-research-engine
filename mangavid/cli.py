@@ -197,6 +197,74 @@ def cmd_aprobar(args) -> None:
     print(f"[aprobar] {len(done)} imágenes marcadas como revisadas a ojo")
 
 
+def cmd_continuidad(args) -> None:
+    """Candidatas de las escenas pedidas hasta que cumplan el registro de continuidad.
+
+    Las candidatas van a <work>/continuidad/<escena>/; las imágenes definitivas no se tocan, no se
+    aprueba nada y el bloqueo de montaje sigue como estaba."""
+    import json
+    import re
+
+    from . import coherencia, continuidad as cont, review
+
+    board = storyboard.load(args.story)
+    work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
+    portraits = _portraits_dir(args.story)
+    folder = work / "continuidad"
+    folder.mkdir(parents=True, exist_ok=True)
+    spec = json.loads(args.spec.read_text(encoding="utf-8")) if args.spec else {}
+    unknown = [n for n in args.escenas if n not in {s.number for s in board.scenes}]
+    if unknown:
+        raise SystemExit(f"Escenas que no están en el guion: {unknown}")
+    if set(args.escenas) & set(args.referencias):
+        raise SystemExit("Una escena no puede ser a la vez de referencia y de prueba")
+    current = {s.number: j.out for s, j in zip(board.scenes, images.scene_jobs(
+        board, work / "images", portraits, args.seed, args.model))}
+    missing = [n for n in args.referencias if not current[n].exists()]
+    if missing:
+        raise SystemExit(f"Faltan las imágenes de las escenas de referencia {missing}")
+    protected = sorted((work / "images").glob("*.png")) + sorted(portraits.glob("*.png"))
+    import glob
+
+    protected += [Path(p) for pattern in args.proteger for p in sorted(glob.glob(pattern))]
+    before = cont.snapshot(protected)
+    tools = coherencia.default_tools()
+    registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
+    cont.save_registry(registry, folder / "registro.json")
+    print(f"[continuidad] registro de continuidad en {folder / 'registro.json'}")
+    header = re.split(r"(?m)^\[\d", args.story.read_text(encoding="utf-8"), maxsplit=1)[0].strip()
+    from imgutils.detect import detect_faces, detect_heads
+
+    def people(scene, path):
+        return review._check_one(review.scene_people_text(scene), f"{scene.number:03d}", path,
+                                 detect_faces, detect_heads, len(scene.characters))
+
+    results, all_cands = [], []
+    for number in args.escenas:
+        sspec = cont.scene_spec(board, number, spec)
+
+        def evaluate(b, scene, s, path, sspec=sspec):
+            return cont.evaluate(b, scene, sspec, path, registry, portraits, tools, people)
+
+        result, cands = cont.run_scene(
+            header, board, sspec, registry, folder, portraits, batch_size=args.lote, max_batches=args.max_lotes,
+            seed=args.seed, model=args.model,
+            generate=lambda jobs: images.generate(jobs, board.negative, args.model), evaluate_fn=evaluate)
+        results.append(result)
+        all_cands += cands
+        cont.write_results(results, all_cands, folder / "resultados.json")
+        print(f"[continuidad] escena {number:03d}: {result.state}"
+              + (f" -> {result.candidate}" if result.candidate else ""))
+        if result.state != "VALID_CANDIDATE":
+            top = sorted(result.unmet.items(), key=lambda kv: -kv[1])[:6]
+            print("  requisitos sin cumplir (nº de candidatas): " + ", ".join(f"{k} ({n})" for k, n in top))
+    changed = cont.protected_changed(before)
+    if changed:
+        raise SystemExit(f"[continuidad] ¡han cambiado archivos protegidos!: {changed}")
+    print(f"[continuidad] {len(before)} archivos protegidos sin cambios. Resultados: {folder / 'resultados.json'}")
+    print("[continuidad] nada se ha aprobado ni sustituido: revisa las candidatas y decide.")
+
+
 def cmd_miniatura(args) -> None:
     from . import thumbnail
 
@@ -294,6 +362,20 @@ def main(argv: list[str] | None = None) -> None:
     c2 = sub.add_parser("comprobar", help="Antes de producir: fichas, rostros elegidos, vestuario y miniatura")
     c2.add_argument("story", type=Path)
     c2.set_defaults(func=cmd_comprobar)
+
+    k = sub.add_parser("continuidad", help="Generar candidatas de unas escenas hasta que cumplan las fichas")
+    k.add_argument("story", type=Path)
+    k.add_argument("--escenas", type=int, nargs="+", required=True, help="Escenas a regenerar como candidatas")
+    k.add_argument("--referencias", type=int, nargs="*", default=[],
+                   help="Escenas aprobadas que son fuente de verdad (ropa, estilo)")
+    k.add_argument("--spec", type=Path, help="JSON con atributos extra por personaje y composición por escena")
+    k.add_argument("--lote", type=int, default=4, help="Candidatas por lote")
+    k.add_argument("--max-lotes", type=int, default=10, help="Lotes como máximo por escena")
+    k.add_argument("--seed", type=int, default=1234)
+    k.add_argument("--model", default=images.DEFAULT_MODEL)
+    k.add_argument("--workdir", type=Path)
+    k.add_argument("--proteger", nargs="*", default=[], help="Más archivos que no pueden cambiar (patrones glob)")
+    k.set_defaults(func=cmd_continuidad)
 
     a = sub.add_parser("aprobar", help="Marcar imágenes como revisadas a ojo tras el informe de coherencia")
     a.add_argument("story", type=Path)
