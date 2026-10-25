@@ -1,181 +1,181 @@
-# El repartidor que salvó al abuelo — historia original, estilo «cine anime» (WAI-Illustrious)
-@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, beautiful detailed eyes, shiny hair, cinematic lighting, lens flare, depth of field, dramatic composition
-@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, bodybuilder, abs, chibi, nsfw, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow, cleavage, large breasts, key, keys, beard, mustache, goatee, facial hair, stubble
+# El repartidor que salvó al abuelo — historia original, estilo «cine anime» (WAI-Illustrious) — versión 2
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, sfw, modest, fully clothed, beautiful detailed eyes, shiny hair, cinematic lighting, lens flare, depth of field, dramatic composition
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, signature, japanese text, kanji, writing, logo, lettering, number, blurry, muscular, bodybuilder, abs, chibi, nsfw, cleavage, large breasts, suggestive, seductive, revealing clothes, bare shoulders, strapless, lying on bed, barefoot, school uniform, teenager, police, badge, patch, emblem, uniform, bird, crow, key, keys, beard, mustache, goatee, facial hair, stubble, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow
 @negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
 @parecido: 0.3
 @retoque: si
 @planos: 4
-@marcos: 1boy, male focus, adult man, 27 years old, handsome, clean-shaven, short black hair, dark brown eyes, slim build, kind face
-@irene: 1girl, young woman, 26 years old, long straight light brown hair, hazel eyes, pretty, elegant makeup
-@lucas: 1boy, male focus, adult man, 29 years old, slicked back blond hair, blue eyes, arrogant smirk, clean-shaven, slim build
+@marcos: 1boy, male focus, adult man, 27 years old, handsome, clean-shaven, short black hair, dark brown eyes, slim build, neutral expression, plain navy blue windbreaker jacket, white t-shirt
+@irene: 1girl, adult woman, 26 years old, mature face, long straight light brown hair, hazel eyes, no earrings, neutral expression
+@lucas: 1boy, male focus, adult man, 29 years old, slicked back blond hair, blue eyes, clean-shaven, slim build, neutral expression, navy blue suit, white shirt, blue tie
 @aurelio: 1boy, male focus, old man, 80 years old, clean-shaven, no beard, no mustache, white hair neatly combed back, short hair, wrinkles, calm neutral expression, elegant grey suit
-@sofia: 1girl, young woman, 28 years old, long black hair in low ponytail, grey eyes, calm serious face, beautiful
-@pilar: 1girl, mature female, mother, middle-aged woman, 55 years old, wrinkles, crow's feet, short wavy auburn hair, sharp eyes, haughty expression, pearl necklace
+@sofia: 1girl, mature woman, 28 years old, business executive, long black hair in low ponytail, grey eyes, sharp elegant features, neutral expression, black women's business suit with skirt, white blouse
+@pilar: 1girl, mature female, middle-aged woman, 55 years old, wrinkles, short wavy auburn hair, sharp eyes, neutral expression, pearl necklace, dark green long-sleeve high-neck dress
 
-[001] solo, @marcos, blue delivery jacket, standing in luxury garden wedding party, red wine stain on his jacket, humiliated, guests in background, golden hour
+[001] solo, @marcos, red wine stain on his jacket, standing humiliated, head down, clenched fists, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, blurred guests in background
 El día de la boda de su hermana, la madre de tu novia te tiró una copa de vino encima delante de doscientos invitados. Y nadie, absolutamente nadie, se movió para ayudarte.
 
-[002] solo, @pilar, elegant dress, holding an empty wine glass, mocking smile, luxury garden wedding, guests in background
+[002] solo, @pilar, holding an empty wine glass, mocking smile, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 «Uy, se me ha resbalado», dijo doña Pilar sonriendo. «Tampoco pasa nada. Esa chaqueta de repartidor ya estaba sucia, ¿no?» Algunos invitados se rieron. Otros miraron hacia otro lado.
 
-[003] solo, @irene, elegant pale blue dress, looking away, cold expression, arms crossed, wedding garden, golden hour
+[003] solo, @irene[pale blue long-sleeve dress with high neckline], standing, arms folded across chest, cold expression, looking away, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Buscaste los ojos de Irene. Tres años juntos. Tres años en los que le diste todo lo que tenías. Pero ella apartó la mirada, como si no te conociera.
 
-[004] 1boy, 1girl, @lucas, expensive navy suit, champagne glass, arm around the shoulder of a woman with long light brown hair, woman seen from behind, smug smile, wedding garden {evitar=2boys, clone, duplicate, twins} {semilla=1}
+[004] solo, @lucas, raising a champagne glass, smug smile, a woman's hand with pink nails resting on his arm, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Y entonces Lucas Ferrán, el heredero de Construcciones Ferrán, le pasó el brazo por los hombros a Irene. «Tranquilo, repartidor. A partir de hoy, de ella me encargo yo.»
 
-[005] solo, @marcos, blue delivery jacket, wine stained, close-up, clenched jaw, holding back tears, cinematic lighting
+[005] solo, @marcos, red wine stain on his jacket, upper body, clenched jaw, holding back tears, golden hour
 Tú eres Marcos Rivas. Veintisiete años, repartidor, sin familia y sin dinero. En aquella boda eras el chiste de todos. Lo que ninguno de ellos sabía es lo que había pasado tres semanas antes.
 
-[006] rainy night street, empty bus stop, wet asphalt reflecting streetlights, delivery motorbike parked, no humans
+[006] no humans, rainy night, empty bus stop shelter on a Spanish city street, European buildings, delivery scooter with a square insulated food box on the back parked by the curb, wet asphalt reflecting streetlights {evitar=bus, truck, sport motorcycle, split screen}
 Tres semanas antes, a las once de la noche, llovía como si el cielo se fuera a caer. Te quedaba un último pedido. Y en una parada de autobús vacía, viste a alguien en el suelo.
 
-[007] solo, @aurelio, grey coat, lying on wet ground at a bus stop, eyes closed, pale, hand on chest, heavy rain, night, streetlight
+[007] solo, @aurelio[grey wool coat], lying on wet street pavement at a bus stop, clutching his chest in pain, eyes shut, pale, heavy rain, night, streetlight, Spanish city street
 Era un anciano. Traje gris, abrigo caro, la mano apretada contra el pecho. Respiraba con dificultad. Los coches pasaban a su lado sin detenerse. A nadie le importaba.
 
-[008] solo, @marcos, blue delivery jacket, soaked by rain, kneeling on wet ground, phone to ear, shouting, worried, night, streetlight
+[008] 1boy, @marcos, soaked by rain, kneeling on wet pavement, holding a smartphone against his ear with one hand, shouting for help, an old man in grey coat lying on the ground beside him with his face turned away, night, streetlight, Spanish city street {evitar=earphones, headset, earbuds, clone, twins}
 Tú te arrodillaste a su lado. Llamaste a emergencias. Te dijeron que la ambulancia tardaría veinte minutos. Miraste al anciano. Veinte minutos eran demasiado.
 
-[009] solo, @marcos, blue delivery jacket, soaked, carrying an old man in grey coat on his back, old man face hidden, running through heavy rain, night, motion blur
+[009] back view, a young man in navy windbreaker running away from the viewer down a rainy night street carrying an old man in grey coat piggyback, both seen from behind, Spanish city street, streetlights, heavy rain, motion blur
 Lo cargaste a la espalda y corriste. Dos calles, tres, cuatro. El hospital estaba a un kilómetro. Las piernas te ardían, pero no lo soltaste ni una vez.
 
-[010] hospital emergency entrance at night, bright lights, rain, empty stretcher, no humans
+[010] no humans, exterior of a modern hospital at night, red illuminated emergency entrance sign, ambulance parked, glass doors with warm light inside, rain on the street {evitar=indoor rain, morgue, covered body, stretcher}
 Llegaste a urgencias empapado y sin aliento. «¡Un infarto! ¡Ayúdenlo, por favor!» Los médicos se lo llevaron corriendo. Tú te quedaste en el pasillo, temblando de frío.
 
-[011] solo, @marcos, blue delivery jacket, wet hair, standing at hospital reception counter, handing over a bank card, tired face, hospital lobby, night
+[011] solo, @marcos, wet hair, standing at a hospital reception counter, handing over a bank card, tired face, bright hospital lobby, night
 El anciano no llevaba cartera. Nadie sabía quién era. Y la enfermera dijo que había que pagar la entrada. Sacaste tu tarjeta. Era el dinero del alquiler. Pagaste sin pensarlo.
 
-[012] solo, @marcos, blue delivery jacket, sitting asleep on plastic chair in hospital corridor, head tilted, dawn light through window
+[012] solo, @marcos, asleep on a plastic chair in a hospital waiting corridor, head tilted against the wall, eyes closed, row of chairs, dawn light through window {evitar=train, bus, blanket}
 Te quedaste toda la noche en una silla de plástico, por si se despertaba solo y asustado. Perdiste el pedido. Te descontaron el día. Te dio igual.
 
-[013] solo, @aurelio, hospital gown, sitting up in hospital bed, weak smile, morning sunlight, white hospital room
+[013] solo, @aurelio[hospital gown], sitting up in a hospital bed, weak smile, morning sunlight, white hospital room
 Al amanecer, el anciano abrió los ojos. Te miró un buen rato. «¿Tú me has traído hasta aquí?» Asentiste. «¿Cómo te llamas, hijo?» «Marcos. Marcos Rivas.»
 
-[014] solo, @aurelio, hospital gown, hospital bed, looking at viewer, gentle eyes, moved, morning sunlight
+[014] solo, @aurelio[hospital gown], in a hospital bed, gentle grateful eyes, morning sunlight, white hospital room
 «Yo me llamo Aurelio.» No dijo nada más. Solo repitió tu nombre en voz baja, como si quisiera grabarlo. «Marcos Rivas. No lo olvidaré.»
 
-[015] solo, @marcos, blue delivery jacket, walking away down hospital corridor, back view, morning light, peaceful
+[015] solo, @marcos, walking away down a hospital corridor, back view, white walls, room doors with small windows, handrail along the wall, morning sunlight {evitar=train, hanging straps, school}
 Esa mañana te fuiste a trabajar sin dormir. No esperaste a que llegara su familia. No pediste nada. Para ti, era lo que habría hecho cualquiera. Pero no cualquiera lo hizo.
 
-[016] small cheap apartment at night, eviction notice paper on table, instant noodles, dim lamp, no humans
+[016] no humans, tiny cheap Spanish apartment at night, small table with a plain white plastic cup of instant noodles without label, a sealed envelope with a red stamp, single lamp, bare walls {evitar=ramen bowl, label, envelope text}
 Ese mes no pudiste pagar el alquiler. Cenaste fideos de sobre durante tres semanas. Y cuando se lo contaste a Irene, ella solo dijo: «¿Y a mí qué? Eso te pasa por tonto.»
 
-[017] solo, @irene, casual expensive clothes, sitting in a cafe, looking at smartphone, smiling secretly, afternoon light
+[017] solo, @irene[beige knit cardigan over white blouse], sitting in a cafe, looking at her smartphone, secret smile, afternoon light
 Hacía tiempo que Irene estaba rara. Sonreía al móvil y lo escondía cuando entrabas. Llegaba tarde. Olía a un perfume de hombre que no era el tuyo.
 
-[018] solo, @pilar, elegant blouse, sitting at luxury dining table, sneering, looking down at viewer, chandelier, night
+[018] solo, @pilar, sitting at a luxury dining table, sneering, looking down at the viewer, chandelier, night
 Su madre nunca te había soportado. «Mi hija se merece un hombre con futuro, no un muerto de hambre en moto.» Te lo decía en cada cena. Y tú siempre callabas, por Irene.
 
-[019] solo, @marcos, blue delivery jacket, holding a small ring box, sad smile, sitting alone on park bench, sunset
+[019] solo, @marcos, sitting alone on a park bench at sunset, looking down at a tiny open red velvet ring box in his palm with a thin silver ring inside, melancholic smile {evitar=ring on finger, walkie talkie, radio, lighter}
 Llevabas un año ahorrando para un anillo. Pensabas pedirle matrimonio después de la boda de su hermana. Era pequeño, sencillo. Todo lo que podías pagar.
 
-[020] luxury estate garden wedding, white flowers, long tables, crystal glasses, string lights, golden hour, no humans
+[020] no humans, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, white flowers, empty chairs {evitar=indoor, church, stained glass, gothic, christmas ornaments}
 Y llegó el día de la boda. Una finca de lujo en las afueras de Madrid. Flores blancas, cristal, música en directo. Y tú, con tu única chaqueta, porque venías directo del trabajo.
 
-[021] solo, @lucas, expensive navy suit, walking toward viewer with arrogant smirk, wedding garden, guests in background
+[021] solo, @lucas, walking toward the viewer with an arrogant smirk, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, blurred guests in background
 Lucas Ferrán llegó tarde, como los que se creen importantes. Su padre era dueño de una constructora. Y él se paseaba entre las mesas como si la finca fuera suya.
 
-[022] solo, @lucas, expensive navy suit, handing an empty tray to someone off screen, mocking laugh, wedding garden
+[022] solo, @lucas, smirking, holding out an empty silver tray toward the viewer, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Te vio y sonrió. Te puso una bandeja vacía en las manos. «Mira, uno del servicio. Tráeme otra copa, anda.» Media mesa se echó a reír.
 
-[023] solo, @marcos, blue delivery jacket, holding an empty silver tray, standing still, humiliated, guests laughing in background, wedding garden
+[023] solo, @marcos, humiliated, jaw clenched, eyes down, holding an empty silver tray, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, blurred guests laughing in background {evitar=smile, happy, waiter, food on tray}
 «No soy camarero», dijiste. «Soy el novio de Irene.» Lucas se rio aún más fuerte. «¿El novio? Irene, cariño, ¿se lo dices tú o se lo digo yo?»
 
-[024] solo, @irene, elegant pale blue dress, standing beside a man in navy suit seen from behind, holding his arm, cold smile, wedding garden
+[024] 1girl, @irene[pale blue long-sleeve dress with high neckline], cold smile, holding the arm of a blond man in navy suit seen from behind, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Irene se levantó y se puso a su lado. Le cogió del brazo. «Lo dejamos, Marcos. Hace dos meses que estoy con Lucas. Iba a decírtelo, pero tú nunca te enteras de nada.»
 
-[025] close-up of a small ring box falling on grass, no humans, shallow depth of field
+[025] no humans, tiny open red velvet ring box with a small silver ring inside lying on green grass, macro close-up, golden hour {evitar=metal box, chest, case, toolbox}
 En tu bolsillo, la cajita del anillo pesaba como una piedra. Se te cayó al césped. Lucas la vio y la abrió con la punta del zapato. «¿Esto es un anillo? Parece de una máquina de chicles.»
 
-[026] solo, @pilar, elegant dress, laughing loudly, hand over mouth, wedding garden, guests in background
+[026] solo, @pilar, laughing loudly, hand over mouth, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Doña Pilar soltó una carcajada. «Ay, hija, menos mal que has espabilado. Lucas tiene futuro. Este, ¿qué tiene? Una moto y deudas.» Fue entonces cuando te tiró el vino encima.
 
-[027] solo, @lucas, expensive navy suit, raising champagne glass, giving a speech, proud, wedding guests, golden hour
+[027] solo, @lucas, confident proud smile, raising a champagne glass high, giving a speech, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Lucas cogió el micrófono. «Y como hoy es un día de celebraciones, os doy una noticia. Esta noche, mi padre firma un acuerdo con el Grupo Valcárcel. Doscientos millones de inversión.»
 
-[028] solo, @lucas, expensive navy suit, close-up, triumphant smile, champagne, cinematic lighting
+[028] solo, @lucas, triumphant smile, half-closed eyes, holding a champagne glass, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Los invitados aplaudieron. Todo el mundo conocía el Grupo Valcárcel. El mayor grupo inmobiliario del país. Con ese dinero, los Ferrán se convertirían en intocables.
 
-[029] solo, @marcos, blue delivery jacket, wine stained, turning to leave, back view, walking toward garden exit, golden hour
+[029] solo, @marcos, red wine stain on his jacket, walking away across a sunlit lawn toward the iron gate of a country estate, back view, wedding tables behind him, golden hour {evitar=corridor, hallway, indoor, school}
 Tú recogiste el anillo del césped. Te limpiaste el vino de la cara. Y te diste la vuelta para marcharte. Ya no tenías nada que hacer allí.
 
-[030] luxury estate gate, convoy of black luxury cars arriving, dust, golden hour, no humans
+[030] no humans, five black luxury cars driving through the iron gate of a Spanish country estate, gravel driveway, dust, golden hour
 Pero antes de que llegaras a la salida, se oyeron motores. Cinco coches negros entraron en la finca, uno detrás de otro. La música se detuvo.
 
-[031] solo, @lucas, expensive navy suit, shocked, dropping champagne glass, wide eyes, wedding garden
+[031] solo, @lucas, shocked, wide eyes, dropping a champagne glass, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Lucas palideció. «Es... es el coche de don Aurelio Valcárcel. Mi padre dijo que firmaríamos en su oficina. ¿Qué hace aquí?» Se colocó la corbata a toda prisa.
 
-[032] solo, @sofia, elegant black business suit, stepping out of black car, sunglasses in hand, serious, wedding garden entrance
+[032] solo, @sofia, stepping out of a black luxury car, holding sunglasses, serious, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 De uno de los coches bajó una mujer joven con traje negro. Sofía Valcárcel. La consejera delegada del grupo. Fría, brillante, temida en todo el país.
 
-[033] solo, @aurelio, elegant grey suit, walking with a cane, dignified, bodyguards in background, wedding garden, golden hour
+[033] 1boy, @aurelio, walking with a cane, dignified, two bodyguards in black suits behind him seen from behind, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Y detrás de ella, apoyado en un bastón, bajó un anciano de pelo blanco. Los invitados se quedaron sin respiración. Era el mismísimo Aurelio Valcárcel.
 
-[034] solo, @lucas, expensive navy suit, bowing deeply, nervous smile, sweating, wedding garden
+[034] solo, @lucas, bowing deeply, nervous smile, sweating, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Lucas corrió hacia él, haciendo reverencias. «¡Don Aurelio! ¡Qué honor! Si hubiera sabido que venía, le habría preparado la mesa principal...»
 
-[035] solo, @aurelio, elegant grey suit, cane, walking past someone without looking, cold eyes, wedding garden {evitar=multiple boys, 2boys, clone, duplicate, twins, extra person, split screen} {semilla=1}
+[035] 1boy, @aurelio, walking with a cane, cold eyes, ignoring a blond man in navy suit who bows in the foreground seen from behind, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Pero don Aurelio pasó a su lado sin mirarlo. Ni una palabra. Siguió caminando entre las mesas, buscando a alguien con la mirada.
 
-[036] solo, @marcos, blue delivery jacket, wine stained, turning around, surprised, wide eyes, wedding garden, golden hour
+[036] solo, @marcos, red wine stain on his jacket, turning around surprised, wide eyes, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Hasta que te encontró. Tú, en la salida, con la chaqueta manchada de vino y el anillo en la mano. El anciano sonrió. Y por primera vez en todo el día, alguien te miró con cariño.
 
-[037] solo, @aurelio, elegant grey suit, hugging a young man in blue delivery jacket, young man face hidden, tears in eyes, wedding garden
+[037] 1boy, @aurelio, tearful eyes, hugging a young man seen from behind with his back to the viewer, short black hair, navy windbreaker, the old man's face over the young man's shoulder, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 «Marcos Rivas.» Te abrazó con fuerza delante de todos. «Llevo tres semanas buscándote, hijo. Tres semanas. Y te encuentro así.»
 
-[038] solo, @irene, elegant pale blue dress, shocked, hand over mouth, wedding garden, guests in background
+[038] solo, @irene[pale blue long-sleeve dress with high neckline], shocked, both hands over her mouth, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, blurred guests
 Irene se quedó blanca. Doña Pilar dejó caer la copa. Lucas abrió la boca, pero no le salió nada. Doscientas personas miraban la escena sin entender.
 
-[039] solo, @aurelio, elegant grey suit, cane, addressing the crowd, stern face, wedding garden, golden hour
+[039] 1boy, @aurelio, standing with a cane, speaking to wedding guests seated at round tables, stern face, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Don Aurelio se giró hacia los invitados. «Hace tres semanas sufrí un infarto en la calle. Coches pasaron a mi lado sin parar. Y este chico me cargó a la espalda un kilómetro bajo la lluvia.»
 
-[040] solo, @aurelio, elegant grey suit, close-up, emotional, tearful eyes, wedding garden
+[040] solo, @aurelio, emotional, tearful eyes, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 «Pagó mi hospital con el dinero de su alquiler. Pasó la noche en una silla. Y se marchó sin pedir nada. Los médicos dicen que diez minutos más y estaría muerto.»
 
-[041] solo, @sofia, elegant black business suit, bowing respectfully, sincere face, wedding garden
+[041] solo, @sofia, standing and bowing respectfully at the waist, sincere face, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Sofía dio un paso al frente y se inclinó ante ti. «Gracias por salvar a mi abuelo, señor Rivas. Mi familia está en deuda con usted.» Los invitados se miraron unos a otros.
 
-[042] solo, @aurelio, elegant grey suit, looking at stained jacket, frowning, angry eyes, wedding garden
+[042] 1boy, @aurelio, angry frown, looking at the red wine stain on the navy jacket of a young man seen from behind in the foreground, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour {evitar=teeth, snarl}
 Entonces don Aurelio miró la mancha de vino en tu chaqueta. Miró la bandeja en el suelo. Y su cara cambió. «¿Quién te ha hecho esto, Marcos?»
 
-[043] solo, @pilar, elegant dress, terrified, stepping back, pale, wedding garden
+[043] solo, @pilar, terrified, pale, stepping back, holding an empty wine glass, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Nadie respondió. Pero todas las miradas fueron hacia doña Pilar. Y hacia Lucas. La mujer retrocedió un paso, con la copa vacía todavía en la mano.
 
-[044] solo, @lucas, expensive navy suit, raising hands nervously, forced laugh, sweating, wedding garden
+[044] solo, @lucas, raising hands nervously, forced laugh, sweating, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 «Ha sido... una broma, don Aurelio. Solo una broma entre amigos», tartamudeó Lucas. «No sabíamos que el chico era... conocido suyo.»
 
-[045] solo, @aurelio, elegant grey suit, cane, cold stare, dramatic lighting, wedding garden
+[045] solo, @aurelio, standing tall with a cane, chin raised, cold stern stare, dignified, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour {evitar=sad, crying, hunched, head down}
 «Una broma», repitió el anciano. «Humillar a un hombre humilde delante de doscientas personas. Eso, para mí, dice todo lo que necesito saber de una familia.»
 
-[046] solo, @sofia, elegant black business suit, holding smartphone to ear, cold decisive face, wedding garden
+[046] solo, @sofia, holding one smartphone to her ear with one hand, cold decisive face, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour {evitar=two phones, screen text}
 Hizo un gesto. Sofía sacó el móvil. «Llamad a Construcciones Ferrán. El acuerdo de esta noche queda cancelado. Definitivamente.»
 
-[047] solo, @lucas, expensive navy suit, falling to his knees on grass, despair, wedding garden, dramatic lighting {evitar=multiple boys, 2boys, clone, duplicate, twins, extra person, split screen} {semilla=1}
+[047] solo, @lucas, on his knees on the grass, devastated, despair, mouth open, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour {evitar=smile, smirk, grin}
 Lucas cayó de rodillas. Doscientos millones. La salvación de la empresa de su padre, perdida en diez segundos. Por una copa de vino. Por una bandeja.
 
-[048] solo, @irene, elegant pale blue dress, walking toward viewer with fake sweet smile, reaching out hand, wedding garden
+[048] solo, @irene[pale blue long-sleeve dress with high neckline], walking toward the viewer with a fake sweet smile, reaching out her hand, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Irene se acercó a ti con una sonrisa temblorosa. «Marcos, cariño... lo de antes era un malentendido. Tú sabes que yo siempre te he querido, ¿verdad?»
 
-[049] solo, @marcos, blue delivery jacket, close-up, calm cold eyes, slight sad smile, golden hour
+[049] solo, @marcos, red wine stain on his jacket, upper body, calm cold eyes, slight sad smile, golden hour
 La miraste. Tres años. Y en ese momento, por fin, la viste de verdad. «Hace dos meses que estás con Lucas, Irene. Me lo acabas de decir tú misma.»
 
-[050] close-up of a man's hand dropping a small ring box into a fountain, water splash, no face, golden hour
+[050] no humans, tiny red velvet ring box falling from a man's hand into a stone garden fountain, small silver ring visible inside, splash, close-up, golden hour {evitar=chest, metal box, safe, keyhole, ring on finger}
 Sacaste la cajita del anillo. Ella la miró con ilusión. Y tú la dejaste caer en la fuente del jardín. «Ese anillo era para alguien que me quisiera sin saber quién me abrazaría hoy.»
 
-[051] solo, @irene, elegant pale blue dress, crying, mascara running, sitting on grass, wedding garden
+[051] solo, @irene[pale blue long-sleeve dress with high neckline], crying, mascara running, sitting on the grass, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Irene se echó a llorar. Pero ya no eran lágrimas de pena. Eran lágrimas de alguien que acababa de entender lo que había perdido.
 
-[052] solo, @aurelio, elegant grey suit, inside luxury car back seat, warm smile, looking at viewer, evening light through window
+[052] solo, @aurelio, sitting in the back seat of a luxury car, warm smile, looking at the viewer, evening light through window {evitar=steering wheel, driving, driver seat}
 Don Aurelio te llevó en su coche. «Marcos, quiero que trabajes conmigo. No como repartidor. Como alguien de mi confianza.» No supiste qué decir.
 
-[053] solo, @sofia, elegant black business suit, sitting in front seat of luxury car, looking back over shoulder, slight smile, evening light
+[053] solo, @sofia, sitting in the front passenger seat of a luxury car, turned back over her shoulder, slight smile, evening light {evitar=steering wheel, driving}
 Sofía te miró desde el asiento delantero. Por primera vez, sonrió. «Mi abuelo no confía en nadie, señor Rivas. Nadie. Usted es el primero en diez años.»
 
-[054] solo, @aurelio, elegant grey suit, luxury car back seat, serious face, holding an old photograph, evening light
+[054] solo, @aurelio, sitting in the back seat of a luxury car, holding a small faded vintage photograph, serious face, evening light {evitar=steering wheel, driving, lighter, pen, blank paper}
 Pero entonces el anciano sacó una fotografía vieja de la cartera. Su sonrisa desapareció. «Hay algo más que tienes que saber, Marcos. No te encontré por casualidad.»
 
-[055] close-up of an old faded photograph of two young men in work clothes smiling at a construction site, no humans, warm vintage tones
+[055] no humans, close-up of an old faded vintage photograph of two young workers in work clothes smiling at a construction site, warm sepia tones {evitar=old man portrait}
 En la foto, dos hombres jóvenes sonreían en una obra. Uno era Aurelio. El otro... tenía tu misma cara. «Este es tu padre, Marcos. Trabajó para mí hace veinticinco años.»
 
-[056] solo, @marcos, blue delivery jacket, wine stained, close-up, shocked, wide eyes, night city lights through car window, dramatic lighting
+[056] solo, @marcos, red wine stain on his jacket, upper body, shocked, wide eyes, night city lights through car window, dramatic lighting
 «Tu padre no murió en un accidente», dijo el anciano en voz baja. «Lo mataron. Y el hombre que lo hizo... esta noche estaba sentado en esa boda.»

@@ -86,7 +86,7 @@ def chosen_portrait(folder: Path, name: str) -> Path:
 
 # Encuadres de los planos extra de una escena (@planos): el primero es la descripción tal cual.
 # Cambiar de plano cada pocos segundos es lo que da ritmo a los canales de manhwa narrado.
-SHOT_FRAMINGS = ["close-up", "wide shot, detailed background", "medium shot, from side", "dynamic angle, cowboy shot"]
+SHOT_FRAMINGS = ["medium shot, front view", "wide shot, detailed background", "upper body, from side", "cowboy shot, front view"]
 
 
 def scene_jobs(board: Storyboard, workdir: Path, portraits: Path, seed: int, model: str) -> list[Job]:

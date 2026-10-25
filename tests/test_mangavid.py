@@ -94,7 +94,7 @@ def test_shots_per_scene(tmp_path):
     # el plano principal no cambia al añadir planos: se reutiliza la imagen ya generada
     single = images.scene_shots(parse(STORY), tmp_path, tmp_path, 1234, "modelo")[0][0]
     assert first.out == single.out and first.prompt == single.prompt
-    assert second.prompt.startswith("close-up, ") and second.out.name.startswith("img_0001_1_")
+    assert second.prompt.startswith("medium shot, front view, ") and second.out.name.startswith("img_0001_1_")
     assert len({first.seed, second.seed, third.seed}) == 3
     assert images.scene_jobs(board, tmp_path, tmp_path, 1234, "modelo")[1] == shots[1][0]
 
