@@ -314,3 +314,21 @@ def test_regression_back_view_of_extra_person_does_not_hide_cast():
     assert co.cast_hidden(s1) is False  # el de espaldas es el chico sin ficha: a Clara se le miran los ojos
     assert co.cast_hidden(s2) is True
     assert co.cast_hidden(s3) is True  # dos personas, las dos con ficha: el guion las pone de espaldas
+
+
+def test_regression_clone_in_place_of_extra_person(tmp_path):
+    """003 s4: «Clara de frente + un chico de espaldas» salió con dos Claras y ningún chico."""
+    board = parse("@clara: 1girl, grey eyes\n"
+                  "[001] 1boy, 1girl, @clara, facing the viewer, a young man seen from behind, back view, cafe\nX")
+    faces = tmp_path / "fichas"
+    faces.mkdir()
+    Image.new("RGB", (200, 300), (1, 1, 1)).save(faces / "clara.png")
+    img = tmp_path / "dos_claras.png"
+    Image.new("RGB", (400, 300), (0, 200, 0)).save(img)
+    tools = co.Tools(detect=lambda im: [((0, 0, 200, 300), 0.9), ((200, 0, 400, 300), 0.9)],
+                     tag=lambda im: {"grey_eyes": 0.9}, difference=lambda a, b: 0.08)  # las dos con su cara
+    rep = co.check(board, [[img]], faces, tools)[0]
+    assert _levels(rep, "clon") == [co.CONFIRMED] and rep.status == "ERROR"
+    # Con un chico de verdad (otra cara, diferencia 0.4), no hay clon.
+    assert co.extra_people_check(["clara"], [Image.new("RGB", (200, 300))], {}, {"clara": None},
+                                 lambda a, b: 0.4) == []

@@ -425,9 +425,31 @@ def check(board: Storyboard, images: list[list[Path]], portraits: Path, tools: T
                 if not any(r.level == CONFIRMED for r in char_results):
                     last_valid[name] = (label, seen, crop)
                 results += char_results
+            results += extra_people_check(scene.characters, crops, assigned, faces, tools.difference)
             reports.append(ImageReport(label, scene.number, k, path.name, list(scene.characters), results,
                                        file_hash(path)))
     return reports
+
+
+def extra_people_check(cast: list[str], crops: list, assigned: dict, faces: dict, difference) -> list[Result]:
+    """Las personas que no son ningún @personaje (el chico de espaldas, gente al fondo) no pueden
+    tener la cara de un @personaje: si la tienen, el generador ha clonado a ese personaje.
+
+    El recuento de personas no lo ve: «1boy, 1girl» con dos Claras da 2 caras, como se esperaba."""
+    used = {id(c) for c in assigned.values()}
+    out = []
+    for crop in crops:
+        if id(crop) in used or crop.height < MIN_CROP:
+            continue
+        for name in cast:
+            if name not in faces:
+                continue
+            diff = difference(faces[name], crop)
+            if diff <= FACE_CONFIRMED:
+                level = CONFIRMED if diff <= FACE_POSSIBLE else POSSIBLE
+                out.append(_r(name, "clon", "solo una vez en la imagen", f"otra persona con su cara ({diff:.2f})",
+                              level, diff, f"CCIP {diff:.3f} entre su ficha y una persona que no es ella/él"))
+    return out
 
 
 def cast_hidden(scene: Scene) -> bool:
