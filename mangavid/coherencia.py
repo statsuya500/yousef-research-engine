@@ -392,7 +392,7 @@ def check(board: Storyboard, images: list[list[Path]], portraits: Path, tools: T
     last_valid: dict[str, tuple[str, Seen, object]] = {}
     reports = []
     for scene, shots in zip(board.scenes, images):
-        hidden = bool(HIDDEN.search(scene.image))
+        hidden = cast_hidden(scene)
         for k, path in enumerate(shots):
             label = f"{scene.number:03d}" + (chr(ord("a") + k) if len(shots) > 1 else "")
             image = Image.open(path).convert("RGB")
@@ -428,6 +428,19 @@ def check(board: Storyboard, images: list[list[Path]], portraits: Path, tools: T
             reports.append(ImageReport(label, scene.number, k, path.name, list(scene.characters), results,
                                        file_hash(path)))
     return reports
+
+
+def cast_hidden(scene: Scene) -> bool:
+    """¿Los @personajes de la escena salen de espaldas?
+
+    «back view» en una escena con más personas que @personajes se refiere a la persona extra
+    (descrita con palabras, sin ficha): los @personajes siguen de cara y se comprueban."""
+    from .review import expected_people, scene_people_text
+
+    if not HIDDEN.search(scene.image):
+        return False
+    people = expected_people(scene_people_text(scene))
+    return not (people is not None and people > len(scene.characters))
 
 
 def _assign(cast: list[str], crops: list, faces: dict, difference) -> list[tuple[str, object]]:

@@ -303,3 +303,14 @@ def test_regression_duplicates_reach_the_gate(tmp_path):
     co.add_people_checks(reports, checks)
     rep = next(r for r in reports if r.label == "003")
     assert rep.status == "ERROR" and _levels(rep, "personas") == [co.CONFIRMED]
+
+
+def test_regression_back_view_of_extra_person_does_not_hide_cast():
+    board = parse("@c: 1girl, grey eyes\n@d: 1boy, brown eyes\n"
+                  "[001] 1boy, 1girl, @c, facing the viewer, a young man seen from behind, back view, cafe\nX\n"
+                  "[002] solo, @d, back view, walking away\nY\n"
+                  "[003] 1boy, 1girl, @c, @d, hugging, back view\nZ")
+    s1, s2, s3 = board.scenes
+    assert co.cast_hidden(s1) is False  # el de espaldas es el chico sin ficha: a Clara se le miran los ojos
+    assert co.cast_hidden(s2) is True
+    assert co.cast_hidden(s3) is True  # dos personas, las dos con ficha: el guion las pone de espaldas
