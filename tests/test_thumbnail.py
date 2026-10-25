@@ -43,7 +43,7 @@ def test_jobs_use_portraits_and_thumbnail_tags(tmp_path):
     jobs = thumbnail.jobs(board, tmp_path / "m", portraits, 3, 10, "model")
     assert len(jobs) == 3 and len({j.out for j in jobs}) == 3
     j = jobs[0]
-    assert j.prompt.startswith("1boy, 1girl, shocked, burning house, anime key visual")
+    assert j.prompt.startswith("1boy, 1girl, shocked, burning house, anime illustration")
     assert "young woman, black hair, red dress" in j.prompt
     assert "text" in j.negative and j.faces == [portraits / "leo.png", portraits / "ana.png"]
 

@@ -1,6 +1,6 @@
 # El repartidor que salvó al abuelo — historia original, estilo «cine anime» (WAI-Illustrious)
-@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, beautiful detailed eyes, shiny hair, anime key visual, cinematic lighting, lens flare, depth of field, dramatic composition
-@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, bodybuilder, abs, chibi, nsfw, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow, cleavage, large breasts
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, beautiful detailed eyes, shiny hair, cinematic lighting, lens flare, depth of field, dramatic composition
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, blurry, muscular, bodybuilder, abs, chibi, nsfw, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow, cleavage, large breasts, key, keys, beard, mustache, goatee, facial hair, stubble
 @negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
 @parecido: 0.3
 @retoque: si
@@ -8,7 +8,7 @@
 @marcos: 1boy, male focus, adult man, 27 years old, handsome, clean-shaven, short black hair, dark brown eyes, slim build, kind face
 @irene: 1girl, young woman, 26 years old, long straight light brown hair, hazel eyes, pretty, elegant makeup
 @lucas: 1boy, male focus, adult man, 29 years old, slicked back blond hair, blue eyes, arrogant smirk, clean-shaven, slim build
-@aurelio: 1boy, male focus, old man, 80 years old, white hair combed back, clean-shaven, wrinkles, kind sharp eyes
+@aurelio: 1boy, male focus, old man, 80 years old, clean-shaven, no beard, no mustache, white hair neatly combed back, short hair, wrinkles, calm neutral expression, elegant grey suit
 @sofia: 1girl, young woman, 28 years old, long black hair in low ponytail, grey eyes, calm serious face, beautiful
 @pilar: 1girl, mature female, mother, middle-aged woman, 55 years old, wrinkles, crow's feet, short wavy auburn hair, sharp eyes, haughty expression, pearl necklace
 

@@ -22,7 +22,7 @@ from .storyboard import Scene, Storyboard
 SIZE = (1280, 720)  # tamaño recomendado por YouTube
 MAX_BYTES = 2_000_000  # límite de YouTube para miniaturas
 # Como las miniaturas de los canales de manhwa narrado: de día, nítidas y saturadas, sin neblina.
-THUMB_TAGS = ("anime key visual, bright daylight, vivid saturated colors, crisp clean lineart, sharp focus, "
+THUMB_TAGS = ("anime illustration, bright daylight, vivid saturated colors, crisp clean lineart, sharp focus, "
               "cel shading, expressive faces, dynamic pose, detailed background")
 THUMB_NEGATIVE = ("text, letters, speech bubble, watermark, logo, signature, dark, monochrome, "
                   "sunset, haze, bloom, painterly, blurry, washed out")
