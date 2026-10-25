@@ -117,7 +117,7 @@ def cmd_revisar(args) -> None:
 
     board = storyboard.load(args.story)
     work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
-    shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, images.DEFAULT_MODEL)
+    shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
     missing = [j.out.name for js in shots for j in js if not j.out.exists()]
     if missing:
         raise SystemExit(f"Faltan {len(missing)} imágenes por generar. Ejecuta antes: "
@@ -218,6 +218,7 @@ def main(argv: list[str] | None = None) -> None:
     v.add_argument("story", type=Path)
     v.add_argument("--workdir", type=Path)
     v.add_argument("--seed", type=int, default=1234)
+    v.add_argument("--model", default=images.DEFAULT_MODEL, help="El mismo modelo con el que se generaron las escenas")
     v.set_defaults(func=cmd_revisar)
 
     args = p.parse_args(argv)

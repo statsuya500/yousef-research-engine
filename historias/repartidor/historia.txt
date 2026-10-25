@@ -21,7 +21,7 @@ El día de la boda de su hermana, la madre de tu novia te tiró una copa de vino
 [003] solo, @irene, elegant pale blue dress, looking away, cold expression, arms crossed, wedding garden, golden hour
 Buscaste los ojos de Irene. Tres años juntos. Tres años en los que le diste todo lo que tenías. Pero ella apartó la mirada, como si no te conociera.
 
-[004] solo, @lucas, expensive navy suit, champagne glass, arm around a woman's shoulder, woman seen from behind, smug smile, wedding garden
+[004] 1boy, 1girl, @lucas, expensive navy suit, champagne glass, arm around the shoulder of a woman with long light brown hair, woman seen from behind, smug smile, wedding garden {evitar=2boys, clone, duplicate, twins} {semilla=1}
 Y entonces Lucas Ferrán, el heredero de Construcciones Ferrán, le pasó el brazo por los hombros a Irene. «Tranquilo, repartidor. A partir de hoy, de ella me encargo yo.»
 
 [005] solo, @marcos, blue delivery jacket, wine stained, close-up, clenched jaw, holding back tears, cinematic lighting
@@ -114,7 +114,7 @@ Y detrás de ella, apoyado en un bastón, bajó un anciano de pelo blanco. Los i
 [034] solo, @lucas, expensive navy suit, bowing deeply, nervous smile, sweating, wedding garden
 Lucas corrió hacia él, haciendo reverencias. «¡Don Aurelio! ¡Qué honor! Si hubiera sabido que venía, le habría preparado la mesa principal...»
 
-[035] solo, @aurelio, elegant grey suit, cane, walking past someone without looking, cold eyes, wedding garden
+[035] solo, @aurelio, elegant grey suit, cane, walking past someone without looking, cold eyes, wedding garden {evitar=multiple boys, 2boys, clone, duplicate, twins, extra person, split screen} {semilla=1}
 Pero don Aurelio pasó a su lado sin mirarlo. Ni una palabra. Siguió caminando entre las mesas, buscando a alguien con la mirada.
 
 [036] solo, @marcos, blue delivery jacket, wine stained, turning around, surprised, wide eyes, wedding garden, golden hour
@@ -150,7 +150,7 @@ Nadie respondió. Pero todas las miradas fueron hacia doña Pilar. Y hacia Lucas
 [046] solo, @sofia, elegant black business suit, holding smartphone to ear, cold decisive face, wedding garden
 Hizo un gesto. Sofía sacó el móvil. «Llamad a Construcciones Ferrán. El acuerdo de esta noche queda cancelado. Definitivamente.»
 
-[047] solo, @lucas, expensive navy suit, falling to his knees on grass, despair, wedding garden, dramatic lighting
+[047] solo, @lucas, expensive navy suit, falling to his knees on grass, despair, wedding garden, dramatic lighting {evitar=multiple boys, 2boys, clone, duplicate, twins, extra person, split screen} {semilla=1}
 Lucas cayó de rodillas. Doscientos millones. La salvación de la empresa de su padre, perdida en diez segundos. Por una copa de vino. Por una bandeja.
 
 [048] solo, @irene, elegant pale blue dress, walking toward viewer with fake sweet smile, reaching out hand, wedding garden
