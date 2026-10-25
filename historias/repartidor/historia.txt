@@ -9,8 +9,8 @@
 @irene: 1girl, adult woman, 26 years old, mature face, long straight light brown hair, hazel eyes, no earrings, neutral expression
 @lucas: 1boy, male focus, adult man, 29 years old, slicked back blond hair, blue eyes, clean-shaven, slim build, neutral expression, navy blue suit, white shirt, blue tie
 @aurelio: 1boy, male focus, old man, 80 years old, clean-shaven, no beard, no mustache, white hair neatly combed back, short hair, wrinkles, calm neutral expression, elegant grey suit
-@sofia: 1girl, mature woman, 28 years old, business executive, long black hair in low ponytail, grey eyes, sharp elegant features, neutral expression, black women's business suit with skirt, white blouse
-@pilar: 1girl, mature female, middle-aged woman, 55 years old, wrinkles, short wavy auburn hair, sharp eyes, neutral expression, pearl necklace, dark green long-sleeve high-neck dress
+@sofia: 1girl, mature woman, 28 years old, business executive, long black hair in low ponytail, grey eyes, sharp elegant features, neutral expression, black women's business suit with skirt, buttoned-up white blouse, small chest
+@pilar: 1girl, old woman, mature female, mother, 60 years old, aged face, deep wrinkles, nasolabial folds, crow's feet, sagging skin, thin lips, short wavy grey hair, sharp haughty eyes, neutral expression, pearl necklace, dark grey long-sleeve high-neck dress
 
 [001] solo, @marcos, red wine stain on his jacket, standing humiliated, head down, clenched fists, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, blurred guests in background
 El día de la boda de su hermana, la madre de tu novia te tiró una copa de vino encima delante de doscientos invitados. Y nadie, absolutamente nadie, se movió para ayudarte.
@@ -33,7 +33,7 @@ Tres semanas antes, a las once de la noche, llovía como si el cielo se fuera a 
 [007] solo, @aurelio[grey wool coat], lying on wet street pavement at a bus stop, clutching his chest in pain, eyes shut, pale, heavy rain, night, streetlight, Spanish city street
 Era un anciano. Traje gris, abrigo caro, la mano apretada contra el pecho. Respiraba con dificultad. Los coches pasaban a su lado sin detenerse. A nadie le importaba.
 
-[008] 1boy, @marcos, soaked by rain, kneeling on wet pavement, holding a smartphone against his ear with one hand, shouting for help, an old man in grey coat lying on the ground beside him with his face turned away, night, streetlight, Spanish city street {evitar=earphones, headset, earbuds, clone, twins}
+[008] 1boy, @marcos, soaked by rain, kneeling on wet pavement, holding a smartphone against his ear with one hand, shouting for help, the legs and grey coat of an old man lying on the ground beside him, night, streetlight, Spanish city street {evitar=earphones, headset, earbuds, clone, twins}
 Tú te arrodillaste a su lado. Llamaste a emergencias. Te dijeron que la ambulancia tardaría veinte minutos. Miraste al anciano. Veinte minutos eran demasiado.
 
 [009] back view, a young man in navy windbreaker running away from the viewer down a rainy night street carrying an old man in grey coat piggyback, both seen from behind, Spanish city street, streetlights, heavy rain, motion blur
@@ -84,7 +84,7 @@ Te vio y sonrió. Te puso una bandeja vacía en las manos. «Mira, uno del servi
 [024] 1girl, @irene[pale blue long-sleeve dress with high neckline], cold smile, holding the arm of a blond man in navy suit seen from behind, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Irene se levantó y se puso a su lado. Le cogió del brazo. «Lo dejamos, Marcos. Hace dos meses que estoy con Lucas. Iba a decírtelo, pero tú nunca te enteras de nada.»
 
-[025] no humans, tiny open red velvet ring box with a small silver ring inside lying on green grass, macro close-up, golden hour {evitar=metal box, chest, case, toolbox}
+[025] no humans, tiny open red velvet ring box with a small silver ring inside lying alone on green grass, no hands, macro close-up, golden hour {evitar=metal box, chest, case, toolbox, hand, fingers}
 En tu bolsillo, la cajita del anillo pesaba como una piedra. Se te cayó al césped. Lucas la vio y la abrió con la punta del zapato. «¿Esto es un anillo? Parece de una máquina de chicles.»
 
 [026] solo, @pilar, laughing loudly, hand over mouth, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
@@ -120,7 +120,7 @@ Pero don Aurelio pasó a su lado sin mirarlo. Ni una palabra. Siguió caminando 
 [036] solo, @marcos, red wine stain on his jacket, turning around surprised, wide eyes, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 Hasta que te encontró. Tú, en la salida, con la chaqueta manchada de vino y el anillo en la mano. El anciano sonrió. Y por primera vez en todo el día, alguien te miró con cariño.
 
-[037] 1boy, @aurelio, tearful eyes, hugging a young man seen from behind with his back to the viewer, short black hair, navy windbreaker, the old man's face over the young man's shoulder, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
+[037] 1boy, @aurelio, close-up of an embrace, tearful eyes, the old man's face resting on the shoulder of a young man in navy windbreaker seen from behind, short black hair, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour
 «Marcos Rivas.» Te abrazó con fuerza delante de todos. «Llevo tres semanas buscándote, hijo. Tres semanas. Y te encuentro así.»
 
 [038] solo, @irene[pale blue long-sleeve dress with high neckline], shocked, both hands over her mouth, outdoor wedding reception on the lawn of a Spanish country estate, long tables with white tablecloths, string lights between trees, stone villa in background, golden hour, blurred guests
