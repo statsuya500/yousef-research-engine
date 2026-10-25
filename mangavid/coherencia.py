@@ -445,6 +445,22 @@ def _assign(cast: list[str], crops: list, faces: dict, difference) -> list[tuple
     return out
 
 
+PEOPLE_LEVEL = {"OK": OK, "DUPLICADO": CONFIRMED, "DUDOSO": POSSIBLE, "SIN CARA": POSSIBLE, "SIN CONTAR": UNCHECKABLE}
+
+
+def add_people_checks(reports: list[ImageReport], checks: list) -> None:
+    """Suma el recuento de personas de review.check (duplicados) a cada imagen del informe,
+    para que el bloqueo de montaje también los tenga en cuenta."""
+    by_label = {c.label: c for c in checks}
+    for rep in reports:
+        c = by_label.get(rep.label)
+        if c is None:
+            continue
+        rep.results.append(_r("(escena)", "personas", "-" if c.expected is None else str(c.expected),
+                              f"{c.faces} caras, {c.heads} cabezas", PEOPLE_LEVEL[c.status], None,
+                              f"recuento de caras: {c.status}"))
+
+
 # --- Antes de producir ---------------------------------------------------------------------
 
 def preflight(board: Storyboard, portraits: Path, tag: Callable | None = None) -> list[Result]:

@@ -275,3 +275,31 @@ def test_regression_preflight_text_has_no_image_summary():
     pre = [co._r("clara", "peinado", "bob_cut", "-", co.POSSIBLE, 0.0, "bob_cut 0.00")]
     text = co.report_text([], pre)
     assert "Antes de producir" in text and "Coherencia:" not in text
+
+
+def test_regression_people_count_ignores_expanded_sheets():
+    from mangavid.review import _check_one, expected_people, scene_people_text
+
+    board = parse("@d: 1boy, young man\n@c: 1girl, young woman\n[001] 1boy, 1girl, @c, @d, cafe\nX\n"
+                  "[002] @c, @d, park\nY\n[003] solo, @c, street\nZ")
+    s1, s2, s3 = board.scenes
+    assert expected_people(s1.image) == 4  # el fallo: las fichas suman otro 1boy y 1girl
+    assert expected_people(scene_people_text(s1)) == 2
+    assert expected_people(scene_people_text(s3)) == 1
+    three = lambda path: [((0, 0, 1, 1), "face", 0.9)] * 3  # noqa: E731
+    # Con tres caras en una escena de dos: DUPLICADO (antes salía OK).
+    assert _check_one(scene_people_text(s1), "001", "x", three, three, 2).status == "DUPLICADO"
+    # Sin «1boy»/«solo», tantas personas como @personajes.
+    assert _check_one(scene_people_text(s2), "002", "x", three, three, 2).status == "DUPLICADO"
+
+
+def test_regression_duplicates_reach_the_gate(tmp_path):
+    from mangavid.review import Check
+
+    good = (0, 200, 0)
+    board, faces, pics = _setup(tmp_path, [good, good, good, (0, 0, 0)])
+    reports = co.check(board, pics, faces, _tools({good: GOOD, (0, 0, 0): SUIT}))
+    checks = [Check("003", pics[2][0], 1, 2, 2, "DUPLICADO")]
+    co.add_people_checks(reports, checks)
+    rep = next(r for r in reports if r.label == "003")
+    assert rep.status == "ERROR" and _levels(rep, "personas") == [co.CONFIRMED]

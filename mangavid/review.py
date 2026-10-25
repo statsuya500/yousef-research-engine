@@ -50,12 +50,23 @@ def check(board: Storyboard, images: list[list[Path]]) -> list[Check]:
     for scene, shots in zip(board.scenes, images):
         for k, path in enumerate(shots):
             label = f"{scene.number:03d}" + (chr(ord("a") + k) if len(shots) > 1 else "")
-            results.append(_check_one(scene.image, label, path, detect_faces, detect_heads))
+            results.append(_check_one(scene_people_text(scene), label, path, detect_faces, detect_heads,
+                                      len(scene.characters)))
     return results
 
 
-def _check_one(prompt: str, label: str, path: Path, detect_faces, detect_heads) -> Check:
+def scene_people_text(scene) -> str:
+    """La descripción de la escena sin las fichas de los personajes.
+
+    scene.image lleva las fichas ya sustituidas, y cada ficha trae su «1boy»/«1girl»: contadas ahí,
+    una escena «1boy, 1girl, @clara, @daniel» esperaría 4 personas y nunca saldría DUPLICADO."""
+    return scene.action or scene.image
+
+
+def _check_one(prompt: str, label: str, path: Path, detect_faces, detect_heads, cast: int = 0) -> Check:
     expected = expected_people(prompt)
+    if expected is None and cast and not _SKIP.search(prompt):
+        expected = cast  # sin «1boy»/«solo» en la escena: tantas personas como @personajes
     faces = sum(1 for d in detect_faces(str(path)) if d[2] > CONFIDENCE)
     heads = sum(1 for d in detect_heads(str(path)) if d[2] > CONFIDENCE)
     if expected is None:

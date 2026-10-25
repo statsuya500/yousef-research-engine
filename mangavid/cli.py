@@ -135,6 +135,7 @@ def cmd_revisar(args) -> None:
         tools = coherencia.default_tools()
         pre = coherencia.preflight(board, _portraits_dir(args.story), tools.tag)
         reports = coherencia.check(board, pics, _portraits_dir(args.story), tools)
+        coherencia.add_people_checks(reports, checks)
         coherencia.write_report(reports, pre, folder / "coherencia.json")
         text += "\n" + coherencia.report_text(reports, pre)
         text += f"\nInforme para el programa: {folder / 'coherencia.json'}"
