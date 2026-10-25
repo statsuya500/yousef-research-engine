@@ -273,3 +273,88 @@ def test_original_images_are_protected(tmp_path):
     assert all(str(work) in c.image for c in cands)  # las candidatas solo van a su carpeta
     Image.new("RGB", (4, 4), (0, 0, 0)).save(originals[0])
     assert ct.protected_changed(before) == [str(originals[0])]
+
+
+# --- Regresiones de la prueba controlada 003/004 ----------------------------------------------------
+
+def test_regression_A_collar_tshirt_is_a_detail_not_a_second_garment():
+    prof = co.profile_from("grey hoodie, light warm grey hoodie with long sleeves, hood down, "
+                           "white t-shirt visible at the collar")
+    assert prof.garments == {"hoodie": {"grey"}}
+    assert prof.details == {"shirt": {"white"}}
+    res = co.compare("daniel", prof, co.Seen({"hoodie": 0.82, "grey_hoodie": 0.5}))
+    levels = {r.attribute: (r.level, r.requires_review) for r in res}
+    assert levels["ropa"] == (co.OK, False)  # antes: «hoodie 0.82, ningún shirt» -> CONFIRMED
+    assert levels["detalle de ropa"] == (co.UNCHECKABLE, False)
+    assert not any(r.level == co.CONFIRMED for r in res)
+    # Si el etiquetador sí la ve, el detalle queda verificado.
+    res = co.compare("daniel", prof, co.Seen({"hoodie": 0.8, "white_shirt": 0.5}))
+    assert {r.attribute: r.level for r in res}["detalle de ropa"] == co.OK
+
+
+def test_regression_B_hair_correction_touches_only_hair(tmp_path):
+    board, _, reg = _registry(tmp_path, _tools({}))  # Clara sin especificación propia
+    sspec = ct.scene_spec(board, 3, {})
+    plan = ct.Plan()
+    for _ in range(3):  # el mismo fallo en tres lotes
+        plan = ct.correct(plan, [ct.Requirement("clara", "color de pelo", "brown", ct.FAIL, "")], reg, sspec)
+    assert plan.emphasis["clara"] == ["short auburn bob hair"]  # solo la frase del pelo, una vez
+    line = ct.scene_line(sspec, reg, plan, 1, board)
+    clara = line.split("@clara[")[1].split("]")[0]
+    assert "24 years old" not in clara and "1girl" not in clara and "young woman" not in clara
+    # La frase ya está en su ficha: el corchete no la repite (el generador ya pone la ficha).
+    assert clara == "cream knit sweater"
+    prompt = parse(HEADER + "\n\n" + line + "\nx").scenes[0]
+    assert prompt.image.count("short auburn bob hair") == 1
+
+
+def test_regression_B_final_prompt_is_not_truncated():
+    class Tok:  # 1 token por palabra, más inicio y fin
+        def __call__(self, text):
+            from types import SimpleNamespace
+            return SimpleNamespace(input_ids=[0] + text.replace(",", " ").split() + [0])
+
+    short = ", ".join(["grey eyes"] * 10)
+    tokens, chunks, truncated = ct.prompt_check(short, Tok())
+    assert tokens == 20 and chunks == 1 and truncated is False
+    long_prompt = ", ".join(f"tag{i} word" for i in range(60))  # 120 tokens: 2 trozos, sin cortar
+    tokens, chunks, truncated = ct.prompt_check(long_prompt, Tok())
+    assert chunks == 2 and truncated is False
+    assert ct.prompt_check(" ".join(["w"] * 80), Tok())[2] is True  # una etiqueta de 80 tokens sí se corta
+
+
+def test_regression_C_strategy_switches_when_a_problem_persists_with_varying_failures(tmp_path):
+    varying = [
+        [ct.Requirement("daniel", "prenda", "x", ct.FAIL, ""), ct.Requirement("clara", "ojos", "x", ct.UNCERTAIN, "")],
+        [ct.Requirement("daniel", "prenda", "x", ct.FAIL, ""), ct.Requirement("(escena)", "estilo", "x", ct.UNCERTAIN, "")],
+    ]
+    result, _, _, seen, _ = _loop(tmp_path, lambda b, r: varying[(b - 1) % 2], max_batches=3)
+    assert any("estrategia «secundarios de espaldas»" in n and "daniel" in n for n in result.corrections)
+    assert seen[0].characters == ["clara", "daniel"]  # lote 1: referencias por región
+    assert seen[-1].characters == ["clara"]  # lote 3: Daniel de espaldas sin referencia facial
+    assert ct.persistent_failures([frozenset({("a", "x"), ("b", "y")}), frozenset({("a", "x")})], 2) == {("a", "x")}
+    assert ct.persistent_failures([frozenset({("a", "x")}), frozenset({("b", "y")})], 2) == frozenset()
+
+
+def test_reevaluate_only_reads_saved_candidates(tmp_path):
+    tools = _tools({})
+    board, portraits, reg = _registry(tmp_path, tools)
+    sspec = ct.scene_spec(board, 3, {})
+    folder = tmp_path / "continuidad"
+    (folder / "003").mkdir(parents=True)
+    known, unknown = folder / "003" / "img_0003_a.png", folder / "003" / "img_0003_b.png"
+    for p in (known, unknown):
+        Image.new("RGB", (8, 8), (5, 5, 5)).save(p)
+    before = ct.snapshot([known, unknown])
+    line = ct.scene_line(sspec, reg, ct.Plan(), 7, board)
+    previous = {str(known): {"line": line, "batch": 2, "strategy": "referencias por región", "reroll": 7,
+                             "prompt": "p", "negative": "n", "seed": 1241, "likeness": 0.6, "model": "m"}}
+    ok = [ct.Requirement("clara", "ojos", "grey", ct.PASS, "")]
+    cands = ct.reevaluate(HEADER, board, sspec, reg, folder, lambda b, s, sp, p: ok, previous)
+    by = {c.image: c for c in cands}
+    assert by[str(known)].reroll == 7 and by[str(known)].batch == 2 and by[str(known)].verdict == "VALID"
+    assert by[str(unknown)].strategy.startswith("línea reconstruida") and by[str(unknown)].reroll == -1
+    assert ct.protected_changed(before) == []  # leer y evaluar no cambia las imágenes
+    ranked = sorted([ct.Candidate(3, 1, "s", 1, "", "", "", 0, 0.6, "m", "a", "", "REJECTED",
+                                  [ct.Requirement("c", "x", "", ct.FAIL, "")]), by[str(known)]], key=ct.score)
+    assert ranked[0] is by[str(known)]

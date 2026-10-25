@@ -356,6 +356,8 @@ def evaluate(board: Storyboard, scene: Scene, sspec: SceneSpec, image_path: Path
                                     f"etiquetador: {evidence}"))
             region, ev = color_status(region_color(image, box, (0.60, 0.95)),
                                       (outfit.get("medida") or {}).get("rgb"))
+            for r in by_attr.get((name, "detalle de ropa"), []):
+                reqs.append(Requirement(name, "detalle de ropa", r.expected, _from_level(r), r.evidence, False))
             reqs.append(Requirement(name, "color de ropa", outfit["texto"],
                                     combine(worst(tag_colors or [UNCERTAIN]), region),
                                     f"etiquetador: {evidence} | región: {ev}"))
@@ -469,7 +471,7 @@ def scene_line(sspec: SceneSpec, registry: dict, plan: Plan, reroll: int, board:
         outfit = outfit_at(registry, c, sspec.number)
         bits = [outfit["texto"]] if outfit else []
         bits += [registry["personajes"][c].get("extra_prompt", "")] + plan.emphasis.get(c, [])
-        parts.append(f"@{c}[{', '.join(b for b in bits if b)}]")
+        parts.append(f"@{c}[{bracket(bits, board.characters[c])}]")
     if len(cast) > 1:
         sides = ["on the left", "on the right"] if len(cast) == 2 else [f"position {i + 1}" for i in range(len(cast))]
         parts.append(", ".join(f"the {gender[c]} {side}" for c, side in zip(cast, sides)))
@@ -486,6 +488,19 @@ def scene_line(sspec: SceneSpec, registry: dict, plan: Plan, reroll: int, board:
     if plan.likeness is not None:
         tail.append(f"{{parecido={plan.likeness:.2f}}}")
     return f"[{sspec.number:03d}] {line} " + " ".join(tail)
+
+
+def bracket(bits: list[str], sheet: str) -> str:
+    """Las frases de ropa y refuerzos de un personaje, sin repetir ninguna ni repetir su ficha
+    (la ficha ya la pone el generador)."""
+    seen = {p.strip().lower() for p in sheet.split(",")}
+    out = []
+    for bit in bits:
+        for phrase in (p.strip() for p in bit.split(",")):
+            if phrase and phrase.lower() not in seen:
+                seen.add(phrase.lower())
+                out.append(phrase)
+    return ", ".join(out)
 
 
 def _count_tags(cast: list[str], board: Storyboard) -> str:
@@ -526,11 +541,10 @@ def correct(plan: Plan, failed: list[Requirement], registry: dict, sspec: SceneS
                     _add(new.avoid, f"{wrong} eyes")
             new.notes.append(f"{name}: ojos -> refuerzo {exp} y negativo sin contradecir a otros")
         elif r.attribute in ("color de pelo", "largo de pelo") and name in registry["personajes"]:
-            extra = registry["personajes"][name].get("extra_prompt") or ""
-            hair = [p.strip() for p in extra.split(",") if "hair" in p] or \
-                   [registry["personajes"][name]["ficha"]]
-            _add(new.emphasis.setdefault(name, []), hair[0])
-            new.notes.append(f"{name}: pelo -> refuerzo «{hair[0]}»")
+            hair = hair_phrase(registry, name)
+            if hair:
+                _add(new.emphasis.setdefault(name, []), hair)
+            new.notes.append(f"{name}: pelo -> refuerzo «{hair}»")
         elif r.attribute in ("ropa", "prenda", "color de ropa") and name in registry["personajes"]:
             outfit = outfit_at(registry, name, sspec.number)
             if outfit:
@@ -553,6 +567,17 @@ def correct(plan: Plan, failed: list[Requirement], registry: dict, sspec: SceneS
     return new
 
 
+def hair_phrase(registry: dict, name: str) -> str | None:
+    """Solo la frase del pelo del personaje (de su especificación o, si no, de su ficha); nunca la
+    ficha entera, que repetiría edad, ojos… y alargaría el prompt hasta truncarlo."""
+    entry = registry["personajes"][name]
+    for text in (entry.get("extra_prompt") or "", entry["ficha"]):
+        phrases = [p.strip() for p in text.split(",") if re.search(r"\bhair\b", p)]
+        if phrases:
+            return phrases[0]
+    return None
+
+
 def co_default_likeness() -> float:
     from .images import IP_SCALE
 
@@ -568,6 +593,16 @@ def _needs_many(registry, present, tag: str) -> bool:
 def _add(items: list[str], value: str) -> None:
     if value and value not in items:
         items.append(value)
+
+
+def persistent_failures(keys: list[frozenset], n: int) -> frozenset:
+    """Problemas que aparecen en los n últimos lotes, aunque el resto de fallos cambie."""
+    if len(keys) < n:
+        return frozenset()
+    common = set(keys[-1])
+    for k in keys[-n:-1]:
+        common &= k
+    return frozenset(common)
 
 
 def failure_key(reqs: list[Requirement]) -> frozenset:
@@ -592,6 +627,9 @@ class Candidate:
     sha256: str
     verdict: str
     requirements: list[Requirement]
+    prompt_tokens: int | None = None  # tokens CLIP del prompt final que recibe el generador
+    prompt_chunks: int | None = None  # trozos de 75 tokens en que lo parte images._encode_long
+    truncated: bool | None = None  # True si alguna etiqueta sola pasa de 75 tokens (se cortaría)
 
 
 @dataclass
@@ -607,7 +645,7 @@ class SceneResult:
 def run_scene(story_header: str, board: Storyboard, sspec: SceneSpec, registry: dict, workdir: Path,
               portraits: Path, *, batch_size: int = 4, max_batches: int = 10, seed: int = 1234,
               model: str, generate: Callable, evaluate_fn: Callable, log: Callable = print,
-              repeat_to_switch: int = 2) -> tuple[SceneResult, list[Candidate]]:
+              repeat_to_switch: int = 2, tokenizer=None) -> tuple[SceneResult, list[Candidate]]:
     """Lotes de candidatas hasta una válida o hasta el límite. generate(jobs) genera las imágenes;
     evaluate_fn(board1, scene, sspec, path) devuelve los requisitos."""
     from . import images as img
@@ -636,6 +674,8 @@ def run_scene(story_header: str, board: Storyboard, sspec: SceneSpec, registry: 
             cand = Candidate(sspec.number, batch + 1, STRATEGIES[plan.strategy], scene.reroll, line, job.prompt,
                              job.negative or b.negative, job.seed, job.ip_scale, model, str(job.out),
                              co.file_hash(job.out), v, reqs)
+            if tokenizer is not None:
+                cand.prompt_tokens, cand.prompt_chunks, cand.truncated = prompt_check(job.prompt, tokenizer)
             batch_cands.append(cand)
             for r in reqs:
                 if r.mandatory and r.status in (FAIL, UNCERTAIN):
@@ -654,14 +694,61 @@ def run_scene(story_header: str, board: Storyboard, sspec: SceneSpec, registry: 
         failed = [r for r in best.requirements if r.mandatory and r.status in (FAIL, UNCERTAIN)]
         key = failure_key(best.requirements)
         last_keys.append(key)
-        same = len(last_keys) >= repeat_to_switch and len(set(last_keys[-repeat_to_switch:])) == 1
+        persistent = persistent_failures(last_keys, repeat_to_switch)
+        same = bool(persistent)
         if same and plan.strategy + 1 < len(STRATEGIES) and len(sspec.cast) > 1:
             plan = Plan(strategy=plan.strategy + 1, notes=plan.notes + [
-                f"lote {batch + 1}: el mismo fallo {sorted(key)} se repite -> estrategia «{STRATEGIES[plan.strategy + 1]}»"])
+                f"lote {batch + 1}: {sorted(persistent)} sigue fallando tras corregirlo "
+                f"-> estrategia «{STRATEGIES[plan.strategy + 1]}»"])
             last_keys.clear()
         else:
             plan = correct(plan, failed, registry, sspec)
     return SceneResult(sspec.number, "NO_VALID_CANDIDATE", None, max_batches, unmet, plan.notes), candidates
+
+
+def prompt_check(prompt: str, tokenizer) -> tuple[int, int, bool]:
+    """(tokens, trozos, truncado) del prompt tal como lo codifica el generador (images._chunks)."""
+    from types import SimpleNamespace
+
+    from .images import CHUNK_TOKENS, _chunks
+
+    chunks = _chunks(SimpleNamespace(tokenizer=tokenizer), prompt)
+    total = len(tokenizer(prompt).input_ids) - 2
+    truncated = any(len(tokenizer(c).input_ids) - 2 > CHUNK_TOKENS for c in chunks)
+    return total, len(chunks), truncated
+
+
+def reevaluate(story_header: str, board: Storyboard, sspec: SceneSpec, registry: dict, folder: Path,
+               evaluate_fn: Callable, previous: dict[str, dict], tokenizer=None) -> list[Candidate]:
+    """Vuelve a evaluar las candidatas ya guardadas de una escena, sin generar nada.
+
+    previous: los registros anteriores por ruta de imagen (línea, semilla, prompt). Las imágenes que
+    no tienen registro (p. ej. un lote generado pero no evaluado antes de parar el proceso) se evalúan
+    con la línea base de la escena y se marcan como «línea reconstruida»."""
+    out = []
+    for path in sorted((folder / f"{sspec.number:03d}").glob("*.png")):
+        rec = previous.get(str(path))
+        line = rec["line"] if rec else scene_line(sspec, registry, Plan(), 0, board)
+        b = parse(story_header + "\n\n" + line + "\nx\n")
+        scene = b.scenes[0]
+        reqs = evaluate_fn(b, scene, sspec, path)
+        cand = Candidate(sspec.number, rec["batch"] if rec else 0,
+                         rec["strategy"] if rec else "línea reconstruida (sin registro)",
+                         rec["reroll"] if rec else -1, line, rec["prompt"] if rec else b.prompt(scene),
+                         rec["negative"] if rec else b.negative, rec["seed"] if rec else -1,
+                         rec["likeness"] if rec else -1.0, rec["model"] if rec else "", str(path),
+                         co.file_hash(path), verdict(reqs), reqs)
+        if tokenizer is not None:
+            cand.prompt_tokens, cand.prompt_chunks, cand.truncated = prompt_check(cand.prompt, tokenizer)
+        out.append(cand)
+    return out
+
+
+def score(c: Candidate) -> tuple[int, int, int]:
+    """Orden: menos FAIL, luego menos UNCERTAIN, luego más PASS (solo requisitos obligatorios)."""
+    mand = [r for r in c.requirements if r.mandatory]
+    return (sum(r.status == FAIL for r in mand), sum(r.status == UNCERTAIN for r in mand),
+            -sum(r.status == PASS for r in mand))
 
 
 def write_results(results: list[SceneResult], candidates: list[Candidate], path: Path) -> None:

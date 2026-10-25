@@ -59,6 +59,7 @@ ACCESSORIES = {"sunglasses": "sunglasses", "glasses": "glasses", "earrings": "ea
                "ribbon": "hair_ribbon"}
 FACIAL_HAIR = ["beard", "mustache", "goatee", "facial_hair", "stubble"]
 WRITING = ["clothes_writing", "jersey"]
+DETAIL = re.compile(r"\b(visible at|at the collar|underneath|under the|peeking)\b")
 HIDDEN = re.compile(r"\b(back view|from behind|seen from behind|face not visible|no face)\b")
 
 
@@ -75,6 +76,9 @@ class Profile:
     accessories: set[str] = field(default_factory=set)
     no_accessories: set[str] = field(default_factory=set)  # «no earrings»
     garments: dict[str, set[str]] = field(default_factory=dict)  # prenda -> colores admitidos
+    # Detalles de vestuario («white t-shirt visible at the collar»): no son una segunda prenda que el
+    # etiquetador tenga que ver por separado; se comprueban, pero no bloquean si no se distinguen.
+    details: dict[str, set[str]] = field(default_factory=dict)
     number: str | None = None
 
 
@@ -129,7 +133,8 @@ def profile_from(text: str) -> Profile:
                 break
         for word, tag in GARMENTS.items():
             if re.search(rf"\b{re.escape(word)}\b", phrase):
-                prof.garments.setdefault(tag, set()).update(_colors(phrase.split("with")[0]))
+                target = prof.details if DETAIL.search(phrase) else prof.garments
+                target.setdefault(tag, set()).update(_colors(phrase.split("with")[0]))
                 break
     return prof
 
@@ -142,6 +147,7 @@ def expected_for(board: Storyboard, scene: Scene, name: str) -> Profile:
         return sheet
     wear = profile_from(outfit)
     sheet.garments = wear.garments or sheet.garments
+    sheet.details = wear.details if (wear.garments or wear.details) else sheet.details
     sheet.number = wear.number or (None if wear.garments else sheet.number)
     sheet.accessories |= wear.accessories
     sheet.hairstyles = wear.hairstyles or sheet.hairstyles
@@ -277,6 +283,16 @@ def compare(name: str, exp: Profile, seen: Seen, *, hidden: bool = False, ocr: C
                           CONFIRMED if s >= TAG_HIGH else POSSIBLE, s, f"{other} {s:.2f}, ningún {garment}"))
         else:
             out.append(_r(name, "ropa", exp_text, "-", UNCHECKABLE, None, "el etiquetador no ve ninguna prenda"))
+    for garment, colors in exp.details.items():
+        exp_text = " ".join(filter(None, ["/".join(sorted(colors)), garment, "(detalle)"]))
+        if garment in worn:
+            color, s = worn[garment]
+            level = OK if not colors or not color or color in colors else POSSIBLE
+            out.append(_r(name, "detalle de ropa", exp_text, f"{color or ''} {garment}".strip(), level, s,
+                          f"{garment} {s:.2f}"))
+        else:
+            out.append(_r(name, "detalle de ropa", exp_text, "-", UNCHECKABLE, None,
+                          "el etiquetador no lo distingue de la prenda principal: revisar a ojo", False))
     if exp.number:
         writing = seen.score(*WRITING)
         if ocr is None:

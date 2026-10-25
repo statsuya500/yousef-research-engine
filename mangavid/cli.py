@@ -229,15 +229,50 @@ def cmd_continuidad(args) -> None:
     protected += [Path(p) for pattern in args.proteger for p in sorted(glob.glob(pattern))]
     before = cont.snapshot(protected)
     tools = coherencia.default_tools()
-    registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
-    cont.save_registry(registry, folder / "registro.json")
-    print(f"[continuidad] registro de continuidad en {folder / 'registro.json'}")
+    if args.solo_evaluar and (folder / "registro.json").exists():
+        registry = json.loads((folder / "registro.json").read_text(encoding="utf-8"))  # el mismo de la generación
+        print(f"[continuidad] registro existente: {folder / 'registro.json'}")
+    else:
+        registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
+        cont.save_registry(registry, folder / "registro.json")
+        print(f"[continuidad] registro de continuidad en {folder / 'registro.json'}")
     header = re.split(r"(?m)^\[\d", args.story.read_text(encoding="utf-8"), maxsplit=1)[0].strip()
     from imgutils.detect import detect_faces, detect_heads
 
     def people(scene, path):
         return review._check_one(review.scene_people_text(scene), f"{scene.number:03d}", path,
                                  detect_faces, detect_heads, len(scene.characters))
+
+    from transformers import CLIPTokenizer
+
+    tokenizer = CLIPTokenizer.from_pretrained(args.model, subfolder="tokenizer")  # ya en caché
+    if args.solo_evaluar:
+        previous = {}
+        if (folder / "resultados.json").exists():
+            previous = {c["image"]: c for c in json.loads((folder / "resultados.json").read_text(
+                encoding="utf-8"))["candidatas"]}
+        all_cands = []
+        for number in args.escenas:
+            sspec = cont.scene_spec(board, number, spec)
+
+            def evaluate(b, scene, s, path, sspec=sspec):
+                return cont.evaluate(b, scene, sspec, path, registry, portraits, tools, people)
+
+            cands = cont.reevaluate(header, board, sspec, registry, folder, evaluate, previous, tokenizer)
+            all_cands += cands
+            ranked = sorted(cands, key=cont.score)
+            print(f"[continuidad] escena {number:03d}: {len(cands)} imágenes reevaluadas, "
+                  f"{sum(c.verdict == 'VALID' for c in cands)} válidas")
+            for c in ranked[:5]:
+                f, u, p = cont.score(c)
+                print(f"  {c.verdict:9} FAIL {f} UNCERTAIN {u} PASS {-p}  semilla {c.reroll}  {c.image}")
+        out = folder / "resultados_reevaluacion.json"
+        cont.write_results([], all_cands, out)
+        changed = cont.protected_changed(before)
+        if changed:
+            raise SystemExit(f"[continuidad] ¡han cambiado archivos protegidos!: {changed}")
+        print(f"[continuidad] {len(before)} archivos protegidos sin cambios. Reevaluación: {out}")
+        return
 
     results, all_cands = [], []
     for number in args.escenas:
@@ -249,7 +284,8 @@ def cmd_continuidad(args) -> None:
         result, cands = cont.run_scene(
             header, board, sspec, registry, folder, portraits, batch_size=args.lote, max_batches=args.max_lotes,
             seed=args.seed, model=args.model,
-            generate=lambda jobs: images.generate(jobs, board.negative, args.model), evaluate_fn=evaluate)
+            generate=lambda jobs: images.generate(jobs, board.negative, args.model), evaluate_fn=evaluate,
+            tokenizer=tokenizer)
         results.append(result)
         all_cands += cands
         cont.write_results(results, all_cands, folder / "resultados.json")
@@ -375,6 +411,8 @@ def main(argv: list[str] | None = None) -> None:
     k.add_argument("--model", default=images.DEFAULT_MODEL)
     k.add_argument("--workdir", type=Path)
     k.add_argument("--proteger", nargs="*", default=[], help="Más archivos que no pueden cambiar (patrones glob)")
+    k.add_argument("--solo-evaluar", action="store_true",
+                   help="No generar: volver a evaluar las candidatas ya guardadas (sin usar el generador)")
     k.set_defaults(func=cmd_continuidad)
 
     a = sub.add_parser("aprobar", help="Marcar imágenes como revisadas a ojo tras el informe de coherencia")
