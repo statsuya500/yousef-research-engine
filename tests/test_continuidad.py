@@ -66,7 +66,6 @@ def test_registry_independent_sheets_and_continuity(tmp_path):
     clara, daniel = reg["personajes"]["clara"], reg["personajes"]["daniel"]
     assert clara["permanentes"]["ojos"]["esperado"] == ["grey"]
     assert daniel["permanentes"]["ojos"]["esperado"] == ["brown"]  # cada ficha la suya
-    assert "ojos" in clara["permanentes"] and clara["permanentes"]["ojos"]["medida"]["hue"] > 300
     # Continuidad: la ropa se hereda hasta que el guion la cambia (escena 005).
     assert ct.outfit_at(reg, "clara", 3)["texto"] == "cream knit sweater"
     assert ct.outfit_at(reg, "clara", 4)["desde_escena"] == 2
@@ -122,12 +121,11 @@ def _evaluate(tmp_path, colors, tags, number=2, people_status="OK", diff=None):
 CLARA_OK = {"grey_eyes": 0.8, "brown_hair": 0.8, "short_hair": 0.8, "sweater": 0.8, "white_sweater": 0.7}
 
 
-def test_clara_correct_is_valid_when_both_sources_agree(tmp_path):
-    # Clara: el mismo color en su ficha y en la escena -> iris y ropa coinciden con la referencia.
-    reg_colors = {GREY_EYES: CLARA_OK}
-    res, reqs = _evaluate(tmp_path, [GREY_EYES], reg_colors)
+def test_clara_identity_passes_when_face_matches(tmp_path):
+    res, reqs = _evaluate(tmp_path, [GREY_EYES], {GREY_EYES: CLARA_OK})
     assert res[("clara", "identidad")].status == ct.PASS
-    assert res[("clara", "ojos")].status == ct.PASS
+    # En una imagen de un solo color no hay iris que medir: UNCERTAIN, nunca un falso rechazo.
+    assert res[("clara", "ojos")].status == ct.UNCERTAIN
 
 
 def test_eye_color_change_is_detected(tmp_path):
@@ -358,3 +356,96 @@ def test_reevaluate_only_reads_saved_candidates(tmp_path):
     ranked = sorted([ct.Candidate(3, 1, "s", 1, "", "", "", 0, 0.6, "m", "a", "", "REJECTED",
                                   [ct.Requirement("c", "x", "", ct.FAIL, "")]), by[str(known)]], key=ct.score)
     assert ranked[0] is by[str(known)]
+
+
+# --- Ojos: medida del iris por croma, con referencias de la ficha y de la escena aprobada ------------
+
+SKIN, HAIR_DARK, WHITE = (245, 222, 214), (70, 55, 50), (250, 250, 250)
+GREY_IRIS, BROWN_IRIS = (120, 118, 122), (150, 100, 60)
+
+
+def _face(iris, skin=SKIN, hair=HAIR_DARK, lashes=(25, 20, 20)):
+    """Cara sintética 200x200: pelo arriba, piel, banda de ojos con blanco, iris, pupila y pestañas."""
+    im = Image.new("RGB", (200, 200), skin)
+    im.paste(hair, (0, 0, 200, 30))  # flequillo / pelo
+    for x0 in (40, 120):
+        im.paste(WHITE, (x0, 80, x0 + 40, 120))
+        im.paste(iris, (x0 + 8, 82, x0 + 32, 118))
+        im.paste((10, 10, 10), (x0 + 16, 94, x0 + 24, 106))  # pupila
+        im.paste(lashes, (x0, 78, x0 + 40, 82))  # pestañas
+    return im
+
+
+def test_iris_measure_ignores_skin_hair_lashes_and_pupil():
+    grey = ct.iris_color(_face(GREY_IRIS), (0, 0, 200, 200))
+    brown = ct.iris_color(_face(BROWN_IRIS), (0, 0, 200, 200))
+    assert grey["chroma"] < ct.IRIS_NEUTRAL <= brown["chroma"]
+    # Mismo iris gris con otra piel y otro pelo: la medida no cambia (no se cuelan en el iris).
+    other = ct.iris_color(_face(GREY_IRIS, skin=(250, 200, 190), hair=(120, 60, 40)), (0, 0, 200, 200))
+    assert abs(other["chroma"] - grey["chroma"]) < 1.5
+    assert ct.iris_color(_face(SKIN), (0, 0, 200, 200)) is None  # ojos tapados: sin iris
+
+
+def test_regression_grey_eyes_pass_and_brown_eyes_fail_against_grey_references():
+    refs = [{**ct.iris_color(_face(GREY_IRIS), (0, 0, 200, 200)), "fuente": "clara.png"},
+            {**ct.iris_color(_face((118, 117, 121)), (0, 0, 200, 200)), "fuente": "img_0002.png"}]
+    # Gris con un leve tono rosado (piel): sigue siendo gris; el tono se ignora en ojos neutros.
+    status, ev = ct.iris_status(ct.iris_color(_face((126, 116, 120)), (0, 0, 200, 200)), refs)
+    assert status == ct.PASS and "solo croma" in ev and "img_0002.png" in ev
+    status, _ = ct.iris_status(ct.iris_color(_face(BROWN_IRIS), (0, 0, 200, 200)), refs)
+    assert status == ct.FAIL
+    assert ct.iris_status(None, refs)[0] == ct.UNCERTAIN  # sin iris visible: nunca FAIL
+    assert ct.iris_status({"chroma": 1.0, "hue": 0.0, "pixels": 999}, [])[0] == ct.UNCERTAIN
+
+
+def test_regression_brown_eyes_pass_and_grey_fail_against_brown_references():
+    refs = [{**ct.iris_color(_face(BROWN_IRIS), (0, 0, 200, 200)), "fuente": "daniel.png"}]
+    assert ct.iris_status(ct.iris_color(_face((140, 95, 60)), (0, 0, 200, 200)), refs)[0] == ct.PASS
+    assert ct.iris_status(ct.iris_color(_face(GREY_IRIS), (0, 0, 200, 200)), refs)[0] == ct.FAIL
+    blue = ct.iris_color(_face((60, 100, 160)), (0, 0, 200, 200))
+    assert ct.iris_status(blue, refs)[0] == ct.FAIL  # otro color con croma parecido: el tono decide
+
+
+def test_registry_takes_eye_references_from_sheet_and_approved_scene(tmp_path):
+    board = parse(STORY)
+    portraits = tmp_path / "fichas"
+    portraits.mkdir()
+    _face(GREY_IRIS).save(portraits / "clara.png")
+    _face(BROWN_IRIS).save(portraits / "daniel.png")
+    scene2 = tmp_path / "img_0002.png"
+    _face((118, 117, 121)).save(scene2)
+    tools = co.Tools(detect=lambda im: [((0, 0, im.width, im.height), 0.9)], tag=lambda im: {},
+                     difference=lambda a, b: 0.05, faces=lambda im: [((0, 0, im.width, im.height), 0.9)])
+    reg = ct.build_registry(board, portraits, {2: scene2}, {2}, {}, tools)
+    fuentes = [m["fuente"] for m in reg["personajes"]["clara"]["permanentes"]["ojos"]["medidas"]]
+    assert fuentes == ["clara.png", "img_0002.png"]
+    assert [m["fuente"] for m in reg["personajes"]["daniel"]["permanentes"]["ojos"]["medidas"]] == ["daniel.png"]
+
+
+# --- Largo de pelo: no medible automáticamente --------------------------------------------------
+
+def test_hair_length_is_not_checkable_automatically_and_never_auto_approved(tmp_path):
+    spec = {"personajes": {"daniel": {"hair_length": "medium_hair"}}}
+    tools = _tools({BROWN: {"short_hair": 0.75, "brown_eyes": 0.8, "brown_hair": 0.8}})
+    board, portraits, reg = _registry(tmp_path, tools, spec=spec)
+    path = _scene_image(tmp_path, "d", [BROWN])
+    scene = board.scenes[0]  # 001: Daniel solo
+    tools.detect = lambda im: [((0, 0, 200, 300), 0.9)]
+    people = lambda s, p: Check("x", p, 1, 1, 1, "OK")  # noqa: E731
+    reqs = ct.evaluate(board, scene, ct.scene_spec(board, 1, {}), path, reg, portraits, tools, people)
+    hair = [r for r in reqs if r.attribute == "largo de pelo" and r.character == "daniel"][0]
+    assert hair.status == ct.NOT_AUTO and hair.mandatory
+    assert "cubre las orejas" in hair.evidence and "short_hair 0.75" in hair.evidence
+    # Aunque todo lo demás pase, el veredicto es revisión visual, nunca VALID.
+    only = [ct.Requirement("daniel", "ojos", "brown", ct.PASS, ""), hair]
+    assert ct.verdict(only) == "NEEDS_VISUAL_REVIEW"
+    assert ct.verdict(only + [ct.Requirement("x", "y", "", ct.UNCERTAIN, "")]) == "UNCERTAIN"
+    # La corrección dirigida no lo trata como un fallo (no hay nada que corregir sin medirlo).
+    assert ct.failure_key(only) == frozenset()
+
+
+def test_loop_stops_for_visual_review_instead_of_generating_more(tmp_path):
+    review = [ct.Requirement("daniel", "largo de pelo", "medium_hair", ct.NOT_AUTO, "")]
+    result, cands, calls, _, _ = _loop(tmp_path, lambda b, r: review if (b, r) == (1, 3) else _bad())
+    assert result.state == "CANDIDATE_NEEDS_VISUAL_REVIEW" and len(calls) == 1
+    assert next(c for c in cands if c.image == result.candidate).verdict == "NEEDS_VISUAL_REVIEW"

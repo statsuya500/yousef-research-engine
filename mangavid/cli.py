@@ -229,9 +229,12 @@ def cmd_continuidad(args) -> None:
     protected += [Path(p) for pattern in args.proteger for p in sorted(glob.glob(pattern))]
     before = cont.snapshot(protected)
     tools = coherencia.default_tools()
-    if args.solo_evaluar and (folder / "registro.json").exists():
-        registry = json.loads((folder / "registro.json").read_text(encoding="utf-8"))  # el mismo de la generación
-        print(f"[continuidad] registro existente: {folder / 'registro.json'}")
+    if args.solo_evaluar:
+        # Registro recalculado con el evaluador actual, en un archivo propio: el de la generación
+        # (registro.json) no se toca, para poder comparar.
+        registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
+        cont.save_registry(registry, folder / f"registro_{args.etiqueta}.json")
+        print(f"[continuidad] registro recalculado: {folder / f'registro_{args.etiqueta}.json'}")
     else:
         registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
         cont.save_registry(registry, folder / "registro.json")
@@ -264,9 +267,11 @@ def cmd_continuidad(args) -> None:
             print(f"[continuidad] escena {number:03d}: {len(cands)} imágenes reevaluadas, "
                   f"{sum(c.verdict == 'VALID' for c in cands)} válidas")
             for c in ranked[:5]:
-                f, u, p = cont.score(c)
-                print(f"  {c.verdict:9} FAIL {f} UNCERTAIN {u} PASS {-p}  semilla {c.reroll}  {c.image}")
-        out = folder / "resultados_reevaluacion.json"
+                f, u, n, p = cont.score(c)
+                print(f"  {c.verdict:19} FAIL {f} UNCERTAIN {u} SIN MEDIR {n} PASS {-p}  semilla {c.reroll}  {c.image}")
+        out = folder / f"resultados_{args.etiqueta}.json"
+        if out.exists():
+            raise SystemExit(f"{out} ya existe: usa otra --etiqueta para no sobrescribir resultados anteriores")
         cont.write_results([], all_cands, out)
         changed = cont.protected_changed(before)
         if changed:
@@ -411,6 +416,8 @@ def main(argv: list[str] | None = None) -> None:
     k.add_argument("--model", default=images.DEFAULT_MODEL)
     k.add_argument("--workdir", type=Path)
     k.add_argument("--proteger", nargs="*", default=[], help="Más archivos que no pueden cambiar (patrones glob)")
+    k.add_argument("--etiqueta", default="reevaluacion",
+                   help="Con --solo-evaluar: nombre de los archivos de resultados (no sobrescribe los anteriores)")
     k.add_argument("--solo-evaluar", action="store_true",
                    help="No generar: volver a evaluar las candidatas ya guardadas (sin usar el generador)")
     k.set_defaults(func=cmd_continuidad)

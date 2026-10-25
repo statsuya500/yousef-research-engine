@@ -32,6 +32,8 @@ from . import coherencia as co
 from .storyboard import Scene, Storyboard, parse
 
 PASS, FAIL, UNCERTAIN, NA = "PASS", "FAIL", "UNCERTAIN", "N/A"
+# No se puede medir con las herramientas instaladas: no aprueba ni rechaza, exige revisión visual.
+NOT_AUTO = "NOT_CHECKABLE_AUTOMATICALLY"
 REGISTRY_VERSION = 1
 
 # Umbrales calibrados con imágenes de la historia de prueba (ver docs del módulo y tests):
@@ -40,8 +42,13 @@ COLOR_PASS = 15.0  # ΔE (CIELAB) hasta aquí: mismo color que la referencia
 COLOR_FAIL = 25.0  # ΔE desde aquí: otro color
 # Ojos: tono y saturación medianos del iris frente a los del rostro de referencia.
 # Gris de Clara: tono ~335°, sat 0.22; cálidos (que el etiquetador llama marrón) ~11-15°.
-IRIS_HUE_PASS, IRIS_HUE_FAIL = 25.0, 40.0
-IRIS_SAT_PASS = 0.12
+# Ojos: croma (CIELAB) del iris sin piel, pelo, pestañas ni brillos. Calibrado con la historia de
+# prueba: grises de Clara 6-8 (ficha 6.9, escena 002 6.6); marrones de Daniel 18-23.
+# El tono solo significa algo en ojos con color: en ojos grises (croma < IRIS_NEUTRAL) se ignora.
+IRIS_NEUTRAL = 10.0
+IRIS_CHROMA_PASS, IRIS_CHROMA_FAIL = 4.0, 9.0  # diferencia de croma con la referencia
+IRIS_HUE_PASS, IRIS_HUE_FAIL = 25.0, 45.0  # solo para ojos con color
+IRIS_MIN_PIXELS = 150
 # Peinados que el etiquetador no reconoce de forma fiable: se comprueban solo por el largo.
 UNRELIABLE_STYLES = {"bob_cut"}
 # Estilo: brillo, saturación y contraste (0-100) frente a la media de las escenas de referencia.
@@ -77,18 +84,39 @@ def region_color(image, box, rows: tuple[float, float], dark: bool = False) -> l
     return [int(v) for v in np.median(px, 0)] if len(px) else [0, 0, 0]
 
 
-def iris_color(image, face_box) -> tuple[float, float]:
-    """(saturación, tono en grados) medianos de la banda de los ojos de una cara."""
+def _lab_rows(px: np.ndarray) -> np.ndarray:
+    c = px / 255
+    c = np.where(c > 0.04045, ((c + 0.055) / 1.055) ** 2.4, c / 12.92)
+    m = np.array([[0.4124, 0.3576, 0.1805], [0.2126, 0.7152, 0.0722], [0.0193, 0.1192, 0.9505]])
+    xyz = (c @ m.T) / np.array([0.9505, 1.0, 1.089])
+    f = np.where(xyz > 0.008856, np.cbrt(xyz), 7.787 * xyz + 16 / 116)
+    return np.stack([116 * f[:, 1] - 16, 500 * (f[:, 0] - f[:, 1]), 200 * (f[:, 1] - f[:, 2])], 1)
+
+
+def iris_color(image, face_box) -> dict | None:
+    """Croma y tono (CIELAB) medianos del iris, o None si no quedan píxeles de iris suficientes.
+
+    De la banda de los ojos se quitan: la piel (color de la mejilla), el pelo (color de la frente,
+    para el flequillo), las pestañas y la pupila (muy oscuros) y el blanco del ojo y los brillos
+    (muy claros). Lo que queda es el iris."""
     x0, y0, x1, y1 = face_box
     w, h = x1 - x0, y1 - y0
-    a = np.asarray(image.crop((x0 + int(w * .1), y0 + int(h * .35), x1 - int(w * .1), y0 + int(h * .65))))
-    px = a.reshape(-1, 3).astype(float) / 255
-    lum = px.mean(1)
-    px = px[(lum > 0.15) & (lum < 0.62)]  # ni el blanco del ojo ni la pupila negra
-    if not len(px):
-        return 0.0, 0.0
-    hsv = np.array([colorsys.rgb_to_hsv(*p) for p in px[:: max(1, len(px) // 4000)]])
-    return float(np.median(hsv[:, 1])), float(np.median(hsv[:, 0]) * 360)
+    a = np.asarray(image).astype(float)
+    band = a[y0 + int(h * .38):y0 + int(h * .62), x0 + int(w * .12):x1 - int(w * .12)].reshape(-1, 3)
+    cheek = a[y0 + int(h * .68):y0 + int(h * .80), x0 + int(w * .3):x1 - int(w * .3)].reshape(-1, 3)
+    hair = a[max(0, y0 - int(h * .05)):y0 + int(h * .12), x0 + int(w * .2):x1 - int(w * .2)].reshape(-1, 3)
+    if not (len(band) and len(cheek) and len(hair)):
+        return None
+    lab_band = _lab_rows(band)
+    skin, hair_c = _lab_rows(np.median(cheek, 0)[None])[0], _lab_rows(np.median(hair, 0)[None])[0]
+    keep = ((lab_band[:, 0] > 25) & (lab_band[:, 0] < 78)
+            & (np.linalg.norm(lab_band - skin, axis=1) > 12) & (np.linalg.norm(lab_band - hair_c, axis=1) > 10))
+    iris = lab_band[keep]
+    if len(iris) < IRIS_MIN_PIXELS:
+        return None
+    a_, b_ = float(np.median(iris[:, 1])), float(np.median(iris[:, 2]))
+    return {"chroma": round(float(np.hypot(a_, b_)), 1), "hue": round(float(np.degrees(np.arctan2(b_, a_)) % 360), 1),
+            "pixels": int(len(iris))}
 
 
 def hue_distance(a: float, b: float) -> float:
@@ -142,8 +170,9 @@ def build_registry(board: Storyboard, portraits: Path, scene_images: dict[int, P
             face = Image.open(face_path).convert("RGB")
             boxes = [b for b, s in (tools.faces(face) if tools.faces else []) if s > 0.4]
             if boxes and "ojos" in perm:
-                sat, hue = iris_color(face, max(boxes, key=lambda b: b[2] - b[0]))
-                perm["ojos"]["medida"] = {"sat": round(sat, 3), "hue": round(hue, 1), "fuente": face_path.name}
+                m = iris_color(face, max(boxes, key=lambda b: b[2] - b[0]))
+                if m:
+                    perm["ojos"].setdefault("medidas", []).append({**m, "fuente": face_path.name})
             if "color de pelo" in perm:
                 perm["color de pelo"]["medida"] = {"rgb": region_color(face, (0, 0, *face.size), (0.0, 0.25), True),
                                                    "fuente": face_path.name}
@@ -164,6 +193,21 @@ def build_registry(board: Storyboard, portraits: Path, scene_images: dict[int, P
                                       "pelo_rgb": region_color(image, box, (0.0, 0.25), True),
                                       "fuente": Path(path).name, "sha256": _file_sha(path)}
             outfits.append(item)
+    # Ojos: además del rostro de la ficha, cada escena de referencia (aprobada) donde sale de cara.
+    for scene in board.scenes:
+        path = scene_images.get(scene.number)
+        if scene.number not in reference_scenes or not path or not Path(path).exists() or not tools.faces:
+            continue
+        image = Image.open(path).convert("RGB")
+        faces = [b for b, s in tools.faces(image) if s > 0.4]
+        for name in scene.characters:
+            perm = chars[name]["permanentes"]
+            box = _person_of(name, image, scene.characters, portraits, tools)
+            face = _face_in(box, faces) if box else None
+            if "ojos" in perm and face:
+                m = iris_color(image, face)
+                if m:
+                    perm["ojos"].setdefault("medidas", []).append({**m, "fuente": Path(path).name})
     style = []
     for number in sorted(reference_scenes):
         path = scene_images.get(number)
@@ -247,18 +291,32 @@ def color_status(measured, reference) -> tuple[str, str]:
     return status, f"ΔE {d:.1f} (rgb {list(measured)} frente a {list(reference)})"
 
 
-def iris_status(measured: tuple[float, float], reference: dict | None) -> tuple[str, str]:
-    if not reference:
+def iris_status(measured: dict | None, references: list[dict] | None) -> tuple[str, str]:
+    """Compara el iris con todas sus referencias (ficha y escenas aprobadas).
+
+    Ojos grises (croma de referencia < IRIS_NEUTRAL): solo cuenta el croma; el tono de un gris es
+    ruido (piel rosada alrededor). Ojos con color: croma y tono. Lo dudoso es UNCERTAIN, nunca FAIL."""
+    if not references:
         return UNCERTAIN, "sin medida de iris de referencia"
-    sat, hue = measured
-    dh, ds = hue_distance(hue, reference["hue"]), abs(sat - reference["sat"])
-    if dh <= IRIS_HUE_PASS and ds <= IRIS_SAT_PASS:
-        status = PASS
-    elif dh >= IRIS_HUE_FAIL:
-        status = FAIL
-    else:
-        status = UNCERTAIN
-    return status, f"iris tono {hue:.0f}° sat {sat:.2f} (ref {reference['hue']:.0f}° {reference['sat']:.2f}): Δtono {dh:.0f}°"
+    if not measured:
+        return UNCERTAIN, f"menos de {IRIS_MIN_PIXELS} píxeles de iris visibles (ojos cerrados, pequeños o tapados)"
+    ref_c = float(np.mean([r["chroma"] for r in references]))
+    c, hue = measured["chroma"], measured["hue"]
+    refs = ", ".join(f"{r['fuente']} {r['chroma']:.1f}" for r in references)
+    ev = f"iris croma {c:.1f} tono {hue:.0f}° ({measured['pixels']} px) frente a {refs}"
+    if ref_c < IRIS_NEUTRAL:
+        if c <= ref_c + IRIS_CHROMA_PASS:
+            return PASS, ev + " [ojos neutros: solo croma]"
+        if c >= ref_c + IRIS_CHROMA_FAIL:
+            return FAIL, ev + " [demasiado color para unos ojos grises]"
+        return UNCERTAIN, ev + " [croma intermedio]"
+    ref_h = float(np.mean([r["hue"] for r in references]))
+    dh = hue_distance(hue, ref_h)
+    if c < IRIS_NEUTRAL or dh >= IRIS_HUE_FAIL:
+        return FAIL, ev + f" [Δtono {dh:.0f}°]"
+    if abs(c - ref_c) <= IRIS_CHROMA_PASS + 2 and dh <= IRIS_HUE_PASS:
+        return PASS, ev + f" [Δtono {dh:.0f}°]"
+    return UNCERTAIN, ev + f" [Δtono {dh:.0f}°]"
 
 
 # --- Especificación de escena -----------------------------------------------------------------------
@@ -314,7 +372,7 @@ def evaluate(board: Storyboard, scene: Scene, sspec: SceneSpec, image_path: Path
             if face is None:
                 region, ev = UNCERTAIN, "sin cara detectada para medir el iris"
             else:
-                region, ev = iris_status(iris_color(image, face), perm["ojos"].get("medida"))
+                region, ev = iris_status(iris_color(image, face), perm["ojos"].get("medidas"))
             tag_ev = "; ".join(r.evidence for r in by_attr.get((name, "ojos"), [])) or "etiquetador: nada"
             reqs.append(Requirement(name, "ojos", "/".join(perm["ojos"]["esperado"]), combine(tag[0], region),
                                     f"etiquetador: {tag_ev} | región: {ev}"))
@@ -325,10 +383,13 @@ def evaluate(board: Storyboard, scene: Scene, sspec: SceneSpec, image_path: Path
             reqs.append(Requirement(name, "color de pelo", "/".join(perm["color de pelo"]["esperado"]),
                                     combine(tag[0], region), f"región: {ev}"))
         if "largo de pelo" in perm:
+            # El etiquetador no distingue bien corto de medio (dice «short_hair» con pelo que cubre
+            # las orejas): no se mide, se pide revisión visual.
             seen = co.Seen(tools.tag(crop))
-            res = co.compare(name, co.Profile(hair_length=perm["largo de pelo"]["esperado"]), seen)
-            reqs.append(Requirement(name, "largo de pelo", perm["largo de pelo"]["esperado"], _from_level(res[0]),
-                                    res[0].evidence))
+            got = ", ".join(f"{t} {seen.score(t):.2f}" for t in co.HAIR_LENGTHS if seen.score(t) >= co.TAG_LOW)
+            reqs.append(Requirement(name, "largo de pelo", perm["largo de pelo"]["esperado"], NOT_AUTO,
+                                    f"revisar a ojo: ¿cubre las orejas y llega a la nuca? "
+                                    f"(etiquetador, no fiable para el largo: {got or 'nada'})"))
         for attr in ("barba", "edad"):
             for r in by_attr.get((name, attr), []):
                 reqs.append(Requirement(name, attr, str(r.expected), _from_level(r), r.evidence))
@@ -430,12 +491,15 @@ def _face_in(person_box, faces: list) -> tuple | None:
 
 
 def verdict(reqs: list[Requirement]) -> str:
-    """VALID solo si todos los obligatorios son PASS (o N/A justificado por el guion)."""
+    """VALID solo si todos los obligatorios son PASS (o N/A justificado por el guion).
+    Si lo único pendiente es lo que no se puede medir, NEEDS_VISUAL_REVIEW: nunca VALID."""
     mandatory = [r for r in reqs if r.mandatory]
     if any(r.status == FAIL for r in mandatory):
         return "REJECTED"
     if any(r.status == UNCERTAIN for r in mandatory):
         return "UNCERTAIN"
+    if any(r.status == NOT_AUTO for r in mandatory):
+        return "NEEDS_VISUAL_REVIEW"
     return "VALID"
 
 
@@ -635,7 +699,7 @@ class Candidate:
 @dataclass
 class SceneResult:
     scene: int
-    state: str  # VALID_CANDIDATE, NO_VALID_CANDIDATE, GPU_ERROR
+    state: str  # VALID_CANDIDATE, CANDIDATE_NEEDS_VISUAL_REVIEW, NO_VALID_CANDIDATE, GPU_ERROR
     candidate: str | None
     batches: int
     unmet: dict[str, int]  # requisito -> nº de candidatas en que falló o quedó incierto
@@ -687,6 +751,10 @@ def run_scene(story_header: str, board: Storyboard, sspec: SceneSpec, registry: 
         valid = [c for c in batch_cands if c.verdict == "VALID"]
         if valid:
             return SceneResult(sspec.number, "VALID_CANDIDATE", valid[0].image, batch + 1, unmet,
+                               plan.notes), candidates
+        review = [c for c in batch_cands if c.verdict == "NEEDS_VISUAL_REVIEW"]
+        if review:  # todo lo medible está bien: falta la revisión visual, no más generación
+            return SceneResult(sspec.number, "CANDIDATE_NEEDS_VISUAL_REVIEW", review[0].image, batch + 1, unmet,
                                plan.notes), candidates
         # La candidata con menos fallos guía la corrección dirigida.
         best = min(batch_cands, key=lambda c: (sum(r.status == FAIL for r in c.requirements),
@@ -744,11 +812,11 @@ def reevaluate(story_header: str, board: Storyboard, sspec: SceneSpec, registry:
     return out
 
 
-def score(c: Candidate) -> tuple[int, int, int]:
-    """Orden: menos FAIL, luego menos UNCERTAIN, luego más PASS (solo requisitos obligatorios)."""
+def score(c: Candidate) -> tuple[int, int, int, int]:
+    """Orden: menos FAIL, menos UNCERTAIN, menos sin medir, más PASS (solo requisitos obligatorios)."""
     mand = [r for r in c.requirements if r.mandatory]
     return (sum(r.status == FAIL for r in mand), sum(r.status == UNCERTAIN for r in mand),
-            -sum(r.status == PASS for r in mand))
+            sum(r.status == NOT_AUTO for r in mand), -sum(r.status == PASS for r in mand))
 
 
 def write_results(results: list[SceneResult], candidates: list[Candidate], path: Path) -> None:
