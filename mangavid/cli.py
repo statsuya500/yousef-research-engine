@@ -122,10 +122,15 @@ def cmd_revisar(args) -> None:
     if missing:
         raise SystemExit(f"Faltan {len(missing)} imágenes por generar. Ejecuta antes: "
                          f"python -m mangavid run {args.story} --only-images")
-    checks = review.check(board, [[j.out for j in js] for js in shots])
+    pics = [[j.out for j in js] for js in shots]
+    checks = review.check(board, pics)
     folder = work / "revision"
     sheets = review.contact_sheets(checks, folder)
     text = review.report(checks)
+    if not args.sin_coherencia:
+        from . import coherencia
+
+        text += "\n" + coherencia.report(coherencia.check(board, pics, _portraits_dir(args.story)))
     (folder / "informe.txt").write_text(text + "\n", encoding="utf-8")
     print(text)
     print(f"[revisión] {len(sheets)} hojas en {folder}")
@@ -219,6 +224,8 @@ def main(argv: list[str] | None = None) -> None:
     v.add_argument("--workdir", type=Path)
     v.add_argument("--seed", type=int, default=1234)
     v.add_argument("--model", default=images.DEFAULT_MODEL, help="El mismo modelo con el que se generaron las escenas")
+    v.add_argument("--sin-coherencia", action="store_true",
+                   help="No comprobar que cada personaje salga igual (ojos, pelo, ropa) en todas las escenas")
     v.set_defaults(func=cmd_revisar)
 
     args = p.parse_args(argv)

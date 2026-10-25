@@ -24,7 +24,8 @@ class Scene:
     avoid: str = ""  # {evitar=...} en la escena: se añade al negativo solo en esta escena
     action: str = ""  # la descripción sin los @personajes: acción, expresión, encuadre y lugar
     likeness: float | None = None  # {parecido=0.6}: peso de la cara del retrato solo en esta escena
-    outfits: dict[str, str] = field(default_factory=dict)  # @sara[simple dress]: ropa de ese personaje
+    # @sara[simple dress]: ropa de ese personaje. Sigue en las escenas siguientes hasta que otra la cambie.
+    outfits: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass
@@ -105,11 +106,15 @@ def parse(text: str) -> Storyboard:
         board.characters[name] = _expand_character(name, raw_characters, [])
 
     seen: set[int] = set()
+    wearing: dict[str, str] = {}  # la última ropa de cada personaje: sigue puesta hasta que el guion la cambie
     for number, image, lines in raw_scenes:
         if number in seen:
             raise ValueError(f"La escena [{number:03d}] está repetida")
         seen.add(number)
-        board.scenes.append(_build_scene(number, image, " ".join(lines).strip(), board.characters))
+        scene = _build_scene(number, image, " ".join(lines).strip(), board.characters)
+        wearing.update(scene.outfits)
+        scene.outfits = {c: wearing[c] for c in scene.characters if c in wearing}
+        board.scenes.append(scene)
     if raw_thumbnail:
         board.thumbnail = _build_scene(0, raw_thumbnail, "", board.characters)
     if not board.scenes:

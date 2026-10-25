@@ -18,6 +18,15 @@ Cuenta caras y cabezas en cada imagen y las compara con las personas que pide la
 - `informe.txt`: escenas marcadas como DUPLICADO, DUDOSO o SIN CARA.
 - `hoja_01.jpg`, `hoja_02.jpg`…: todas las imágenes numeradas, 8 por hoja; las marcadas llevan el estado en rojo.
 
+Además, `revisar` comprueba la **coherencia** de cada personaje (módulo `mangavid/coherencia.py`):
+recorta a cada persona, el etiquetador WD14 dice qué ve (color de ojos, pelo, prenda y su color) y lo
+compara con su ficha y la ropa que lleva en esa escena, y con el resto de sus apariciones (si en 9
+escenas tiene ojos verdes y en una rojos, marca esa). Si la ropa lleva un número («green shirt with
+number 10») busca el número con OCR. Sale al final de `informe.txt` como «Coherencia: …».
+La ropa se escribe una vez (`@clara[green shirt with number 10]`) y sigue puesta en las escenas
+siguientes hasta que otra escena la cambie. Pon en la ficha los rasgos fijos (ojos, pelo) con colores
+claros, para que se puedan comprobar.
+
 DUPLICADO es casi siempre un fallo real. DUDOSO a veces es un falso positivo (un póster, un reflejo): compruébalo a ojo.
 
 ## 2. Revisión a ojo (obligatoria)
