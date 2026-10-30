@@ -18,6 +18,23 @@ Cuenta caras y cabezas en cada imagen y las compara con las personas que pide la
 - `informe.txt`: escenas marcadas como DUPLICADO, DUDOSO o SIN CARA.
 - `hoja_01.jpg`, `hoja_02.jpg`…: todas las imágenes numeradas, 8 por hoja; las marcadas llevan el estado en rojo.
 
+Además, `revisar` comprueba la **coherencia visual** (`mangavid/coherencia.py`) y escribe
+`revision/coherencia.json` (estructurado, por escena) más un resumen al final de `informe.txt`:
+- Referencia: la **ficha** y la ropa vigente (la ropa sigue puesta hasta que el guion la cambie).
+  Nunca la mayoría de imágenes. La aparición válida anterior solo da avisos (POSSIBLE).
+- Por personaje: cara (CCIP contra la ficha y contra su aparición anterior), ojos, color, largo
+  y peinado del pelo, barba, edad aparente, accesorios, prenda y color, número en la ropa.
+- Niveles: `OK` (verificado), `CONFIRMED` (error seguro), `POSSIBLE` (posible error),
+  `NOT CHECKABLE` (no se puede verificar; nunca se da por bueno). Cada uno con confianza y evidencia.
+- El número de una camiseta sale siempre NOT CHECKABLE: el OCR necesita un modelo no descargado.
+  Míralo a ojo.
+
+Después de mirar a ojo cada imagen marcada, apruébala: `python -m mangavid aprobar <historia.txt> 003b 004`.
+La aprobación vale solo para ese archivo con ese contenido: si la imagen se retoca o se regenera,
+`run` la bloquea como «modificada después del informe» hasta que vuelvas a ejecutar `revisar` y aprobarla.
+`run` no monta el vídeo si hay imágenes sin revisar o con fallos sin aprobar (solo con `--forzar`),
+y antes de generar comprueba fichas, rostros elegidos, vestuario y miniatura (`python -m mangavid comprobar`).
+
 DUPLICADO es casi siempre un fallo real. DUDOSO a veces es un falso positivo (un póster, un reflejo): compruébalo a ojo.
 
 ## 2. Revisión a ojo (obligatoria)

@@ -97,12 +97,14 @@ def cmd_run(args) -> None:
     output = args.output or args.story.with_suffix(".mp4")
     print(f"[guion] {len(board.scenes)} escenas, {len(board.characters)} personajes")
 
-    jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
-    images.generate(jobs, board.negative, args.model)
-    pics = [j.out for j in jobs]
+    _preflight_or_stop(board, args.story, args.forzar)
+    shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
+    images.generate([j for js in shots for j in js], board.negative, args.model)
+    pics = [[j.out for j in js] for js in shots]
     if args.only_images:
         print(f"[imágenes] en {work / 'images'}")
         return
+    _review_gate_or_stop(work, [p for ps in pics for p in ps], args.forzar)
     voices = tts.synthesize(
         [Segment(0.0, 0.0, "", s.narration) for s in board.scenes], work / "voice", args.voice, args.rate
     )
@@ -117,18 +119,191 @@ def cmd_revisar(args) -> None:
 
     board = storyboard.load(args.story)
     work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
-    jobs = images.scene_jobs(board, work / "images", _portraits_dir(args.story), args.seed, images.DEFAULT_MODEL)
-    missing = [j.out.name for j in jobs if not j.out.exists()]
+    shots = images.scene_shots(board, work / "images", _portraits_dir(args.story), args.seed, args.model)
+    missing = [j.out.name for js in shots for j in js if not j.out.exists()]
     if missing:
         raise SystemExit(f"Faltan {len(missing)} imágenes por generar. Ejecuta antes: "
                          f"python -m mangavid run {args.story} --only-images")
-    checks = review.check(board, [j.out for j in jobs])
+    pics = [[j.out for j in js] for js in shots]
+    checks = review.check(board, pics)
     folder = work / "revision"
     sheets = review.contact_sheets(checks, folder)
     text = review.report(checks)
+    if not args.sin_coherencia:
+        from . import coherencia
+
+        tools = coherencia.default_tools()
+        pre = coherencia.preflight(board, _portraits_dir(args.story), tools.tag)
+        reports = coherencia.check(board, pics, _portraits_dir(args.story), tools)
+        coherencia.add_people_checks(reports, checks)
+        coherencia.write_report(reports, pre, folder / "coherencia.json")
+        text += "\n" + coherencia.report_text(reports, pre)
+        text += f"\nInforme para el programa: {folder / 'coherencia.json'}"
     (folder / "informe.txt").write_text(text + "\n", encoding="utf-8")
     print(text)
     print(f"[revisión] {len(sheets)} hojas en {folder}")
+
+
+def _preflight_or_stop(board, story: Path, force: bool) -> None:
+    """Antes de generar: ficha, rostro de referencia, vestuario y miniatura (comprobación 8)."""
+    from . import coherencia
+
+    try:
+        tag = coherencia.default_tools().tag
+    except Exception as e:  # sin imgutils: solo las comprobaciones de texto
+        print(f"[comprobar] sin etiquetador ({e}); el rostro de cada ficha no se compara")
+        tag = None
+    pre = coherencia.preflight(board, _portraits_dir(story), tag)
+    bad = [r for r in pre if r.level == coherencia.CONFIRMED]
+    if pre:
+        print(coherencia.report_text([], pre))
+    if bad and not force:
+        raise SystemExit(f"[comprobar] {len(bad)} errores confirmados antes de producir. "
+                         "Corrige las fichas o relanza con --forzar si lo has revisado.")
+
+
+def _review_gate_or_stop(work: Path, pics: list[Path], force: bool) -> None:
+    """Antes de montar: ninguna imagen sin revisar ni con fallos sin aprobar (comprobación 7)."""
+    from . import coherencia
+
+    folder = work / "revision"
+    pending = coherencia.blockers(folder / "coherencia.json", coherencia.load_approvals(folder), pics)
+    if not pending:
+        return
+    print("[montaje] imágenes que no pueden pasar al vídeo:")
+    for line in pending[:40]:
+        print("  " + line)
+    if len(pending) > 40:
+        print(f"  … y {len(pending) - 40} más")
+    if not force:
+        raise SystemExit("[montaje] parado. Revisa y aprueba esas imágenes, o relanza con --forzar.")
+    print("[montaje] --forzar: se monta igualmente.")
+
+
+def cmd_comprobar(args) -> None:
+    from . import coherencia
+
+    board = storyboard.load(args.story)
+    pre = coherencia.preflight(board, _portraits_dir(args.story), coherencia.default_tools().tag)
+    print(coherencia.report_text([], pre) if pre else "[comprobar] fichas, rostros, vestuario y miniatura: sin avisos")
+
+
+def cmd_aprobar(args) -> None:
+    from . import coherencia
+
+    work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
+    folder = work / "revision"
+    done = coherencia.approve(folder, folder / "coherencia.json", args.etiquetas)
+    print(f"[aprobar] {len(done)} imágenes marcadas como revisadas a ojo")
+
+
+def cmd_continuidad(args) -> None:
+    """Candidatas de las escenas pedidas hasta que cumplan el registro de continuidad.
+
+    Las candidatas van a <work>/continuidad/<escena>/; las imágenes definitivas no se tocan, no se
+    aprueba nada y el bloqueo de montaje sigue como estaba."""
+    import json
+    import re
+
+    from . import coherencia, continuidad as cont, review
+
+    board = storyboard.load(args.story)
+    work = args.workdir or args.story.with_name(f"{args.story.stem}_work")
+    portraits = _portraits_dir(args.story)
+    folder = work / "continuidad"
+    folder.mkdir(parents=True, exist_ok=True)
+    spec = json.loads(args.spec.read_text(encoding="utf-8")) if args.spec else {}
+    unknown = [n for n in args.escenas if n not in {s.number for s in board.scenes}]
+    if unknown:
+        raise SystemExit(f"Escenas que no están en el guion: {unknown}")
+    if set(args.escenas) & set(args.referencias):
+        raise SystemExit("Una escena no puede ser a la vez de referencia y de prueba")
+    current = {s.number: j.out for s, j in zip(board.scenes, images.scene_jobs(
+        board, work / "images", portraits, args.seed, args.model))}
+    missing = [n for n in args.referencias if not current[n].exists()]
+    if missing:
+        raise SystemExit(f"Faltan las imágenes de las escenas de referencia {missing}")
+    protected = sorted((work / "images").glob("*.png")) + sorted(portraits.glob("*.png"))
+    import glob
+
+    protected += [Path(p) for pattern in args.proteger for p in sorted(glob.glob(pattern))]
+    before = cont.snapshot(protected)
+    tools = coherencia.default_tools()
+    if args.solo_evaluar:
+        # Registro recalculado con el evaluador actual, en un archivo propio: el de la generación
+        # (registro.json) no se toca, para poder comparar.
+        registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
+        cont.save_registry(registry, folder / f"registro_{args.etiqueta}.json")
+        print(f"[continuidad] registro recalculado: {folder / f'registro_{args.etiqueta}.json'}")
+    else:
+        registry = cont.build_registry(board, portraits, current, set(args.referencias), spec, tools)
+        cont.save_registry(registry, folder / "registro.json")
+        print(f"[continuidad] registro de continuidad en {folder / 'registro.json'}")
+    header = re.split(r"(?m)^\[\d", args.story.read_text(encoding="utf-8"), maxsplit=1)[0].strip()
+    from imgutils.detect import detect_faces, detect_heads
+
+    def people(scene, path):
+        return review._check_one(review.scene_people_text(scene), f"{scene.number:03d}", path,
+                                 detect_faces, detect_heads, len(scene.characters))
+
+    from transformers import CLIPTokenizer
+
+    tokenizer = CLIPTokenizer.from_pretrained(args.model, subfolder="tokenizer")  # ya en caché
+    if args.solo_evaluar:
+        previous = {}
+        if (folder / "resultados.json").exists():
+            previous = {c["image"]: c for c in json.loads((folder / "resultados.json").read_text(
+                encoding="utf-8"))["candidatas"]}
+        all_cands = []
+        for number in args.escenas:
+            sspec = cont.scene_spec(board, number, spec)
+
+            def evaluate(b, scene, s, path, sspec=sspec):
+                return cont.evaluate(b, scene, sspec, path, registry, portraits, tools, people)
+
+            cands = cont.reevaluate(header, board, sspec, registry, folder, evaluate, previous, tokenizer)
+            all_cands += cands
+            ranked = sorted(cands, key=cont.score)
+            print(f"[continuidad] escena {number:03d}: {len(cands)} imágenes reevaluadas, "
+                  f"{sum(c.verdict == 'VALID' for c in cands)} válidas")
+            for c in ranked[:5]:
+                f, u, n, p = cont.score(c)
+                print(f"  {c.verdict:19} FAIL {f} UNCERTAIN {u} SIN MEDIR {n} PASS {-p}  semilla {c.reroll}  {c.image}")
+        out = folder / f"resultados_{args.etiqueta}.json"
+        if out.exists():
+            raise SystemExit(f"{out} ya existe: usa otra --etiqueta para no sobrescribir resultados anteriores")
+        cont.write_results([], all_cands, out)
+        changed = cont.protected_changed(before)
+        if changed:
+            raise SystemExit(f"[continuidad] ¡han cambiado archivos protegidos!: {changed}")
+        print(f"[continuidad] {len(before)} archivos protegidos sin cambios. Reevaluación: {out}")
+        return
+
+    results, all_cands = [], []
+    for number in args.escenas:
+        sspec = cont.scene_spec(board, number, spec)
+
+        def evaluate(b, scene, s, path, sspec=sspec):
+            return cont.evaluate(b, scene, sspec, path, registry, portraits, tools, people)
+
+        result, cands = cont.run_scene(
+            header, board, sspec, registry, folder, portraits, batch_size=args.lote, max_batches=args.max_lotes,
+            seed=args.seed, model=args.model,
+            generate=lambda jobs: images.generate(jobs, board.negative, args.model), evaluate_fn=evaluate,
+            tokenizer=tokenizer)
+        results.append(result)
+        all_cands += cands
+        cont.write_results(results, all_cands, folder / "resultados.json")
+        print(f"[continuidad] escena {number:03d}: {result.state}"
+              + (f" -> {result.candidate}" if result.candidate else ""))
+        if result.state != "VALID_CANDIDATE":
+            top = sorted(result.unmet.items(), key=lambda kv: -kv[1])[:6]
+            print("  requisitos sin cumplir (nº de candidatas): " + ", ".join(f"{k} ({n})" for k, n in top))
+    changed = cont.protected_changed(before)
+    if changed:
+        raise SystemExit(f"[continuidad] ¡han cambiado archivos protegidos!: {changed}")
+    print(f"[continuidad] {len(before)} archivos protegidos sin cambios. Resultados: {folder / 'resultados.json'}")
+    print("[continuidad] nada se ha aprobado ni sustituido: revisa las candidatas y decide.")
 
 
 def cmd_miniatura(args) -> None:
@@ -168,6 +343,13 @@ def cmd_miniatura(args) -> None:
     print("[miniatura] para cambiar solo el texto, relanza con --texto: las imágenes no se regeneran")
 
 
+def cmd_modelos(args) -> None:
+    from . import modelos
+
+    wanted = [images.DEFAULT_MODEL] + ([] if args.sin_wai else [modelos.WAI_MODEL]) + args.model
+    modelos.download(wanted)
+
+
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="mangavid", description="Historia en texto → vídeo estilo manhwa narrado")
     sub = p.add_subparsers(dest="command", required=True)
@@ -198,6 +380,8 @@ def main(argv: list[str] | None = None) -> None:
     r.add_argument("--music-volume", type=float, default=0.12)
     r.add_argument("--font-size", type=int, default=16)
     r.add_argument("--only-images", action="store_true", help="Generar solo las imágenes para revisarlas")
+    r.add_argument("--forzar", action="store_true",
+                   help="Producir aunque haya errores de coherencia confirmados o imágenes sin aprobar")
     r.set_defaults(func=cmd_run)
 
     m = sub.add_parser("miniatura", help="Opciones de miniatura de YouTube con texto grande")
@@ -218,7 +402,44 @@ def main(argv: list[str] | None = None) -> None:
     v.add_argument("story", type=Path)
     v.add_argument("--workdir", type=Path)
     v.add_argument("--seed", type=int, default=1234)
+    v.add_argument("--model", default=images.DEFAULT_MODEL, help="El mismo modelo con el que se generaron las escenas")
+    v.add_argument("--sin-coherencia", action="store_true",
+                   help="No comprobar que cada personaje salga igual (ojos, pelo, ropa) en todas las escenas")
     v.set_defaults(func=cmd_revisar)
+
+    c2 = sub.add_parser("comprobar", help="Antes de producir: fichas, rostros elegidos, vestuario y miniatura")
+    c2.add_argument("story", type=Path)
+    c2.set_defaults(func=cmd_comprobar)
+
+    k = sub.add_parser("continuidad", help="Generar candidatas de unas escenas hasta que cumplan las fichas")
+    k.add_argument("story", type=Path)
+    k.add_argument("--escenas", type=int, nargs="+", required=True, help="Escenas a regenerar como candidatas")
+    k.add_argument("--referencias", type=int, nargs="*", default=[],
+                   help="Escenas aprobadas que son fuente de verdad (ropa, estilo)")
+    k.add_argument("--spec", type=Path, help="JSON con atributos extra por personaje y composición por escena")
+    k.add_argument("--lote", type=int, default=4, help="Candidatas por lote")
+    k.add_argument("--max-lotes", type=int, default=10, help="Lotes como máximo por escena")
+    k.add_argument("--seed", type=int, default=1234)
+    k.add_argument("--model", default=images.DEFAULT_MODEL)
+    k.add_argument("--workdir", type=Path)
+    k.add_argument("--proteger", nargs="*", default=[], help="Más archivos que no pueden cambiar (patrones glob)")
+    k.add_argument("--etiqueta", default="reevaluacion",
+                   help="Con --solo-evaluar: nombre de los archivos de resultados (no sobrescribe los anteriores)")
+    k.add_argument("--solo-evaluar", action="store_true",
+                   help="No generar: volver a evaluar las candidatas ya guardadas (sin usar el generador)")
+    k.set_defaults(func=cmd_continuidad)
+
+    a = sub.add_parser("aprobar", help="Marcar imágenes como revisadas a ojo tras el informe de coherencia")
+    a.add_argument("story", type=Path)
+    a.add_argument("etiquetas", nargs="+", help="Etiquetas del informe, p. ej. 003b 004")
+    a.add_argument("--workdir", type=Path)
+    a.set_defaults(func=cmd_aprobar)
+
+    d = sub.add_parser("modelos", help="Descargar todos los modelos para trabajar sin conexión")
+    d.add_argument("--model", action="append", default=[],
+                   help="Modelo de imagen extra (repetible). Por defecto se baja también WAI, el de «cine anime»")
+    d.add_argument("--sin-wai", action="store_true", help="No descargar el modelo WAI de estilo «cine anime»")
+    d.set_defaults(func=cmd_modelos)
 
     args = p.parse_args(argv)
     args.func(args)

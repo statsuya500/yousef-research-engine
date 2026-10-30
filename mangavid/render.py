@@ -36,23 +36,32 @@ def _motion(index: int, frames: int) -> str:
     ][index % 4]
 
 
-def _render_scene(index: int, image: Path, voice: Path, narration: str, out: Path, style: str) -> None:
+def _render_scene(index: int, shots: list[Path], voice: Path, narration: str, out: Path, style: str) -> None:
+    """Los planos de la escena se reparten a partes iguales el tiempo de la narración."""
     speech = media.duration(voice)
     total = speech + PAUSE
     frames = math.ceil(total * FPS)
     w, h = SIZE
     srt = out.with_suffix(".srt")
     srt.write_text(to_srt([Segment(0.0, speech, "", narration)]), encoding="utf-8")
+    n = len(shots)
+    parts = []
+    for k in range(n):
+        d = frames // n + (1 if k < frames % n else 0)
+        parts.append(
+            f"[{k}:v]scale={w * 2}:{h * 2}:force_original_aspect_ratio=increase,crop={w * 2}:{h * 2},"
+            f"zoompan={_motion(index * n + k, d)}:d={d}:s={w}x{h}:fps={FPS},setsar=1[s{k}]"
+        )
+    joined = "".join(f"[s{k}]" for k in range(n)) + f"concat=n={n}:v=1:a=0" if n > 1 else "[s0]null"
     vfilter = (
-        f"scale={w * 2}:{h * 2}:force_original_aspect_ratio=increase,crop={w * 2}:{h * 2},"
-        f"zoompan={_motion(index, frames)}:d={frames}:s={w}x{h}:fps={FPS},"
-        f"subtitles='{srt.name}':force_style='{style}',format=yuv420p"
+        ";".join(parts) + f";{joined},subtitles='{srt.name}':force_style='{style}',format=yuv420p[v]"
     )
+    inputs = [arg for p in shots for arg in ("-i", p.resolve())]
     tmp = out.with_suffix(".tmp.mp4")
     media.run(
         [
-            "ffmpeg", "-y", "-v", "error", "-i", image.resolve(), "-i", voice.resolve(),
-            "-filter_complex", f"[0:v]{vfilter}[v];[1:a]aresample={media.SAMPLE_RATE},apad[a]",
+            "ffmpeg", "-y", "-v", "error", *inputs, "-i", voice.resolve(),
+            "-filter_complex", f"{vfilter};[{n}:a]aresample={media.SAMPLE_RATE},apad[a]",
             "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}",
             "-c:v", "h264_nvenc", "-preset", "p5", "-cq", "23", "-r", str(FPS),
             "-c:a", "aac", "-b:a", "192k", "-ac", "2",
@@ -66,7 +75,7 @@ def _render_scene(index: int, image: Path, voice: Path, narration: str, out: Pat
 
 def render(
     board: Storyboard,
-    images: list[Path],
+    images: list[list[Path]],  # los planos de cada escena
     voices: list[Path],
     workdir: Path,
     output: Path,
@@ -78,11 +87,12 @@ def render(
     workdir.mkdir(parents=True, exist_ok=True)
     style = DEFAULT_SUB_STYLE.replace("FontSize=16", f"FontSize={font_size}")
     jobs = []
-    for i, (scene, image, voice) in enumerate(zip(board.scenes, images, voices)):
+    for i, (scene, shots, voice) in enumerate(zip(board.scenes, images, voices)):
+        names = "+".join(p.name for p in shots)  # con un solo plano, la misma clave que antes
         key = hashlib.sha1(
-            f"{RENDER_VERSION}|{image.name}|{voice.name}|{scene.narration}|{i % 4}|{style}".encode()
+            f"{RENDER_VERSION}|{names}|{voice.name}|{scene.narration}|{i % 4}|{style}".encode()
         ).hexdigest()[:10]
-        jobs.append((i, image, voice, scene.narration, workdir / f"seg_{scene.number:04d}_{key}.mp4"))
+        jobs.append((i, shots, voice, scene.narration, workdir / f"seg_{scene.number:04d}_{key}.mp4"))
 
     todo = [j for j in jobs if not j[4].exists()]
     print(f"[montaje] {len(todo)} tramos nuevos de {len(jobs)}")

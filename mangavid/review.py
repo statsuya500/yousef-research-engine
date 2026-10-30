@@ -23,7 +23,7 @@ _HIDDEN = re.compile(r"\b(face not visible|back view|no face|from behind|silhoue
 
 @dataclass
 class Check:
-    number: int
+    label: str  # número de escena, con letra si tiene varios planos: «007», «007b»
     image: Path
     expected: int | None  # None: escena con multitud, no se cuenta
     faces: int
@@ -42,27 +42,44 @@ def expected_people(prompt: str) -> int | None:
     return 1 if "solo" in prompt else None
 
 
-def check(board: Storyboard, images: list[Path]) -> list[Check]:
+def check(board: Storyboard, images: list[list[Path]]) -> list[Check]:
+    """images: los planos de cada escena, en el orden de board.scenes."""
     from imgutils.detect import detect_faces, detect_heads
 
     results = []
-    for scene, path in zip(board.scenes, images):
-        prompt = scene.image
-        expected = expected_people(prompt)
-        faces = sum(1 for d in detect_faces(str(path)) if d[2] > CONFIDENCE)
-        heads = sum(1 for d in detect_heads(str(path)) if d[2] > CONFIDENCE)
-        if expected is None:
-            status = "SIN CONTAR"
-        elif faces > expected:
-            status = "DUPLICADO"
-        elif heads > expected:
-            status = "DUDOSO"
-        elif expected > 0 and faces == 0 and heads == 0 and not _HIDDEN.search(prompt):
-            status = "SIN CARA"
-        else:
-            status = "OK"
-        results.append(Check(scene.number, path, expected, faces, heads, status))
+    for scene, shots in zip(board.scenes, images):
+        for k, path in enumerate(shots):
+            label = f"{scene.number:03d}" + (chr(ord("a") + k) if len(shots) > 1 else "")
+            results.append(_check_one(scene_people_text(scene), label, path, detect_faces, detect_heads,
+                                      len(scene.characters)))
     return results
+
+
+def scene_people_text(scene) -> str:
+    """La descripción de la escena sin las fichas de los personajes.
+
+    scene.image lleva las fichas ya sustituidas, y cada ficha trae su «1boy»/«1girl»: contadas ahí,
+    una escena «1boy, 1girl, @clara, @daniel» esperaría 4 personas y nunca saldría DUPLICADO."""
+    return scene.action or scene.image
+
+
+def _check_one(prompt: str, label: str, path: Path, detect_faces, detect_heads, cast: int = 0) -> Check:
+    expected = expected_people(prompt)
+    if expected is None and cast and not _SKIP.search(prompt):
+        expected = cast  # sin «1boy»/«solo» en la escena: tantas personas como @personajes
+    faces = sum(1 for d in detect_faces(str(path)) if d[2] > CONFIDENCE)
+    heads = sum(1 for d in detect_heads(str(path)) if d[2] > CONFIDENCE)
+    if expected is None:
+        status = "SIN CONTAR"
+    elif faces > expected:
+        status = "DUPLICADO"
+    elif heads > expected:
+        status = "DUDOSO"
+    elif expected > 0 and faces == 0 and heads == 0 and not _HIDDEN.search(prompt):
+        status = "SIN CARA"
+    else:
+        status = "OK"
+    return Check(label, path, expected, faces, heads, status)
 
 
 def contact_sheets(checks: list[Check], folder: Path, per_sheet: int = 8, width: int = 640) -> list[Path]:
@@ -83,7 +100,7 @@ def contact_sheets(checks: list[Check], folder: Path, per_sheet: int = 8, width:
         for c in group:
             im = Image.open(c.image).convert("RGB")
             im = im.resize((width, round(im.height * width / im.width)))
-            label = f"{c.number:03d}" + ("" if c.status in ("OK", "SIN CONTAR") else f"  {c.status}")
+            label = c.label + ("" if c.status in ("OK", "SIN CONTAR") else f"  {c.status}")
             draw = ImageDraw.Draw(im)
             draw.text((10, 8), label, fill="yellow" if c.status in ("OK", "SIN CONTAR") else "red",
                       font=font, stroke_width=3, stroke_fill="black")
@@ -103,8 +120,8 @@ def report(checks: list[Check]) -> str:
     bad = [c for c in checks if c.status not in ("OK", "SIN CONTAR")]
     lines = [f"Escenas revisadas: {len(checks)}. Posibles problemas: {len(bad)}."]
     for c in bad:
-        lines.append(f"  [{c.number:03d}] {c.status}: esperadas {c.expected}, caras {c.faces}, cabezas {c.heads}")
-    crowd = [f"{c.number:03d}" for c in checks if c.status == "SIN CONTAR"]
+        lines.append(f"  [{c.label}] {c.status}: esperadas {c.expected}, caras {c.faces}, cabezas {c.heads}")
+    crowd = [c.label for c in checks if c.status == "SIN CONTAR"]
     if crowd:
         lines.append(f"Sin contar (multitud o número sin indicar, revisar a ojo): {', '.join(crowd)}")
     return "\n".join(lines)

@@ -126,6 +126,15 @@ Los resultados se guardan junto al original y los archivos intermedios en `nombr
 
 ## Vídeos estilo manhwa desde una historia (`mangavid`)
 
+**Antes de la primera historia**, descarga todos los modelos de una vez (unos 25 GB, con conexión):
+
+```bash
+cd ~/doblaje && source venv/bin/activate && uv pip install -r requirements.txt
+python -m mangavid modelos            # Animagine, WAI («cine anime»), caras y detectores
+```
+
+Después trabaja sin conexión poniendo `HF_HUB_OFFLINE=1` delante de cada comando. Si una descarga falla, relanza el comando: lo ya bajado no se repite.
+
 Convierte un guion de escenas en un vídeo narrado: una imagen por escena generada en tu GPU
 (Animagine XL 4.0, ~11 s por imagen con 8 GB de VRAM), voz con Edge-TTS, movimiento suave,
 subtítulos de 2 líneas como máximo y un `.srt` completo para YouTube.
@@ -144,6 +153,17 @@ python -m mangavid run historia.txt                 # historia.mp4 + historia.sr
 python -m mangavid run historia.txt --only-images   # solo imágenes, para revisarlas
 python -m mangavid run historia.txt --music musica.mp3 --voice es-MX-JorgeNeural
 ```
+
+Con `@planos: 4` en la cabecera, cada escena tiene 4 imágenes (la descripción tal cual y tres
+encuadres más: primer plano, plano abierto, de lado…) que se reparten el tiempo de la narración.
+Así la imagen cambia cada 3-4 segundos, como en los canales de manhwa narrado. El plano principal
+es el mismo que sin `@planos`, así que no se pierde lo ya generado.
+
+La ropa de un personaje (`@clara[green shirt with number 10]`) sigue puesta en las escenas siguientes
+hasta que otra escena la cambie. `python -m mangavid revisar historia.txt` comprueba después cada personaje
+(cara, ojos, pelo, edad, barba, accesorios, ropa) contra su ficha y su aparición anterior y deja
+`revision/coherencia.json`. `run` no monta el vídeo con imágenes sin revisar o con fallos sin aprobar
+(`python -m mangavid aprobar historia.txt 003b`), salvo con `--forzar`.
 
 Todo se guarda en `historia_work/` con un hash por escena: si se corta o cambias una escena,
 al relanzar solo se rehace lo que falta. Pensado para vídeos de horas.

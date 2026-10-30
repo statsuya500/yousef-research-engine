@@ -12,6 +12,7 @@ El texto se escribe así (en @miniatura_texto o con --texto):
 from __future__ import annotations
 
 import math
+import re
 from dataclasses import dataclass, replace
 from pathlib import Path
 
@@ -20,9 +21,11 @@ from .storyboard import Scene, Storyboard
 
 SIZE = (1280, 720)  # tamaño recomendado por YouTube
 MAX_BYTES = 2_000_000  # límite de YouTube para miniaturas
-THUMB_TAGS = ("anime key visual, colorful, bright lighting, vivid colors, expressive faces, "
-              "dynamic pose, detailed background")
-THUMB_NEGATIVE = "text, letters, speech bubble, watermark, logo, signature, dark, monochrome"
+# Como las miniaturas de los canales de manhwa narrado: de día, nítidas y saturadas, sin neblina.
+THUMB_TAGS = ("anime illustration, bright daylight, vivid saturated colors, crisp clean lineart, sharp focus, "
+              "cel shading, expressive faces, dynamic pose, detailed background")
+THUMB_NEGATIVE = ("text, letters, speech bubble, watermark, logo, signature, dark, monochrome, "
+                  "sunset, haze, bloom, painterly, blurry, washed out")
 FONT = Path(__file__).parent / "fonts" / "Anton-Regular.ttf"
 YELLOW = (255, 221, 0, 255)
 BLACK = (10, 10, 20, 255)
@@ -57,7 +60,8 @@ def jobs(board: Storyboard, folder: Path, portraits: Path, options: int, seed: i
         raise SystemExit(f"Miniatura: falta la ficha {', '.join(missing)} en {portraits}. "
                          "Ejecuta primero: python -m mangavid personajes <historia.txt>")
     framed = replace(scene, action=", ".join(p for p in (scene.action, THUMB_TAGS) if p))
-    prompt = board.prompt(framed)
+    styled = replace(board, style=board.thumbnail_style) if board.thumbnail_style else board
+    prompt = styled.prompt(framed)
     negative = ", ".join(p for p in (board.negative_for(scene), THUMB_NEGATIVE) if p)
     scale = next(v for v in (scene.likeness, board.likeness, images.IP_SCALE) if v is not None)
     result = []
@@ -76,17 +80,18 @@ def jobs(board: Storyboard, folder: Path, portraits: Path, options: int, seed: i
 class Item:
     text: str
     character: str | None = None  # None: frase suelta, sin flecha
+    speech: bool = False  # @kai>¡No saltes!: lo dice el personaje, con pico de bocadillo
 
 
 def parse_text(text: str) -> list[Item]:
-    """«@kai=PROTA | ¡No saltes!» -> etiqueta de @kai y una frase suelta."""
+    """«@kai=PROTA | @kai>¡No saltes! | ?!?» -> etiqueta de @kai, frase dicha por @kai y una suelta."""
     items = []
     for part in (p.strip() for p in text.split("|")):
         if not part:
             continue
-        if part.startswith("@") and "=" in part:
-            name, label = part[1:].split("=", 1)
-            items.append(Item(label.strip().replace("*", "").upper(), name.strip().lower()))
+        if m := re.match(r"@([\w-]+)\s*([=>])(.*)$", part):
+            items.append(Item(m.group(3).strip().replace("*", "").upper(), m.group(1).lower(),
+                              m.group(2) == ">"))
         else:
             items.append(Item(part.replace("*", "").upper()))
     return [i for i in items if i.text]
@@ -112,12 +117,12 @@ def _wrap(text: str, font, max_width: float, max_lines: int = 3) -> list[str]:
 
 
 def sticker(lines: list[str], size: int, angle: float):
-    """Rótulo amarillo con borde negro y contorno blanco, inclinado y girado."""
+    """Rótulo amarillo con borde negro grueso, inclinado y girado."""
     from PIL import Image, ImageDraw, ImageFont
 
     font = ImageFont.truetype(str(FONT), size)
-    white, black = max(4, int(size * 0.2)), max(3, int(size * 0.1))
-    pad = white + 4
+    black = max(4, int(size * 0.13))
+    pad = black + 4
     widths = [font.getlength(line) for line in lines]
     line_h = int(size * 1.05)
     w, h = int(max(widths)) + 2 * pad, line_h * len(lines) + 2 * pad
@@ -125,7 +130,6 @@ def sticker(lines: list[str], size: int, angle: float):
     draw = ImageDraw.Draw(layer)
     for k, (line, lw) in enumerate(zip(lines, widths)):
         xy = (pad + (max(widths) - lw) / 2, pad + k * line_h - size * 0.08)
-        draw.text(xy, line, font=font, fill=WHITE, stroke_width=white, stroke_fill=WHITE)
         draw.text(xy, line, font=font, fill=BLACK, stroke_width=black, stroke_fill=BLACK)
         draw.text(xy, line, font=font, fill=YELLOW)
     extra = int(SLANT * h)
@@ -218,7 +222,24 @@ def _place(layer, avoid: list[Box], taken: list[Box], edges, around: Box | None)
     return best
 
 
-ARROW_BEND = 0.32  # curvatura de las flechas: desvío del centro en parte de su largo
+ARROW_BEND = 0.12  # curvatura de las flechas: desvío del centro en parte de su largo (casi rectas)
+SPEECH_BASE = 34  # ancho en px de la base del pico de bocadillo
+
+
+def _speech_tail(draw, start, end, box: Box) -> Box:
+    """Pico de bocadillo amarillo con borde negro, del rótulo (`start`) hacia quien habla (`end`)."""
+    ang = math.atan2(end[1] - start[1], end[0] - start[0])
+    # La base se mete un poco dentro del rótulo para que el pico parezca salir de él.
+    inner = (start[0] - 18 * math.cos(ang), start[1] - 18 * math.sin(ang))
+    for fill, grow in ((BLACK, 7), (YELLOW, 0)):
+        half = SPEECH_BASE / 2 + grow
+        tip = (end[0] + grow * math.cos(ang), end[1] + grow * math.sin(ang))
+        draw.polygon([tip,
+                      (inner[0] + half * math.cos(ang + math.pi / 2), inner[1] + half * math.sin(ang + math.pi / 2)),
+                      (inner[0] + half * math.cos(ang - math.pi / 2), inner[1] + half * math.sin(ang - math.pi / 2))],
+                     fill=fill)
+    xs, ys = (start[0], end[0]), (start[1], end[1])
+    return (min(xs) - 20, min(ys) - 20, max(xs) + 20, max(ys) + 20)
 
 
 def _curve(start, end, bend: float = ARROW_BEND, steps: int = 40) -> list[tuple[float, float]]:
@@ -310,7 +331,11 @@ def compose(base: Path, text: str, out: Path, characters: list[str] | None = Non
     label_font = ImageFont.truetype(str(FONT), LABEL_SIZE)
     # Primero las etiquetas, que tienen que estar junto a su personaje; después las frases.
     for k, item in enumerate(sorted(items, key=lambda i: i.character is None)):
-        if item.character:
+        if item.speech:
+            lines = _wrap(item.text, caption_font, SIZE[0] * CAPTION_WIDTH * 0.8)
+            layer = sticker(lines, int(CAPTION_SIZE * 0.85), angles[k % 4] * 0.6)
+            target = head_of[item.character]
+        elif item.character:
             lines = _wrap(item.text, label_font, SIZE[0] * LABEL_WIDTH)
             layer = sticker(lines, LABEL_SIZE, angles[k % 4])
             target = head_of[item.character]
@@ -325,7 +350,14 @@ def compose(base: Path, text: str, out: Path, characters: list[str] | None = Non
             start = _edge_point(box, (tcx, tcy))
             gap = max(target[2] - target[0], target[3] - target[1]) * 0.55
             dist = math.hypot(tcx - start[0], tcy - start[1])
-            if dist > gap + 40:
+            if item.speech:
+                # El pico apunta a la barbilla: la parte baja de la cabeza.
+                mouth = (tcx, target[1] + (target[3] - target[1]) * 0.8)
+                d = math.hypot(mouth[0] - start[0], mouth[1] - start[1]) or 1.0
+                stop = min(d - 10, max(40.0, d * 0.55))
+                end = (start[0] + (mouth[0] - start[0]) * stop / d, start[1] + (mouth[1] - start[1]) * stop / d)
+                taken.append(_speech_tail(arrows, start, end, box))
+            elif dist > gap + 40:
                 end = (tcx - (tcx - start[0]) * gap / dist, tcy - (tcy - start[1]) * gap / dist)
                 taken.append(_arrow(arrows, start, end, 9))
         canvas.alpha_composite(layer, (int(box[0]), int(box[1])))

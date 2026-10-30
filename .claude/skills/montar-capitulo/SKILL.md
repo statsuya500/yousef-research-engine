@@ -13,13 +13,16 @@ Todos los comandos, desde `~/doblaje` y con `HF_HUB_OFFLINE=1` (los modelos ya e
 Los procesos largos, en segundo plano.
 
 1. **Revisar el guion** con la skill `revisar-guion`. ⏸ Enseña los problemas y espera.
-2. **Retratos:** `venv/bin/python -m mangavid personajes <historia.txt>`
+2. **Retratos:** (después, `python -m mangavid comprobar <historia.txt>` compara cada rostro elegido con su ficha)
+   `venv/bin/python -m mangavid personajes <historia.txt>`
    Genera 4 opciones por personaje (los derivados, como `@alex5`, parten del retrato elegido de su base).
    Haz una hoja con las opciones (ffmpeg tile) y míralas: descarta las que no cuadren
    (sexo, edad, rasgos de la ficha). ⏸ Recomienda una por personaje y espera la elección.
    Aplica con `venv/bin/python -m mangavid elegir <historia.txt> <personaje> <n>`.
 3. **Escenas:** `venv/bin/python -m mangavid run <historia.txt> --only-images` (~11 s por imagen).
-4. **Revisar imágenes** con la skill `revisar-imagenes` y arregla lo que falle. ⏸ Enseña el resultado y espera.
+4. **Revisar imágenes** con la skill `revisar-imagenes` y arregla lo que falle. Mira a ojo las marcadas
+   en `revision/coherencia.json` y apruébalas con `python -m mangavid aprobar <historia.txt> <etiquetas>`.
+   ⏸ Enseña el resultado y espera.
 5. **Vídeo:** `venv/bin/python -m mangavid run <historia.txt>` (voz, movimiento, subtítulos de 2 líneas).
    Opciones: `--music musica.mp3`, `--voice es-MX-JorgeNeural`, `--rate +5%`.
 6. **Comprobar:** saca 2-3 fotogramas con ffmpeg y míralos (subtítulos legibles, imagen correcta).

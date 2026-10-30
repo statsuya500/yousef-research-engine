@@ -24,7 +24,8 @@ class Scene:
     avoid: str = ""  # {evitar=...} en la escena: se añade al negativo solo en esta escena
     action: str = ""  # la descripción sin los @personajes: acción, expresión, encuadre y lugar
     likeness: float | None = None  # {parecido=0.6}: peso de la cara del retrato solo en esta escena
-    outfits: dict[str, str] = field(default_factory=dict)  # @sara[simple dress]: ropa de ese personaje
+    # @sara[simple dress]: ropa de ese personaje. Sigue en las escenas siguientes hasta que otra la cambie.
+    outfits: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass
@@ -33,6 +34,8 @@ class Storyboard:
     negative: str = ""
     negative_solo: str = ""  # se añade al negativo en escenas «solo» (evita personajes clonados)
     likeness: float | None = None  # @parecido: cuánto se impone la cara del retrato (0-1)
+    shots: int = 1  # @planos: imágenes por escena, que se reparten el tiempo de la narración
+    refine: bool = False  # @retoque: si -> las caras se redibujan a más resolución (ojos nítidos)
     characters: dict[str, str] = field(default_factory=dict)  # etiquetas ya expandidas
     # Personaje derivado -> personaje base (p. ej. «@alex5: @alex, stubble» -> alex5: alex).
     # El retrato del derivado se genera con la cara del retrato elegido del base.
@@ -40,6 +43,7 @@ class Storyboard:
     scenes: list[Scene] = field(default_factory=list)
     thumbnail: Scene | None = None  # @miniatura: imagen de la miniatura, con @personajes como una escena
     thumbnail_text: str = ""  # @miniatura_texto: texto grande de la miniatura (*palabra* resaltada)
+    thumbnail_style: str = ""  # @miniatura_estilo: sustituye a @estilo solo en la miniatura
 
     def prompt(self, scene: Scene) -> str:
         """Acción y expresión primero, después los rasgos de los personajes y al final el estilo.
@@ -77,10 +81,16 @@ def parse(text: str) -> Storyboard:
                 board.negative_solo = value
             elif name == "parecido":
                 board.likeness = float(value)
+            elif name == "planos":
+                board.shots = max(1, int(value))
+            elif name == "retoque":
+                board.refine = value.lower() in ("si", "sí", "1", "true")
             elif name == "miniatura":
                 raw_thumbnail = value
             elif name == "miniatura_texto":
                 board.thumbnail_text = value
+            elif name == "miniatura_estilo":
+                board.thumbnail_style = value
             else:
                 board.characters[name] = value
         elif raw_scenes:
@@ -96,13 +106,23 @@ def parse(text: str) -> Storyboard:
         board.characters[name] = _expand_character(name, raw_characters, [])
 
     seen: set[int] = set()
+    wearing: dict[str, str] = {}  # la última ropa de cada personaje: sigue puesta hasta que el guion la cambie
+    first_outfit: dict[str, str] = {}
     for number, image, lines in raw_scenes:
         if number in seen:
             raise ValueError(f"La escena [{number:03d}] está repetida")
         seen.add(number)
-        board.scenes.append(_build_scene(number, image, " ".join(lines).strip(), board.characters))
+        scene = _build_scene(number, image, " ".join(lines).strip(), board.characters)
+        for c, outfit in scene.outfits.items():
+            first_outfit.setdefault(c, outfit)
+        wearing.update(scene.outfits)
+        scene.outfits = {c: wearing[c] for c in scene.characters if c in wearing}
+        board.scenes.append(scene)
     if raw_thumbnail:
         board.thumbnail = _build_scene(0, raw_thumbnail, "", board.characters)
+        # Sin [ropa] en @miniatura, cada personaje lleva la de su primera aparición en la historia.
+        board.thumbnail.outfits = {**{c: first_outfit[c] for c in board.thumbnail.characters if c in first_outfit},
+                                   **board.thumbnail.outfits}
     if not board.scenes:
         raise ValueError("El guion no tiene ninguna escena [001]")
     return board

@@ -43,7 +43,7 @@ def test_jobs_use_portraits_and_thumbnail_tags(tmp_path):
     jobs = thumbnail.jobs(board, tmp_path / "m", portraits, 3, 10, "model")
     assert len(jobs) == 3 and len({j.out for j in jobs}) == 3
     j = jobs[0]
-    assert j.prompt.startswith("1boy, 1girl, shocked, burning house, anime key visual")
+    assert j.prompt.startswith("1boy, 1girl, shocked, burning house, anime illustration")
     assert "young woman, black hair, red dress" in j.prompt
     assert "text" in j.negative and j.faces == [portraits / "leo.png", portraits / "ana.png"]
 
@@ -101,17 +101,17 @@ def test_compose_without_text_and_sheet(tmp_path):
     assert thumbnail.contact_sheet([plain, full], tmp_path / "hoja.jpg").exists()
 
 
-def test_arrows_are_curved():
+def test_arrows_are_slightly_curved():
     import math
 
     pts = thumbnail._curve((100, 400), (500, 400))
     assert pts[0] == (100, 400) and pts[-1] == (500, 400)
-    # el centro se separa de la línea recta y se abomba hacia arriba
+    # el centro se separa un poco de la línea recta (flechas casi rectas) hacia arriba
     mid = pts[len(pts) // 2]
-    assert mid[1] < 400 - 0.1 * 400
+    assert 400 - 0.1 * 400 < mid[1] < 400 - 0.04 * 400
     # casi vertical: se abomba hacia el borde más cercano (aquí, la izquierda)
     pts = thumbnail._curve((300, 600), (310, 300))
-    assert min(p[0] for p in pts) < 300 - 30
+    assert min(p[0] for p in pts) < 300 - 10
     assert all(math.isfinite(c) for p in pts for c in p)
 
 
@@ -125,3 +125,12 @@ def test_cli_own_image(tmp_path):
     out = tmp_path / "h_miniaturas" / "miniatura_1.jpg"
     assert Image.open(out).size == thumbnail.SIZE
     assert (tmp_path / "h_miniaturas" / "opciones.jpg").exists()
+
+
+def test_parse_speech_and_thumbnail_style():
+    items = thumbnail.parse_text("@kai=prota | @kai>¡No saltes! | ?!?")
+    assert [(i.text, i.character, i.speech) for i in items] == [
+        ("PROTA", "kai", False), ("¡NO SALTES!", "kai", True), ("?!?", None, False)]
+    from mangavid.storyboard import parse
+    board = parse("@estilo: soft glow\n@miniatura_estilo: crisp daylight\n@kai: 1boy\n[001] solo, @kai\nHola.")
+    assert board.thumbnail_style == "crisp daylight" and board.style == "soft glow"
