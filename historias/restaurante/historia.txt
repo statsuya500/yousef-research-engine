@@ -1,0 +1,1616 @@
+# Volví diez años atrás para salvar el restaurante de mi padre
+# Canal: Bienvenido a Destino de Millones · historia original · ~95-110 min
+#
+# Formato: narración en segunda persona («tú»), frases cortas, diálogos entre «».
+# Estilo «cine anime» con WAI-Illustrious. Lánzalo así:
+#   python -m mangavid personajes historia.txt --model John6666/wai-nsfw-illustrious-sdxl-v150-sdxl
+#   python -m mangavid run historia.txt --model John6666/wai-nsfw-illustrious-sdxl-v150-sdxl --rate +25%
+# @planos: 2 -> unas 1.170 imágenes. En una T4 de Colab son ~8 h repartidas en varias sesiones
+# (todo se guarda en Drive y continúa donde se quedó). Con una GPU rápida puedes subir a @planos: 4.
+#
+# Personajes:
+#   Leo Ferrer (tú)  - 24 años (34 en el futuro). Cocinero en el restaurante de su padre.
+#   Ramón Ferrer     - su padre, 56 años, dueño de Casa Ferrer. Esconde una deuda y un problema de corazón.
+#   Valeria Ruiz     - pastelera de la panadería de enfrente. Siempre quiso a Leo.
+#   Bruno Salas      - mejor amigo de Leo y segundo de cocina. El traidor. Deudas de juego.
+#   Nerea Montes     - novia de Leo. Lo deja por Bruno.
+#   Gonzalo Gálvez   - dueño del Grupo Gálvez. Quiere el local para su hotel.
+#   Elena Ríos       - la crítica gastronómica más temida del país. Jurado de «El Gran Fogón».
+#   Inspectora Vidal - investiga incendios de locales comprados por Gálvez.
+#   El Chispa        - el hombre que Gálvez paga para provocar los incendios.
+
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, sfw, modest, fully clothed, beautiful detailed eyes, shiny hair, cinematic lighting, lens flare, depth of field, dramatic composition
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, signature, japanese text, kanji, writing, logo, lettering, number, blurry, muscular, bodybuilder, abs, chibi, nsfw, cleavage, large breasts, suggestive, seductive, revealing clothes, bare shoulders, strapless, barefoot, school uniform, teenager, police, badge, patch, emblem, key, keys, beard, mustache, goatee, facial hair, stubble, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow
+@negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
+@parecido: 0.3
+@retoque: si
+@planos: 2
+
+@leo: 1boy, male focus, adult man, 24 years old, handsome, clean-shaven, messy short black hair, dark brown eyes, slim build, neutral expression
+@leo34: @leo, adult man, 34 years old, tired eyes, dark circles under eyes, thin face, messy black hair slightly longer
+@ramon: 1boy, male focus, middle-aged man, 56 years old, clean-shaven, short grey hair, kind brown eyes, laugh lines, sturdy build, neutral expression
+@valeria: 1girl, adult woman, 24 years old, long wavy auburn hair in a low ponytail, green eyes, light freckles, gentle face, neutral expression
+@bruno: 1boy, male focus, adult man, 25 years old, clean-shaven, short wavy blond hair, light blue eyes, charming face, slim build, neutral expression
+@bruno35: @bruno, adult man, 35 years old, blond hair slicked back, arrogant mature face
+@nerea: 1girl, adult woman, 24 years old, long straight black hair, sharp dark eyes, elegant makeup, neutral expression
+@galvez: 1boy, male focus, older man, 58 years old, clean-shaven, silver hair slicked back, cold grey eyes, thin face, neutral expression
+@elena: 1girl, mature woman, 52 years old, short silver bob hair, round glasses, calm intelligent eyes, neutral expression
+@vidal: 1girl, adult woman, 40 years old, short dark brown hair, serious brown eyes, neutral expression
+@chispa: 1boy, male focus, thin man, 40 years old, clean-shaven, buzz cut, narrow face, shifty eyes
+
+# Miniatura: Leo de chef, tranquilo, frente a Bruno, que no se cree lo que ve. Leo a la izquierda.
+@miniatura: 2boys, upper body, face to face, @leo[white chef jacket, black apron], @bruno[white chef jacket], confident calm smile, other man shocked, pale, wide-eyed, television cooking show studio, bright stage lights, {evitar=1girl, multiple girls, 3boys, extra person, hug, holding hands}
+@miniatura_texto: @leo=PROTA | @bruno=TRAIDOR | ¡Volví al pasado!
+
+# ================= GANCHO =================
+
+[001] solo, @leo34[worn grey apron over black t-shirt, yellow rubber gloves], standing in a luxury hotel ballroom, holding a tray of dirty plates, head down, luxury hotel ballroom, crystal chandeliers, round tables with white tablecloths, elegant guests in background, night
+«¡Que alguien saque de aquí al friegaplatos!» La voz resonó en todo el salón del hotel. Doscientos invitados se giraron a mirarte. Y tú no podías hacer nada.
+
+[002] solo, @bruno35[white chef jacket with gold buttons], pointing at someone off-screen, mocking smile, luxury hotel ballroom, crystal chandeliers, round tables with white tablecloths, elegant guests in background, night
+Era Bruno Salas, el chef estrella del Hotel Gálvez. Tu mejor amigo de la infancia. «Señores, perdonen. Este hombre antes cocinaba. Ahora ni siquiera sabe llevar una bandeja.»
+
+[003] solo, white porcelain plate shattering on a marble floor, pieces flying, sauce splashing, luxury hotel ballroom floor, crystal chandelier light, night, no humans
+Te quitó un plato de la bandeja y lo dejó caer al suelo. El ruido hizo reír a varias mesas. «Recógelo», dijo. «Es lo único que sabes hacer bien.»
+
+[004] solo, @leo34, kneeling on a marble floor, picking up broken porcelain pieces with gloved hands, humiliated, clenched jaw, luxury hotel ballroom, blurred elegant guests laughing in background, night
+Te arrodillaste y recogiste los trozos uno a uno. Treinta y cuatro años. Diez de ellos fregando platos en el mismo hotel donde antes estaba el restaurante de tu padre.
+
+[005] no humans, luxury modern hotel tower at night, glass facade lit with golden light, built on a corner of an old Spanish neighborhood, rain, wet street
+Porque el Hotel Gálvez se levantaba exactamente ahí. Sobre las cenizas de Casa Ferrer, el pequeño restaurante donde creciste, donde tu padre cocinó durante treinta años.
+
+[006] no humans, burned ruins of a small restaurant at night, charred wooden beams, broken windows, smoke, firefighter hoses on wet street, memory, desaturated
+Hace diez años, una noche de marzo, el restaurante ardió. La policía dijo que fue un cortocircuito. El seguro no pagó. Y la deuda que tu padre tenía se lo llevó todo.
+
+[007] solo, @ramon[white chef jacket], sitting alone at an empty wooden table, holding his chest, tired sad eyes, dim light, empty rented room, memory, desaturated
+Tu padre no lo soportó. Tres meses después del incendio, su corazón se paró. Tú tenías veinticuatro años y ya no tenías ni familia ni casa.
+
+[008] solo, @bruno35, leaning close to whisper, cold smile, half-closed eyes, luxury hotel ballroom, night, close-up
+Mientras recogías el último trozo, Bruno se agachó a tu lado. Nadie más podía oírlo. «¿Sabes qué es lo más gracioso, Leo? Que nunca te diste cuenta.»
+
+[009] solo, @leo34, kneeling, looking up in shock, wide eyes, trembling, luxury hotel ballroom, night, close-up
+«Aquella noche, la puerta de atrás no la forzó nadie. La abrí yo. Gálvez me pagó la deuda y me dio este puesto. Tu padre era un viejo terco. Y tú, un idiota.»
+
+[010] solo, @bruno35, standing up, adjusting his chef jacket, smug, turning away, luxury hotel ballroom, night
+Bruno se levantó, se sacudió la chaqueta y volvió a su sitio entre aplausos. Esa noche, Gonzalo Gálvez lo iba a presentar como el mejor chef joven del país.
+
+[011] solo, @leo34[black t-shirt, thin grey jacket], walking alone under heavy rain on a dark city street at night, soaked, head down, streetlights, wet asphalt
+Saliste del hotel sin cambiarte. Llovía como la noche del incendio. Caminabas sin saber adónde ibas. Solo oías la voz de Bruno, una y otra vez. «La abrí yo.»
+
+[012] solo, @leo34, sitting on a wet bench at night, holding an old unopened envelope with both hands, rain, streetlight, sad
+En el bolsillo llevabas una carta que nunca te atreviste a abrir. Te la dio Valeria, la chica de la panadería de enfrente, el día que se fue del barrio. Hace diez años.
+
+[013] solo, @leo34, clutching his chest in pain, leaning against a wet wall, pale, rain, night, streetlight
+Entonces sentiste un dolor en el pecho. Como un puño apretándote el corazón. El mismo dolor que mató a tu padre. Quisiste pedir ayuda, pero no te salió la voz.
+
+[014] solo, @leo34, lying on a wet sidewalk at night, eyes half-closed, rain falling on his face, an envelope on the ground beside his hand, streetlight
+Caíste en la acera. La lluvia te mojaba la cara. Lo último que pensaste fue que, si pudieras volver atrás, aunque fuera un solo día, lo harías todo distinto.
+
+[015] no humans, completely black background with a single small warm light in the center, soft glow, mysterious
+Después, nada. Solo oscuridad. Y silencio.
+
+# ================= CAPÍTULO 1: Diez años antes =================
+
+[016] no humans, small bedroom above a restaurant, wooden bed with rumpled sheets, old desk, window with soft morning light, steam drifting through the doorway
+Hasta que olió a caldo. Caldo de huesos, laurel y pimienta. El olor de los domingos de tu infancia. Un olor que no sentías desde hacía diez años.
+
+[017] solo, @leo[plain white t-shirt], waking up and sitting up in a wooden bed, confused, messy hair, small bedroom above a restaurant, old desk, window with soft morning light
+Abriste los ojos. Estabas en tu antigua habitación, encima del restaurante. La de los pósteres de cocineros famosos. La que ardió hace diez años.
+
+[018] solo, @leo, looking at his own hands with disbelief, sitting on a bed, small bedroom above a restaurant, window with soft morning light, close-up
+Te miraste las manos. Sin cicatrices de quemaduras. Sin la piel agrietada de diez años de lejía. Eran las manos de un chico joven.
+
+[019] no humans, old paper wall calendar on a bedroom wall, february page, one day circled with a red pen, morning light
+En la pared, el calendario de la tienda de la esquina. Febrero. El día 13 marcado con un círculo rojo. Diez años antes. Treinta días antes del incendio.
+
+[020] solo, @leo, standing in front of a small mirror, touching his own young face, shocked, small bedroom above a restaurant, morning light
+Te acercaste al espejo. Tenías veinticuatro años otra vez. Sin ojeras. Sin canas. No sabías si estabas muerto, soñando o loco. Pero el olor a caldo era real.
+
+[021] solo, @leo, running down narrow old wooden stairs, wearing sneakers, motion, warm light from below
+Bajaste las escaleras corriendo. Los mismos escalones que crujían. La misma barandilla pegajosa. Y al fondo, la luz de la cocina encendida.
+
+[022] solo, @ramon[white chef jacket, black apron], standing at a stove stirring a big pot with a wooden spoon, gentle smile, small family restaurant kitchen, stainless steel counters, gas stoves with steaming pots, hanging copper pans, warm light
+Y allí estaba él. Tu padre. Ramón Ferrer, con su chaqueta blanca y su cuchara de madera, removiendo el caldo como cada mañana. Vivo.
+
+[023] solo, @ramon, turning his head with a warm smile, holding a wooden spoon, small family restaurant kitchen, gas stoves with steaming pots, warm light
+«¿Ya despierto, dormilón? Hoy cumplimos veinticinco años abiertos, ¿te acuerdas? Necesito que estés fino esta noche.» Lo dijo como si fuera un día cualquiera.
+
+[024] solo, @leo, standing in a kitchen doorway, tears streaming down his face, trembling lips, small family restaurant kitchen, warm light
+No pudiste contestar. Se te llenaron los ojos de lágrimas. Diez años soñando con volver a oír esa voz. Y ahí estaba, quejándose de que llegabas tarde.
+
+[025] 1boy, solo, @ramon, being hugged from the front by a young man in a white t-shirt seen from behind, surprised, small family restaurant kitchen, warm light, {evitar=clone, twins, kiss}
+Lo abrazaste tan fuerte que casi se le cae la cuchara. «Pero bueno, ¿qué te pasa? ¿Has tenido una pesadilla?» «Sí, papá», dijiste. «Una muy larga.»
+
+[026] solo, @ramon, laughing, patting someone's shoulder off-screen, small family restaurant kitchen, warm light
+Tu padre se rio y te dio una palmada en la espalda. «Pues lávate la cara y ponte la chaqueta. El caldo no se vigila solo.» Era él. Era exactamente él.
+
+[027] solo, @leo[white chef jacket, black apron], tying an apron, determined expression, small family restaurant kitchen, stainless steel counters, warm light
+Te pusiste la chaqueta blanca. Te quedaba igual que siempre. Y mientras te atabas el delantal, empezaste a pensar con la cabeza fría.
+
+[028] solo, @leo, thinking, hand on chin, serious eyes, small family restaurant kitchen, warm light, close-up
+Si era un sueño, querías vivirlo. Si no lo era, tenías treinta días. Treinta días para evitar el incendio. Para salvar a tu padre. Para que la historia no se repitiera.
+
+[029] no humans, old wooden back door of a restaurant kitchen with a broken old lock, scratched metal plate, daylight, close-up
+Lo primero que miraste fue la puerta de atrás. La cerradura seguía rota, como siempre. «Papá, ¿cuándo vas a arreglar esto?» «Algún día», dijo. «Total, aquí no hay nada que robar.»
+
+[030] solo, @ramon, shrugging with a smile, holding a ladle, small family restaurant kitchen, warm light
+«Además, Bruno tiene la otra llave del candado de fuera. Él abre por las mañanas.» Al oír ese nombre, se te heló la sangre.
+
+[031] solo, @bruno[white chef jacket], entering a kitchen through a back door, cheerful wave, charming smile, morning light, small family restaurant kitchen
+Y como si lo hubieras llamado, la puerta de atrás se abrió. «¡Buenos días, familia!» Bruno Salas. Veinticinco años. Tu mejor amigo desde los seis. Sonriendo.
+
+[032] solo, @bruno, putting an arm forward for a fist bump, friendly grin, small family restaurant kitchen, morning light
+«¿Qué pasa, Leo? Tienes cara de haber visto un fantasma.» Te puso el puño para chocarlo, como hacíais desde niños. Tuviste que obligarte a levantar la mano.
+
+[033] solo, @leo, forced smile, clenched fist at his side, small family restaurant kitchen, morning light, close-up
+Chocaste su puño. Sonreíste. Por dentro, querías gritar. Pero no podías. Si Bruno sospechaba algo, Gálvez buscaría otra forma de destruir a tu padre. Y entonces no sabrías ni cuándo ni cómo.
+
+[034] solo, @leo, cutting onions on a wooden board with a chef knife, focused, small family restaurant kitchen, stainless steel counters, warm light
+Así que hiciste lo más difícil de tu vida: cocinar a su lado como si nada. Picaste cebolla. Limpiaste pescado. Y lo observaste con otros ojos.
+
+[035] solo, @bruno, looking at his smartphone with a worried face, hiding it quickly, small family restaurant kitchen, warm light
+Esa mañana, el móvil de Bruno sonó cinco veces. Las cinco colgó sin contestar. A la sexta, salió al callejón y habló en voz baja. Volvió pálido.
+
+[036] solo, @leo, glancing sideways with suspicion, chopping vegetables, small family restaurant kitchen, warm light
+Entonces no le diste importancia. Ahora sabías lo que era. Bruno debía dinero. Mucho dinero. A gente que no espera. Y Gálvez pensaba pagárselo.
+
+[037] no humans, narrow old Spanish neighborhood street at morning, small bakery with glass display of pastries across from a small restaurant with a green wooden door and potted plants, warm sunlight
+A media mañana saliste a la calle. Enfrente estaba la panadería de los Ruiz. El escaparate lleno de cruasanes. El mismo de siempre.
+
+[038] solo, @valeria[cream knitted sweater, white apron], arranging pastries behind a glass display, gentle smile, small bakery with glass display of pastries, warm morning light
+Y detrás del mostrador, con harina en la nariz, estaba Valeria. La chica que siempre te guardaba el último cruasán. La que te escribió una carta que nunca leíste.
+
+[039] solo, @valeria, looking up surprised, holding a tray of croissants, small bakery with glass display of pastries, warm morning light
+«¿Leo? ¿Vienes a por tu cruasán o a quedarte ahí parado mirándome?» Te diste cuenta de que llevabas un minuto entero en la puerta.
+
+[040] solo, @leo, standing at a bakery counter, shy smile, scratching the back of his head, small bakery with glass display of pastries, warm morning light
+En el futuro, ella se fue del barrio una semana después del incendio. Nunca volviste a verla. Nunca supiste qué ponía esa carta. «Vengo a por el cruasán», dijiste. «Y a verte.»
+
+[041] solo, @valeria, blushing, looking away, holding a paper bag, small bakery, warm morning light
+Valeria se puso roja hasta las orejas. «¿Tú estás bien? Normalmente solo me gruñes.» Te dio la bolsa. Dentro había dos cruasanes, no uno.
+
+[042] solo, @valeria, leaning on the counter, worried expression, small bakery, warm morning light
+«Oye, Leo… ¿tu padre está bien? Ayer lo vi sentado en el escalón de la puerta, con la mano en el pecho. Me dijo que era una indigestión.»
+
+[043] solo, @leo, frozen, wide eyes, holding a paper bag, small bakery, warm morning light, close-up
+Una indigestión. En tu primera vida, tu padre también lo llamó así. Hasta que su corazón dejó de latir tres meses después del incendio.
+
+[044] solo, @nerea[elegant beige trench coat, black turtleneck], walking into a restaurant dining room, looking at her phone, bored expression, cozy traditional Spanish family restaurant dining room, wooden tables with white tablecloths, warm lamps
+Al volver al restaurante te esperaba otra cara del pasado. Nerea Montes. Tu novia. La chica más guapa del barrio, según todos. Y según ella misma.
+
+[045] solo, @nerea, looking down at someone with a slight frown, arms crossed, cozy traditional Spanish family restaurant dining room, warm lamps
+«Leo, esta noche, después de la fiesta, tenemos que hablar. En serio. No puedo pasarme la vida oliendo a fritura.» Ni te dio un beso.
+
+[046] solo, @leo, calm neutral expression, holding a dish towel, cozy restaurant dining room, warm lamps
+En tu primera vida, esa frase te rompió el corazón. Ahora la conocías de memoria. Nerea te dejaría en un mes. Y tres años después se casaría con Bruno.
+
+[047] 1boy, 1girl, @bruno, @nerea, standing apart near the restaurant entrance, the woman smiling flirtatiously at the man, the man smirking, cozy restaurant dining room, warm lamps, {evitar=hug, kiss, holding hands, 3people}
+Desde la cocina, la viste reírse de un chiste de Bruno. Un poco demasiado. Bruno te miró de reojo. Antes no veías nada. Ahora lo veías todo.
+
+[048] no humans, cozy traditional Spanish family restaurant dining room at night, full of people at wooden tables, string of warm lights, small cake with candles on a table, festive atmosphere
+Esa noche, Casa Ferrer celebró sus veinticinco años. El comedor lleno. Los vecinos de toda la vida. Y tu padre saliendo de la cocina con una tarta.
+
+[049] solo, @ramon, standing in the middle of a restaurant dining room raising a glass, proud emotional smile, warm festive lights, night
+«Veinticinco años dando de comer a este barrio», dijo. «Y espero darle veinticinco más. Con mi hijo, que algún día cocinará mejor que yo.» Todos aplaudieron.
+
+[050] solo, @leo, standing in a kitchen doorway, watching with a sad and determined face, warm festive lights, night
+Tú sabías que, si no hacías nada, no habría veinticinco años más. Ni siquiera veinticinco días. Miraste a todos. A tu padre. A Valeria. A Bruno.
+
+[051] solo, @galvez[charcoal grey suit, black overcoat], standing at a restaurant entrance at night, cold smile, hands in coat pockets, a black luxury car behind him on a narrow street
+Y entonces la puerta del restaurante se abrió. Un hombre de pelo plateado, abrigo caro y sonrisa de hielo. Gonzalo Gálvez. El dueño de medio centro de la ciudad.
+
+[052] solo, @galvez, looking around the restaurant with contempt, slight smirk, cozy restaurant dining room, warm lights, night
+«Felicidades, Ramón. Veinticinco años… Qué bonito. Lástima que este barrio vaya a cambiar tanto. Ya hablaremos de tu local. Pronto.» Se fue sin quitarse el abrigo.
+
+[053] solo, @ramon, forced smile, pale, hand slightly on his chest, restaurant dining room, warm lights, night
+Tu padre sonrió para los invitados. Pero tú viste cómo se llevaba la mano al pecho. Y cómo se le borraba el color de la cara.
+
+[054] solo, @leo, standing alone in an empty restaurant kitchen at night, looking at the back door, fists clenched, determined eyes, small family restaurant kitchen, dim light
+Cuando todos se fueron, te quedaste solo en la cocina, mirando la puerta de atrás. Treinta días. Ya sabías quiénes eran. Ahora tenías que demostrarlo.
+
+[055] solo, @leo, close-up, intense eyes, dim kitchen light, night
+Esta vez no ibas a fregar platos en el hotel de nadie. Esta vez, el que iba a perderlo todo era otro.
+
+# ================= CAPÍTULO 2: La deuda =================
+
+[056] solo, @leo[plain white t-shirt], sitting on a bed reading a message on a smartphone, unimpressed face, small bedroom above a restaurant, window with soft morning light
+A la mañana siguiente, un mensaje de Nerea: «Lo de hablar, mejor otro día. Hoy estoy liada.» En tu primera vida, ese «otro día» llegó delante de medio barrio. Esta vez no te pillaría por sorpresa.
+
+[057] no humans, tiny cluttered office behind a restaurant kitchen, piles of invoices, old desk lamp, filing boxes, old computer, morning light through small window
+Bajaste temprano, antes que nadie. Fuiste directo al despacho de tu padre: un cuarto diminuto detrás de la cocina, lleno de facturas y cajas.
+
+[058] solo, @leo[white chef jacket, black apron], searching through filing boxes, focused, tiny cluttered office behind a restaurant kitchen, piles of invoices, old desk lamp
+En tu primera vida no entraste aquí hasta después del incendio. Cuando ya era tarde. Esta vez sabías lo que buscabas. Una carpeta azul. Con un nombre.
+
+[059] no humans, blue cardboard folder open on a wooden desk, printed loan contract pages with signatures and stamps, old desk lamp, close-up, no readable text
+«Inversiones Altamira». Sesenta mil euros entre lo prestado y unos intereses abusivos. Y como garantía, el local entero. Fecha de vencimiento: quince de marzo.
+
+[060] solo, @leo, reading a document with a grim face, tiny cluttered office, old desk lamp, close-up
+Quince de marzo. El día después del incendio. Ahora lo entendías todo. Si el restaurante ardía, tu padre no podría pagar. Y el local pasaba a Altamira. Es decir, a Gálvez.
+
+[061] solo, @leo, clenched fist on a desk, angry eyes, tiny cluttered office, old desk lamp
+En el futuro lo supiste por los papeles del notario: Altamira era una empresa pantalla de Gálvez. Cuando el local fue suyo, la empresa desapareció. Y nadie preguntó nada.
+
+[062] solo, @ramon[white chef jacket, black apron], standing in an office doorway, surprised, then ashamed, tiny cluttered office, morning light
+«¿Qué haces con eso?» Tu padre estaba en la puerta. Al ver la carpeta, se le cayó el alma a los pies. Por primera vez en tu vida, lo viste avergonzado.
+
+[063] solo, @ramon, sitting down heavily on an old chair, rubbing his forehead, tired, tiny cluttered office, morning light
+«Hace dos años se hundió el techo del comedor. El banco no me daba nada. Y apareció esta gente, muy amable, con el dinero en dos días. No quería preocuparte, hijo.»
+
+[064] solo, @ramon, looking down at his hands, sad smile, tiny cluttered office, morning light
+«Voy pagando lo que puedo. Si este mes va bien, hablaré con ellos para alargar el plazo. Siempre se puede hablar con la gente.» Con Gálvez no. Eso lo sabías tú.
+
+[065] solo, @leo, kneeling in front of a seated man, serious and kind expression, tiny cluttered office, morning light, {evitar=2boys, clone}
+Te agachaste delante de él. «Papá, escúchame. No vas a perder el restaurante. Te lo prometo. Pero a partir de hoy, todo lo que pase con esta deuda me lo cuentas.»
+
+[066] solo, @ramon, eyes glistening, nodding slowly, gentle smile, tiny cluttered office, morning light
+Tu padre te miró como si no te reconociera. «¿Desde cuándo eres tú el que cuida de mí?» No le contestaste. Desde hacía diez años. Solo que él no lo sabía.
+
+[067] solo, @leo, sitting alone at an empty restaurant table with a notebook and pen, writing a list, focused, cozy restaurant dining room, warm lamps, morning
+Esa mañana, en la mesa del fondo, escribiste en una libreta todo lo que recordabas. Fechas. Nombres. Cosas pequeñas que en su día no entendiste.
+
+[068] no humans, open spiral notebook on a wooden table with a handwritten list, a pen, a cup of coffee, warm morning light, close-up, no readable text
+Uno: el corazón de papá. Dos: sesenta mil euros antes del quince de marzo. Tres: demostrar quién iba a quemar el restaurante. Antes de que lo hicieran.
+
+[069] solo, @leo, tapping a pen against his lips, thinking, cozy restaurant dining room, warm lamps
+Sesenta mil euros. Tú tenías ochocientos en la cuenta. Pero había algo que solo tú sabías. Un programa de televisión que iba a empezar en una semana.
+
+[070] no humans, television screen in a restaurant showing a cooking show advertisement with a golden trophy and bright stage lights, warm room, no readable text
+«El Gran Fogón». El primer concurso de cocina para jóvenes chefs. Premio: cien mil euros. En tu primera vida lo ganó Bruno. Con la receta de tu padre.
+
+[071] solo, @leo, staring at a television screen with a determined smile, cozy restaurant dining room, warm lamps
+Cien mil euros. Y el ganador se convertía en el chef joven más famoso del país. Ese premio fue el primer escalón de Bruno. Esta vez, iba a ser el tuyo.
+
+[072] solo, @leo[dark blue denim jacket over white t-shirt], walking on a city sidewalk with determination, grey government building in background, daylight
+Pero el dinero no bastaba. Gálvez buscaría otra forma de quitaros el local. Necesitabas a alguien que pudiera detenerlo. Y recordabas un nombre.
+
+[073] no humans, news article on a tablet screen with a photo of a burned warehouse, blurred, memory, desaturated, no readable text
+En tu primera vida, años después, salió en las noticias: «La inspectora Vidal investigó durante años incendios de locales comprados por el Grupo Gálvez. Nunca pudo demostrar nada.»
+
+[074] solo, @vidal[beige trench coat, grey turtleneck], sitting behind a desk with case files, skeptical look, plain government office, grey filing cabinets, window with blinds, daylight
+La encontraste en una oficina gris del centro. Gabardina beige. Ojeras de no dormir. Te escuchó dos minutos sin pestañear. «¿Y tú cómo sabes lo de Altamira?»
+
+[075] solo, @leo, sitting in front of a desk, calm and serious, plain government office, window with blinds, daylight
+No podías decirle la verdad. «Mi padre les debe dinero. He investigado. Han comprado tres locales en el barrio. Los tres ardieron antes de pagar la deuda.»
+
+[076] solo, @vidal, leaning back in a chair, arms crossed, doubtful, plain government office, daylight
+«Eso ya lo sé, chico. Lo que no tengo son pruebas. Sin pruebas, un incendio es un cortocircuito. ¿Sabes cuántos chavales vienen aquí con teorías?»
+
+[077] solo, @leo, leaning forward, pointing at a city map on the desk, intense eyes, plain government office, daylight
+En tu primera vida, cuando empezaste a sospechar de Gálvez, leíste cada noticia sobre él cien veces. Te las sabías de memoria. Incluso las pequeñas, de las que nadie lee.
+
+[078] solo, @leo, speaking with calm certainty, plain government office, window with blinds, daylight, close-up
+«El jueves por la noche arderá el almacén de la calle Hierro, el que compró Altamira en enero. Vacío. A las tres de la mañana.»
+
+[079] solo, @vidal, raising an eyebrow, holding a pen, plain government office, daylight
+La inspectora te miró largo rato. «Si eso pasa, vuelve a verme. Y si no pasa, no vuelvas nunca.» Te fuiste sabiendo que no te creía. Todavía.
+
+[080] no humans, small family restaurant kitchen at lunch time, busy, many plates with food on the counter, steam, hanging copper pans, warm light
+Dos días después, el dieciséis de febrero, la cocina estaba a tope. Mediodía. Veinte mesas. Tu padre llevaba toda la mañana más callado de lo normal.
+
+[081] solo, @ramon, holding onto a steel counter, grimacing in pain, hand on chest, sweat, pale, small family restaurant kitchen, steam, warm light
+Y de repente, lo viste agarrarse a la encimera. La cara gris. Sudor frío en la frente. La mano apretada contra el pecho. Exactamente como tú en aquella acera.
+
+[082] solo, @ramon, waving a hand dismissively, forced smile, pale, sweating, small family restaurant kitchen
+«No es nada… Una indigestión. Termino estos platos y me siento un rato.» En tu primera vida, le hiciste caso. Esta vez apagaste los fuegos de un golpe.
+
+[083] solo, @leo, shouting with urgency, holding a smartphone to his ear, small family restaurant kitchen, steam, warm light
+«¡Bruno, cubre el pase! ¡Valeria, llama a un taxi!» Valeria había venido a traer el pan. Dejó las cestas en el suelo y salió corriendo a la calle.
+
+[084] solo, @valeria[cream knitted sweater, white apron], running out of a restaurant door to the street, waving her arm for a taxi, worried, narrow old Spanish neighborhood street, daylight
+En menos de un minuto había un taxi en la puerta. Tu padre protestaba. Que el servicio. Que los clientes. Que no era para tanto. No le hiciste caso.
+
+[085] no humans, exterior of a modern hospital emergency entrance in daylight, glass doors, ambulance parked, people in background
+Urgencias. Tu padre caminaba apoyado en ti. Cuando la enfermera le vio la cara, no le dejó ni sentarse. Se lo llevaron en una silla de ruedas por un pasillo blanco.
+
+[086] solo, @leo, sitting on a plastic chair in a hospital waiting corridor, elbows on knees, hands clasped, anxious, bright white lights
+Esperaste dos horas. Las dos horas más largas de tus dos vidas. Valeria se sentó a tu lado. No dijo nada. Solo te dio un café de máquina y se quedó.
+
+[087] 1boy, 1girl, @leo, @valeria, sitting side by side on plastic chairs in a hospital corridor, not touching, she is looking at him with concern, he is staring at the floor, bright white lights, {evitar=hug, kiss, holding hands, 3people}
+«¿Cómo lo supiste?», preguntó al fin. «Lo de tu padre. Saliste corriendo antes de que él dijera nada.» «Lo vi en su cara», mentiste. Ella no pareció creerte. Pero no insistió.
+
+[088] solo, doctor in white coat, middle-aged man, clean-shaven, glasses, holding a clipboard, serious but relieved expression, hospital corridor, bright white lights
+Por fin salió el cardiólogo. «Ha sido un infarto. Pequeño, por suerte. Tiene una arteria casi cerrada. Le vamos a poner un stent esta misma tarde.»
+
+[089] solo, doctor in white coat, middle-aged man, clean-shaven, glasses, looking directly at the viewer, serious, hospital corridor
+«Ha hecho bien en traerlo tan rápido. Si hubiera esperado unas semanas más, el siguiente no lo habría contado.» Unas semanas más. Tú sabías exactamente cuántas.
+
+[090] solo, @leo, covering his face with both hands, shoulders shaking, relieved tears, hospital corridor, bright white lights
+Te tapaste la cara con las manos. Y por primera vez desde que despertaste, lloraste de alivio. Lo primero de tu lista ya no estaba escrito con sangre.
+
+[091] solo, @ramon[light blue hospital gown], sitting up in a hospital bed, tired smile, white hospital room, evening light through window
+Esa noche, tu padre te sonrió desde la cama del hospital, con un tubo en el brazo. «Cinco días aquí dentro, dicen. ¿Y el restaurante?» «Yo me encargo, papá.»
+
+[092] solo, @ramon, pointing a finger with a stern but loving look, sitting up in a hospital bed, white hospital room, evening light
+«Tú y Bruno. Que no se os queme el caldo.» Se rio de su propio chiste. A ti no te hizo gracia. Ni un poco.
+
+[093] solo, @valeria[cream knitted sweater, beige coat], holding a plastic food container wrapped in a cloth, gentle smile, hospital room doorway, evening light
+Valeria apareció con un táper de croquetas de su abuela. «La comida de hospital es un castigo. Esto es medicina de verdad.» Tu padre se comió seis antes de que la enfermera los pillara.
+
+[094] solo, @ramon, laughing with food in his mouth, sitting up in a hospital bed, white hospital room, evening light
+«Esta chica vale oro, Leo. A ver si espabilas, que el que no la vea es que está ciego.» Valeria casi deja caer el táper. Tú miraste al techo.
+
+[095] no humans, narrow old Spanish neighborhood street at night, small restaurant with green wooden door closed, streetlights, quiet
+Volviste al restaurante pasada la medianoche para preparar el caldo del día siguiente. La calle estaba vacía. O eso creías.
+
+[096] solo, @leo, hiding behind a kitchen window, peeking through the blinds, tense, dark kitchen, night, dim streetlight
+Desde la ventana de la cocina oíste voces en el callejón. Apagaste la luz y miraste entre las rendijas de la persiana.
+
+[097] 2boys, @bruno[dark hoodie], @chispa[black leather jacket], standing apart in a narrow back alley behind a restaurant, the thin man handing a thick envelope to the blond man, single streetlight, night, trash bins, {evitar=1girl, 3boys, hug}
+Era Bruno. Con él, un hombre flaco de pelo rapado y chaqueta de cuero. Le dio un sobre gordo. Bruno lo guardó en la sudadera sin contarlo.
+
+[098] solo, @chispa, smoking a cigarette, sly grin, narrow back alley behind a restaurant, single streetlight, night
+«De parte del señor Gálvez. Para que vayas pagando lo tuyo. El resto, cuando hagamos el trabajo. Ya te diré la noche.» El hombre tiró el cigarro y se fue.
+
+[099] solo, @leo, crouching below a window in a dark kitchen, hand covering his mouth, wide eyes, night
+El trabajo. La noche. No tenías grabación. No tenías nada. Si llamabas a la policía, Bruno diría que era un préstamo de un amigo. Y Gálvez se escondería mejor.
+
+[100] solo, @leo, standing in a dark kitchen, looking at the old back door, determined face, dim light from the street, night
+Necesitabas que lo hicieran. Que vinieran esa noche, con todo. Y que alguien estuviera esperándolos. Para eso, la inspectora Vidal tenía que creerte.
+
+[101] no humans, empty warehouse burning at night, flames from windows, firefighters spraying water, fire trucks with lights, wet street, no people close to the fire
+Dos noches después, a las tres y diez de la madrugada, el almacén de la calle Hierro ardió. Vacío. Sin heridos. Exactamente como dijiste.
+
+[102] solo, @leo, asleep sitting in a hospital armchair next to a bed, a smartphone on his lap lighting up with an incoming call, white hospital room, early morning, dim light
+Esa noche te quedaste a dormir en el sillón del hospital, al lado de tu padre. A las siete de la mañana sonó tu móvil. Una voz seca, sin saludo. «Soy Vidal. Ven a verme. Ahora.»
+
+# ================= CAPÍTULO 3: La crítica =================
+
+[103] solo, @vidal[beige trench coat, grey turtleneck], standing by a window with blinds, holding a paper coffee cup, tired serious face, plain government office, grey filing cabinets, early morning light
+La inspectora Vidal no había dormido. Tenía las fotos del almacén quemado encima de la mesa. «Las tres y diez. Calle Hierro. Altamira. Ahora explícame cómo lo sabías.»
+
+[104] solo, @leo[dark blue denim jacket over white t-shirt], sitting in front of a desk, calm, hands together, plain government office, early morning light
+«Un hombre de Gálvez bebe en el bar de mi calle y habla demasiado», dijiste. Era mentira. Pero era la única verdad que ella podía aceptar.
+
+[105] solo, @vidal, narrowing her eyes, leaning on a desk with both hands, plain government office, morning light
+«Si no fuera porque pasaste la noche en el hospital con tu padre, y hay cámaras, ahora estarías detenido», dijo. «Así que me da igual cómo lo sepas.»
+
+[106] solo, @vidal, pointing a finger at someone, serious, plain government office, morning light
+«Me importa que vuelva a pasar. Y va a pasar en el restaurante de tu padre, ¿verdad?» Asentiste. «Pero todavía no sé qué noche.»
+
+[107] solo, @vidal, handing over a small white business card, serious, plain government office, morning light, close-up of the hand
+«No tengo gente para vigilar un restaurante un mes entero. Cuando sepas la noche, me llamas. Y esa noche, yo estaré allí.» Te dio una tarjeta. Solo un número.
+
+[108] solo, @vidal, looking at the viewer with a warning expression, arms crossed, plain government office, morning light
+«Y otra cosa, chico. No hagas el héroe. Esta gente no quema solo almacenes.» Te guardaste la tarjeta en la cartera como si fuera oro.
+
+[109] solo, @ramon[light blue hospital gown], sitting up in a hospital bed, frowning at someone off-screen, white hospital room, daylight
+Al mediodía fuiste al hospital. Pero tu padre no estaba solo. En la silla de las visitas, con su abrigo negro y su sonrisa de hielo, estaba Gonzalo Gálvez.
+
+[110] solo, @galvez[charcoal grey suit, black overcoat], sitting in a hospital visitor chair, legs crossed, fake sympathetic smile, holding a bouquet of white flowers, white hospital room, daylight
+«Ramón, me he enterado y he venido corriendo. Un susto así te hace pensar, ¿verdad? En lo que de verdad importa. En la salud. En descansar.»
+
+[111] solo, @galvez, placing a document on a hospital bed tray, smooth smile, white hospital room, daylight
+Dejó un papel en la bandeja de la comida. «Ochenta mil por el local. Y me olvido de la deuda con Altamira. Es más de lo que vale. Lo hago por amistad.»
+
+[112] solo, @ramon, pushing a paper away on a hospital bed tray, stubborn proud face, white hospital room, daylight
+Tu padre ni lo leyó. Lo apartó con la mano del suero. «Ese local era de mi padre, Gonzalo. Y será de mi hijo. No está en venta.»
+
+[113] solo, @galvez, standing up and buttoning his overcoat, cold smile, white hospital room, daylight
+Gálvez se levantó despacio. «Como quieras. Pero el quince de marzo está muy cerca. Y los restaurantes viejos… a veces tienen mala suerte.» Al salir, te rozó el hombro.
+
+[114] solo, @galvez, passing by close in a hospital doorway, looking sideways with contempt, close-up
+«Cuida bien de tu padre, chaval. Sería una pena que se llevara otro disgusto.» Lo dijo en voz baja, sonriendo. Como si te deseara buenas tardes.
+
+[115] solo, @leo, standing in a hospital doorway, clenched jaw, fists tight, looking at someone walking away, white hospital corridor
+En tu primera vida, esa frase no la oíste. No estabas en la habitación. Ahora sí. Y ahora sabías lo que significaba «mala suerte».
+
+[116] no humans, cozy traditional Spanish family restaurant dining room on a friday night, wooden tables with white tablecloths, framed old photos on walls, warm lamps, many customers in background
+Esa noche era viernes. Diecinueve de febrero. Y había otra fecha marcada en tu libreta, con dos rayas debajo: «La crítica».
+
+[117] solo, @leo[white chef jacket, black apron], remembering, staring into space with a sad face, small family restaurant kitchen, stainless steel counters, warm light
+En tu primera vida, una mujer sola cenó en la mesa siete. Pidió el arroz de tu padre. Una semana después salió la crítica: «Casa Ferrer, un recuerdo demasiado salado».
+
+[118] no humans, old newspaper page with a food review and a small photo of a rice dish, coffee stain, crumpled, memory, desaturated, no readable text
+Esa crítica vació el restaurante. Las reservas cayeron a la mitad. Tu padre, desesperado, pidió más plazo a Altamira. Y se lo negaron. Nunca supiste por qué el arroz salió así.
+
+[119] solo, @leo, eyes narrowing as he realizes something, small family restaurant kitchen, warm light, close-up
+Hasta ahora. Esa noche, el arroz no lo hizo tu padre. Estaba enfermo y lo hizo Bruno. Igual que hoy.
+
+[120] solo, @bruno[white chef jacket], tasting broth from a big pot with a spoon, relaxed smile, small family restaurant kitchen, gas stoves with steaming pots, warm light
+«Tranquilo, jefe», te dijo Bruno, guiñándote un ojo. «Hoy el arroz lo hago yo. Tú encárgate de la carne, que bastante tienes con lo de tu padre.»
+
+[121] no humans, old leather notebook open on a kitchen counter, handwritten recipes with small drawings of rice pans, a date written in the corner, warm kitchen light, close-up, no readable text
+Antes del servicio sacaste de la estantería el cuaderno de tu padre. Tapas de piel, hojas amarillas. La primera receta, «Arroz de la abuela», con la fecha de hace veintiocho años.
+
+[122] solo, @leo, secretly preparing a small separate pot of broth on a back stove, glancing over his shoulder, small family restaurant kitchen, warm light
+Mientras Bruno estaba en el almacén, preparaste un segundo caldo, más pequeño, en el fuego de atrás. Lo tapaste con un trapo. Nadie lo vio.
+
+[123] solo, @elena[dark green wool coat, cream blouse], sitting alone at a restaurant table by the window, reading the menu, calm observant expression, cozy restaurant dining room, warm lamps, night
+A las nueve y media entró ella. Pelo plateado. Gafas redondas. Abrigo verde. Pidió la mesa siete. Y el arroz de la casa.
+
+[124] solo, @leo, peeking from the kitchen pass window, focused, small family restaurant kitchen, warm light, night
+Elena Ríos. La crítica más temida del país. En tu primera vida no sabías ni quién era. Ahora la reconociste al instante: su cara salió en todas partes cuando se convirtió en jurado de la tele.
+
+[125] solo, @bruno, glancing around and pouring a large handful of coarse salt into a big pot, sneaky expression, small family restaurant kitchen, steam, warm light
+Y entonces lo viste. Bruno miró a los lados. Cogió un puñado de sal gorda. Y lo echó en la olla del caldo. No una pizca. Un puñado entero.
+
+[126] solo, @leo, watching from behind a shelf, cold expression, small family restaurant kitchen, steam, close-up
+Te temblaron las manos. No de miedo. De rabia. Diez años preguntándote qué había fallado esa noche. Y era tan simple como un puñado de sal.
+
+[127] solo, @leo, calling out to someone off-screen with a natural smile, holding a tray, small family restaurant kitchen, warm light
+«Bruno, la mesa tres pregunta por el vino que recomendaste. Sal tú, que a mí no me hacen caso.» Bruno dudó. Pero no podía negarse sin parecer raro.
+
+[128] solo, @leo, quickly swapping pots on a stove, pouring the salty broth into a sink, focused, steam, small family restaurant kitchen
+En cuanto salió, cambiaste las ollas. Tiraste el caldo salado por el fregadero. Pusiste el tuyo en su lugar. Te costó diez segundos. Diez segundos que te habían costado diez años.
+
+[129] solo, @leo, cooking paella-style rice in a wide flat pan, careful movements, steam, small family restaurant kitchen, warm light
+Hiciste el arroz tú mismo, siguiendo el cuaderno de tu padre paso a paso. El sofrito lento. El caldo justo. Y el secreto de la abuela al final: una corteza de limón quemada.
+
+[130] no humans, beautiful golden rice dish in a wide flat pan on a wooden table, steam rising, lemon peel, warm restaurant lights, close-up
+Cuando Bruno volvió, el arroz ya estaba en la mesa siete. «¿Ya lo has sacado?», preguntó, extrañado. «Tardabas mucho», dijiste. Él sonrió. Creía que su sal estaba dentro.
+
+[131] solo, @elena, tasting a spoonful of rice, eyes closing, surprised pleasure, restaurant table, warm lamps, night
+Elena Ríos probó la primera cucharada. Cerró los ojos. Dejó la cuchara en la mesa. Y se quedó así un rato, sin moverse.
+
+[132] solo, @elena, raising a hand to call a waiter, gentle expression, restaurant table, warm lamps, night
+Luego levantó la mano. «Quiero hablar con el cocinero.» Bruno se adelantó, sonriendo, quitándose el delantal. Pero ella señaló hacia ti. «No. El que lo ha hecho.»
+
+[133] solo, @bruno, frozen mid-step, confused smile fading, cozy restaurant dining room, warm lamps, night
+Bruno se quedó a medio camino. No entendía nada. ¿Cómo sabía ella quién lo había hecho? Tú tampoco lo sabías. Te acercaste a la mesa con el delantal manchado.
+
+[134] solo, @elena, looking up at someone with a knowing smile, adjusting her round glasses, restaurant table, warm lamps, night
+«Te he visto por la ventana de la cocina», dijo. «Moviendo el arroz como se movía hace veinte años. Ya comí este arroz entonces. Lo hacía un hombre con tu misma cara.»
+
+[135] solo, @leo, surprised, standing by a restaurant table, slight bow, cozy restaurant dining room, warm lamps, night
+«Es mi padre. Ramón Ferrer. Está en el hospital.» Ella asintió despacio. «Pues dígale que su hijo ha aprendido bien. El limón quemado. Pocos se acuerdan de eso.»
+
+[136] solo, @elena, putting on her coat, calm, holding a small notebook, cozy restaurant dining room, warm lamps, night
+Antes de irse, dejó una tarjeta en la mesa. «Soy jurado de un programa nuevo. "El Gran Fogón". Si tienes la mitad de talento que tu padre, preséntate.»
+
+[137] solo, @bruno, tasting from the sink with his finger, puzzled frown, small family restaurant kitchen, night
+Cuando se fue, Bruno metió el dedo en los restos de la olla grande. Puso cara rara. La olla que tú habías tirado. Pero en el fregadero quedaba un charco de caldo salado.
+
+[138] solo, @bruno, looking at someone off-screen with a suspicious half-smile, small family restaurant kitchen, night
+«¿Este caldo lo has tirado tú?» «Se cortó», dijiste, sin mirarlo. «Hice otro.» Bruno se rio. Pero la risa no le llegó a los ojos. Por primera vez, te miró de verdad.
+
+[139] solo, @leo, washing a pot calmly, back half turned, small family restaurant kitchen, night
+No dijiste nada más. Ni él tampoco. Pero algo había cambiado entre vosotros. Él no sabía qué. Tú sí. Y tenías que tener cuidado.
+
+[140] solo, @leo, sitting on the back steps of a restaurant at night, looking at a business card in his hand, thoughtful, narrow back alley, single streetlight
+Esa noche, sentado en el escalón del callejón, miraste las dos tarjetas que tenías. La de Vidal. Y la de Elena Ríos. Dos personas que en tu primera vida nunca conociste.
+
+[141] solo, @valeria[beige coat, red scarf], walking out of a bakery at night, carrying a small paper box, gentle smile, narrow old Spanish neighborhood street, streetlights
+«¿Se puede?» Valeria cruzó la calle con una cajita de cartón. «Me han sobrado dos tartaletas de limón. Y tienes cara de necesitar azúcar.»
+
+[142] 1boy, 1girl, @leo, @valeria, sitting on back steps of a restaurant at night with a small gap between them, eating small lemon tarts, smiling, narrow back alley, single streetlight, {evitar=hug, kiss, holding hands, 3people}
+Comisteis las tartaletas en el escalón, como cuando teníais quince años. Le contaste lo de la crítica. Sin lo del futuro. Ella te escuchó sin interrumpir.
+
+[143] solo, @valeria, looking at someone with admiration and a soft smile, holding half a lemon tart, night, streetlight, close-up
+«Leo, llevas una semana rara. Más serio. Más… como un hombre mayor. Pero me gusta. Antes cocinabas para que tu padre te aplaudiera. Ahora cocinas como si quisieras proteger algo.»
+
+[144] solo, @leo, looking up at the night sky, faint smile, sitting on steps, streetlight
+Proteger algo. Sí. A todos. «Valeria, voy a presentarme a ese concurso de la tele.» Ella abrió mucho los ojos. «¿Tú? ¿En la tele? ¡Si te pones rojo pidiendo el pan!»
+
+[145] solo, @valeria, laughing with her hand over her mouth, night, streetlight
+Se rio tanto que se le cayó la tartaleta. Luego se puso seria. «Si te presentas, yo te ayudo con los postres. Que en eso eres un desastre.» Era verdad. En las dos vidas.
+
+[146] solo, @leo, filling an online form on a laptop at night, focused face lit by the screen, small bedroom above a restaurant, dark
+Esa misma noche rellenaste la inscripción. Nombre. Edad. Restaurante. Y en «¿Por qué quieres ganar?» escribiste una sola frase: «Para que mi padre no pierda su casa».
+
+[147] solo, @bruno[dark hoodie], showing a smartphone screen with a cheerful grin, small family restaurant kitchen, morning light
+A la mañana siguiente, Bruno llegó con el móvil en la mano. «¡Mira! ¡Me he apuntado a El Gran Fogón! ¿Te imaginas? ¿Por qué no te apuntas tú también?»
+
+[148] solo, @leo, smiling calmly with folded arms, small family restaurant kitchen, morning light
+«Ya lo he hecho», dijiste. Bruno se quedó un segundo callado. Luego te dio una palmada en el hombro. «¡Genial! Así competimos como en los viejos tiempos. Que gane el mejor.»
+
+[149] solo, @leo, close-up, cold calm eyes, slight smile, kitchen light
+Que gane el mejor. En tu primera vida, ganó el que robó la receta. Esta vez, el cuaderno de tu padre, con sus fechas, estaba en tu mochila. Y no pensabas soltarlo.
+
+# ================= CAPÍTULO 4: El casting =================
+
+[150] solo, @ramon[brown cardigan over white shirt], walking slowly out of a hospital entrance, holding a small bag, relieved smile, daylight
+El veintiuno de febrero le dieron el alta a tu padre. Salió del hospital despacio, con una bolsa de pastillas y prohibido acercarse a un fogón durante un mes.
+
+[151] solo, @ramon, sitting in an armchair in a small living room, wrapped in a blanket, grumpy face, holding a remote control, warm afternoon light
+«¡Un mes! ¿Y qué hago yo un mes sin cocinar? ¿Ver la tele?» «Exactamente», dijiste. «Hoy, por ejemplo, me vas a ver a mí en la tele.»
+
+[152] solo, @ramon, eyes wide with surprise, then proud smile, sitting in an armchair, warm afternoon light
+«¿Tú? ¿En El Gran Fogón?» Por un momento se olvidó de quejarse. Luego se le humedecieron los ojos. «Tu madre siempre dijo que acabarías en la tele. Yo pensaba que de reportero.»
+
+[153] no humans, exterior of a large modern television studio building, crowds of young chefs in white jackets queuing at the entrance, morning sunlight
+El casting era en los estudios de la tele, a las afueras. Cuando llegaste, había una fila de cincuenta cocineros con chaqueta blanca. Todos nerviosos. Todos con un sueño.
+
+[154] solo, @valeria[beige coat, red scarf], standing in a queue outside a studio, holding a big bag of pastry tools, cheerful encouraging smile, morning sunlight
+Valeria vino contigo. Había cerrado la panadería por primera vez en tres años. «No te lo creas mucho», dijo. «Vengo por si te desmayas.»
+
+[155] solo, @bruno[white chef jacket], waving from further ahead in a queue, confident grin, morning sunlight, studio building
+Bruno estaba diez puestos por delante. Te saludó con la mano. Llevaba una chaqueta nueva, con su nombre bordado en el pecho. Una chaqueta cara. Pagada con dinero de Gálvez.
+
+[156] no humans, television cooking show studio, rows of cooking stations, bright stage lights, studio cameras, empty audience seats, wide shot
+El plató era enorme. Cincuenta puestos de cocina en filas. Luces que quemaban. Cámaras por todas partes. Al fondo, una mesa alta para el jurado.
+
+[157] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, big smile, television cooking show studio, bright stage lights
+«¡Bienvenidos a El Gran Fogón!», gritó el presentador. «Hoy, cincuenta. En la final, solo dos. Y el ganador se llevará… ¡cien mil euros!» Todos aplaudieron.
+
+[158] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone and a card, serious face, television cooking show studio, bright stage lights
+«Y para que nadie diga que la tele no paga… El premio se ingresará en las cuarenta y ocho horas siguientes a la final. Palabra de esta cadena.»
+
+[159] solo, @leo[white chef jacket, black apron], standing at a cooking station, calculating, focused eyes, television cooking show studio, bright stage lights
+Cuarenta y ocho horas. Hiciste la cuenta. La final era el doce de marzo. El dinero llegaría el catorce. La deuda vencía el quince. Justo a tiempo. Ni un día de margen.
+
+[160] solo, @elena[dark green blazer, cream blouse], sitting at a high judges' table, round glasses, calm expression, hands folded, television cooking show studio, bright stage lights
+En la mesa del jurado, Elena Ríos. Al verte, solo movió un poco la cabeza. Como si dijera: «Has venido.» Nadie más se dio cuenta.
+
+[161] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, pointing at the cooks, television cooking show studio, bright stage lights
+«Primera prueba. Cuarenta y cinco minutos. Un plato que diga quién eres. Solo pasarán doce. ¡El tiempo empieza… ya!»
+
+[162] no humans, many young chefs cooking frantically at rows of cooking stations, flames, steam, bright stage lights, television studio, motion blur
+El plató se volvió loco. Sartenes. Gritos. Humo. Alguien cortándose un dedo. Bruno ya estaba montando algo con espumas y flores comestibles.
+
+[163] solo, @leo, calmly peeling potatoes with a small knife, peaceful focused face, cooking station, television studio, bright lights
+Tú cogiste cuatro patatas, seis huevos y una cebolla. Los de al lado te miraron con pena. Una tortilla de patatas. En un concurso de cien mil euros.
+
+[164] solo, @leo, flipping a potato omelette in a frying pan using a plate, skilled movement, cooking station, television studio, bright lights
+Pero era la primera tortilla que te enseñó tu padre, a los diez años, el verano que murió tu madre. La hiciste exactamente igual. Despacio. Sin prisa.
+
+[165] solo, @bruno, plating a fancy modern dish with tweezers, edible flowers and foam, confident, cooking station, television studio, bright lights
+Bruno presentó una «esfera de mar con aire de cítricos». Precioso. El jurado aplaudió. Él te miró de reojo, con una sonrisa de lado. Como diciendo: ¿eso es todo?
+
+[166] no humans, simple golden Spanish potato omelette on a white plate, slice cut showing creamy inside, judges' table, bright studio lights, close-up
+Llegó tu turno. Dejaste el plato en la mesa. Una tortilla. Nada más. Un miembro del jurado suspiró. «¿Esto es lo que dice quién eres? ¿Que te gusta el bar de abajo?»
+
+[167] solo, @elena, tasting a piece of potato omelette with a fork, eyes closed, judges' table, television studio, bright lights
+Elena Ríos cortó un trozo. Lo probó. Y no dijo nada durante cinco segundos. En el plató no se oía ni el aire acondicionado.
+
+[168] solo, @elena, looking at someone with a slight smile, putting down a fork, judges' table, television studio, bright lights
+«Cualquiera puede hacer una esfera», dijo. «Hacer una tortilla perfecta, con nervios y cincuenta cámaras delante… eso es saber quién eres. Pasa.»
+
+[169] solo, @leo, bowing his head slightly, quiet smile, cooking station, television studio, bright lights
+Doce elegidos. Tú. Bruno. Y diez más. Al salir del plató, Valeria te esperaba con los ojos brillando. «¡Una tortilla! ¡Estás loco! ¡Y te ha salido bien!»
+
+[170] no humans, busy television studio backstage corridor, cables on the floor, lighting equipment, young chefs in white jackets chatting in background, a handheld camera
+En el pasillo de los camerinos había fiesta. Los elegidos se abrazaban. Los demás lloraban. Y una cámara del programa grababa todo para el «detrás de las cámaras».
+
+[171] solo, @nerea[elegant beige trench coat, black turtleneck], walking down a backstage corridor, heels, confident cold expression, television studio backstage, cables, lights
+Y entonces apareció Nerea. Tacones. Gafas de sol en la cabeza. No sabías que iba a venir. Ella no había venido por ti.
+
+[172] solo, @nerea, standing in a corridor with arms crossed, looking at someone with pity, people watching in background, television studio backstage
+«Leo, ya que estamos aquí… Te lo digo delante de todos para que no haya dramas luego. Lo nuestro se ha acabado.» El pasillo entero se quedó callado.
+
+[173] solo, @nerea, flipping her hair, condescending smile, television studio backstage, people watching in background
+«Yo necesito a alguien con ambición. Con futuro. No a un chico que quiere pasarse la vida en el restaurante de su papá haciendo tortillas.»
+
+[174] 1boy, 1girl, @bruno, @nerea, standing next to each other without touching, she looks at him with admiration, he smiles awkwardly, television studio backstage corridor, people watching in background, {evitar=hug, kiss, holding hands, 3people}
+Se puso al lado de Bruno. Muy cerca. Bruno se encogió de hombros con cara de culpa falsa. «Sin rencores, tío. Estas cosas pasan.» Alguien silbó. Otros se rieron.
+
+[175] no humans, group of young chefs in white jackets whispering and pointing in a backstage corridor, one holding a phone recording, television studio, shallow depth of field
+«¡Madre mía, qué fuerte!» «¿Delante de todos?» «Pobre chaval, la tortilla y ahora esto.» Alguien lo estaba grabando con el móvil. En tu primera vida, ese vídeo te persiguió años.
+
+[176] solo, @leo, calm relaxed smile, hands in pockets, television studio backstage corridor, close-up
+Pero esta vez no te temblaron las piernas. Ni se te cayó la cara de vergüenza. Sonreíste. Con calma. Como quien ya ha visto la película y sabe cómo acaba.
+
+[177] solo, @leo, speaking calmly, slight nod, television studio backstage corridor
+«Te deseo mucha suerte, Nerea. De verdad. Con él la vas a necesitar.» Y te diste la vuelta. Así de simple.
+
+[178] solo, @nerea, mouth slightly open, offended and confused, television studio backstage corridor
+Nerea se quedó con la boca abierta. Esperaba lágrimas. Súplicas. Un escándalo para el vídeo. No esperaba que le desearas suerte como quien le da los buenos días al panadero.
+
+[179] no humans, young chefs in a backstage corridor exchanging surprised looks, some smiling, one lowering a phone, television studio
+«¿Has visto qué tranquilo?», murmuró alguien. «Ese tío tiene más clase que todos nosotros juntos.» El que grababa bajó el móvil. Ya no había drama que grabar.
+
+[180] solo, @valeria[beige coat, red scarf], stepping forward with a fierce look, pointing a finger, television studio backstage corridor
+Valeria, en cambio, no se dio la vuelta. Se plantó delante de Nerea. «Por cierto, guapa. El que tiene futuro es él. Tú solo tienes buen ojo para los escaparates.»
+
+[181] solo, @valeria, turning around with her chin up, proud, walking away, television studio backstage corridor
+Y se fue detrás de ti con la barbilla bien alta. En el pasillo, alguien empezó a aplaudir. Luego otro. Nerea se puso roja hasta el cuello.
+
+[182] 1boy, 1girl, @leo, @valeria, walking side by side in a parking lot at sunset without touching, she looks at him, he laughs, studio building in background, {evitar=hug, kiss, holding hands, 3people}
+En el aparcamiento te reíste por primera vez en todo el día. «¿Buen ojo para los escaparates?» «Me ha salido así», dijo Valeria, colorada. «Llevo años queriéndole decir algo.»
+
+[183] solo, @valeria, looking down shyly, hands in coat pockets, sunset, parking lot, soft light
+Luego se quedó callada. «¿Estás bien? De verdad. Era tu novia.» Pensaste en diez años de soledad. En una carta sin abrir. «Estoy mejor que nunca», dijiste. Y era verdad.
+
+[184] solo, @ramon[brown cardigan over white shirt], sitting in an armchair laughing, holding a smartphone, small living room, evening warm light
+Cuando llegaste a casa, tu padre ya lo sabía todo. El vídeo de Nerea corría por el barrio. Pero el vídeo que más se compartía era otro: el del aplauso.
+
+[185] solo, @ramon, wagging a finger with a knowing smile, sitting in an armchair, small living room, evening warm light
+«Esa chica siempre miraba el escaparate de al lado, hijo. Yo nunca dije nada.» Luego te miró por encima de las gafas. «La otra, en cambio… la del pan. Esa te mira a ti.»
+
+[186] no humans, newspaper food section on a wooden table with a photo of a rice dish in a wide pan, morning light, coffee cup, no readable text
+Cinco días después, el viernes veintiséis, salió la crítica de Elena Ríos. Esta vez el titular era otro: «Casa Ferrer: el arroz que el tiempo no pudo vencer».
+
+[187] no humans, long queue of people waiting outside a small restaurant with a green wooden door on a narrow old Spanish street, midday sunlight, neighbors chatting
+Al mediodía había cola en la puerta. Gente de otros barrios. De otras ciudades. El teléfono no paraba. Reservas para tres semanas.
+
+[188] no humans, neighbors chatting excitedly in front of a small bakery and a restaurant on a narrow old Spanish street, daylight
+«¡Que salimos en el periódico!», gritaba la señora Encarna, la vecina del tercero. «¡Yo como aquí desde que abrieron! ¡Yo lo sabía!» Todo el barrio presumía de vosotros.
+
+[189] solo, @ramon, standing at a restaurant door watching the queue, emotional smile, hand on the doorframe, daylight
+Tu padre, que no podía cocinar, se pasó la mañana en la puerta saludando a cada cliente. «Veinticinco años», decía, emocionado. «Y ahora vienen de fuera.»
+
+[190] solo, @galvez[charcoal grey suit], sitting in a luxury office chair, crumpling a newspaper in his fist, furious cold face, modern luxury office, glass walls, city skyline, daylight
+En una oficina con vistas a toda la ciudad, Gonzalo Gálvez arrugó el mismo periódico. «Bruno. Ven ahora mismo.»
+
+[191] solo, @bruno[dark hoodie], standing nervously in front of a big desk, sweating, avoiding eye contact, modern luxury office, glass walls, daylight
+Bruno llegó sudando. «Te juro que eché la sal. Un puñado entero. Alguien cambió la olla. Leo dijo que el caldo se había cortado…»
+
+[192] solo, @galvez, leaning forward over his desk, cold threatening stare, steepled fingers, modern luxury office, daylight
+«Entonces vigila a Leo. Si ese restaurante empieza a ganar dinero, el viejo pagará. Y si paga, el local no será nunca mío. ¿Lo entiendes?»
+
+[193] solo, @galvez, looking out of a big window at the city, hands behind his back, cold profile, modern luxury office, city skyline, daylight
+«Puede que tengamos que adelantar el trabajo. Busca una noche en que no haya nadie. Y avísale al Chispa.» Bruno tragó saliva. Y asintió.
+
+[194] solo, @leo[white chef jacket, black apron], stopping in the middle of plating a dish, worried realization, small family restaurant kitchen, busy, warm light
+Tú no estabas en esa oficina. Pero no te hacía falta. Lo viste en la cara de Bruno esa tarde: más callado, más pendiente de ti. Algo había cambiado.
+
+[195] solo, @leo, staring at a calendar on a kitchen wall, thinking hard, small family restaurant kitchen, warm light
+Y entonces te diste cuenta del problema. Al cambiar las cosas, el futuro también cambiaba. La noche del catorce ya no era segura. Podía ser mañana. Podía ser cualquier día.
+
+[196] solo, @leo, sitting on a bed at night, writing in a notebook, determined face, small bedroom above a restaurant, desk lamp
+No podías vigilar el restaurante treinta noches seguidas. Vidal tampoco. Si no sabías qué noche iban a venir… tenías que elegirla tú.
+
+[197] solo, @leo, sudden idea, slight smile, notebook in hand, small bedroom above a restaurant, desk lamp, night, close-up
+Tenías que darles la noche perfecta. Una noche con el restaurante vacío y sin testigos. Y hacer que Bruno creyera que la había encontrado él solito.
+
+# ================= CAPÍTULO 5: El cebo =================
+
+[198] solo, @leo[dark blue denim jacket over white t-shirt], thinking at a kitchen table at night, notebook open, pen in hand, small family restaurant kitchen, dim warm light
+Repasaste lo que sabías. En tu primera vida, el incendio fue la noche en que todo el barrio estaba fuera, celebrando la victoria de Bruno en la tele. Por eso nadie vio nada.
+
+[199] solo, @leo, eyes lighting up with an idea, notebook in hand, small family restaurant kitchen, dim warm light, close-up
+Esta vez no habría victoria de Bruno. Pero podía haber otra fiesta. Una noche en la que todo el barrio estuviera fuera. Y en la que tú no estuvieras donde ellos creían.
+
+[200] solo, TV producer, woman with short black hair, headset around her neck, holding a clipboard, busy and curious expression, busy television studio backstage corridor, cables, lights
+Al día siguiente buscaste a la productora del programa. Una mujer con cascos y prisa. «Tengo una historia para vuestra gala», le dijiste. Ella se paró en seco.
+
+[201] solo, @leo, explaining with open hands, earnest face, television studio backstage corridor, lights
+«Mi padre tuvo un infarto. El restaurante tiene veinticinco años. Todo el barrio nos ha apoyado. Si llego a la final, me gustaría que el barrio entero viniera a la gala.»
+
+[202] solo, TV producer, woman with short black hair, headset around her neck, writing excitedly on a clipboard, big smile, television studio backstage corridor
+«¿Un barrio entero en el plató? ¡Eso es oro!», dijo, apuntando sin parar. «La gala de finalistas es el sábado catorce. Os mando un autobús. Si llegas a la final, claro.»
+
+[203] solo, @leo, walking away down a corridor, small satisfied smile, television studio backstage, lights
+El sábado catorce. La misma noche que en tu primera vida. Ahora solo tenías que llegar a la final. Y asegurarte de que Bruno se enterara.
+
+[204] solo, @leo[white chef jacket, black apron], announcing something to people in a kitchen, cheerful, raising a ladle, small family restaurant kitchen, warm light
+Esa tarde lo anunciaste en la cocina, en voz alta. «¡Si llego a la final, la tele invita a todo el barrio a la gala del día catorce! Esa noche cerramos. Nos vamos todos.»
+
+[205] solo, @ramon[brown cardigan over white shirt], clapping happily, sitting on a stool in a kitchen corner, warm light
+Tu padre aplaudió desde su taburete. «¡Por fin una noche libre! Hace veinticinco años que no cierro un sábado.» Valeria, que traía el pan, sonrió desde la puerta.
+
+[206] solo, @bruno[white chef jacket], pausing while cutting vegetables, eyes thinking, slight hidden smile, small family restaurant kitchen, warm light
+Y Bruno, que cortaba pimientos, se quedó quieto un segundo. Solo un segundo. Luego siguió cortando. Pero tú viste el brillo en sus ojos. Había mordido el anzuelo.
+
+[207] solo, @bruno, typing a message on a smartphone in a narrow back alley, glancing back at the door, sneaky, daylight
+Diez minutos después salió al callejón «a fumar». Bruno no fumaba. Lo viste por la ventana escribiendo un mensaje con prisa, mirando hacia atrás.
+
+[208] solo, @leo, making a quiet phone call in a small storage room, whispering, serious face, shelves with food boxes, dim light
+Te metiste en el almacén y llamaste a Vidal. «Sábado catorce. De madrugada. El restaurante estará vacío y el barrio entero, en la tele.» Silencio al otro lado. «¿Seguro?» «Seguro.»
+
+[209] solo, @vidal[beige trench coat, grey turtleneck], speaking on a phone in a parked car at night, serious, city lights through the windshield
+«Necesito verlo con mis propios ojos», dijo Vidal. «Pon cámaras en tu local. Es tu casa, es legal. Yo estaré fuera con dos agentes de paisano. Pero necesito un sitio para esperar sin que nos vean.»
+
+[210] solo, @leo, looking out a window toward a bakery across the street, small family restaurant dining room, evening light
+Miraste por la ventana. Justo enfrente, con el cartel de madera y las luces apagadas por la noche, estaba la panadería de los Ruiz. Con vistas directas al callejón.
+
+[211] solo, @valeria[cream knitted sweater, white apron], wiping her hands on her apron, surprised and serious, small bakery with glass display of pastries, evening light
+«¿Quieres esconder a la policía en mi panadería?» Valeria se quedó con el trapo en la mano. Le contaste lo justo. Bruno. Gálvez. El sobre del callejón. Sin lo del futuro.
+
+[212] solo, @valeria, looking down, hurt and angry, holding a cloth, small bakery, evening light
+«Bruno…», susurró. «Comía en mi casa. Mi abuela le hacía la merienda.» Se quedó callada mucho rato. Luego levantó la cabeza. «¿A qué hora tengo que dejaros la llave?»
+
+[213] solo, @valeria, small sad smile, looking up, small bakery, evening light, close-up
+«Y Leo… Gracias por contármelo. Últimamente parece que llevas el mundo encima. Me gusta que, al menos un trozo, lo lleves conmigo.»
+
+[214] no humans, a small hidden security camera inside a flower pot in a narrow back alley, pointing at an old metal back door, tiny red recording light, night
+Esa semana compraste dos cámaras pequeñas con lo poco que tenías ahorrado. Una, en una maceta del callejón, apuntando a la puerta de atrás. Otra dentro, en la cocina, entre los botes de especias.
+
+[215] no humans, television cooking show studio, rows of cooking stations, bright stage lights, studio cameras, audience in background
+Mientras tanto, el concurso seguía. Cuartos de final, el veintiocho de febrero. De doce, quedarían seis. Tema: «Postres de mercado».
+
+[216] solo, @leo[white chef jacket, black apron], tasting a spoonful of white powder with a suspicious frown, cooking station, television studio, bright lights
+Postres. Tu punto débil. Antes de empezar, hiciste lo que Valeria te había dicho mil veces: «Prueba siempre todo, hasta el azúcar». Lo probaste. No era azúcar. Era sal fina.
+
+[217] solo, @bruno, at a neighboring cooking station, pretending to focus on his work, side-eye glance, hidden smirk, television studio, bright lights
+Alguien había cambiado el bote. Bruno estaba en el puesto de al lado, muy concentrado en sus fresas. Demasiado concentrado. No levantó la vista ni una vez.
+
+[218] solo, @leo, calm thoughtful face, holding a jar of salt, cooking station, television studio, bright lights, close-up
+Podías quejarte al jurado. Pero no tenías pruebas. Y perderías diez minutos. Entonces te acordaste de algo que Valeria hacía los domingos. Caramelo. Con sal.
+
+[219] solo, @leo, pouring golden caramel from a pan over a dessert, steam, skilled, cooking station, television studio, bright lights
+Usaste la sal. Hiciste un caramelo dorado con un toque salado sobre una tarta de manzana asada. El olor llenó todo el plató. El presentador se acercó a mirar.
+
+[220] solo, @elena[dark green blazer, cream blouse], tasting a dessert with a small spoon, delighted surprise, judges' table, television studio, bright lights
+Elena Ríos probó tu tarta y levantó las cejas. «Caramelo salado. Valiente. Equilibrado. ¿De dónde has sacado la idea?» «De una amiga pastelera», dijiste. «Ella me enseñó a probarlo todo.»
+
+[221] solo, @bruno, forced tight smile, standing at a cooking station, frustrated eyes, television studio, bright lights
+Bruno aplaudió como todos. Pero se le notaba en la mandíbula. Su trampa había hecho el mejor postre del día.
+
+[222] solo, @valeria, watching a television in a small bakery at night, hands over her mouth, eyes shining, small bakery, dim light
+Esa noche, Valeria vio el programa en la panadería. Cuando dijiste «una amiga pastelera», se tapó la boca con las dos manos. No te lo dijo. Pero te dejó tres tartaletas en la puerta.
+
+[223] solo, @leo[dark blue denim jacket over white t-shirt], at a small bakery counter at night, laughing, flour on his cheek, warm dim light
+Las noches siguientes practicasteis postres en su obrador, después de cerrar. Ella te enseñaba. Tú lo hacías mal. Ella se reía. Llevabas diez años sin reírte así.
+
+[224] solo, @valeria[cream knitted sweater, white apron], kneading dough on a floured wooden table, flour on her nose, looking up with a teasing smile, small bakery workshop, warm dim light
+«Tienes las manos de un cocinero y la paciencia de un niño de cinco años», te dijo una noche, quitándote la manga pastelera. «El hojaldre se hace con cariño, no con prisa.»
+
+[225] solo, @valeria, suddenly serious, looking at a letter on the table, small bakery workshop, warm dim light
+Otra noche te enseñó una carta. «Me han ofrecido una beca en una escuela de pastelería en Lyon. Empieza en abril. Un año entero.» Lo dijo sin mirarte.
+
+[226] solo, @leo, frozen, holding a piping bag, small bakery workshop, warm dim light, close-up
+En tu primera vida se fue a Lyon una semana después del incendio. Y nunca volvió. Te dejó una carta en la puerta. Tú la guardaste diez años sin abrirla. Por miedo.
+
+[227] solo, @leo, gentle smile, looking at someone across a table, small bakery workshop, warm dim light
+«Deberías ir», dijiste. Ella te miró sorprendida. «Eres la mejor pastelera que conozco. No te quedes por nadie. Ni siquiera por mí.» Ella bajó la vista. «¿Y si quiero quedarme por alguien?»
+
+[228] solo, @valeria, blushing, quickly turning away and dusting flour off the table, small bakery workshop, warm dim light
+No te dejó contestar. Se puso a limpiar la mesa con mucha energía. «Bueno, ¡el hojaldre no se hace solo!» Tú sonreíste. Esta vez, la carta no se iba a quedar sin abrir.
+
+[229] no humans, television cooking show studio, only four cooking stations lit, dramatic spotlights, studio cameras, audience in background
+Cinco de marzo. Semifinal. Quedabais cuatro. Solo pasarían dos a la final. Tema: «El plato de tu infancia».
+
+[230] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, dramatic expression, television cooking show studio, spotlights
+«¡Cuatro cocineros, dos plazas, una hora!», gritó el presentador. «Queremos emocionarnos. Queremos saber de dónde venís.»
+
+[231] solo, @bruno, talking to a handheld camera with a confident smile, cooking station, television studio, spotlights
+Antes de empezar, la cámara del programa entrevistó a Bruno. «Si llego a la final, cocinaré el arroz de mi abuela. Una receta familiar que nadie conoce.» Tú lo oíste desde tu puesto.
+
+[232] solo, @leo, cold calm stare, cooking station, television studio, spotlights, close-up
+El arroz de su abuela. La abuela de Bruno no sabía ni freír un huevo. Era el arroz de tu abuela. El del cuaderno. El que Bruno aprendió en vuestra cocina. Igual que en tu primera vida.
+
+[233] solo, @leo, cooking lentils in a pot, peaceful focused face, cooking station, television studio, warm spotlight
+Tú cocinaste unas lentejas. Las lentejas que tu padre te hacía los lunes cuando volvías del colegio. Con chorizo, pimentón y un trozo de pan para mojar.
+
+[234] solo, @bruno, plating a refined modern dish of grilled octopus with purple potato puree, precise, cooking station, television studio, spotlights
+Bruno hizo pulpo a la brasa con puré violeta. Técnico. Perfecto. Frío. Como él. Los otros dos semifinalistas se pusieron nerviosos y se les pasó el punto.
+
+[235] no humans, rustic bowl of Spanish lentil stew with chorizo and a piece of bread on a judges' table, steam rising, bright studio lights, close-up
+Cuando el jurado probó tus lentejas, uno de ellos dejó la cuchara y se rio. «Mi madre las hacía así. Con el pimentón un poco quemado. Me has hecho volver a los ocho años.»
+
+[236] solo, @elena, writing on a small card, slight nod, judges' table, television studio, spotlights
+Elena Ríos no dijo nada. Solo apuntó algo en una tarjeta. Y te miró un segundo más de lo normal.
+
+[237] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a golden envelope, excited face, television cooking show studio, spotlights
+«Y los finalistas de El Gran Fogón son…» Silencio. Tambores. «¡Bruno Salas! ¡Y Leo Ferrer! ¡Los dos del mismo restaurante!»
+
+[238] no humans, studio audience applauding and cheering, confetti falling, bright stage lights, television studio
+El público se volvió loco. Los dos amigos de la infancia, cara a cara en la final. A la tele le encantaba la historia. Si supieran cuál era la historia de verdad.
+
+[239] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, inviting gesture, television cooking show studio, confetti
+«¡Y una sorpresa! El sábado catorce, gala de finalistas en directo. Con las familias. ¡Y con todo el barrio de Casa Ferrer, que viene en autobús!» Más aplausos.
+
+[240] solo, @bruno, standing in a backstage corridor, talking quietly on a phone, covering his mouth with his hand, nervous excitement, television studio backstage
+Después, en el pasillo, oíste a Bruno hablando por teléfono junto a la máquina de café. Bajito. «Sí. El sábado. Todo el barrio estará aquí. El local, vacío. Yo dejo el candado abierto por la tarde.»
+
+[241] solo, @leo, hiding around a corridor corner, listening, back against the wall, calm intense eyes, television studio backstage
+Te quedaste detrás de la esquina sin respirar. Lo había dicho con su propia voz. Ahora solo faltaba que lo hicieran. Y que las cámaras lo vieran.
+
+[242] solo, @bruno, putting the phone away, turning and seeing someone, startled then fake friendly smile, television studio backstage corridor
+Bruno colgó y se dio la vuelta. Casi chocáis. Por un segundo, el miedo le cruzó la cara. «¡Leo! ¿Llevas mucho ahí?» «Acabo de llegar», sonreíste. «Vengo a por un café.»
+
+[243] solo, @bruno, putting an arm out for a fist bump, wide fake smile, nervous sweat, television studio backstage corridor
+«¡Qué final nos espera, eh! Como cuando éramos críos.» Te puso el puño. Lo chocaste. Igual que la primera mañana. Pero esta vez, tu mano no tembló.
+
+[244] solo, @leo, walking out of a studio building at night, looking up at the sky, determined calm, parking lot lights
+Al salir del estudio miraste el cielo. Siete días para la final. Nueve para el incendio. Diez para la deuda. Y por primera vez en dos vidas, ibas un paso por delante.
+
+# ================= CAPÍTULO 6: La receta de mamá =================
+
+[245] solo, TV producer, woman with short black hair, headset around her neck, reading from a clipboard, serious, busy television studio backstage corridor, cables, lights
+Al día siguiente, la productora os dio el tema de la final. «Un plato para toda la vida. El que serviríais en vuestro restaurante cada día, durante cincuenta años.»
+
+[246] solo, @leo[dark blue denim jacket over white t-shirt], walking on a quiet street at dusk, hands in pockets, thinking, narrow old Spanish neighborhood street, soft evening light
+Para toda la vida. Volviste a casa andando, dándole vueltas. El arroz era de tu padre. Y Bruno iba a hacerlo. Tú necesitabas algo tuyo. Algo que nadie pudiera robarte.
+
+[247] no humans, small bedroom above a restaurant at dawn, steam drifting through the doorway, soft golden light, nostalgic atmosphere
+Entonces recordaste el olor. El de la primera mañana. Caldo de huesos, laurel y pimienta. El que te despertó en esta vida. El caldo de los domingos.
+
+[248] solo, @ramon[brown cardigan over white shirt], sitting at a kitchen table with a cup of tea, looking up surprised, small family restaurant kitchen, evening warm light
+«Papá, ¿cómo hacía mamá el caldo de los domingos?» Tu padre dejó la taza en la mesa muy despacio. Hacía catorce años que nadie en esa casa decía «mamá» en voz alta.
+
+[249] no humans, old framed photograph on a kitchen shelf showing a smiling young woman with long dark hair holding a soup ladle, warm light, slightly faded colors
+Tu madre, Lucía, murió cuando tenías diez años. El caldo de los domingos murió con ella. Tu padre nunca volvió a hacerlo. Decía que le salía mal. Tú sabías que no podía.
+
+[250] solo, @ramon, looking at an old photograph with wet eyes and a gentle smile, small family restaurant kitchen, evening warm light
+«No lo escribió nunca», dijo al fin. «Lo hacía de memoria. Huesos de jamón, un hueso de rodilla, gallina vieja. Y algo más que nunca me quiso decir. Decía que era su secreto para que volviera a casa los domingos.»
+
+[251] solo, @ramon, smiling with nostalgia, looking far away, small family restaurant kitchen, evening warm light
+«Yo trabajaba hasta las tantas los sábados. Y el domingo por la mañana, ese olor me sacaba de la cama. Ni el despertador. Ella lo sabía.»
+
+[252] solo, @leo, sitting across a table, listening attentively, emotional, small family restaurant kitchen, evening warm light
+Te quedaste callado. Tú también recordabas ese olor. Pero no lo que tenía dentro. Tenías diez años. Y una nariz de diez años.
+
+[253] no humans, kitchen stove with three big pots of broth simmering at night, bones and vegetables, steam, small family restaurant kitchen, dim warm light
+Esa noche hiciste tres caldos distintos. Huesos de jamón. Rodilla. Gallina. Los probaste. Estaban buenos. Pero no eran ese. Faltaba algo.
+
+[254] solo, @leo, tasting broth from a spoon at night, frustrated, shaking his head, small family restaurant kitchen, dim warm light, steam
+La segunda noche, cinco caldos. Con apio. Con nabo. Con puerro. Ninguno. La tercera, ocho. Te dormiste con la cabeza en la encimera.
+
+[255] solo, @valeria[cream knitted sweater, beige coat], entering a dark kitchen with a basket of bread, surprised to see someone asleep, small family restaurant kitchen, dim dawn light, steam
+Valeria te encontró así a las seis de la mañana, cuando trajo el pan. Te puso su abrigo encima. Y, sin despertarte, probó los ocho caldos uno por uno.
+
+[256] solo, @valeria, holding a small spoon, thinking with closed eyes, small family restaurant kitchen, dawn light, steam
+«Les falta dulce», dijo cuando abriste los ojos. «Un dulce de verdad. No azúcar. Algo que se tueste.» Pensó un momento. «Mi abuela decía que tu madre le compraba castañas en otoño. Muchas. Más que nadie del barrio.»
+
+[257] solo, @leo, sitting up suddenly, eyes wide with realization, coat falling from his shoulders, small family restaurant kitchen, dawn light
+Castañas. Castañas asadas. Te acordaste de golpe: la cocina oliendo a castaña, tu madre dejándote pelar las quemadas. Y luego, el caldo. Siempre después.
+
+[258] no humans, roasted chestnuts on a black iron pan, slightly charred shells, steam, warm kitchen light, close-up
+Asaste castañas. Las echaste al caldo la última hora, con la piel quemada envuelta en una gasa. Dejaste que el olor subiera por la escalera. Y esperaste.
+
+[259] solo, @ramon[white t-shirt, old grey robe], walking down old wooden stairs in the early morning, sleepy face changing to shock, warm light from below
+A las siete, tu padre bajó la escalera en bata, despeinado, medio dormido. Se paró en el último escalón. Se le cayeron las gafas al suelo.
+
+[260] solo, @ramon, standing in a kitchen doorway, tears streaming down his face, hand over his mouth, small family restaurant kitchen, morning light, steam
+«Lucía…», susurró. Como si ella estuviera en la cocina. Luego te miró a ti, con la cara llena de lágrimas. «Es ese. Es exactamente ese, hijo.»
+
+[261] solo, @ramon, sitting at the kitchen table, holding a bowl of broth with both hands, crying and smiling, small family restaurant kitchen, morning light
+Se tomó un tazón entero sin decir nada. Luego otro. «Catorce años», dijo. «Catorce años sin domingos.» Y tú supiste cuál sería tu plato de la final.
+
+[262] solo, @leo, holding a fire extinguisher in a hardware store aisle, serious face, shelves with tools, daylight
+Esa misma mañana fuiste a la ferretería. Compraste dos extintores grandes. Los escondiste en la cocina, detrás de los sacos de harina. Por si acaso. Vidal había dicho que no hicieras el héroe. No pensabas hacerlo. Pero tampoco ir desarmado.
+
+[263] no humans, insurance policy documents and a receipt on a small office desk, a pen, an old desk lamp, close-up, no readable text
+Y en el despacho encontraste otra sorpresa: el seguro del local llevaba un año caducado. Tu padre no podía pagarlo. Con el dinero de las reservas, lo renovaste esa misma tarde. En tu primera vida, por eso no cobrasteis nada.
+
+[264] solo, @nerea[white blouse, black skirt, beige trench coat], entering a restaurant dining room with sunglasses on her head, smug smile, holding a designer handbag, cozy restaurant dining room, midday light
+El martes al mediodía, con el comedor lleno, entró Nerea. Bolso nuevo. Gafas nuevas. Pidió una mesa «para ver cómo trabajan los pobres».
+
+[265] solo, @nerea, sitting at a restaurant table, legs crossed, scrolling her phone, condescending look, cozy restaurant dining room, midday light
+«Bruno me ha alquilado un ático en el centro», te dijo cuando llevaste el pan. «Con terraza. Dice que después del sábado todo va a cambiar. Que tu padre tendrá que vender esto por cuatro duros.»
+
+[266] solo, @leo, holding a bread basket, calm serious face, looking down at someone sitting, cozy restaurant dining room, midday light
+Después del sábado. No sabía lo que estaba diciendo. Por un momento, casi te dio pena. «Nerea. Hazme un favor. Aléjate de Bruno antes del sábado. En serio.»
+
+[267] solo, @nerea, laughing mockingly, hand on her chest, cozy restaurant dining room, midday light
+Se rio en tu cara. «¿Celoso? Qué tierno.» Le diste el pan y te fuiste. Se lo habías dicho. Lo que hiciera con eso ya no era asunto tuyo.
+
+[268] solo, @galvez[charcoal grey suit, black overcoat], entering a busy restaurant, cold smile, two men in dark suits behind him out of focus, cozy restaurant dining room, midday light
+Al día siguiente, a la hora de comer, la puerta se abrió otra vez. Gonzalo Gálvez. Con dos hombres de traje detrás. El comedor estaba lleno.
+
+[269] solo, @galvez, standing in the middle of a busy dining room, speaking loudly with a fake friendly smile, cozy restaurant dining room, customers looking, midday light
+«¡Ramón! Qué éxito, ¿eh? Una crítica, un concursito… Te subo la oferta. Noventa mil. Hoy. Y te olvidas de Altamira para siempre. Firma y te vas a descansar.»
+
+[270] solo, @ramon[brown cardigan over white shirt], sitting at a table near the kitchen, calmly sipping coffee, not looking at the man, cozy restaurant dining room, midday light
+Tu padre ni se levantó. Siguió con su café. «Ya te lo dije en el hospital, Gonzalo. No está en venta. El quince te pago. Y no vuelvas por aquí.»
+
+[271] solo, @galvez, smile disappearing, cold threatening expression, leaning on a table, cozy restaurant dining room, midday light
+Gálvez se inclinó sobre la mesa. «¿Con qué vas a pagarme, viejo? ¿Con croquetas? El quince es el quince. Y si no pagas, este tugurio será mío. Con todo lo que haya dentro.»
+
+[272] solo, @leo[white chef jacket, black apron], walking out of the kitchen into a dining room, calm firm face, wiping hands on a towel, cozy restaurant dining room, midday light
+Saliste de la cocina secándote las manos. Despacio. Sin prisa. «Señor Gálvez, está usted hablando muy alto. Aquí la gente viene a comer tranquila.»
+
+[273] solo, @leo, standing tall with a calm stare, cozy restaurant dining room, customers watching in background, midday light
+«El quince le pagaremos. Hasta el último euro. Delante de notario. Y después, si quiere comer aquí, tendrá que reservar como todo el mundo. Hay lista de espera de tres semanas.»
+
+[274] no humans, restaurant customers laughing and applauding at their tables, some raising glasses, cozy traditional Spanish family restaurant dining room, midday light
+Alguien en la mesa del fondo se rio. Luego otro. La señora Encarna aplaudió con el tenedor en la mano. «¡Eso, que reserve!» Medio comedor se echó a reír.
+
+[275] solo, @galvez, red-faced with anger, turning to leave, cozy restaurant dining room, customers laughing in background
+Gálvez se puso rojo. Nadie se reía de Gonzalo Gálvez. Se abrochó el abrigo con las manos temblando de rabia. «Ríete ahora, chaval. Ya veremos quién se ríe el domingo.»
+
+[276] solo, @leo, watching someone leave through a restaurant door, cold eyes, slight smile, cozy restaurant dining room, midday light
+El domingo. Otra pista. Ya no la necesitabas. Pero cada vez que abría la boca, se hundía un poco más.
+
+[277] solo, @ramon, looking up at someone with a proud and slightly worried smile, sitting at a table, cozy restaurant dining room, midday light
+Cuando se fue, tu padre te miró. «¿Delante de notario? ¿Y de dónde vamos a sacar sesenta mil euros?» «Del concurso, papá. Voy a ganarlo.» Lo dijiste como quien dice que mañana sale el sol.
+
+[278] no humans, small bakery workshop at night with lights off, a single small lamp on, flour bags, a window looking at a narrow alley across the street
+El miércoles por la noche, la panadería de los Ruiz se convirtió en un cuartel. Persianas bajadas. Una lámpara pequeña. Y la mejor vista del callejón de todo el barrio.
+
+[279] solo, @vidal[beige trench coat, grey turtleneck], standing by a dark window looking out through blinds, holding a small notebook, focused, small bakery workshop, night, dim lamp
+Vidal miró por la ventana un buen rato. «Perfecto. Desde aquí se ve la puerta de atrás y la esquina. Dos de mis agentes en un coche al final de la calle. Yo, aquí.»
+
+[280] solo, @vidal, explaining with one finger raised, serious, small bakery workshop, night, dim lamp
+«Escúchame bien. No podemos detenerlo por entrar: tiene el candado abierto. Tenemos que esperar a que saque la gasolina. Si lo pillamos con la gasolina dentro, es intento de incendio. Sin eso, no hay nada.»
+
+[281] solo, @leo[dark blue denim jacket over white t-shirt], nodding seriously, small bakery workshop, night, dim lamp
+«¿Y si enciende?», preguntaste. Vidal te miró fijo. «No le dejaremos. Pero por si acaso, ¿tienes extintores?» Sonreíste. «Dos. Detrás de la harina.»
+
+[282] solo, @vidal, small approving smile, crossing her arms, small bakery workshop, night, dim lamp
+Por primera vez, la inspectora casi sonrió. «Para no saber nada de esto, piensas en todo, chico.» No le contestaste. Habías tenido diez años para pensar.
+
+[283] solo, @vidal, looking out the window again, serious profile, small bakery workshop, night, dim lamp
+«Lo más importante», dijo, «es que el que entre hable. El Chispa ha estado dos veces detenido y nunca ha dicho una palabra. Si no habla, Gálvez se libra otra vez.»
+
+[284] solo, @leo, thinking, hand on chin, small bakery workshop, night, dim lamp, close-up
+Hablaría. En tu primera vida, tres años después, el Chispa murió en una pelea de cárcel. Y dicen que antes gritó a todo el patio que Gálvez le debía dinero. Que nunca le pagó lo del último incendio.
+
+[285] solo, @leo, speaking quietly with a sly look, small bakery workshop, night, dim lamp
+«Pregúntele cuánto le debe Gálvez», dijiste. «Por los otros incendios. Algo me dice que no le ha pagado. Y un hombre al que no le pagan… habla.»
+
+[286] solo, @valeria[cream knitted sweater], sitting on a flour sack in a dim workshop, hugging her knees, looking at someone worried, small bakery workshop, night
+Cuando Vidal se fue, Valeria seguía sentada en un saco de harina. «Leo… ¿tú vas a estar aquí el sábado? ¿Con ellos?» «Sí.» «Entonces yo también.»
+
+[287] solo, @leo, shaking his head gently, kneeling to her eye level without touching, small bakery workshop, night, dim lamp
+«No. Tú vas a la gala con mi padre. Necesito que esté tranquilo, lejos de aquí. Si se entera de esto, su corazón…» No terminaste la frase. Ella asintió despacio.
+
+[288] solo, @valeria, small sad smile, eyes glistening, small bakery workshop, night, dim lamp
+«Vale. Pero me debes una explicación. Una de verdad. Algún día me vas a contar cómo sabes todas estas cosas antes de que pasen.» «Algún día», prometiste.
+
+[289] no humans, small family restaurant kitchen at night, a single pot of broth simmering, roasted chestnuts on the counter, dim warm light
+Los días siguientes ensayaste el caldo cada noche. La gasa con castañas. La gallina. El hueso. Y para acompañar, algo de tu abuela: unas croquetas pequeñas de lo que quedaba del caldo.
+
+[290] solo, @leo, carefully shaping small croquettes on a tray, focused peaceful face, small family restaurant kitchen, night, warm light
+Las croquetas de las sobras. Así comía tu familia cuando no había dinero. Nada se tiraba. Del caldo del domingo salían las croquetas del lunes. Así de simple. Así de rico.
+
+[291] solo, @ramon[brown cardigan over white shirt], tasting a croquette in a kitchen, eyes closed, smiling, night, warm light
+Tu padre las probó la última noche. Asintió. «Tu madre estaría orgullosa», dijo. Y luego, con la boca llena: «Aunque las suyas eran más gorditas.»
+
+[292] solo, @leo, lying on a bed at night, staring at the ceiling, worried and determined, small bedroom above a restaurant, moonlight
+La noche antes de la final no pudiste dormir. No por el concurso. Por todo lo demás. Si algo fallaba, lo perdías todo otra vez. Pero esta vez no estabas solo.
+
+[293] solo, @leo, holding his father's old leather notebook, putting it into a backpack, determined, small bedroom above a restaurant, early morning light
+Por la mañana metiste en la mochila el cuaderno de tu padre. Tapas de piel. «Arroz de la abuela». La fecha de hace veintiocho años. Por si acaso. Por si alguien se olvidaba de quién era cada cosa.
+
+# ================= CAPÍTULO 7: La final =================
+
+[294] no humans, television cooking show studio packed with audience, two cooking stations in the center under spotlights, studio cameras, big screens, festive atmosphere, wide shot
+Doce de marzo. Final en directo. El plató estaba a reventar. Cuatro millones de personas mirando desde sus casas. Y en el centro, solo dos puestos de cocina.
+
+[295] solo, @ramon[navy blue blazer over white shirt], sitting in a studio audience front row, nervous proud smile, hands on knees, bright studio lights
+En la primera fila, tu padre, con la americana de las bodas. Le habían dado permiso los médicos con una condición: nada de emociones fuertes. No iba a ser fácil.
+
+[296] solo, @valeria[soft yellow dress with long sleeves, beige cardigan], sitting in a studio audience, holding a handmade sign, excited and nervous, bright studio lights
+A su lado, Valeria, con un cartel hecho a mano que había pintado con glaseado de colores. Y detrás, media calle: la señora Encarna, el del quiosco, los del bar de la esquina.
+
+[297] solo, @nerea[red dress with long sleeves, black coat], sitting in a studio audience on the opposite side, arms crossed, smug smile, bright studio lights
+En el otro lado del público, Nerea, con un vestido rojo, aplaudiendo cada vez que salía el nombre de Bruno. Como si ya hubiera ganado.
+
+[298] solo, @galvez[charcoal grey suit], sitting in a VIP box above the audience, legs crossed, cold satisfied smile, dim VIP lights, television studio
+Y en el palco de patrocinadores, Gonzalo Gálvez. Su grupo de hoteles pagaba media temporada del programa. Había venido a ver ganar a su futuro jefe de cocina.
+
+[299] solo, @bruno[white chef jacket with his name embroidered], standing at a cooking station under a spotlight, confident wave to the audience, bright smile, television studio
+Bruno saludó a las cámaras como una estrella. Chaqueta nueva. Peinado nuevo. Sonrisa de anuncio. En tu primera vida, esa noche fue la más feliz de la suya.
+
+[300] solo, @leo[white chef jacket, black apron], standing at a cooking station under a spotlight, calm, eyes closed for a moment, television studio
+Tú cerraste los ojos un segundo. Pensaste en tu madre. En el olor de los domingos. En la acera mojada donde te moriste. Y abriste los ojos.
+
+[301] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, dramatic pose, television cooking show studio, spotlights
+«¡Final de El Gran Fogón! ¡Noventa minutos! ¡Un plato para toda la vida! ¡Cien mil euros! ¡El tiempo empieza… YA!» El público rugió.
+
+[302] solo, @bruno, cooking sofrito in a wide flat pan, confident fast movements, steam, cooking station, television studio, spotlights
+Bruno empezó el sofrito en una paellera grande. Cebolla, pimiento, tomate rallado. Movía la cuchara exactamente como tu padre. Lo había visto mil veces.
+
+[303] solo, @leo, putting bones and an old hen into a big pot of water, calm, steam, cooking station, television studio, spotlights
+Tú pusiste los huesos al fuego. La gallina. El laurel. Y en una sartén aparte, las castañas, que empezaron a crujir.
+
+[304] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone toward a cooking station, curious, television studio
+El presentador se acercó a Bruno. «¿Qué nos preparas?» «El arroz de mi abuela Rosario, de Valencia. Una receta que en mi familia ha pasado de generación en generación.»
+
+[305] solo, @ramon, in the audience, smile freezing, leaning forward, staring at a cooking station, confused, bright studio lights
+En la primera fila, tu padre dejó de sonreír. Estiró el cuello para ver mejor la paellera. El color del sofrito. El tipo de arroz. La forma de remover.
+
+[306] solo, @valeria, putting a gentle hand on the armrest beside an older man, worried look, studio audience, bright lights, {evitar=2girls, clone}
+Valeria vio cómo se le tensaba la cara y le puso la mano en el reposabrazos. «Señor Ramón, respire. Leo sabe lo que hace.» Ella no sabía qué hacía Leo. Pero lo creía.
+
+[307] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone toward another station, smiling, television studio
+«¿Y tú, Leo? ¿Qué es eso? ¿Un caldo? ¿En una final?» Algunos en el público se rieron. «El caldo de los domingos de mi madre», dijiste. «Y las croquetas del lunes.»
+
+[308] solo, @leo, speaking to a camera with a soft serious face, cooking station, steam behind him, television studio, spotlights
+«Mi madre murió cuando yo tenía diez años. No escribió la receta. Mi padre no ha vuelto a probarlo en catorce años. Hasta esta semana. Esto es lo que yo serviría toda la vida.»
+
+[309] no humans, studio audience falling silent, some people with hands over their hearts, dim audience lights, television studio
+El plató se quedó en silencio. Hasta los técnicos dejaron de moverse. El presentador tardó un segundo en reaccionar. «Bueno… pues… ¡seguimos!»
+
+[310] solo, @bruno, glancing at a rival station with an annoyed frown, stirring rice, television studio, spotlights
+Bruno te miró de reojo. Por primera vez en todo el concurso, parecía nervioso. Cuatro millones de personas acababan de emocionarse con un caldo. Y él solo tenía un arroz prestado.
+
+[311] no humans, close-up of a wide flat pan of golden saffron rice cooking, a piece of lemon peel being charred with a small torch, flames, steam, television studio lights
+A mitad de cocción, Bruno sacó un soplete y quemó una corteza de limón. Lentamente. Delante de la cámara. El secreto de tu abuela. Delante de todo el país.
+
+[312] solo, @ramon, gripping the armrests, pale, shocked expression, studio audience, bright lights
+Tu padre se agarró a la butaca. Esa corteza de limón no estaba en ningún libro. Solo en un cuaderno con tapas de piel. Y en la cocina de Casa Ferrer.
+
+[313] solo, @elena[dark green blazer, cream blouse], watching from the judges' table, eyes narrowing behind round glasses, attentive, television studio, spotlights
+En la mesa del jurado, Elena Ríos también lo vio. Dejó de escribir. Se quitó las gafas. Las limpió despacio. Y se las volvió a poner, mirando la paellera de Bruno.
+
+[314] solo, @leo, straining a clear golden broth through a cloth, focused, steam, cooking station, television studio, spotlights
+Tú no miraste. Seguiste con lo tuyo. Colaste el caldo tres veces. Quedó transparente y dorado, como un ámbar líquido. Y el olor empezó a llenar el plató.
+
+[315] no humans, audience members sniffing the air with surprised nostalgic smiles, an old woman wiping her eyes, television studio, warm lights
+Primero lo olieron las primeras filas. Luego todo el público. Una señora mayor se llevó la mano a la boca. Ese olor era el de la casa de su abuela. Era el de la casa de todos.
+
+[316] solo, @leo, frying small golden croquettes in hot oil, steam, cooking station, television studio, spotlights
+Las croquetas, al final. Doradas. Pequeñas. Crujientes. Con el relleno de la gallina del caldo. En un cuenco blanco, el caldo. Al lado, tres croquetas. Nada más.
+
+[317] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, counting down with his hand raised, television studio, spotlights
+«¡Cinco! ¡Cuatro! ¡Tres! ¡Dos! ¡Uno! ¡Manos arriba!» Los dos levantasteis las manos. Bruno, sudando. Tú, tranquilo.
+
+[318] no humans, beautiful wide flat pan of golden saffron rice with a crispy crust and a charred lemon peel on top, on a judges' table, bright studio lights, close-up
+Primero, el arroz de Bruno. Dorado. Brillante. Con su socarrat perfecto y la corteza de limón quemada encima. Hay que reconocerlo: le había salido muy bien.
+
+[319] no humans, three judges tasting rice with spoons at a judges' table, two of them smiling and nodding, bright studio lights, television studio
+Dos miembros del jurado probaron y asintieron. «Espectacular.» «Un sabor muy profundo. Muy de casa.» Bruno sonrió. Nerea aplaudió desde su asiento.
+
+[320] solo, @elena, tasting rice slowly, eyes closed, then opening them with a cold calm look, judges' table, television studio, spotlights
+Elena Ríos probó una sola cucharada. La saboreó largo rato. Dejó la cuchara. Y miró a Bruno por encima de las gafas.
+
+[321] solo, @elena, holding a spoon, asking a question with a polite but sharp expression, judges' table, television studio, spotlights
+«Bruno, ¿dices que es una receta de tu abuela Rosario? ¿De Valencia?» «Sí, señora. De toda la vida. Ella me la enseñó de pequeño.» Lo dijo sin pestañear.
+
+[322] solo, @elena, folding her hands on the table, calm, intelligent eyes, judges' table, television studio, spotlights
+«Qué curioso», dijo Elena. «Porque hace tres semanas comí este mismo arroz. Con este mismo limón quemado. En un restaurante pequeño de este barrio que tanto os gusta enseñar.»
+
+[323] solo, @elena, looking toward the audience front row, gentle nod, judges' table, television studio, spotlights
+«Y hace veinte años, también. Lo hacía un cocinero llamado Ramón Ferrer. Que, si no me equivoco, está sentado en la primera fila.» Todas las cámaras giraron hacia tu padre.
+
+[324] solo, @ramon, being looked at by cameras, standing up slowly, emotional, trembling lips, studio audience front row, bright lights
+Tu padre se levantó despacio. No dijo nada. No hacía falta. La cara se le había puesto del color de la cebolla pochada.
+
+[325] solo, @bruno, laughing nervously, sweat on his forehead, raising his hands, cooking station, television studio, spotlights
+«¡Coincidencia!», se rio Bruno, demasiado alto. «¡Es un arroz típico! Todos los arroces se parecen. ¡Yo trabajo en ese restaurante, a lo mejor lo copiaron de mí!»
+
+[326] solo, @elena, raising one eyebrow, unimpressed, judges' table, television studio, spotlights
+«El limón quemado no es típico, Bruno», dijo Elena, sin levantar la voz. «En treinta años comiendo en este país, solo lo he visto en una cocina. Y tú tienes veinticinco años.»
+
+[327] no humans, studio audience murmuring, people whispering to each other, some pointing, tense atmosphere, television studio, dim audience lights
+El público empezó a murmurar. El presentador no sabía si cortar a publicidad. El realizador, en su cabina, le gritó al oído: «¡No cortes! ¡No cortes! ¡Audiencia récord!»
+
+[328] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a microphone, awkward nervous smile, looking toward a cooking station, television studio
+«Bueno… Leo, tú trabajas en ese restaurante… ¿Tienes algo que decir?» Todo el país te miró. Bruno también. Con los ojos suplicando que te callaras.
+
+[329] solo, @leo, reaching into a backpack and taking out an old leather notebook, calm serious face, cooking station, television studio, spotlights
+No dijiste nada. Abriste la mochila. Sacaste el cuaderno de tu padre, con las tapas de piel gastadas. Y lo abriste por la primera página.
+
+[330] no humans, old leather notebook open under bright studio light, yellowed page with handwritten recipe and a small drawing of a rice pan and a lemon, date written in the corner, held up to a camera, close-up, no readable text
+«Arroz de la abuela.» Letra de tu padre. Un dibujo de una paellera. Al lado, un limón con una llama. Y en la esquina, la fecha: hace veintiocho años. Cuando Bruno tenía menos de un año.
+
+[331] no humans, giant studio screen showing a close-up of an old handwritten notebook page, audience gasping in front of it, television studio, dramatic lighting
+La cámara hizo zoom. La página salió en la pantalla gigante del plató. Y en cuatro millones de televisores. Se oyó un «oooh» que retumbó en todo el estudio.
+
+[332] solo, @leo, holding the notebook calmly, speaking without anger, cooking station, television studio, spotlights
+«Este es el cuaderno de mi padre», dijiste, sin rabia. «La receta es de mi abuela Carmen. No de Valencia. De un pueblo de Teruel. Y el limón quemado es porque una vez se le quemó sin querer. Le gustó. Y lo dejó así.»
+
+[333] solo, @bruno, pale, mouth opening and closing, frozen, cooking station, television studio, spotlights
+Bruno abrió la boca. La cerró. La volvió a abrir. «Yo… yo lo aprendí… Mi abuela también…» Ni él se lo creía ya.
+
+[334] no humans, studio audience booing, some people shaking their heads, others laughing, television studio, dim audience lights
+Desde el fondo del público, alguien gritó: «¡Ladrón!» Luego otro. Y luego un abucheo enorme. Los mismos que lo habían aplaudido diez minutos antes.
+
+[335] solo, @nerea, sinking down into her seat, covering her face with her coat, embarrassed, studio audience, bright lights
+Nerea se hundió en su asiento. Se tapó la cara con el abrigo. Ya no aplaudía. La cámara de público la enfocó un segundo. Ese plano también se hizo viral.
+
+[336] solo, @galvez, in a VIP box, standing up abruptly, furious cold face, buttoning his jacket, television studio, dim VIP lights
+En el palco, Gonzalo Gálvez se levantó, se abrochó la chaqueta y se fue sin despedirse. Su futuro jefe de cocina acababa de quedar como un ladrón delante de todo el país.
+
+[337] solo, @elena, raising a hand to calm the audience, composed, judges' table, television studio, spotlights
+Elena levantó la mano y el público se calló. «El jurado no está aquí para juzgar personas. Está aquí para juzgar platos. Bruno ya ha presentado el suyo. Ahora, el de Leo.»
+
+[338] no humans, white bowl of clear golden broth with three small golden croquettes on a side plate, on a judges' table, steam rising, warm spotlight, close-up
+Dejaste el cuenco en la mesa. Caldo dorado y transparente. Tres croquetas pequeñas. Ni espumas. Ni flores. Ni soplete. Solo un domingo de hace catorce años.
+
+[339] no humans, three judges sipping broth from spoons at a judges' table, silent, focused, bright studio lights
+Los tres miembros del jurado probaron el caldo a la vez. Y ninguno dijo nada. Uno volvió a meter la cuchara. Luego otra vez. Luego cogió el cuenco con las dos manos y bebió.
+
+[340] solo, @elena, holding a spoon, eyes glistening behind round glasses, emotional smile, judges' table, television studio, warm spotlight
+Elena Ríos tenía los ojos húmedos. «¿Castaña?», preguntó en voz muy baja. Asentiste. «Castaña asada con la piel. Era el secreto de mi madre. Para que mi padre volviera a casa los domingos.»
+
+[341] solo, @elena, putting down the spoon, speaking slowly and clearly, judges' table, television studio, spotlights
+«Llevo treinta años escribiendo de comida», dijo. «He comido en los mejores restaurantes del mundo. Y pocas veces he probado algo así. Esto no es un plato. Esto es una casa.»
+
+[342] solo, @ramon, crying openly in the audience, covering his mouth with a handkerchief, studio audience, warm lights
+En la primera fila, tu padre lloraba. Sin vergüenza. Con el pañuelo de los domingos en la mano. Valeria también lloraba. Y media fila de detrás.
+
+[343] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a golden envelope, solemn, television studio, spotlights, drum roll atmosphere
+«El jurado ha deliberado», dijo el presentador, con un sobre dorado en la mano. «El ganador de la primera edición de El Gran Fogón… y de los cien mil euros… es…»
+
+[344] no humans, golden confetti falling from the ceiling of a television studio, bright spotlights, audience standing and cheering, celebration, wide shot
+«¡LEO FERRER!» El plató explotó. Confeti dorado. Gritos. La señora Encarna saltando en su butaca como si tuviera veinte años.
+
+[345] solo, @leo, standing still under falling golden confetti, eyes closed, quiet emotional smile, cooking station, television studio, spotlights
+Tú no saltaste. No gritaste. Te quedaste quieto bajo el confeti, con los ojos cerrados. En tu primera vida, esa noche fregaste los platos de la fiesta de Bruno.
+
+[346] solo, @ramon, climbing onto a television stage with wet eyes, arms open, golden confetti, bright studio lights
+Tu padre se saltó la valla del público, con su corazón recién arreglado y todo. Los de seguridad no se atrevieron a pararlo. Subió al escenario.
+
+[347] 1boy, solo, @ramon, hugging a young man in a white chef jacket seen from behind, crying with joy, golden confetti, television studio, spotlights, {evitar=clone, twins, 2boys facing camera}
+Te abrazó delante de cuatro millones de personas. «Tu madre…», empezó a decir. No pudo terminar. Tampoco hacía falta.
+
+[348] solo, @valeria, standing in the audience holding a handmade sign, crying and laughing, golden confetti, television studio
+Valeria levantó su cartel por encima de todos. Lo había pintado con glaseado. Ponía: «A por ellos, cocinero». Las letras se habían corrido un poco con las lágrimas.
+
+[349] solo, TV host, man in a bright blue suit, clean-shaven, styled brown hair, holding a giant symbolic check, smiling broadly, golden confetti, television studio
+«¡Cien mil euros, Leo! ¡En tu cuenta en cuarenta y ocho horas, como prometimos!» Cuarenta y ocho horas. Sábado catorce. Justo a tiempo.
+
+[350] solo, @bruno, standing alone at his station, untying his apron with shaking hands, humiliated, empty eyes, golden confetti falling around him, television studio
+Bruno se desató el delantal en su puesto, solo. Nadie fue a consolarlo. Ni Nerea. El confeti dorado le caía encima como si se burlara de él.
+
+[351] no humans, busy television studio backstage corridor after a show, cables, lights, crew members walking, confetti on the floor
+Después, en los camerinos, todos querían hablar contigo. Periodistas. Productores. Dos restaurantes de Madrid ofreciéndote trabajo. Les diste las gracias a todos. Tenías otras prioridades.
+
+[352] solo, @bruno[dark hoodie], blocking a corridor, standing, furious red eyes, clenched fists, television studio backstage corridor, dim light
+Bruno te esperaba al final del pasillo, donde no había cámaras. Ya no sonreía. «Te crees muy listo, ¿verdad? Sabías lo del arroz. Lo has preparado todo.»
+
+[353] solo, @bruno, leaning forward with a venomous whisper, television studio backstage corridor, dim light, close-up
+«Disfruta tu premio. Porque el sábado no vais a tener nada que celebrar. Ni tú ni el viejo.» Se le escapó. Lo supo en cuanto lo dijo. Se le fue el color de la cara.
+
+[354] solo, @leo, calm stare, hands in pockets, television studio backstage corridor, dim light
+Lo miraste con calma. Con la misma calma con la que él te miraba en el hotel, diez años en el futuro. «Nos vemos en la gala, Bruno. No llegues tarde.»
+
+[355] solo, @bruno, walking away fast down a corridor, looking back over his shoulder nervously, television studio backstage, dim light
+Bruno se fue casi corriendo. Por primera vez, tenía miedo. No sabía de qué. Pero lo tenía.
+
+[356] solo, @galvez[charcoal grey suit, black overcoat], sitting in the back seat of a luxury car at night, talking on a phone, cold furious face, city lights through the window
+En un coche negro, Gálvez hablaba por teléfono. «Me da igual el premio. Que pague la deuda si quiere. Un local quemado sin seguro no vale nada. El viejo me lo venderá por cuatro duros. El sábado. Como estaba previsto.»
+
+[357] no humans, black luxury car driving away on a wet city street at night, red tail lights, rain
+Lo que Gálvez no sabía es que el seguro de Casa Ferrer ya no estaba caducado. Lo habías renovado tú. Y que en una panadería, al otro lado de la calle, alguien esperaba.
+
+# ================= CAPÍTULO 8: La noche del catorce =================
+
+[358] no humans, smartphone screen on a wooden kitchen table showing a bank app notification, morning light, coffee cup beside it, no readable text, close-up
+El sábado catorce, a las once de la mañana, te vibró el móvil. Una notificación del banco. Cien mil euros. Ingresados. La tele había cumplido su palabra.
+
+[359] solo, @leo[dark blue denim jacket over white t-shirt], sitting at a kitchen table staring at a phone, letting out a long breath, relieved, small family restaurant kitchen, morning light
+Soltaste el aire que llevabas guardando desde hacía un mes. Sesenta mil para la deuda, con todos sus intereses. Y lo que sobraba, para el restaurante. Lo primero de la lista estaba hecho. Ahora, lo segundo.
+
+[360] solo, @ramon[navy blue blazer over white shirt], standing in front of a mirror adjusting his tie, happy, small living room, afternoon light
+Por la tarde, tu padre se puso otra vez la americana de las bodas. «Dos noches de fiesta en una semana», refunfuñaba. «Me vais a matar del corazón.» Se reía. Tú no.
+
+[361] no humans, a big tour bus parked on a narrow old Spanish neighborhood street at sunset, neighbors in nice clothes getting on, festive atmosphere
+A las seis llegó el autobús de la tele. El barrio entero subió, vestido de domingo. La gala era en un hotel a dos horas. La cadena pagaba la cena y la noche de hotel para todos.
+
+[362] solo, @bruno[black suit, white shirt], arriving at a restaurant back alley in the afternoon, looking around carefully, holding a small padlock key hidden in his palm, narrow back alley behind a restaurant, daylight
+Pero antes de subir, viste por la ventana a Bruno entrar en el callejón. Traje negro para la gala. Miró a los dos lados. Y se agachó junto a la puerta de atrás.
+
+[363] no humans, smartphone screen showing a security camera view of an old metal back door in an alley, a man crouching by a padlock, daylight, close-up
+En tu móvil, la cámara escondida lo grabó todo. Bruno abriendo el candado. Dejándolo colgado, abierto, para que pareciera cerrado. Y yéndose hacia su coche como si nada.
+
+[364] solo, @leo, looking at a phone screen with a cold calm face, sitting by a window, small family restaurant dining room, sunset light
+Ya estaba. La primera prueba. Bruno, con su propia llave, con su traje de gala, abriendo la puerta del restaurante de tu padre. Diez años después, la misma escena. Pero esta vez, grabada.
+
+[365] solo, @valeria[soft green dress with long sleeves, beige coat], standing at a bus door, looking back at someone with worry, sunset, narrow old Spanish neighborhood street
+Valeria se paró en la puerta del autobús y te miró. Tú le hiciste un gesto. «Ve tranquila. Cuida de papá.» Ella asintió. Pero no se movió hasta que el conductor tocó el claxon.
+
+[366] no humans, luxury hotel ballroom set up for a television gala, round tables, stage with lights, cameras, festive decorations, night, wide shot
+La gala era en un hotel de cuatro estrellas. Escenario. Cámaras. Música. Tu padre, en la mesa principal, con el corazón de vuelta y un plato de jamón delante.
+
+[367] solo, @bruno, sitting at a gala table, forced smile, nervously checking his watch, luxury hotel ballroom, night, festive lights
+Bruno llegó tarde. Se sentó en la otra punta de la mesa, lo más lejos posible de ti. Sonreía para las cámaras y miraba el reloj cada cinco minutos.
+
+[368] solo, @nerea[red dress with long sleeves, black coat], sitting alone at a gala table, sulking, arms crossed, luxury hotel ballroom, night
+Nerea no se sentó con él. Estaba en otra mesa, con el móvil, enfadada con el mundo. Desde la final, no le cogía el teléfono.
+
+[369] solo, @leo[black suit, white shirt], standing up from a gala table holding his stomach, slight grimace, luxury hotel ballroom, night, festive lights
+A las once y media te levantaste de la mesa con la mano en el estómago. «Papá, me ha sentado mal algo. Me voy a la habitación a tumbarme. No me esperéis.»
+
+[370] solo, @ramon, looking up worried, then smiling, waving a hand, gala table, luxury hotel ballroom, night
+«¿Ves? Eso es de los nervios. Anda, ve a dormir, campeón.» Bruno te vio irte. Pareció aliviado. Tú también lo estabas. Él creía que estabas en tu habitación.
+
+[371] solo, @leo, getting into the back seat of a taxi at night, determined face, hotel entrance lights, rain starting
+Pero no subiste a la habitación. Saliste por la puerta de servicio y cogiste un taxi. Dos horas de carretera. Llovía. Como la noche en que te moriste.
+
+[372] no humans, narrow old Spanish neighborhood street at night, completely empty, all windows dark, wet cobblestones, single streetlight, rain
+A la una y media llegaste al barrio. Ni una luz. Ni un alma. Todas las persianas bajadas. El barrio entero estaba a doscientos kilómetros, durmiendo en un hotel.
+
+[373] solo, @vidal[beige trench coat, grey turtleneck], sitting on a stool in a dark bakery workshop by a window, holding a thermos cup, watching through blinds, night, dim light
+En la panadería, Vidal tenía el abrigo puesto y un termo de café. «Llegas pronto», dijo, sin dejar de mirar por la persiana. «Todavía no ha pasado nada.»
+
+[374] no humans, laptop screen in a dark room showing two security camera views of a dark back alley and a dark restaurant kitchen, green night vision, close-up
+En el portátil, las dos cámaras. El callejón, vacío bajo la farola. La cocina, a oscuras. La puerta de atrás, cerrada. Con el candado colgando. Abierto.
+
+[375] solo, @leo, sitting on a flour sack in a dark bakery, looking at a laptop screen, tense, face lit by the screen, night
+Te sentaste en el mismo saco de harina donde Valeria te había dicho «entonces yo también». Esperasteis. Las dos. Las dos y media. Nada.
+
+[376] solo, @vidal, checking her watch, speaking quietly into a small radio, dark bakery workshop, night, dim light
+«Coche dos, ¿algo?» «Nada, inspectora. Calle vacía.» Vidal te miró. «Si no viene, chico, me debes una noche de sueño.»
+
+[377] solo, @leo, staring at a laptop screen without blinking, sweat on his forehead, dark bakery workshop, night
+¿Y si no venía? ¿Y si el abucheo de la final había asustado a Gálvez? ¿Y si habías cambiado tanto las cosas que el futuro ya no se parecía a nada?
+
+[378] no humans, wall clock in a dark bakery showing three o'clock, dim light, close-up
+Las tres. Las tres y cinco. Y entonces el coche dos habló por la radio. «Inspectora. Un hombre a pie. Por la esquina de abajo. Con dos garrafas.»
+
+[379] solo, @chispa[black leather jacket, black cap], walking down a dark wet alley carrying two large plastic jerrycans, hunched, looking around, narrow back alley behind a restaurant, single streetlight, night, rain
+Era él. El hombre flaco del sobre. Gorra negra. Chaqueta de cuero. Dos garrafas de gasolina. Caminaba pegado a la pared, como una rata.
+
+[380] solo, @chispa, crouching by an old metal back door, removing an open padlock with a gloved hand, smirk, narrow back alley, single streetlight, night, rain
+Llegó a la puerta de atrás. Tocó el candado. Se abrió solo. Sonrió. «Buen chico, Bruno», murmuró. El micrófono de la cámara lo cogió perfectamente.
+
+[381] no humans, laptop screen showing a night vision security camera view of a man entering a dark restaurant kitchen through a back door carrying jerrycans, close-up
+En la pantalla del portátil, lo visteis entrar en la cocina. La cocina de tu padre. La de veinticinco años de caldos y domingos.
+
+[382] solo, @vidal, standing up quietly, putting on gloves, signaling with her hand, focused, dark bakery workshop, night
+Vidal se levantó en silencio. Se puso los guantes. «Todavía no. Que saque la gasolina. Que la eche. Necesito que la eche.» Cada segundo duraba un año.
+
+[383] no humans, laptop screen showing a night vision camera view of a man pouring liquid from a jerrycan across a kitchen floor, close-up
+El Chispa abrió la primera garrafa. Empezó a regar el suelo de la cocina. Los fogones. Los sacos de harina. Detrás de los cuales estaban tus extintores.
+
+[384] solo, @vidal, speaking into a radio with a sharp commanding face, rushing toward a door, dark bakery, night
+«¡Ahora! ¡Coche dos, por delante! ¡Yo por detrás!» Vidal salió como un rayo. Tú detrás de ella. No pensabas quedarte mirando.
+
+[385] no humans, two people running across a dark wet street toward a restaurant back alley at night, rain, streetlights, motion blur, seen from behind
+Cruzasteis la calle en tres segundos. La lluvia en la cara. El corazón en la garganta. Vidal sacó una linterna y empujó la puerta de atrás.
+
+[386] solo, @chispa, inside a dark kitchen, turning around in surprise, holding a lit lighter, flashlight beam on his face, wet floor, night
+La linterna le dio en la cara al Chispa. Tenía el mechero en la mano. Encendido. Se quedó quieto un segundo, como un animal deslumbrado.
+
+[387] solo, @vidal, pointing a flashlight forward, shouting, determined, dark restaurant kitchen, night
+«¡Quieto! ¡Policía! ¡Suelta eso!» El Chispa no lo soltó. Miró el suelo empapado de gasolina. Y en sus ojos viste lo que iba a hacer.
+
+[388] no humans, a lit lighter falling toward a wet kitchen floor in slow motion, small flame, dark kitchen, dramatic lighting, close-up
+Lo tiró. El mechero cayó girando en el aire. Despacio. Todo iba despacio. Diez años de tu vida en una llamita del tamaño de un dedo.
+
+[389] no humans, flames spreading quickly across a wet kitchen floor, orange light, dark kitchen, smoke starting, dramatic
+Las llamas corrieron por el suelo como agua. Hacia los fogones. Hacia los sacos. Hacia todo lo que tu familia había construido en veinticinco años.
+
+[390] solo, @leo, rushing forward with a fire extinguisher, spraying white foam at flames, determined face, smoke, orange light, dark kitchen
+Pero tú ya estabas detrás de los sacos de harina. Habías puesto los extintores ahí por esto. Quitaste la anilla y disparaste la espuma sobre las llamas.
+
+[391] no humans, white foam covering a kitchen floor, flames dying out, smoke rising, dark kitchen, flashlight beams, close-up
+Un extintor. Luego el otro. La espuma blanca cubrió el suelo. Las llamas se apagaron una a una con un siseo. Veinte segundos. Solo veinte segundos.
+
+[392] solo, @vidal, pinning a thin man's arm behind his back, firm, dark kitchen covered in foam, flashlight on the floor, night, {evitar=2girls, clone}
+Mientras tanto, Vidal ya tenía al Chispa contra la pared, con el brazo a la espalda. Los dos agentes del coche entraron por delante. Se acabó.
+
+[393] solo, @leo, standing in a dark smoky kitchen, holding an empty fire extinguisher, breathing heavily, foam everywhere, flashlight beams, night
+Te quedaste en medio de la cocina con el extintor vacío en la mano, respirando humo. Los fogones, intactos. Los sacos, intactos. Las paredes, intactas.
+
+[394] no humans, old wooden shelf with an old leather notebook untouched, a framed photo of a smiling woman beside it, foam on the floor below, flashlight light, dark kitchen
+En la estantería, la foto de tu madre sonriendo con su cucharón. Ni una mancha. Te temblaron las piernas y tuviste que apoyarte en la encimera.
+
+[395] solo, @vidal, wiping foam from her coat, looking at someone with a half-smile, dark kitchen, flashlight, night
+Vidal se sacudió la espuma del abrigo. «Te dije que no hicieras el héroe.» Luego miró los extintores vacíos. «Pero menos mal que lo has hecho.»
+
+[396] solo, @chispa, sitting on a chair in a dark kitchen with hands behind his back, defiant smirk, wet hair, flashlight on his face, night
+Sentaron al Chispa en una silla, en medio de la espuma. Esposado. Sonreía. «No tenéis nada. Pasaba por aquí. La puerta estaba abierta. Quería calentarme.»
+
+[397] solo, @vidal, crouching in front of a seated man, calm cold stare, holding a smartphone, dark kitchen, flashlight, night
+Vidal se agachó delante de él. «Dos garrafas. Un mechero. Una cámara que te ha grabado echando la gasolina. Y antecedentes. Te caen quince años, amigo.»
+
+[398] solo, @vidal, holding up a phone showing a call log, close to a man's face, dark kitchen, night
+Le sacó el móvil del bolsillo. «Última llamada: hace una hora. A un tal Bruno. La anterior, a una oficina del Grupo Gálvez.» El Chispa dejó de sonreír.
+
+[399] solo, @leo, stepping forward, speaking calmly to a seated man, dark kitchen, flashlight, night
+Entonces hablaste tú. «¿Cuánto te debe Gálvez? Por lo de la calle Hierro. Y por los otros tres. ¿Te ha pagado alguno entero?» El Chispa te miró sorprendido.
+
+[400] solo, @chispa, face twisting with anger, looking down, bitter, dark kitchen, night
+«…Ni uno», escupió al fin. «Siempre dice que la semana que viene. Que el negocio va lento. Y ahora yo me como quince años y él se va de vacaciones.»
+
+[401] solo, @vidal, placing a small recorder on a table, calm, leaning forward, dark kitchen, flashlight, night
+Vidal dejó una grabadora encima de la mesa. «Pues tú decides. O te los comes tú solo. O me cuentas quién te paga. Y entonces el juez sabrá que colaboraste.»
+
+[402] solo, @chispa, staring at a recorder, then looking up with resignation, dark kitchen, night
+El Chispa miró la grabadora mucho rato. Luego miró la puerta por la que había entrado. La puerta que Bruno le había dejado abierta. Y empezó a hablar.
+
+[403] solo, @chispa, talking with a tired face, eyes on the floor, dark kitchen, flashlight, night
+«Gálvez. Siempre Gálvez. Cuatro locales en dos años. Su empresa, Altamira, les presta dinero. Cuando no pagan, yo quemo. Y él se queda el solar. El chico de la cocina abría la puerta. Le pagaba la deuda del juego.»
+
+[404] solo, @vidal, turning off a recorder, glancing at someone with satisfaction, dark kitchen, night
+Vidal apagó la grabadora. Te miró. «Dos años detrás de este hombre. Dos años.» Se le quebró un poco la voz. Solo un poco. Luego carraspeó. «Mañana. ¿A qué hora dices que viene?»
+
+[405] solo, @leo, looking at a clock on a kitchen wall, calm serious face, dark kitchen, dawn starting through the window
+«A las diez. Con un notario. A quedarse el local de mi padre.» Vidal sonrió de verdad por primera vez desde que la conocías. «Perfecto. Allí estaremos.»
+
+[406] no humans, small family restaurant kitchen at dawn, windows open, foam drying on the floor, soft blue morning light, quiet
+Se llevaron al Chispa a las cinco. Abriste todas las ventanas para que se fuera el olor a gasolina. Fregaste la espuma tú solo, de rodillas.
+
+[407] solo, @leo, kneeling on a kitchen floor scrubbing with a brush, tired peaceful smile, dawn light through windows, small family restaurant kitchen
+Diez años fregando suelos en el hotel de Gálvez. Y este era el primero que fregabas con gusto. Porque debajo de la espuma, el suelo seguía siendo de tu padre.
+
+[408] solo, @leo, sitting on the back step of a restaurant at sunrise, exhausted, looking at the sky, peaceful, narrow back alley, golden sunrise light
+Amaneció. Te sentaste en el escalón del callejón. El mismo donde comiste tartaletas con Valeria. La lluvia había parado. El cielo estaba limpio.
+
+[409] solo, @leo, reading a message on a smartphone with a small tender smile, sitting on steps, sunrise light
+Te vibró el móvil. Un mensaje de Valeria, a las seis y media: «¿Estás bien? No he dormido. Dime solo una palabra.» Le escribiste una: «Intacto.»
+
+[410] solo, @valeria[white t-shirt, cardigan], sitting on a hotel bed reading a phone, covering her mouth with her hand, tears of relief, hotel room, morning light
+En un hotel a doscientos kilómetros, Valeria leyó la palabra y se echó a llorar en silencio, para no despertar a tu padre en la habitación de al lado.
+
+# ================= CAPÍTULO 9: El quince de marzo =================
+
+[411] no humans, tour bus arriving on a narrow old Spanish neighborhood street in the morning, neighbors getting off with tired happy faces, sunny morning light
+A las nueve y media volvió el autobús. Los vecinos bajaban despeinados, con sueño y con ganas de contar la gala. Nadie sabía nada. Vidal lo había querido así.
+
+[412] solo, @ramon[navy blue blazer over white shirt], stepping off a bus, sniffing the air with a puzzled frown, narrow old Spanish neighborhood street, morning light
+Tu padre bajó el último. Se paró en la acera y olió el aire. «¿Huele a… gasolina?» Saliste a buscarlo. Le cogiste del brazo. «Papá, ven. Siéntate. Tengo que contarte algo.»
+
+[413] solo, @ramon, sitting at a kitchen table, listening with a shocked pale face, small family restaurant kitchen, windows open, morning light
+Lo sentaste en la cocina, con sus pastillas al lado y un vaso de agua. Y se lo contaste todo. Altamira. Gálvez. El Chispa. Y Bruno. Despacio. Con cuidado. Mirándole la cara.
+
+[414] solo, @ramon, staring at the floor, hands trembling, heartbroken, small family restaurant kitchen, morning light
+«¿Bruno?», repitió. «Le di de comer desde los seis años. Le enseñé a coger un cuchillo. Cuando su padre se fue, le pagué el instituto.» Se le quebró la voz.
+
+[415] solo, @leo, crouching in front of a seated man, holding out a glass of water, worried kind face, small family restaurant kitchen, morning light, {evitar=2boys, clone}
+Le diste el vaso de agua y le contaste el pulso a escondidas. Estaba bien. Más fuerte de lo que pensabas. «Papá, ¿estás bien?» Él tardó en contestar.
+
+[416] solo, @ramon, looking around the intact kitchen with wet eyes, touching the stove gently, small family restaurant kitchen, morning light
+Miró su cocina. Los fogones. La foto de tu madre. Pasó la mano por la encimera como si acariciara a un perro viejo. «Iban a quemarla. Con la foto de tu madre dentro.»
+
+[417] solo, @ramon, standing up with a determined proud face, buttoning his blazer, small family restaurant kitchen, morning light
+Y entonces se levantó. Se abrochó la americana. Y por primera vez en un mes, no parecía un enfermo. «Bien. ¿A qué hora dices que viene ese sinvergüenza?»
+
+[418] solo, @valeria[soft green dress with long sleeves, beige coat], rushing into a kitchen, out of breath, relieved, looking around, small family restaurant kitchen, morning light
+Valeria entró corriendo, todavía con el vestido de la gala. Miró la cocina. Te miró a ti. Se le escapó un suspiro tan grande que tu padre la miró con sospecha.
+
+[419] solo, @ramon, raising an eyebrow, pointing at someone with a half-smile, small family restaurant kitchen, morning light
+«¿Tú también lo sabías?», preguntó tu padre. Valeria se puso roja. «Un poco.» «Ya. Y por eso no comiste nada anoche. Pensé que era por la dieta.»
+
+[420] no humans, black luxury car parked on a narrow old Spanish neighborhood street in front of a small restaurant with a green wooden door, neighbors gathering on the sidewalk, sunny morning
+A las diez en punto, un coche negro paró en la puerta. Los vecinos, que aún no se habían ido a casa, se quedaron mirando. Algo iba a pasar. Lo olían.
+
+[421] solo, @galvez[charcoal grey suit, black overcoat], stepping out of a black luxury car, confident cold smile, adjusting his cuffs, narrow old Spanish neighborhood street, sunny morning
+Bajó Gonzalo Gálvez. Detrás, un abogado con maletín y un notario mayor con una carpeta de piel. Venían a quedarse el local. O lo que quedara de él.
+
+[422] solo, @bruno[black suit, white shirt, loosened tie], walking up a street with a fake concerned face, tired eyes, narrow old Spanish neighborhood street, sunny morning
+Y por la esquina, como un buen amigo preocupado, apareció Bruno. Todavía con el traje de la gala. Venía a «consolaros». A ver las cenizas con sus propios ojos.
+
+[423] no humans, small restaurant with a green wooden door and potted plants on a sunny morning, intact and clean, neighbors watching from the sidewalk
+Pero no había cenizas. La fachada de Casa Ferrer estaba exactamente igual. La puerta verde. Las macetas. El cartel de madera. Intacto.
+
+[424] solo, @bruno, stopping dead in the street, face draining of color, mouth open, staring at a building, sunny morning
+Bruno se paró en seco en mitad de la calle. Se le fue la sangre de la cara. Miró el restaurante. Miró el callejón. Volvió a mirar el restaurante. Como si no pudiera creérselo.
+
+[425] solo, @galvez, glancing at the intact restaurant with a twitching eye, controlled cold expression, sunny morning, street
+Gálvez también lo vio. El Chispa no le había llamado en toda la noche, pero eso pasaba a menudo. Le tembló un párpado. Solo uno. Pero se recompuso enseguida. Era un profesional. Entró en el restaurante como si fuera suyo.
+
+[426] solo, @galvez, standing in a restaurant dining room holding a document, cold formal smile, notary and lawyer blurred behind him, cozy restaurant dining room, morning light
+«Buenos días, Ramón. Hoy es quince de marzo. Sesenta mil euros, ni uno menos. O firmas la entrega del local delante del señor notario.»
+
+[427] no humans, neighbors crowding at a restaurant window and doorway, watching inside, curious and tense, sunny morning
+Los vecinos se apelotonaron en la puerta y en la ventana. La señora Encarna se abrió paso a codazos hasta la primera fila. «¡Dejadme ver, que soy la más antigua!»
+
+[428] solo, @leo[dark blue denim jacket over white t-shirt], stepping forward calmly holding a smartphone, cozy restaurant dining room, morning light
+Te adelantaste con el móvil en la mano. «Buenos días, señor Gálvez. Señor notario, ¿me da el número de cuenta de Inversiones Altamira, por favor? Vamos a pagar.»
+
+[429] solo, notary, elderly man with round glasses, grey suit, holding a leather folder, surprised, reading a number, cozy restaurant dining room, morning light
+El notario, sorprendido, leyó el número en voz alta. Tú lo tecleaste. Sesenta mil euros. Le diste al botón. Y le enseñaste la pantalla.
+
+[430] solo, notary, elderly man with round glasses, grey suit, checking a tablet and nodding, signing a document, cozy restaurant dining room, morning light
+El notario comprobó la transferencia en su tableta. Firmó un papel. «Pago recibido. La deuda queda saldada. La garantía sobre el local, cancelada. Enhorabuena, señor Ferrer.»
+
+[431] no humans, neighbors cheering and clapping at a restaurant doorway, an old woman raising her fist, sunny morning
+La calle estalló en aplausos. «¡Toma ya!», gritó el del quiosco. «¡Con el dinero de la tele!», gritó otro. La señora Encarna se secaba los ojos con el pañuelo.
+
+[432] solo, @galvez, forcing a polite smile, buttoning his coat, turning toward the door, cozy restaurant dining room, morning light
+Gálvez sonrió como quien pierde una partida de cartas. «Enhorabuena, entonces. Disfrutadlo mientras dure. Los restaurantes viejos… a veces tienen mala suerte.»
+
+[433] solo, @leo, speaking calmly with a slight smile, cozy restaurant dining room, morning light
+«¿Como anoche?», preguntaste. Gálvez se paró con la mano en el pomo de la puerta. «Antes de irse, señor Gálvez… ¿no le extraña que el restaurante siga en pie?»
+
+[434] solo, @galvez, turning back slowly, cold suspicious stare, hand on a door handle, cozy restaurant dining room, morning light
+Gálvez se dio la vuelta muy despacio. Por primera vez en su vida, Gonzalo Gálvez no sabía qué estaba pasando. Y no le gustaba.
+
+[435] no humans, old television in a restaurant dining room showing a security camera video of a man in a black suit crouching by a padlock in an alley, neighbors watching, morning light, no readable text
+Encendiste la tele vieja del comedor, la de ver el fútbol. Y pusiste el vídeo de la cámara. Callejón. Ayer por la tarde. Un hombre con traje de gala. Abriendo el candado.
+
+[436] no humans, neighbors at a restaurant door staring at a television in shock, hands over mouths, pointing, sunny morning
+«¡Es Bruno!», gritó alguien en la puerta. «¡Con el traje de la tele!» Todo el barrio miró hacia la calle, donde Bruno seguía plantado. Más blanco que la harina.
+
+[437] no humans, television screen showing a night vision video of a thin man with jerrycans entering a dark kitchen, neighbors watching in background, close-up, no readable text
+Luego la segunda grabación. Las tres y cinco de la madrugada. El Chispa con las dos garrafas. El candado que se abre solo. Y su voz, clarísima: «Buen chico, Bruno».
+
+[438] solo, @bruno, turning to run away down a street, panicked face, sunny morning, narrow old Spanish neighborhood street
+Bruno se dio la vuelta para salir corriendo. Pero en la esquina estaba el del quiosco, que medía dos metros. Y detrás, la señora Encarna con el bolso en alto.
+
+[439] solo, @vidal[beige trench coat, grey turtleneck], walking out of a bakery door across the street with a calm determined face, two plainclothes men in dark jackets behind her blurred, sunny morning, narrow old Spanish neighborhood street
+Y de la panadería de enfrente salió la inspectora Vidal. Gabardina beige. Ojeras de dos noches sin dormir. Y la sonrisa más tranquila del mundo.
+
+[440] solo, @vidal, showing an identification card held up in her hand toward someone, firm face, street, sunny morning, close-up of the hand and face, {evitar=badge, emblem}
+«Bruno Salas. Queda detenido por cooperación en un intento de incendio. Tiene derecho a guardar silencio.» Uno de sus agentes le puso las esposas. Delante de todo el barrio.
+
+[441] solo, @bruno, hands behind his back, being led by an unseen person, face of shame and despair, crowd of neighbors in background, sunny morning, street
+Bruno bajó la cabeza. Los mismos vecinos que lo vieron crecer, que le dieron caramelos, que lo aplaudieron en la tele… lo miraban ahora en silencio. Ese silencio pesaba más que cualquier abucheo.
+
+[442] solo, @vidal, walking into a restaurant dining room holding a small recorder, calm, cozy restaurant dining room, morning light
+Vidal entró en el comedor con la grabadora en la mano. La dejó encima de la mesa, delante de Gálvez. Y le dio al botón.
+
+[443] solo, @chispa, memory, talking with a tired face, eyes on the floor, dark kitchen, flashlight, night, desaturated
+«Gálvez. Siempre Gálvez. Cuatro locales en dos años. Su empresa, Altamira, les presta dinero. Cuando no pagan, yo quemo. Y él se queda el solar.» La voz del Chispa llenó el comedor.
+
+[444] solo, @galvez, standing rigid, jaw clenched, eyes darting to his lawyer, cozy restaurant dining room, morning light
+Gálvez no se movió. Miró a su abogado. «Esto es una grabación ilegal. Un delincuente diciendo tonterías. Mis abogados…» Se giró hacia el hombre del maletín.
+
+[445] solo, lawyer, middle-aged man in a grey suit holding a briefcase, stepping back with raised palms, nervous, cozy restaurant dining room, morning light
+El abogado dio un paso atrás, con las manos levantadas. «Señor Gálvez, yo le llevo los contratos. Esto… esto es penal. Búsquese a otro.» Y se fue por la puerta sin despedirse.
+
+[446] solo, @vidal, speaking calmly and firmly, looking straight at someone, cozy restaurant dining room, morning light
+«Gonzalo Gálvez», dijo Vidal. «Queda detenido por inducción a cuatro incendios y un intento de incendio. Y por estafa a través de Inversiones Altamira. Llevo dos años esperando decir esto.»
+
+[447] solo, @galvez, being led out of a restaurant with hands behind his back, cold furious face, neighbors watching from the sidewalk, sunny morning
+Le pusieron las esposas al lado de la mesa siete. La de la crítica. La del arroz. Y lo sacaron por la puerta verde de Casa Ferrer, la que había querido quemar.
+
+[448] no humans, neighbors on a sunny street shouting and pointing at a man being taken to a car, an old woman shaking her umbrella, lively crowd, morning
+Los vecinos no se callaron. «¡Que reserve, que reserve!», gritó alguien, y toda la calle se rio. La señora Encarna le apuntó con el paraguas. «¡Sinvergüenza! ¡Y el traje, de mercadillo!»
+
+[449] solo, @bruno, sitting in the back of a dark car, looking out the window at someone, pleading teary eyes, sunny morning, street
+Antes de que cerraran la puerta del coche, Bruno te llamó. «¡Leo! ¡Leo, por favor! ¡Éramos hermanos! ¡Me iban a romper las piernas por la deuda! ¡No tenía otra salida!»
+
+[450] solo, @leo, standing on a sidewalk looking at someone with sad calm eyes, sunny morning, street
+Te acercaste al coche. Lo miraste. Al niño de seis años que chocaba el puño contigo. Al hombre que se agachó a tu lado en el hotel. Eran la misma persona. Eso era lo más triste.
+
+[451] solo, @leo, speaking quietly with a firm but sad expression, close-up, sunny morning
+«Podías habérmelo dicho, Bruno. Te habría ayudado. Mi padre te habría ayudado, como siempre.» Tragaste saliva. «Éramos hermanos. Hasta que abriste la puerta.»
+
+[452] solo, @bruno, crying in the back of a car, head down against the window, sunny morning
+Bruno bajó la cabeza contra la ventanilla y lloró. El coche arrancó. Y tú te quedaste mirando cómo se alejaba por la calle donde crecisteis juntos.
+
+[453] solo, @nerea[white blouse, black skirt, beige trench coat], arriving on a street out of breath, holding a phone, looking at a car driving away, shocked, sunny morning
+En ese momento llegó Nerea corriendo, con el móvil en la mano. Se había enterado por el grupo de vecinos. Llegó justo para ver el coche girar la esquina.
+
+[454] solo, @nerea, turning away from a crowd with a cold face, putting on sunglasses, sunny morning, street, neighbors in background
+«¿Bruno? Yo con ese hombre no tengo nada que ver», dijo en voz alta, para que la oyeran todos. Nadie le contestó. Ya la conocían. Ya se conocía todo el barrio.
+
+[455] solo, @nerea, looking toward someone with regret and a small hopeful smile, sunglasses in hand, sunny morning, street
+Luego te miró a ti. Con esa cara que ponía cuando quería algo. «Leo… ¿podemos hablar? Creo que me equivoqué contigo.»
+
+[456] solo, @leo, polite small smile, turning away toward a restaurant door, sunny morning, street
+«Te dije que te alejaras antes del sábado, Nerea», dijiste, con amabilidad. «Me alegro de que estés bien.» Y entraste en el restaurante. Nada más.
+
+[457] solo, @ramon, standing on a chair in the doorway of a restaurant, raising his arms to speak to a crowd of neighbors, emotional happy face, sunny morning
+Entonces tu padre se subió a una silla en la puerta. Con su corazón nuevo. Con su americana de las bodas. «¡Vecinos! ¡Hoy no cobra nadie en Casa Ferrer! ¡Comida para todo el barrio!»
+
+[458] no humans, long tables set up on a narrow old Spanish street with white tablecloths, neighbors eating and laughing, string lights, sunny afternoon, festive
+Sacasteis las mesas a la calle. Todas las que teníais y las del bar de la esquina. Comió el barrio entero. Valeria trajo todo el pan del horno. Hasta Vidal se sentó, con su gabardina.
+
+[459] solo, @leo[white chef jacket, black apron], cooking in a busy kitchen, smiling, sweating, steam, small family restaurant kitchen, warm light
+Tú cocinaste. Arroz de la abuela, con su limón quemado. Lentejas. Tortilla. Y al final, para cada mesa, un tazón de caldo de los domingos. Porque, por fin, era domingo de verdad.
+
+[460] solo, @vidal, sitting at a street table holding a bowl of broth, surprised soft smile, sunny afternoon, festive street
+Vidal probó el caldo y se quedó callada. «Mi madre hacía uno así», dijo. «Lo había olvidado.» Luego carraspeó y volvió a ser inspectora. «Que conste que esto no es un soborno.»
+
+[461] solo, @ramon, sitting at a street table at sunset, looking at someone with a deep thoughtful gaze, holding a glass, festive lights, street
+Al atardecer, cuando ya se habían ido casi todos, tu padre se sentó a tu lado. Se quedó un rato callado. Luego te preguntó lo que llevaba todo el día queriendo preguntar.
+
+[462] solo, @ramon, asking quietly with serious kind eyes, sunset, street table, close-up
+«Hijo. ¿Cómo lo sabías? Lo de mi corazón. Lo de la crítica. Lo de la noche. Lo del arroz de Bruno. No me digas que lo viste en mi cara.»
+
+[463] solo, @leo, looking down at his hands, then up at someone with a sad smile, sunset, street table
+Pensaste mucho la respuesta. «Tuve un sueño, papá. Muy largo. De diez años. En ese sueño, Bruno quemó el restaurante. Y tú… tú no estabas.»
+
+[464] solo, @ramon, silent for a moment, then placing a hand on someone's shoulder off-screen, warm gentle smile, sunset, street
+Tu padre no dijo nada durante un buen rato. Luego te puso la mano en el hombro. Esa mano grande, de cocinero. «Pues no vuelvas a soñarlo», dijo. «Que ahora estoy aquí.»
+
+[465] solo, @leo, smiling with tears in his eyes, sunset, close-up
+Sonreíste. Y lloraste un poco. Las dos cosas a la vez. Como en los domingos de tu infancia, cuando tu madre servía el caldo y tu padre bajaba la escalera en bata.
+
+# ================= CAPÍTULO 10: Lo que se queda =================
+
+[466] no humans, narrow old Spanish neighborhood street in early spring morning, small bakery with a suitcase by the door, cherry blossom petals on the sidewalk, soft sunlight
+Tres semanas después, a principios de abril, una maleta esperaba en la puerta de la panadería de los Ruiz. Valeria se iba a Lyon. Un año entero.
+
+[467] solo, @valeria[light blue coat, white scarf], standing in a bakery doorway holding a sealed envelope, nervous shy smile, spring morning light
+La encontraste en la puerta, con el abrigo puesto y un sobre en la mano. El mismo sobre. Lo reconociste al instante: el papel crema, su letra redonda. «Para ti. Léela cuando me vaya.»
+
+[468] solo, @leo[dark blue denim jacket over white t-shirt], holding an envelope, staring at it with emotion, spring morning, street, close-up
+En tu primera vida, guardaste ese sobre diez años sin abrirlo. Por miedo a lo que dijera. Por miedo a que ya fuera tarde. Lo llevabas en el bolsillo la noche que te moriste.
+
+[469] solo, @leo, opening an envelope right away, determined small smile, spring morning, street
+Esta vez lo abriste delante de ella. «¡Leo! ¡Te he dicho que cuando me vaya!» «Ya esperé demasiado una vez», dijiste. Ella no entendió la frase. Tú sí.
+
+[470] no humans, handwritten letter on cream paper held in hands, soft spring morning light, blurred street in background, close-up, no readable text
+«Leo: te quiero desde los quince años. Desde el día que te quemaste con la bandeja de cruasanes y no lloraste para que no me sintiera culpable. No te pido nada.»
+
+[471] no humans, handwritten letter on cream paper, a small drawing of a lemon tart at the bottom, soft spring light, close-up, no readable text
+«Solo que, si algún día sientes lo mismo, vengas a buscarme. Aunque sea a Lyon. Aunque tardes diez años. Yo te guardaré el último cruasán.» Abajo, una tartaleta de limón dibujada.
+
+[472] solo, @leo, lowering a letter, eyes wet, smiling, spring morning, street
+Diez años. En tu primera vida tardaste diez años y nunca llegaste. Doblaste la carta con cuidado. Te la guardaste en el bolsillo del pecho. Y la miraste.
+
+[473] solo, @valeria, blushing deeply, holding her breath, looking at someone with hope and fear, spring morning, bakery doorway
+Valeria estaba roja hasta las orejas, esperando. Con miedo. Con el mismo miedo que tú tenías hace diez años, en otra vida. «Di algo», susurró. «Lo que sea.»
+
+[474] solo, @leo, speaking softly with a sincere smile, spring morning, street, close-up
+«No voy a tardar diez años», dijiste. «Vete a Lyon. Aprende todo lo que puedas. Y en Navidad, iré a buscarte. Con un caldo en un termo, si hace falta.»
+
+[475] solo, @valeria, laughing and crying at the same time, covering her face with her hands, spring morning, bakery doorway
+Se echó a reír y a llorar a la vez. Luego te dio un beso tan rápido que casi no te enteraste. Y se subió al taxi sin mirar atrás, para que no la vieras llorar más.
+
+[476] no humans, taxi driving away down a narrow old Spanish street in spring, cherry blossom petals floating, soft morning light
+Desde la ventana de la panadería, la abuela Ruiz aplaudía. Desde la del restaurante, tu padre también. Y la señora Encarna, desde el tercero, gritó: «¡Ya era hora!»
+
+[477] no humans, courtroom with wooden benches and a judge's bench, people seated, daylight through tall windows, no flags, no emblems
+Los meses siguientes pasaron rápido. En junio empezó el juicio. Gonzalo Gálvez se sentó en el banquillo sin su abrigo caro. Ningún abogado de los buenos quiso defenderlo.
+
+[478] solo, @galvez[plain grey suit], sitting on a courtroom bench, looking older and tired, defeated, head slightly down, courtroom, daylight
+Las cuatro víctimas declararon. El Chispa declaró. Y Bruno también. Doce años de cárcel para Gálvez. Inversiones Altamira, cerrada. Y los cuatro solares, devueltos a sus dueños.
+
+[479] solo, @vidal[dark blue blazer, white blouse], standing on courthouse steps, small satisfied smile, sunglasses in hand, sunny day
+Vidal salió del juzgado con una sonrisa que no le cabía en la cara. Un mes después la ascendieron a comisaria. El primer domingo, vino a comer al restaurante. Desde entonces, no ha faltado ni uno.
+
+[480] solo, @bruno[plain grey sweatshirt], sitting alone at a small table writing a letter with a pencil, sad remorseful face, bare room with a small barred window, daylight
+A Bruno le cayeron tres años por colaborar. En septiembre, te llegó una carta suya desde la cárcel. Cuatro hojas. Sin excusas. Solo pidiendo perdón. A ti. Y sobre todo, a tu padre.
+
+[481] solo, @ramon[white chef jacket, black apron], reading a letter at a kitchen table, sad thoughtful face, small family restaurant kitchen, afternoon light
+Tu padre la leyó tres veces. No dijo nada. Pero esa noche, cuando cerrasteis, lo encontraste mirando el gancho de la pared donde Bruno colgaba su delantal.
+
+[482] solo, @leo, writing a short note at a table, thoughtful expression, small family restaurant kitchen, night, warm lamp
+Tardaste dos meses en contestar. Una sola línea. «Cuando salgas, el caldo del domingo sigue siendo a las doce.» No era perdón. Todavía no. Pero era una puerta. Y esta vez, la abrías tú.
+
+[483] solo, @nerea[elegant black coat], walking alone down a city street with a suitcase, looking back once, cloudy day
+Nerea se mudó a otra ciudad ese verano. Antes de irse, vino a comer una última vez. Sola. Pidió el arroz. Se lo comió entero. Y al pagar, te dijo: «Tenías razón. Lo siento.» Tú le sonreíste. Era suficiente.
+
+[484] no humans, small family restaurant kitchen during busy service, steam, many plates on the pass, warm light, energetic atmosphere
+El restaurante no paró en todo el año. Te ofrecieron trabajo en Madrid, en Barcelona, en París. Dijiste que no a todos. Tu sitio estaba en esta cocina. Con este suelo. Con esta puerta de atrás.
+
+[485] no humans, new solid metal back door with a modern lock in a restaurant kitchen, daylight, clean, close-up
+Por cierto, la puerta de atrás la cambiasteis en abril. Una de acero, con cerradura buena. Tu padre hizo una sola copia de la llave. Y te la dio a ti.
+
+[486] solo, @ramon, teaching cooking techniques, holding a wooden spoon, gentle smile, small family restaurant kitchen, warm light, young cooks in background blurred
+Tu padre volvió a cocinar en mayo, con permiso del médico. Pero solo los mediodías. Por las tardes, enseñaba a los dos chavales nuevos que contrataste. Uno de ellos se parecía mucho a Bruno a su edad.
+
+[487] solo, @ramon, wagging a finger at someone with a playful stern face, small family restaurant kitchen, warm light
+«A este lo vigilo yo», te dijo, señalándolo con la cuchara. Luego se rio. «Pero de cerca. No como a otros. Que el que avisa no es traidor.»
+
+[488] solo, @elena[dark green wool coat, cream blouse], sitting at a restaurant table by the window, round glasses, raising a glass with a warm smile, cozy restaurant dining room, warm lamps, night
+Elena Ríos volvió a la mesa siete en octubre. Esta vez no vino de incógnito. Vino a cenar con tu padre, como dos viejos amigos. Y a contarte un secreto: «Prepárate para noviembre.»
+
+[489] no humans, small family restaurant dining room full of people celebrating, raised glasses, a framed certificate on the wall, warm festive lights, night
+En noviembre, Casa Ferrer recibió su primera estrella. La primera del barrio. El periódico puso una foto de tu padre llorando en la puerta verde. La señora Encarna la recortó y la colgó en el mercado.
+
+[490] solo, @ramon, standing in front of a restaurant door crying with joy, holding a framed certificate, neighbors applauding blurred, night, warm lights
+«Veinticinco años sin estrella», dijo tu padre a los periodistas. «Y llega el año que casi la quemamos. Esto lo ha hecho mi hijo.» Tú negaste con la cabeza. Lo habíais hecho juntos.
+
+[491] no humans, snowy European city street at night during Christmas, old stone buildings, a river with a bridge, warm Christmas lights, gentle snowfall
+En Navidad, cumpliste tu promesa. Lyon. Nieve en las calles, luces en el río, y un frío que se metía en los huesos. Llevabas un termo de caldo en la mochila. De verdad.
+
+[492] solo, @valeria[cream knitted sweater, red scarf, white chef jacket open], walking out of a pastry school building into the snow, surprised, wide eyes, hands over mouth, snowy night, Christmas lights
+Valeria salió de la escuela con la chaqueta de pastelera manchada de chocolate. Te vio en la acera, con la nieve en el pelo y el termo en la mano. Se quedó quieta.
+
+[493] 1boy, 1girl, @leo[dark wool coat, grey scarf], @valeria[cream knitted sweater, red scarf, white chef jacket open], standing face to face in the snow, smiling at each other, close but not touching, snowy street, Christmas lights, night, {evitar=3people, kiss}
+«¿Eso es… caldo?», preguntó, riéndose. «Te dije que vendría con un termo, si hacía falta.» «¡Pero era una forma de hablar, idiota!» Y se te echó encima.
+
+[494] no humans, two cups of steaming broth on a bench by a frozen river at night, snow, Christmas lights reflecting on the water, warm atmosphere
+Os tomasteis el caldo en un banco junto al río, con la nieve cayendo. Ella dijo que era el mejor que había probado nunca. Tú sabías que era por el frío. Y que no era verdad. Y te dio igual.
+
+[495] solo, @valeria, sitting on a snowy bench holding a cup of broth with both hands, looking at someone with a curious serious face, snow, night, Christmas lights
+«Leo», dijo de repente. «Me lo prometiste. ¿Cómo sabías las cosas antes de que pasaran?» Tú miraste el río. Y decidiste que a ella no le ibas a mentir.
+
+[496] solo, @leo, sitting on a snowy bench, looking at the river, telling a story with a calm sad smile, snow, night, Christmas lights
+Se lo contaste todo. El hotel. Los platos. Diez años fregando. La acera. La lluvia. La carta sin abrir en el bolsillo. Y el olor a caldo al despertar.
+
+[497] solo, @valeria, listening with tears running down her cheeks, holding a cup with both hands, snowy bench, night, Christmas lights
+Ella no dijo que estabas loco. No dijo que era imposible. Solo te escuchó, con lágrimas en la cara. Y al final, preguntó lo único que le importaba.
+
+[498] solo, @valeria, asking softly with a trembling voice, snowy night, close-up, Christmas lights
+«En esa otra vida… ¿yo volví alguna vez?» Negaste con la cabeza. «No. Te escribí una vez a Lyon. Me devolvieron la carta. Nunca supe dónde estabas.»
+
+[499] solo, @valeria, wiping her tears and smiling with determination, snowy night, Christmas lights
+Valeria se secó las lágrimas con la manga. «Pues en esta vida vuelvo en abril», dijo. «Y no me voy a ir nunca más. Que te quede claro, viajero del tiempo.»
+
+[500] no humans, small bakery and a small restaurant facing each other on a narrow old Spanish street in spring, cherry blossoms, morning sunlight, peaceful
+Volvió en abril, como dijo. Un año justo después de irse. La abuela Ruiz le dejó la panadería. Y entre la panadería y el restaurante, solo quedaba una calle de cuatro metros.
+
+[501] no humans, small family restaurant kitchen in early morning, a single pot of broth simmering, roasted chestnuts on the counter, soft golden light, steam
+El trece de febrero siguiente, un año exacto después de despertarte en tu antigua habitación, bajaste a la cocina antes que nadie. Pusiste el caldo al fuego. Con sus castañas.
+
+[502] no humans, small lemon tart on a white plate with a small silver ring placed on top, warm kitchen light, close-up
+Y en un plato pequeño, una tartaleta de limón. La primera que te salía bien de verdad. Encima, un anillo de plata. Sencillo. Como a ella le gustaban las cosas.
+
+[503] solo, @valeria[cream knitted sweater, white apron], walking into a restaurant kitchen with a basket of bread, sleepy morning face, small family restaurant kitchen, soft golden light
+A las seis y media entró Valeria con el pan, como cada mañana. Medio dormida. Con harina en la nariz. «Huele a domingo», dijo. «Y es jueves.»
+
+[504] solo, @valeria, freezing in place, staring at a plate on a counter, hand covering her mouth, eyes filling with tears, small family restaurant kitchen, soft golden light
+Entonces vio la tartaleta. Y el anillo. El pan se le cayó al suelo. Por segunda vez en su vida, una barra de pan se quedó tirada por tu culpa.
+
+[505] solo, @leo[white chef jacket, black apron], standing in a kitchen holding a small plate, nervous gentle smile, small family restaurant kitchen, soft golden light
+«No sé hacer hojaldre», dijiste. «Ni caramelo sin quemarlo. Pero en dos vidas no he querido a nadie como a ti. ¿Te casas con un cocinero que todavía no sabe hacer postres?»
+
+[506] solo, @valeria, laughing and crying, nodding repeatedly, small family restaurant kitchen, soft golden light
+«¡Sí! ¡Sí, idiota! ¡Pues claro que sí!» Y se te echó al cuello con tanta fuerza que casi tiráis la olla del caldo. Casi.
+
+[507] solo, @ramon[white t-shirt, old grey robe], standing at the bottom of old wooden stairs in a robe, clapping, laughing with wet eyes, warm light
+Desde la escalera, en bata y despeinado, tu padre aplaudía. Había bajado por el olor. Como los domingos en que vivía tu madre. Aunque era jueves.
+
+[508] solo, @ramon, raising a ladle like a toast, grinning, tears in his eyes, small family restaurant kitchen, soft golden light
+«¡Ya era hora!», gritó, levantando el cucharón como si fuera una copa de champán. «¡Lucía, ¿lo ves?! ¡Nuestro chico ha espabilado!» Y por la ventana, la señora Encarna ya se había enterado.
+
+[509] no humans, wedding reception with long tables set up on a narrow old Spanish street, string lights between buildings, white tablecloths, neighbors celebrating, warm summer evening
+Os casasteis en junio. En la iglesia del barrio. Y el banquete, en la calle, con las mesas de Casa Ferrer y las del bar de la esquina. Cocinó tu padre. El postre, la novia.
+
+[510] solo, @vidal[elegant dark green dress with long sleeves], sitting at a wedding street table raising a glass, rare warm smile, string lights, summer evening
+La comisaria Vidal vino con vestido y todo. Brindó por «el chaval que no hizo el héroe… pero casi». Elena Ríos escribió una crítica de la boda. Diez sobre diez. Sin pruebas de sal.
+
+[511] no humans, an empty chair at a long wedding table on a street, a small bowl of broth placed in front of it, string lights, summer evening, nostalgic atmosphere
+En la mesa principal había una silla vacía, con un tazón de caldo delante. Para tu madre. Tu padre la puso él mismo. Y nadie se sentó en ella en toda la noche.
+
+[512] solo, @leo[dark suit, white shirt], standing at a wedding street table, looking around at everyone with a peaceful emotional smile, string lights, summer evening
+Miraste alrededor. Tu padre bailando con la señora Encarna. Valeria riéndose con harina en el vestido de novia. El barrio entero. Vivos. Todos. Y la puerta verde, intacta.
+
+[513] no humans, luxury hotel ballroom at night, empty, chairs stacked, dim light, memory, desaturated
+En otra vida, a esta misma hora, estarías fregando los platos de una gala en el hotel de Gálvez. Con treinta y cuatro años. Con un sobre sin abrir en el bolsillo.
+
+[514] no humans, narrow old Spanish neighborhood street at night with a small restaurant glowing warmly, string lights, neighbors dancing in the distance, peaceful
+En esta vida, ese hotel no se construyó nunca. En su lugar, en la esquina, sigue estando Casa Ferrer. Con su estrella. Con su arroz. Con su caldo de los domingos.
+
+[515] solo, @leo, looking up at the night sky with a quiet smile, string lights, summer evening, street
+Aquella noche, bajo la lluvia, pediste volver atrás aunque fuera un solo día. Para hacerlo todo distinto. Te dieron treinta. Y no desperdiciaste ni uno.
+
+[516] no humans, small bedroom above a restaurant at dawn, steam drifting through the doorway, soft golden light, two pairs of slippers by the bed, peaceful
+Ahora, cada domingo, el olor a caldo sube por la escalera a las siete de la mañana. Y en esta casa, por fin, todo el mundo baja a desayunar.
+
+[517] no humans, small restaurant with a green wooden door on a narrow old Spanish street at sunrise, warm light in the windows, peaceful, wide shot
+Si esta historia te ha llegado, cuéntanos en los comentarios: si pudieras volver diez años atrás, ¿qué es lo primero que cambiarías? Y suscríbete. Porque cada historia, como cada vida, puede cambiar en un solo momento.
