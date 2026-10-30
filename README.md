@@ -135,6 +135,8 @@ python -m mangavid modelos            # Animagine, WAI («cine anime»), caras y
 
 Después trabaja sin conexión poniendo `HF_HUB_OFFLINE=1` delante de cada comando. Si una descarga falla, relanza el comando: lo ya bajado no se repite.
 
+**En Google Colab:** abre `notebooks/mangavid_Colab.ipynb`. Descarga los modelos y genera en segundo plano, con una celda que enseña el progreso. Las historias y los vídeos se guardan en Google Drive. Para que la sesión no se apague por inactividad, pega `notebooks/mantener_colab.js` en la consola del navegador (F12 → Console).
+
 Convierte un guion de escenas en un vídeo narrado: una imagen por escena generada en tu GPU
 (Animagine XL 4.0, ~11 s por imagen con 8 GB de VRAM), voz con Edge-TTS, movimiento suave,
 subtítulos de 2 líneas como máximo y un `.srt` completo para YouTube.
