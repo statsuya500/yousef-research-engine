@@ -126,6 +126,15 @@ Los resultados se guardan junto al original y los archivos intermedios en `nombr
 
 ## Vídeos estilo manhwa desde una historia (`mangavid`)
 
+**Antes de la primera historia**, descarga todos los modelos de una vez (unos 25 GB, con conexión):
+
+```bash
+cd ~/doblaje && source venv/bin/activate && uv pip install -r requirements.txt
+python -m mangavid modelos            # Animagine, WAI («cine anime»), caras y detectores
+```
+
+Después trabaja sin conexión poniendo `HF_HUB_OFFLINE=1` delante de cada comando. Si una descarga falla, relanza el comando: lo ya bajado no se repite.
+
 Convierte un guion de escenas en un vídeo narrado: una imagen por escena generada en tu GPU
 (Animagine XL 4.0, ~11 s por imagen con 8 GB de VRAM), voz con Edge-TTS, movimiento suave,
 subtítulos de 2 líneas como máximo y un `.srt` completo para YouTube.

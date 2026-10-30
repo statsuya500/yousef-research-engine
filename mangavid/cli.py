@@ -343,6 +343,13 @@ def cmd_miniatura(args) -> None:
     print("[miniatura] para cambiar solo el texto, relanza con --texto: las imágenes no se regeneran")
 
 
+def cmd_modelos(args) -> None:
+    from . import modelos
+
+    wanted = [images.DEFAULT_MODEL] + ([] if args.sin_wai else [modelos.WAI_MODEL]) + args.model
+    modelos.download(wanted)
+
+
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="mangavid", description="Historia en texto → vídeo estilo manhwa narrado")
     sub = p.add_subparsers(dest="command", required=True)
@@ -427,6 +434,12 @@ def main(argv: list[str] | None = None) -> None:
     a.add_argument("etiquetas", nargs="+", help="Etiquetas del informe, p. ej. 003b 004")
     a.add_argument("--workdir", type=Path)
     a.set_defaults(func=cmd_aprobar)
+
+    d = sub.add_parser("modelos", help="Descargar todos los modelos para trabajar sin conexión")
+    d.add_argument("--model", action="append", default=[],
+                   help="Modelo de imagen extra (repetible). Por defecto se baja también WAI, el de «cine anime»")
+    d.add_argument("--sin-wai", action="store_true", help="No descargar el modelo WAI de estilo «cine anime»")
+    d.set_defaults(func=cmd_modelos)
 
     args = p.parse_args(argv)
     args.func(args)
