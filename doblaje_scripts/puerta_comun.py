@@ -58,7 +58,7 @@ NEG_CHAR = {
 _D = ", soft diffused daylight, pastel colors, soft blurry background"
 _N = ", soft warm evening light, pastel colors, soft blurry background"
 LUGAR = {
-    "stairs": "at the foot of the marble staircase of a white mansion, rainy night, warm light from the windows" + _N,
+    "stairs": "outdoors, exterior, on the wet marble front steps of a white mansion, rainy night, heavy rain, wet hair, dark blue sky, warm light from the windows" + _N,
     "stairs_sun": "at the marble staircase of a white mansion with flowers, sunny afternoon" + _D,
     "orphanage": "in the courtyard of an old stone orphanage with bare trees" + _D,
     "orphanage_office": "inside a small old orphanage office with a wooden desk and a plain wall" + _D,
@@ -88,6 +88,20 @@ LUGAR = {
     "cemetery": "in a small quiet cemetery with green grass, cloudy sky" + _D,
     "court": "inside a courtroom with wooden benches and tall windows" + _D,
 }
+# Exteriores de noche: sin esto el «bright soft daylight» del estilo convierte la escalera bajo la lluvia en un salón de día.
+# Los interiores de noche (gala, capilla…) se quedan con la luz clara de siempre.
+NOCHE = {"stairs", "bridge", "rooftop"}
+NEG_LUGAR = {"stairs": "indoors, interior, ceiling, chandelier, sunlight, daytime, window frame",
+             "bridge": "indoors, interior, sunlight, daytime", "rooftop": "indoors, interior, sunlight, daytime"}
+
+
+def estilo(loc=None):
+    """El estilo de siempre; de noche cambia la luz de día por luz cálida de noche."""
+    if loc in NOCHE:
+        return STYLE.replace("high-key lighting, bright soft daylight", "soft warm night lighting, moonlight, rain glow" if "rain" in LUGAR[loc] else "soft warm night lighting")
+    return STYLE
+
+
 ESCENARIO = {k: "no humans, scenery, " + v.replace("at the foot of ", "").replace("in the ", "").replace("inside ", "")
              .replace("in a ", "").replace("on a ", "").replace("on the ", "").replace("under ", "")
              for k, v in LUGAR.items()}
@@ -98,7 +112,8 @@ def ficha(who, ropa=None):
     return FICHA[who] + (", " + ROPA[who][ropa] if ropa else "")
 
 
-def negative(who, allow=(), side=False, ropa=None):
+def negative(who, allow=(), side=False, ropa=None, loc=None):
     obj = ", ".join(o for o in OBJ if o not in allow)
-    n = ", ".join(x for x in (COMMON, obj, NEG_CHAR[who], NEG_CHAR.get(f"{who}_{ropa}", "")) if x)
+    common = COMMON.replace("dark, ", "") if loc in NOCHE else COMMON
+    n = ", ".join(x for x in (common, obj, NEG_CHAR[who], NEG_CHAR.get(f"{who}_{ropa}", ""), NEG_LUGAR.get(loc, "")) if x)
     return n + (", looking at viewer, facing viewer" if side else "")

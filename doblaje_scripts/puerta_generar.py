@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 from mangavid import images
-from puerta_comun import STYLE, LUGAR, ESCENARIO, L, V, ficha, negative
+from puerta_comun import STYLE, estilo, LUGAR, ESCENARIO, L, V, ficha, negative
 from puerta_plan import plan, pools, EXPR
 H = Path('/mnt/c/videos/puerta'); P = H/'planos'; P.mkdir(exist_ok=True)
 FOOD = ("food", "plate", "cup", "glass")
@@ -29,15 +29,15 @@ for i, p in enumerate(sorted(gen, key=lambda p: first[p])):
         seeds = prev + extra
     if False: pass
     elif kind == "scen":
-        prompt, neg, size = ", ".join((ESCENARIO[loc], STYLE)), negative("escenario", ALLOW.get(loc, ())), L
+        prompt, neg, size = ", ".join((ESCENARIO[loc], estilo(loc))), negative("escenario", ALLOW.get(loc, ()), loc=loc), L
     elif kind == "cow":
-        prompt = ", ".join((ficha(who, rp), f"solo, cowboy shot, three-quarter view, {EXPR[mood]}, {LUGAR[loc]}", STYLE)); neg = negative(who, ALLOW.get(loc, ()), ropa=rp); size = L
+        prompt = ", ".join((ficha(who, rp), f"solo, cowboy shot, three-quarter view, {EXPR[mood]}, {LUGAR[loc]}", estilo(loc))); neg = negative(who, ALLOW.get(loc, ()), ropa=rp, loc=loc); size = L
     elif kind == "close":
         prompt = ", ".join((ficha(who, rp), f"solo, close-up, portrait, face focus, {EXPR[mood]}, soft blurry background, bokeh, pastel colors", STYLE)); neg = negative(who, ropa=rp); size = L
     else:
         face = "facing right" if first[p] and True else "facing left"
-        prompt = ", ".join((ficha(who, rp), f"solo, cowboy shot, standing, side profile, from side, looking at someone off-screen, calm expression, {LUGAR[loc]}", STYLE))
-        neg = negative(who, ALLOW.get(loc, ()), side=True, ropa=rp); size = V
+        prompt = ", ".join((ficha(who, rp), f"solo, cowboy shot, standing, side profile, from side, looking at someone off-screen, calm expression, {LUGAR[loc]}", estilo(loc)))
+        neg = negative(who, ALLOW.get(loc, ()), side=True, ropa=rp, loc=loc); size = V
     cfg[name] = dict(clave=list(p), usos=use[p], primera_escena=first[p], semillas=list(seeds), prompt=prompt, negative=neg, tamaño=list(size))
     jobs += [images.Job(prompt, s, P/f"{name}_{s}.png", size, [], neg, images.IP_SCALE) for s in seeds]
 (P/'configuracion.json').write_text(json.dumps(cfg, ensure_ascii=False, indent=1))

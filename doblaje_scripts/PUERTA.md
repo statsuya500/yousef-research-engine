@@ -37,3 +37,16 @@ Miniatura: como en las otras historias, con `miniatura_paneles.py` o `python -m 
 
 Probado en la nube sin GPU: el guion convertido se lee bien, el plan sale con 1.006 posiciones y la generación prepara
 1.777 trabajos en 329 grupos. No se han generado imágenes: eso se hace en el PC.
+
+## En Google Colab
+
+Abre `notebooks/puerta_Colab.ipynb` en Colab (GPU T4) y ejecuta las celdas en orden. Hace los mismos pasos, pero guarda
+todo en Drive, en `Mi unidad/mangavid/puerta`: `/mnt/c/videos` apunta a `Mi unidad/mangavid`. Si se corta la sesión, ejecuta
+otra vez las celdas 1-3 y el paso donde estabas. Ese paso sigue donde lo dejó.
+
+Para repetir solo algunas pruebas de calibración: `python doblaje_scripts/puerta_calibrar.py dario-sudadera isabel-gala`.
+
+## Escalera de noche
+
+La escalera, el puente y la azotea son exteriores de noche. Para ellos, `estilo(lugar)` cambia el «bright soft daylight» por
+luz de noche y añade a los negativos «indoors, ceiling, chandelier». Sin eso, la escalera bajo la lluvia salía como un salón de día.
