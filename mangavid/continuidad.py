@@ -252,6 +252,7 @@ class Requirement:
     status: str  # PASS, FAIL, UNCERTAIN o N/A
     evidence: str
     mandatory: bool = True
+    retry: bool = False  # el fallo se arregla con otra semilla, no cambiando la descripción
 
 
 LEVEL_TO_STATUS = {co.OK: PASS, co.CONFIRMED: FAIL, co.POSSIBLE: UNCERTAIN}
