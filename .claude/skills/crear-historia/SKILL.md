@@ -10,7 +10,8 @@ Para siempre en cada ⏸ y espera su respuesta.
 
 ## 1. Mirar lo que ya existe
 
-Lee `historias/CATALOGO.md`: lista de historias que el usuario ya tiene, con su premisa. Lee también los
+Lee `historias/PARAMETROS.md` (qué funciona en el canal: título, gancho, ritmo, duración) y
+`historias/CATALOGO.md`: lista de historias que el usuario ya tiene, con su premisa. Lee también los
 `historias/*/PLAN.md` que haya. Ninguna propuesta puede repetir la premisa central de una ya hecha
 (por ejemplo, otra regresión en el tiempo, otro heredero con amnesia o otro repartidor que salva a un abuelo).
 
