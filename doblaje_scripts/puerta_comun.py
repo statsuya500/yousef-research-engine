@@ -21,7 +21,7 @@ FICHA = {
     "dario_nino": "1boy, little boy, 8 years old, child, messy dark brown hair, big grey eyes, worn blue sweater",
 }
 ROPA = {
-    "dario": {"sudadera": "grey hoodie, old jeans", "botones": "burgundy bellboy uniform with gold buttons",
+    "dario": {"sudadera": "grey hoodie, old jeans", "botones": "burgundy long-sleeve bellboy jacket with high collar and gold buttons, black trousers",
               "chofer": "black suit, white shirt, black tie", "mono": "grey work overalls",
               "traje": "elegant dark grey suit, white shirt"},
     "isabel": {"gala": "elegant silver long-sleeve evening gown, pearl earrings", "blanco": "white tailored suit, silver rose pendant"},
@@ -40,7 +40,7 @@ OBJ = ["paper", "document", "phone", "bag", "book", "laptop", "cup", "mug", "gla
 NEG_CHAR = {
     "dario": "blonde hair, red hair, black hair, long hair, glasses, beard, stubble",
     "dario_sudadera": "short sleeves, t-shirt, bare arms",
-    "dario_botones": "hoodie, jeans, casual clothes",
+    "dario_botones": "hoodie, jeans, casual clothes, short sleeves, bare arms, blue clothes, navy, two-tone jacket",
     "dario_chofer": "hoodie, jeans, casual clothes, uniform",
     "isabel": "blonde hair, red hair, short hair, curly hair, glasses",
     "fernando": "blonde hair, long hair, beard, glasses, young",
