@@ -7,6 +7,11 @@ from pathlib import Path
 from dubber import tts, media
 from dubber.segments import Segment, to_srt
 from mangavid import storyboard, render
+import subprocess
+# NVENC si el ffmpeg lo tiene (PC); si no (algunos Colab), libx264.
+CODEC = (["-c:v", "h264_nvenc", "-preset", "p5", "-cq", "23"] if "h264_nvenc" in subprocess.run(
+    ["ffmpeg", "-hide_banner", "-encoders"], capture_output=True, text=True).stdout
+    else ["-c:v", "libx264", "-preset", "veryfast", "-crf", "21"])
 H, OUT, WORK = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
 EXTRA = 1.0  # segundos extra tras terminar de leer
 reg = json.loads((H/'escenas'/'registro.json').read_text())['imagenes']
@@ -46,7 +51,7 @@ def weighted(index, shots, voice, narration, out, style):
     tmp = out.with_suffix('.tmp.mp4')
     media.run(["ffmpeg", "-y", "-v", "error", *inputs, "-i", voice.resolve(),
                "-filter_complex", f"{vfilter};[{n}:a]aresample={media.SAMPLE_RATE},apad[a]",
-               "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}", "-c:v", "h264_nvenc", "-preset", "p5", "-cq", "23",
+               "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}", *CODEC,
                "-r", str(render.FPS), "-c:a", "aac", "-b:a", "192k", "-ac", "2", tmp.name], cwd=out.parent)
     tmp.replace(out); srt.unlink()
     print(f'[sistema] escena {num}: ventana {fr[pos]/render.FPS:.1f} s de {total:.1f} s', flush=True)
