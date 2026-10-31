@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 from mangavid import images
-from puerta_comun import STYLE, estilo, LUGAR, ESCENARIO, L, V, ficha, negative
+from puerta_comun import estilo, fondo_cerca, LUGAR, ESCENARIO, L, V, ficha, negative
 from puerta_plan import plan, pools, EXPR
 H = Path('/mnt/c/videos/puerta'); P = H/'planos'; P.mkdir(exist_ok=True)
 FOOD = ("food", "plate", "cup", "glass")
@@ -33,7 +33,7 @@ for i, p in enumerate(sorted(gen, key=lambda p: first[p])):
     elif kind == "cow":
         prompt = ", ".join((ficha(who, rp), f"solo, cowboy shot, three-quarter view, {EXPR[mood]}, {LUGAR[loc]}", estilo(loc))); neg = negative(who, ALLOW.get(loc, ()), ropa=rp, loc=loc); size = L
     elif kind == "close":
-        prompt = ", ".join((ficha(who, rp), f"solo, close-up, portrait, face focus, {EXPR[mood]}, soft blurry background, bokeh, pastel colors", STYLE)); neg = negative(who, ropa=rp); size = L
+        prompt = ", ".join((ficha(who, rp), f"solo, close-up, portrait, face focus, {EXPR[mood]}, {fondo_cerca(loc)}", estilo(loc))); neg = negative(who, ropa=rp, loc=loc); size = L
     else:
         face = "facing right" if first[p] and True else "facing left"
         prompt = ", ".join((ficha(who, rp), f"solo, cowboy shot, standing, side profile, from side, looking at someone off-screen, calm expression, {LUGAR[loc]}", estilo(loc)))

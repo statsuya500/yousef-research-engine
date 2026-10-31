@@ -4,6 +4,7 @@ cambia por fases de la historia (sudadera, botones, chófer, traje) y en el tall
 import json, math, re
 from collections import Counter
 from pathlib import Path
+from puerta_comun import NOCHE
 H = Path('/mnt/c/videos/puerta')
 EXPR = {"neutral": "calm expression", "happy": "gentle smile", "sad": "sad expression, looking down", "crying": "crying, tears",
         "angry": "angry, frowning", "shocked": "surprised, wide eyes", "smug": "smug smirk, arrogant", "cold": "cold expression, serious",
@@ -47,7 +48,7 @@ def plan():
         if not chars:   # paisaje o público: solo planos de escenario
             slots[n] = [("scen", None, None, loc, None)] * k; prev = loc; continue
         f = chars[0]; s = chars[1] if len(chars) > 1 else None
-        P = lambda kind, who: (kind, who, ropa(who, n, loc), loc if kind in ("cow", "side") else None, "neutral" if kind == "side" else mood)
+        P = lambda kind, who: (kind, who, ropa(who, n, loc), loc if kind in ("cow", "side") or (kind == "close" and loc in NOCHE) else None, "neutral" if kind == "side" else mood)
         seq = []
         if loc != prev: seq.append(("scen", None, None, loc, None))
         if s and ndecl >= 2 and k >= 3 and len(seq) < k:   # viñeta doble solo si los dos están en la línea de escena

@@ -58,7 +58,7 @@ NEG_CHAR = {
 _D = ", soft diffused daylight, pastel colors, soft blurry background"
 _N = ", soft warm evening light, pastel colors, soft blurry background"
 LUGAR = {
-    "stairs": "outdoors, exterior, on the wet marble front steps of a white mansion, rainy night, heavy rain, wet hair, dark blue sky, warm light from the windows" + _N,
+    "stairs": "outdoors, exterior, on the wide wet marble front steps of a white neoclassical mansion with columns and big lit windows, rainy night, heavy rain, wet hair, dark blue sky, warm light from the windows" + _N,
     "stairs_sun": "at the marble staircase of a white mansion with flowers, sunny afternoon" + _D,
     "orphanage": "in the courtyard of an old stone orphanage with bare trees" + _D,
     "orphanage_office": "inside a small old orphanage office with a wooden desk and a plain wall" + _D,
@@ -91,8 +91,18 @@ LUGAR = {
 # Exteriores de noche: sin esto el «bright soft daylight» del estilo convierte la escalera bajo la lluvia en un salón de día.
 # Los interiores de noche (gala, capilla…) se quedan con la luz clara de siempre.
 NOCHE = {"stairs", "bridge", "rooftop"}
-NEG_LUGAR = {"stairs": "indoors, interior, ceiling, chandelier, sunlight, daytime, window frame",
+NEG_LUGAR = {"stairs": "indoors, interior, ceiling, chandelier, sunlight, daytime, window frame, church, cathedral, dome, castle, spire, tower, bokeh orbs",
              "bridge": "indoors, interior, sunlight, daytime", "rooftop": "indoors, interior, sunlight, daytime"}
+
+
+# Fondo de los primeros planos en esos exteriores (los demás primeros planos llevan fondo claro genérico).
+FONDO_CERCA = {"stairs": "rainy night, rain drops, wet hair, dark blue blurry background, warm window light glow",
+               "bridge": "rainy night, rain drops, wet hair, dark blurry city lights background",
+               "rooftop": "night, dark blue blurry city lights background"}
+
+
+def fondo_cerca(loc=None):
+    return FONDO_CERCA.get(loc, "soft blurry background, bokeh, pastel colors")
 
 
 def estilo(loc=None):
