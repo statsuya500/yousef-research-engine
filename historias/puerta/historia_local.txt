@@ -1,0 +1,1134 @@
+# puerta: guion convertido al formato local (lugar y tono deducidos de la imagen).
+@estilo: masterpiece, high score, great score, absurdres, anime illustration, light novel style, clean thin lineart, soft shading, high-key lighting, bright soft daylight, white sparkles, bokeh, heavily blurred background, soft cream and white palette, glossy eyes, upper body
+@dario: 1boy, young man, 18 years old, messy short dark brown hair, grey eyes, slim build, clean-shaven
+@isabel: 1girl, mature woman, 37 years old, long straight dark brown hair, grey eyes, elegant, cream blouse, beige long coat
+@fernando: 1boy, adult man, 45 years old, short black hair with grey temples, sharp brown eyes, thin lips, dark navy suit, white shirt
+@ivan: 1boy, young man, 20 years old, styled blond hair, light brown eyes, white blazer, black t-shirt
+@valentina: 1girl, young woman, 19 years old, long straight dark brown hair with a side part, grey eyes, oversized grey sweater
+@ines: 1girl, old woman, 70 years old, catholic nun, black and white nun habit, white veil, kind wrinkled face, small round glasses
+@toni: 1boy, young man, 19 years old, curly red hair, freckles, green eyes, green hoodie
+@paula: 1girl, young woman, 20 years old, short black bob hair, warm brown eyes, black hotel receptionist uniform, white blouse
+@rafael: 1boy, old man, 75 years old, white hair neatly combed back, tired kind grey eyes, wrinkles, grey wool cardigan, white shirt
+@guardia: 1boy, adult man, 40 years old, large build, bald, black suit, earpiece
+@director: 1boy, adult man, 50 years old, balding, nervous face, dark suit
+@policia: 1boy, adult man, 45 years old, short grey hair, dark jacket, serious face
+@dario_nino: 1boy, little boy, 8 years old, child, messy dark brown hair, big grey eyes, worn blue sweater
+
+[001] @dario, stairs, sad
+«¡Sacad a ese estafador de mi casa!» El guardia te empujó y rodaste por la escalera de mármol. Doce escalones. Bajo la lluvia. Delante de doscientos invitados.
+
+[002] stairs, happy
+Arriba, la gente de la fiesta se asomaba con sus copas. Algunos se reían. Otros grababan con el móvil. Nadie bajó a ayudarte.
+
+[003] stairs, neutral
+A tu lado, en un charco, brillaba medio medallón de plata. Lo único que te dejaron hace dieciocho años. La razón por la que estabas allí.
+
+[004] @dario, stairs, neutral
+Te llamas Darío. Tienes dieciocho años. Y la mujer que acababa de mirarte desde lo alto de esa escalera… era tu madre.
+
+[005] stairs, neutral
+Pero empecemos una hora antes. Cuando llegaste a la verja de la mansión Del Castillo, empapado, con una mochila vieja y un medallón en el bolsillo.
+
+[006] @dario, stairs, neutral
+Esa noche, los Del Castillo celebraban treinta años de su cadena de hoteles. Había coches de lujo, fotógrafos y música. Y tú, en la verja, con veinte euros en la cartera.
+
+[007] @guardia, stairs, cold
+«Las entregas, por la puerta de atrás», gruñó el guardia, sin mirarte. «No traigo nada», dijiste. «Vengo a ver a Isabel del Castillo. Es… un asunto personal.»
+
+[008] @guardia, stairs, smug
+El guardia se rio. «¿Tú? ¿Un asunto personal con la señora? Largo de aquí, chaval.» Pero en ese momento, una voz bajó por la escalera.
+
+[009] @valentina, stairs, neutral
+«¿Qué pasa, Ramón?» Una chica de tu edad, con un vestido azul. Pelo oscuro. Ojos grises. Los mismos ojos que veías cada mañana en el espejo del orfanato.
+
+[010] @valentina, stairs, smug
+Te miró de arriba abajo. La sudadera mojada. Las zapatillas rotas. «Qué asco. ¿Es un mendigo? Que se vaya, que está mojando la entrada.»
+
+[011] @dario, stairs, determined
+Sacaste el medallón. «Solo quiero hablar con la señora Del Castillo cinco minutos. Dígale que tengo esto.» Valentina frunció el ceño. Algo en ese medallón le sonaba.
+
+[012] @isabel, stairs, shocked
+Y entonces apareció ella. Vestido plateado. Pendientes de perlas. Isabel del Castillo. La mujer más elegante que habías visto nunca. Sonriendo… hasta que vio lo que tenías en la mano.
+
+[013] @isabel, stairs, shocked
+Se le borró la sonrisa. Se le fue el color de la cara. Se llevó la mano al cuello, como si buscara algo que ya no estaba ahí. «¿De dónde… de dónde has sacado eso?»
+
+[014] @dario, stairs, neutral
+«Me lo dejaron hace dieciocho años. En una cesta, en la puerta del orfanato de Santa Clara. Con una pulsera del hospital que ponía su apellido. Del Castillo.»
+
+[015] stairs, shocked
+Un murmullo recorrió la escalera. Los invitados se miraron. Alguien dejó caer una copa. Isabel abrió la boca para decir algo…
+
+[016] @fernando, stairs, cold
+…pero un hombre se le adelantó. Esmoquin negro. Sienes canosas. Sonrisa de hielo. Fernando, su marido. «Isabel, cariño, vuelve dentro. Ya me encargo yo.»
+
+[017] @fernando, stairs, smug
+Bajó los escalones despacio, como si le diera pereza. «A ver, chico. ¿Cuánto quieres? Porque esto es una estafa muy vieja. Un medallón comprado en un mercadillo y un cuento triste.»
+
+[018] @dario, stairs, determined
+«No quiero dinero. Quiero saber quién soy.» Fernando se rio. Los invitados se rieron con él. Como si tu vida fuera un chiste contado en una fiesta.
+
+[019] @fernando, stairs, neutral
+Entonces te agarró de la muñeca. Fuerte. Y la viste: una cicatriz blanca en el dorso de su mano derecha, como un anzuelo. Se acercó a tu oído.
+
+[020] @fernando, stairs, cold
+«Escúchame bien, basura. Si vuelves a acercarte a esta casa, te arrepentirás de haber nacido.» Luego, en voz alta, sonriendo: «¡Seguridad! Este joven se va.»
+
+[021] @guardia, stairs, neutral
+El guardia no te acompañó. Te empujó. Perdiste el equilibrio en el mármol mojado. Y caíste.
+
+[022] stairs, neutral
+Doce escalones. Cada uno, un golpe. La mochila por un lado. El medallón por otro. Y abajo, el suelo duro y el agua fría.
+
+[023] @ivan, stairs, smug
+«¡Ja! ¡El hijo perdido!», gritó un chico rubio de esmoquin blanco, grabando con el móvil. Iván, el hijo de Fernando. «¡Saluda a la cámara, primo! ¡Te vas a hacer famoso!»
+
+[024] @valentina, stairs, neutral
+Valentina sacó unas monedas del bolso y te las tiró escaleras abajo. «Para el autobús», dijo. Algunos invitados aplaudieron la gracia.
+
+[025] @isabel, stairs, sad
+Solo una persona no se reía. Isabel dio un paso hacia ti. «¡Espera!», gritó. Pero Fernando la cogió del brazo y la metió dentro. La puerta se cerró.
+
+[026] stairs, neutral
+La puerta se cerró. Sin más. Como se cierran las puertas de las casas a las que no perteneces. La música de la fiesta siguió sonando.
+
+[027] @dario, stairs, sad
+Te arrodillaste en el agua. Recogiste el medallón. Recogiste las monedas, una a una. No por orgullo. Porque eran todo el dinero que ibas a tener para cenar.
+
+[028] @dario, stairs, sad
+Caminaste bajo la lluvia sin saber adónde ir. En el orfanato ya no había sitio para ti. Hoy cumplías dieciocho años. Y tu familia te acababa de tirar por una escalera.
+
+[029] @dario, bridge, neutral
+Debajo de un puente, miraste el medallón. La mitad de una rosa grabada en plata. La otra mitad la tenía alguien en esa casa. Estabas seguro. Lo habías visto en su cara.
+
+[030] @dario, bridge, determined
+Esa noche juraste una cosa. Que todos los que se rieron en esa escalera, un día, te abrirían la puerta. Y que descubrirías por qué te dejaron, hace dieciocho años, en la puerta de un orfanato.
+
+[031] orphanage, neutral
+Dieciocho años antes. Catorce de enero. Nevaba como no había nevado en veinte años. Y en la puerta del orfanato de Santa Clara, alguien dejó una cesta.
+
+[032] @ines, orphanage, shocked
+Sor Inés la encontró a las dos de la madrugada. Había oído un coche. Cuando abrió la puerta, solo vio las luces traseras alejándose entre la nieve.
+
+[033] orphanage, neutral
+Dentro de la cesta, un bebé de tres días envuelto en una manta blanca. Medio medallón de plata. Y una pulsera de hospital con un apellido escrito a mano: Del Castillo.
+
+[034] @ines, orphanage, neutral
+Ese bebé eras tú. Sor Inés te llamó Darío, como su hermano pequeño. Y como no tenías apellido, te puso el que se ponía entonces a los niños abandonados: Expósito.
+
+[035] @ines, orphanage_office, neutral
+Avisó a la policía. Llamó a los hospitales. En ningún sitio constaba un bebé desaparecido con ese apellido. Como si nunca hubieras existido.
+
+[036] orphanage, shocked
+Creciste en Santa Clara. Un edificio viejo de piedra, con calefacción que fallaba y monjas que te querían a su manera. No era una mala vida. Pero no era una familia.
+
+[037] @dario_nino, orphanage, sad
+Vinieron muchas familias. Ninguna te eligió. De bebé tenías asma y siempre estabas enfermo. Luego te hiciste mayor. Y la gente quiere bebés, no niños que ya saben lo que es esperar.
+
+[038] orphanage, crying
+A los siete años llegó Toni. Pelirrojo, pecoso, llorando sin parar. Lo dejaron unos tíos que ya no podían con él. Esa noche le diste tu manta. Desde entonces, no os separasteis.
+
+[039] @toni, orphanage, happy
+Toni creció siendo el gracioso. Tú, el serio. Él hablaba por los dos. Tú pegabas por los dos cuando hacía falta. Y él arreglaba cualquier móvil que le pusieras delante.
+
+[040] orphanage, neutral
+A los seis años tuviste la peor crisis de asma de tu vida. Una noche de nieve, como la de la cesta. La ambulancia no podía subir la cuesta del orfanato.
+
+[041] @ines, orphanage, determined
+Sor Inés te envolvió en una manta y te bajó en brazos. Dos kilómetros. En la nieve. Con sesenta años. Llegó al hospital sin poder hablar. Los médicos dijeron que llegó justo a tiempo.
+
+[042] @dario_nino, orphanage, crying
+A los nueve, una pareja estuvo a punto de llevarte con ellos. Vinieron tres domingos. El cuarto, te dijeron que habían elegido a otro niño. Te escondiste en el cuarto de la caldera hasta la noche.
+
+[043] @ines, orphanage, sad
+Sor Inés te encontró allí, con el farol. No te riñó. Se sentó en el suelo, a tu lado. «Las familias no se eligen, Darío», te dijo. «Se encuentran. Y a veces tardan.»
+
+[044] street, neutral
+Esa Navidad, las monjas te regalaron una naranja y un coche de lata de segunda mano. Lo desmontaste esa misma noche. Lo volviste a montar. Y ya nunca dejaste de hacerlo con todo.
+
+[045] garage, angry
+A los catorce, sor Inés te consiguió trabajo por las tardes en el taller de Matías, un mecánico viejo del barrio. Barrías. Pasabas herramientas. Mirabas.
+
+[046] @dario, workshop, neutral
+Y aprendiste. Rápido. A los dieciséis arreglabas motores que Matías no sabía arreglar. «Tienes manos de oro, chaval», te decía. «Las has heredado de alguien. Eso no se aprende.»
+
+[047] @dario, workshop, neutral
+De alguien. Esa palabra te persiguió toda la infancia. ¿De quién eran tus ojos grises? ¿Tus manos? ¿Por qué nadie había venido nunca a buscarte?
+
+[048] @ines, orphanage_office, neutral
+La mañana de tu cumpleaños número dieciocho, sor Inés te llamó a su despacho. Tenía en las manos una caja de madera pequeña. Le temblaban los dedos.
+
+[049] @ines, orphanage_office, neutral
+«Hoy te vas, hijo. Y hoy te tengo que dar esto. Te lo tenía que haber dado hace mucho. Pero tenía miedo.» Abriste la caja. El medallón. La pulsera. Del Castillo.
+
+[050] @dario, orphanage_office, neutral
+«¿Miedo de qué?», preguntaste. Sor Inés suspiró. «Cuando tenías diez años, llamé a la empresa de esa familia. Me dijeron que no habían perdido a ningún niño. Que si volvía a llamar, me denunciarían.»
+
+[051] @ines, orphanage_office, sad
+«Me asusté. Pensé que, si esa familia te había abandonado, ir a buscarlos solo te haría daño. Que mejor esperar a que fueras un hombre. Perdóname, Darío.»
+
+[052] @dario, orphanage_office, happy
+Te agachaste delante de ella. «Usted me dio una manta, un nombre y una cama durante dieciocho años. No tengo nada que perdonarle.» Ella lloró. Tú no. Nunca llorabas delante de nadie.
+
+[053] library, neutral
+Esa misma tarde fuiste a la biblioteca. Buscaste «Del Castillo». Hoteles Del Castillo. La familia más rica de la ciudad. Y una presidenta: Isabel del Castillo.
+
+[054] library, neutral
+En una revista de hace diecinueve años encontraste una foto. Una chica de diecinueve años en una fiesta. Al cuello, un medallón de plata. Una rosa entera.
+
+[055] @dario, library, neutral
+Pusiste tu mitad al lado de la foto. La forma del pétalo. El borde roto. Era la misma rosa. La chica de la foto se llamaba Isabel. Hoy tenía treinta y siete años.
+
+[056] @toni, library, happy
+Toni te esperaba en la puerta. Él había salido del orfanato el año anterior. Trabajaba en una tienda de reparación de móviles y vivía en un piso diminuto con otros tres chicos.
+
+[057] @toni, street, smug
+«¿Y? ¿Eres un príncipe perdido?» Le enseñaste la foto. Dejó de sonreír. «Darío… esa gente da una fiesta esta noche. Lo he visto en las noticias. Treinta años de los hoteles.»
+
+[058] @dario, street, determined
+Esa noche. Tu cumpleaños. No podías esperar ni un día más. Llevabas esperando toda la vida. Y ya sabes cómo acabó.
+
+[059] flat, neutral
+Esa noche dormiste en el suelo del piso de Toni, en un colchón que olía a humedad. Con la ropa mojada en una silla. Y la espalda llena de moratones.
+
+[060] @toni, flat, happy
+A la mañana siguiente, Toni te despertó con el móvil en la mano. «Darío… tienes que ver esto.» Tenía la cara blanca.
+
+[061] stairs, neutral
+Un vídeo. Tú, cayendo por la escalera. Grabado por Iván. Título: «El estafador de la escalera». Tres millones de visitas en una noche.
+
+[062] stairs, happy
+Los comentarios eran peores que la caída. «Qué cara más dura.» «Que lo metan en la cárcel.» «Pobre señora, con lo buena que es.» Nadie preguntó si decías la verdad.
+
+[063] @dario, flat, cold
+Miraste el vídeo diez veces. Y en la décima, viste algo. Justo antes de que se cerrara la puerta, se oía la voz de Isabel. «¡Espera!» Nadie más se había fijado. Tú sí.
+
+[064] @dario, flat, neutral
+Esa semana buscaste trabajo en veinte sitios. En cinco te reconocieron. «¿Tú no eres el del vídeo?» Y la puerta se cerraba. Otra vez.
+
+[065] garage, angry
+El taller de Matías había cerrado. Se jubilaba. Sin taller, sin orfanato y sin dinero, solo te quedaba una idea. Una idea loca.
+
+[066] lobby, neutral
+El Gran Hotel Del Castillo. El hotel más famoso de la cadena. Si querías estar cerca de esa familia, tenías que entrar en su mundo. Aunque fuera por la puerta de servicio.
+
+[067] @dario, hotel_office, neutral
+Te cortaste el pelo. Te pusiste la única camisa blanca que tenías. Y en la solicitud escribiste tu nombre del orfanato: Darío Expósito. Nadie lo relacionaría con el vídeo.
+
+[068] hotel_office, neutral
+La jefa de personal ni te miró a la cara. «¿Experiencia?» «Mecánico. Cuatro años.» «Necesitamos un botones. Turno de noche. Mil euros. Empiezas mañana.» Así de fácil.
+
+[069] @dario, lobby, neutral
+Al día siguiente te pusieron un uniforme granate con botones dorados y un gorrito ridículo. Te miraste en el espejo del vestuario. Pareciste un mono de feria. Pero estabas dentro.
+
+[070] @paula, lobby, happy
+En recepción te recibió una chica de pelo corto y ojos castaños. Paula. «Bienvenido al circo», te dijo, guiñándote un ojo. «Primera regla: sonríe aunque te escupan.»
+
+[071] @paula, lobby, happy
+Esa primera noche, cuando no había nadie, se acercó. «Yo también vi el vídeo», susurró. Se te heló la sangre. «Y vi a la señora gritar "espera". Tranquilo. No diré nada.»
+
+[072] @dario, lobby, neutral
+«¿Por qué me ayudas?», preguntaste. Paula se encogió de hombros. «Porque yo también me crie sin padre. Y porque los que se reían en ese vídeo vienen aquí cada semana. Y no dejan propina.»
+
+[073] garage, angry
+La tercera noche te mandaron al garaje a buscar unas maletas. Allí, junto a un coche antiguo, un anciano daba patadas a una rueda.
+
+[074] @rafael, garage, angry
+«¡Cacharro del demonio! ¡Cincuenta años juntos y me dejas tirado!» Era un señor mayor, de pelo blanco, con una rebeca gris. Tenía la cara de alguien que estaba solo desde hacía mucho.
+
+[075] @dario, garage, angry
+«¿Me deja?», preguntaste. El viejo te miró con desconfianza. «¿Tú? ¿El botones?» «El botones arreglaba motores hasta la semana pasada.»
+
+[076] @dario, garage, angry
+Tardaste veinte minutos. El carburador, sucio. Un cable suelto. Cuando el motor arrancó, el viejo dio un salto como un niño. «¡Ja! ¡Ruge como el primer día!»
+
+[077] @rafael, garage, angry
+«¿Cómo te llamas, chaval?» «Darío.» «Yo soy Rafael. Vivo en el ático de este hotel desde que murió mi mujer. Ven mañana a tomar un té. A las once. No me gusta tomarlo solo.»
+
+[078] @dario, garage, shocked
+Rafael. Rafael del Castillo. El fundador de los hoteles. Lo habías leído en la biblioteca. El padre de Isabel. Tu abuelo. Y te acababa de invitar a un té.
+
+[079] @dario, elevator, neutral
+Podías decírselo. Enseñarle el medallón. Pero ¿y si reaccionaba como Fernando? ¿Y si te echaban del hotel? No. Primero, que te conociera. Que viera quién eras. Y después, la verdad.
+
+[080] penthouse, neutral
+A las once de la noche subiste al ático. Muebles viejos. Fotos de una mujer sonriente. Un tablero de ajedrez. Y dos tazas de té esperando.
+
+[081] @rafael, penthouse, sad
+«¿Sabes jugar?» No sabías. Te enseñó. Te ganó seis veces seguidas. A la séptima, casi le ganas. «Tienes cabeza», gruñó. «Y no te rindes. Eso me gusta.»
+
+[082] @rafael, penthouse, sad
+Mientras jugabais, te habló de su mujer, de los hoteles, de su hija. «Isabel viene poco. Su marido se encarga de todo. Demasiado de todo.» Lo dijo como quien escupe algo amargo.
+
+[083] @dario, penthouse, neutral
+No preguntaste más. Pero desde esa noche, cada vez que terminaba tu turno, subías al ático. Té, ajedrez y un viejo que hablaba. Tú escuchabas. Y aprendías.
+
+[084] lobby, happy
+El viernes de tu segunda semana, a medianoche, la puerta giratoria trajo problemas. Un grupo de chicos ricos con maletas de marca, gritando, borrachos. Y delante de todos, Iván.
+
+[085] @ivan, lobby, smug
+«¡Botones! ¡Las maletas!» Te acercaste con la cabeza baja. Él te dio una maleta. Luego otra. Y entonces te miró a la cara. Y se le dibujó una sonrisa enorme.
+
+[086] @ivan, lobby, smug
+«¡No me lo puedo creer! ¡Chicos, mirad! ¡Es el estafador de la escalera! ¡El de mi vídeo! ¡Ahora es botones en mi hotel!» Sus amigos estallaron en carcajadas.
+
+[087] lobby, happy
+Los clientes del vestíbulo se giraron. Algunos sacaron el móvil. «¿Ese es el del vídeo?» «¡Qué fuerte! ¡Trabaja aquí!» Paula, en recepción, apretó los puños.
+
+[088] @ivan, lobby, smug
+Iván cogió una botella de champán de la mano de un amigo. Y te la vació encima de la cabeza. Despacio. «¡Bautizo! ¡Bienvenido a la familia, primito!»
+
+[089] @dario, lobby, neutral
+El champán te chorreaba por la cara, por el uniforme, por las maletas. Los amigos de Iván se doblaban de risa. Tú no te moviste. No dijiste nada.
+
+[090] @dario, lobby, neutral
+Cuando terminó, cogiste las maletas. «Su suite está en la planta doce, señor. Le subo el equipaje. ¿Desea algo más?» Iván dejó de reírse. No esperaba eso.
+
+[091] @ivan, lobby, smug
+«¿Algo más? ¡Sí! ¡Que te echen!» Se giró hacia el director del hotel, que había bajado corriendo. «¡Quiero a este estafador fuera de mi hotel ahora mismo!»
+
+[092] @director, lobby, neutral
+El director, un hombre bajito y sudoroso, no sabía dónde meterse. «Por supuesto, señor Iván… Expósito, recoja sus cosas…»
+
+[093] @rafael, elevator, angry
+«¿Qué escándalo es este?» Las puertas del ascensor se abrieron. Rafael, con su rebeca gris y su bastón. El vestíbulo entero se calló de golpe.
+
+[094] @ivan, lobby, smug
+Iván se puso derecho como un soldado. «¡Don Rafael! Nada, nada… Este botones es un estafador. Usted vio el vídeo…»
+
+[095] @rafael, lobby, sad
+«Yo no veo vídeos, muchacho. Yo veo personas. Y este chico me arregló el coche que tu padre dijo que había que tirar. ¿Tú qué has arreglado en tu vida? ¿Una resaca?»
+
+[096] lobby, happy
+Alguien en el vestíbulo no pudo aguantarse la risa. Luego otro. Paula se tapó la boca detrás del mostrador. Los amigos de Iván, de repente, miraban el suelo.
+
+[097] @rafael, @director, lobby, sad
+«Director. Este chico se queda. Y el señor Iván pagará el uniforme nuevo. Y la limpieza del suelo. De su bolsillo, no del de su padre.»
+
+[098] @ivan, lobby, angry
+Iván se puso rojo hasta las orejas. Pero no se atrevió a contestar. Al pasar a tu lado hacia el ascensor, te susurró: «Esto no se queda así. Mi padre se va a enterar.»
+
+[099] @dario, lobby, cold
+Lo sabías. Y en el fondo, era lo que querías. Que Fernando se enterara de que estabas allí. Que sintiera el mismo miedo que tú sentiste en esa escalera.
+
+[100] @paula, lobby, happy
+Paula te dio una toalla. «Sonríe aunque te escupan», te recordó. «Pero lo de "¿desea algo más?"… Eso ha sido mejor que sonreír.» Por primera vez en días, te reíste.
+
+[101] @rafael, penthouse, sad
+Esa noche, en el ático, Rafael movió un caballo y te miró por encima de las gafas. «¿Por qué te llamó "primito" ese idiota?» Casi se te cae el té.
+
+[102] @dario, penthouse, neutral
+«Cosas suyas», dijiste. Rafael no insistió. Pero te miró un rato largo. Como si hubiera visto algo en tu cara que no sabía de dónde le sonaba.
+
+[103] @fernando, office, neutral
+Iván tardó menos de una hora en llamar a su padre. Fernando escuchó sin interrumpir. Cuando colgó, se quedó mirando la ciudad por la ventana. Mucho rato. Demasiado para alguien que no tenía nada que temer.
+
+[104] @fernando, office, determined
+Llamó a la jefa de personal. «Ese botones, Expósito. Fuera.» Silencio al otro lado. «Señor… Don Rafael ha dado orden personal de que se quede.» Fernando colgó sin despedirse.
+
+[105] @fernando, office, neutral
+Contra Don Rafael no podía. El viejo seguía teniendo el treinta por ciento de los hoteles y el apellido. Fernando apretó el bolígrafo hasta que se le pusieron blancos los nudillos.
+
+[106] lobby, neutral
+Una semana después, el hotel entero se puso nervioso. Venía la presidenta. Isabel del Castillo hacía una visita cada mes. Todo tenía que brillar.
+
+[107] @isabel, lobby, happy
+Entró sin escolta, sin prisa, saludando a cada empleado por su nombre. Así era ella. Por eso todo el personal la quería. Y por eso a ti se te encogió el estómago.
+
+[108] @dario, lobby, neutral
+Ibas con un carrito de maletas cuando te agachaste a recoger una bolsa. Y el medallón, que llevabas colgado de un cordón bajo la camisa, se te salió del cuello.
+
+[109] @isabel, lobby, shocked
+Isabel se paró en seco a dos metros. Lo miró. Te miró. Se llevó la mano a la garganta, como aquella noche. El director, a su lado, siguió hablando de toallas. Ella ya no lo oía.
+
+[110] @isabel, lobby, neutral
+«Director, quiero ver la lavandería», dijo de pronto. «Que me acompañe el botones. Él solo.» El director parpadeó. Pero nadie le lleva la contraria a la presidenta.
+
+[111] laundry, neutral
+La lavandería estaba en el sótano. Ruido de lavadoras. Olor a jabón. Nadie más. En cuanto se cerró la puerta, Isabel se dio la vuelta.
+
+[112] @isabel, laundry, neutral
+«¿De dónde has sacado ese medallón? Dímelo. Por favor. Esta vez no hay nadie que me meta dentro de casa.» Le temblaba la voz. Se le notaba que llevaba días sin dormir.
+
+[113] @dario, laundry, cold
+Se lo contaste todo. La cesta. La nieve. Sor Inés. La pulsera con su apellido. El catorce de enero de hace dieciocho años. Ella se apoyó en una lavadora para no caerse.
+
+[114] @isabel, laundry, crying
+«El catorce de enero», repitió. «Ese día di a luz. Me sedaron. Cuando desperté, me dijeron que mi hijo había muerto. Que era mejor no verlo. Que no podría soportarlo.»
+
+[115] @isabel, laundry, crying
+«Nunca lo vi. Nunca vi su cuerpo. Nunca vi una tumba. Mi padre dijo que era mejor así. Y yo tenía diecinueve años y les creí a todos.»
+
+[116] @dario, laundry, sad
+Te quedaste callado. Durante dieciocho años pensaste que tu madre te había tirado como un trapo. Que no te quiso. Nunca imaginaste que a ella también le hubieran mentido.
+
+[117] @isabel, laundry, neutral
+Isabel sacó del abrigo una bolsita de terciopelo. La abrió. Dentro, la otra mitad de la rosa. «La llevo encima desde aquella noche en la escalera. No he podido dejarla en casa.»
+
+[118] laundry, neutral
+Acercasteis las dos mitades. Los bordes rotos encajaron. La rosa, entera, por primera vez en dieciocho años. Ninguno de los dos respiraba.
+
+[119] @isabel, laundry, crying
+Pero ella apartó la mano. «No. Espera. Un medallón se puede robar. Se puede copiar. Si me equivoco… no sobreviviría otra vez. Necesito estar segura.»
+
+[120] @dario, laundry, neutral
+Lo entendiste. Te arrancaste unos pelos y se los diste. «Haga la prueba. Yo también necesito estar seguro.» Ella los guardó en la bolsita, junto a su mitad del medallón.
+
+[121] @isabel, laundry, cold
+«Tres semanas», dijo. «Y, Darío… no se lo digas a nadie. Ni siquiera a mi marido. Sobre todo, a mi marido.» No te explicó por qué. No hizo falta.
+
+[122] @ivan, laundry, smug
+Lo que ninguno de los dos vio fue a Iván, al fondo del pasillo del sótano. Había venido a por su coche al garaje. Y había visto a la presidenta entrar con el botones. A solas.
+
+[123] dining, neutral
+Esa noche, en la mansión, la cena duró cinco minutos. Fernando dejó los cubiertos en la mesa. «Me han dicho que hoy has pasado media hora en una lavandería con un botones.»
+
+[124] @fernando, dining, cold
+«Ese chico es un estafador profesional, Isabel. Te está manipulando. Eres una mujer sensible y él lo sabe. El médico te dijo que no te alteraras con el pasado.»
+
+[125] @isabel, dining, neutral
+Isabel no contestó. Por primera vez en dieciocho años de matrimonio, no le dio la razón. Solo dijo: «Estoy cansada», y subió a su habitación. Con la bolsita de terciopelo en el bolsillo.
+
+[126] @valentina, bedroom_mansion, neutral
+En la escalera, a oscuras, Valentina lo había oído todo. Su madre nunca se callaba ante su padre. Y su padre nunca levantaba la voz. Esa noche, las dos cosas habían cambiado.
+
+[127] @valentina, library, neutral
+Buscó en internet. «Isabel del Castillo joven». Y encontró la misma foto que tú. Su madre a los diecinueve. Con un medallón de plata al cuello. Una rosa.
+
+[128] garage, angry
+A las tres de la madrugada, al terminar tu turno, había un coche negro aparcado en el garaje del hotel. Con los faros encendidos. Apuntándote.
+
+[129] @fernando, garage, angry
+Fernando bajó del coche. Sin chófer. Sin testigos. Llevaba en la mano un sobre gordo. «Darío, ¿verdad? O Expósito. Como prefieras. Vamos a hablar como adultos.»
+
+[130] @fernando, garage, angry
+«Cincuenta mil euros. Tuyos. Firmas aquí que reconoces haber intentado estafar a mi familia, que te vas de la ciudad y que no vuelves a acercarte a mi mujer. Y todos contentos.»
+
+[131] @dario, garage, angry
+Cincuenta mil euros. Más dinero del que habías visto en tu vida. Miraste el sobre. Miraste a Fernando. Y te hiciste una pregunta muy simple.
+
+[132] @dario, garage, angry
+«¿Por qué un hombre tan rico paga cincuenta mil euros a un estafador? A los estafadores se les denuncia. A no ser que tenga miedo de que no lo sea.»
+
+[133] @fernando, garage, angry
+La sonrisa de Fernando se borró. Guardó el sobre. Dio un paso hacia ti. Tan cerca que olías su colonia cara.
+
+[134] @fernando, garage, angry
+«Escúchame, huérfano. No sabes con quién juegas. Desaparece. O te desaparezco yo.» La cicatriz blanca de su mano estaba a un palmo de tu cara.
+
+[135] @fernando, garage, angry
+Subió al coche y arrancó. Te quedaste solo en el garaje, con el corazón a mil. No te había asustado. Te había dado una pista. Ese hombre sabía algo. Algo de hace dieciocho años.
+
+[136] cafe, neutral
+A las cuatro de la mañana, en una cafetería de esas que no cierran nunca, se lo contaste todo a Toni y a Paula. El medallón. La lavandería. El sobre.
+
+[137] @toni, cafe, cold
+Toni, que nunca se tomaba nada en serio, se puso serio. «Ese tío te ha amenazado. La próxima vez, que no sea tu palabra contra la suya. Dame el móvil.»
+
+[138] @toni, cafe, happy
+Te instaló una aplicación. «Si mantienes pulsado el botón de volumen, graba vídeo con la pantalla apagada. Nadie lo nota. Lo uso para pillar a los clientes que me gritan en la tienda.»
+
+[139] @paula, cafe, cold
+Paula escuchaba en silencio. «Y otra cosa», dijo al fin. «En el hotel, las cámaras del personal guardan copia en la nube cuarenta y ocho horas. Lo sé porque una vez me acusaron de robar una propina.»
+
+[140] @dario, cafe, happy
+Te quedaste mirándolos. Un pelirrojo que arreglaba móviles y una recepcionista que sonreía aunque la escupieran. Toda tu familia, de momento. Y te pareció suficiente.
+
+[141] rooftop, neutral
+Unas noches después, en el descanso, Paula te llevó a la azotea del hotel. Un sitio que no salía en ningún folleto. Depósitos de agua, un banco viejo y toda la ciudad a vuestros pies.
+
+[142] @paula, rooftop, happy
+«Aquí subo cuando un cliente me grita», te dijo. «Desde aquí todos los ricos parecen hormigas.» Se rio. Luego se quedó callada mirando las luces.
+
+[143] @paula, rooftop, happy
+«Mi padre se fue cuando yo tenía cuatro años. Mi madre limpia oficinas. Yo estudio Turismo por las noches. Algún día dirigiré un hotel como este. Y dejaré propina siempre.»
+
+[144] @dario, rooftop, neutral
+Te quedaste mirándola. No era la chica más guapa que habías visto. Era la más valiente. Y no lo sabía. «Lo harás», dijiste. «Y yo te arreglaré los ascensores.»
+
+[145] @dario, @paula, rooftop, happy
+Paula se rio tan fuerte que una paloma salió volando de un depósito. Os quedasteis allí hasta que se acabó el descanso. Y al día siguiente. Y al otro.
+
+[146] @dario, lockers, neutral
+Desde aquella noche en el garaje hiciste una cosa cada día. Antes de empezar el turno, dejabas el móvil escondido arriba, en tu taquilla, grabando con la app de Toni y una batería extra.
+
+[147] @toni, shop, happy
+Había sido idea de Toni. «Si ese tío quiere hundirte, no lo hará en la calle. Lo hará dentro. Y lo más fácil es meterte algo en la taquilla. Es lo que haría yo si fuera malo. Que no lo soy. Casi.»
+
+[148] lobby, neutral
+Pasaron dos semanas tranquilas. Demasiado tranquilas. Isabel se había ido a Francia a cerrar un negocio. Don Rafael tenía revisión médica toda la mañana. Y Fernando vino al hotel. «Por casualidad.»
+
+[149] @ivan, lobby, angry
+A las cinco de la tarde, Iván bajó al vestíbulo gritando. «¡Mi reloj! ¡Mi Rolex de veinte mil euros! ¡Ha desaparecido de mi suite! ¡Y el único que ha entrado hoy es el botones!»
+
+[150] lobby, neutral
+El vestíbulo se quedó en silencio. Los clientes se giraron. Algunos ya sacaban el móvil. El estafador de la escalera. Ahora, ladrón. Era demasiado bueno para no grabarlo.
+
+[151] @fernando, lobby, cold
+Fernando apareció a su lado, serio, como un padre preocupado. «Calma, hijo. Que lo compruebe seguridad. Que abran las taquillas del personal. Delante de todos, para que nadie diga nada.»
+
+[152] @guardia, lockers, neutral
+Bajasteis todos al vestuario. El jefe de seguridad fue abriendo taquillas una a una. La tuya, la última. Con una palanca, porque «se había perdido» la llave maestra.
+
+[153] lockers, neutral
+Y allí estaba. Encima de tu uniforme de repuesto, brillando como una burla. Un Rolex de oro. Alguien soltó un «¡oooh!». Iván sonrió de oreja a oreja.
+
+[154] @dario, lockers, cold
+Te quedaste mirando el reloj. No te temblaron las manos. No gritaste. Porque, justo encima, detrás de la batería, la pantalla apagada de tu móvil seguía grabando.
+
+[155] @ivan, lockers, smug
+«¡Segunda parte, chicos! ¡El estafador de la escalera ahora es el ladrón del hotel!», gritaba Iván, grabando otra vez. «¡Dadle a me gusta!»
+
+[156] @policia, lobby, cold
+Diez minutos después llegaron dos agentes de paisano. Fernando los había llamado antes de que bajarais al vestuario. Eso lo pensaste después. En ese momento solo pensabas en no perder la calma.
+
+[157] @dario, lobby, neutral
+Te esposaron en mitad del vestíbulo. Delante de los clientes. Delante de tus compañeros. Delante de Fernando, que te miraba con una pena perfectamente ensayada.
+
+[158] @paula, lobby, crying
+«¡Es inocente!», gritó Paula desde el mostrador. «¡Lleva aquí un mes y nunca ha cogido ni un caramelo!» El director le hizo un gesto para que se callara. Ella no se calló.
+
+[159] @dario, lobby, neutral
+Al pasar a su lado, le dijiste una sola frase. En voz baja. «Mi taquilla. Arriba. Detrás de la batería.» Paula abrió los ojos. Lo había entendido.
+
+[160] cell, neutral
+Pasaste la noche en un calabozo. Un banco de cemento. Una luz que no se apagaba nunca. Y en la cabeza, una sola idea: que Paula llegara antes de que alguien vaciara la taquilla.
+
+[161] @paula, lockers, happy
+Paula esperó a que terminara su turno. La taquilla seguía abierta, con la cerradura rota por la palanca. Metió la mano hasta el fondo de la balda de arriba. Y lo encontró.
+
+[162] @toni, shop, happy
+A medianoche, en la tienda de Toni, conectaron el móvil al ordenador. Siete horas de grabación. Toni las pasó a toda velocidad. Hasta que algo se movió en la pantalla.
+
+[163] lockers, neutral
+Las tres y cuarto de la tarde. La puerta de tu taquilla se abre con una llave maestra. Un brazo con chaqueta blanca. Una cara rubia. Iván, dejando el reloj encima de tu uniforme.
+
+[164] @toni, shop, happy
+«¡Lo tenemos!», gritó Toni, saltando de la silla. «¡Y encima mira a la cámara! ¡Mira a la cámara sin saber que es una cámara! ¡Es tontísimo!»
+
+[165] rooftop, neutral
+A las seis de la mañana, Paula y Toni entraron en la comisaría con un portátil. A las ocho, te dejaron salir. Sin cargos. El reloj, devuelto a su dueño. Con vídeo incluido.
+
+[166] @dario, street, sad
+Paula y Toni te esperaban en la puerta con un café. Toni se puso a llorar. Paula le dio una colleja. «¡No llores, que me haces llorar a mí!» Y lloraron los dos.
+
+[167] @director, hotel_office, neutral
+Esa misma mañana, Don Rafael pidió ver el vídeo. En el despacho del director. Con el director, con Fernando y con Iván. Y contigo, por expreso deseo del viejo.
+
+[168] @rafael, @director, hotel_office, angry
+Cuando Iván apareció en la pantalla dejando el reloj en tu taquilla, Rafael no dijo nada. Pero los nudillos se le pusieron blancos sobre el bastón.
+
+[169] @ivan, @director, hotel_office, shocked
+Iván se puso blanco. Miró a su padre. Esperaba que lo salvara, como siempre. Que dijera algo. Que lo arreglara.
+
+[170] @fernando, @director, hotel_office, cold
+Pero Fernando se giró hacia él con cara de asco. «¿Cómo has podido, Iván? ¿Una broma así? ¡Yo te he educado mejor! Don Rafael, le pido perdón. Mi hijo ha actuado solo.»
+
+[171] @ivan, @director, hotel_office, shocked
+Iván se quedó con la boca abierta. Solo. «Mi hijo ha actuado solo.» Su propio padre lo acababa de tirar escaleras abajo. Como a ti. Delante de todos.
+
+[172] @rafael, @director, hotel_office, sad
+«Iván, fuera de este hotel. No vuelvas a pisarlo. Y tú, Fernando…» Rafael lo miró largo rato. «Tú y yo hablaremos otro día. Cuando no haya testigos.»
+
+[173] @rafael, @director, hotel_office, sad
+Luego se giró hacia ti. «Darío, se acabó el uniforme de mono. Desde hoy eres mi chófer y mi mecánico personal. Con sueldo de verdad. Si aceptas, claro.»
+
+[174] @dario, @director, hotel_office, happy
+«Acepto, Don Rafael.» Al salir del despacho, el director te dio la mano. La jefa de personal te sonrió. Paula, desde recepción, te levantó el pulgar.
+
+[175] @ivan, garage, angry
+En el garaje, Iván estaba sentado en su deportivo, solo. Había abierto en el móvil el vídeo de la escalera. El de la fiesta. Pero no el que subió a internet: el original, entero, sin cortar.
+
+[176] stairs, neutral
+Subió el volumen al máximo. Por debajo de la lluvia y de las risas, muy flojo, se oía la voz de su padre. Algo sobre «arrepentirte de haber nacido». Iván no lo había oído nunca.
+
+[177] @ivan, street, smug
+Lo escuchó tres veces. Luego apagó el móvil. Y por primera vez en su vida, Iván Valdés se preguntó qué clase de hombre era su padre.
+
+[178] @dario, street, neutral
+Las semanas siguientes fuiste el chófer de Don Rafael. Lo llevabas al médico, al club, al cementerio a ver a su mujer. Y por las noches, ajedrez. Ya le ganabas una de cada tres.
+
+[179] street, neutral
+Hasta que, un jueves por la tarde, sonó el móvil. Un número que no tenías guardado. «Soy Isabel. Han llegado los resultados. ¿Dónde podemos vernos? Donde nadie nos conozca.»
+
+[180] chapel, neutral
+Solo se te ocurrió un sitio. La capilla del orfanato de Santa Clara. Donde te bautizaron. Donde sor Inés rezaba cada noche por un bebé que llegó en una cesta.
+
+[181] @isabel, chapel, neutral
+Isabel ya estaba allí, sentada en el último banco. Sin maquillaje. Con un sobre en las manos. No lo había abierto. «Quería abrirlo contigo», dijo.
+
+[182] chapel, neutral
+Lo abristeis juntos. Una hoja. Muchos números. Y abajo, en negrita: «Probabilidad de maternidad: 99,98 %».
+
+[183] @isabel, chapel, crying
+Isabel se dobló sobre sí misma. Lloraba sin ruido, como la gente que ha llorado sola demasiadas veces. «Dieciocho años», repetía. «Dieciocho años llevándote flores a una tumba que no existe.»
+
+[184] @isabel, chapel, crying
+Te abrazó. Fuerte. Con miedo a que te esfumaras. Tú te quedaste quieto, sin saber qué hacer con los brazos. Nadie te había abrazado así nunca. Luego, despacio, la abrazaste tú también.
+
+[185] @dario, chapel, crying
+Por primera vez en tu vida, lloraste delante de alguien. No pudiste evitarlo. Tenías dieciocho años y, de repente, tenías madre.
+
+[186] @isabel, chapel, crying
+Isabel juntó las dos mitades de la rosa. «Me la regaló mi padre a los quince. Cuando me quedé embarazada, la partí en dos. Una mitad para mí. La otra la puse en la manta del bebé.»
+
+[187] @isabel, chapel, sad
+«Tu padre se llamaba Andrés. Era mecánico. Arreglaba los coches de mi padre. Tenía tus manos. Y tus ojos grises… no, esos son míos. Pero la forma de mirar, de él.»
+
+[188] @isabel, chapel, neutral
+«Mi padre no lo soportaba. Un mecánico con la heredera. Un día Andrés desapareció. Me dijeron que se había ido a Alemania. Luego supe que estaba embarazada. Y mi padre me mandó a una clínica en la montaña.»
+
+[189] orphanage, neutral
+«Allí nadie sabría nada. Lo organizó todo su secretario. Un chico joven, muy atento, muy eficiente. Se llamaba Fernando.» Lo dijo y se quedó callada. Mirándote.
+
+[190] @dario, chapel, neutral
+Fernando. El secretario. El que lo organizó todo. El que te tiró por la escalera. El que pagó cincuenta mil euros por que desaparecieras. Las piezas empezaron a encajar solas.
+
+[191] @isabel, chapel, neutral
+«Fue él quien me dijo que el niño había muerto. Me cogió de la mano. Lloró conmigo. Un año después, me pidió matrimonio. Pensé que era el hombre más bueno del mundo.»
+
+[192] @ines, chapel, neutral
+En ese momento, la puerta de la capilla se abrió. Sor Inés, con su farol de siempre. «Perdón, hijo. Vi luz y…» Miró a Isabel. Y se quedó muy quieta.
+
+[193] @dario, chapel, cold
+Sacaste el móvil. Buscaste en la web de los hoteles una foto de Fernando. Se la enseñaste. «Hermana, la noche de la cesta, ¿vio a alguien? ¿Algo? Lo que sea.»
+
+[194] @ines, orphanage, neutral
+Sor Inés miró la foto mucho rato. «La cara no la vi. Llevaba un abrigo caro, de pelo de camello. Cuando abrí la puerta, ya estaba en la verja. Se giró. Y se tapó la cara con la mano.»
+
+[195] @ines, orphanage, neutral
+«La mano. La mano sí la vi. Con la luz del farol. Tenía una marca blanca en el dorso. Como un anzuelo.» Isabel soltó un gemido. Tú cerraste los ojos.
+
+[196] @ines, orphanage, sad
+«Se lo dije a la policía», susurró sor Inés. «Me dijeron que no se busca a un hombre por una cicatriz. Que el niño estaba sano y que ya está. Y yo… yo me callé.»
+
+[197] @isabel, chapel, shocked
+Isabel se quedó mirando la nada. «Se cortó con un cristal», dijo, como hablando sola. «Eso me contó. Un cristal roto, el invierno que perdí al bebé. Dieciocho años durmiendo a su lado.»
+
+[198] @isabel, chapel, angry
+Se levantó de golpe. «Voy a la policía. Ahora mismo. Voy a…» La paraste antes de que llegara a la puerta. Con calma. Como cuando arreglabas un motor que se calienta.
+
+[199] @dario, chapel, determined
+«¿Con qué pruebas? Una monja que vio una mano hace dieciocho años. Él tiene los mejores abogados del país. Dirá que miles de personas tienen cicatrices. Y sabrá que vamos a por él.»
+
+[200] @isabel, chapel, crying
+Isabel se sentó otra vez. Respiró. «Tienes razón. Y hay algo más.» Se miró las manos. «Dentro de tres semanas es la junta de accionistas. Y creo que Fernando va a intentar quitarme la empresa.»
+
+[201] @isabel, chapel, neutral
+Sacó un bote de pastillas del bolso. «Esto me lo da él. Para los nervios. Desde hace años. Últimamente me cuesta pensar. Se me olvidan las cosas. Y él va diciendo por ahí que no estoy bien.»
+
+[202] @dario, chapel, cold
+Cogiste el bote. «Deje de tomarlas. No se lo diga. Y que se las analice un médico que no conozca él.» Isabel asintió. Por primera vez, era la hija la que obedecía.
+
+[203] @isabel, chapel, determined
+«Haré como si nada», dijo. «Volveré a casa. Cenaré con él. Le sonreiré.» Le tembló la voz al decirlo. «Lo he hecho dieciocho años sin saberlo. Puedo hacerlo tres semanas sabiéndolo.»
+
+[204] @valentina, street, cold
+Fuera, en un coche aparcado frente al orfanato, alguien había esperado todo ese rato. Valentina. Llevaba días siguiendo a su madre. Y acababa de verla salir de una capilla… contigo.
+
+[205] @valentina, street, angry
+Se bajó del coche y se plantó delante de su madre. «Es él, ¿verdad? El de la escalera. No es un estafador.» No era una pregunta. Isabel no le mintió.
+
+[206] @valentina, street, crying
+«Es tu hermano», dijo Isabel. «Tu hermano mayor.» Valentina se tapó la boca. Te miró. Y se acordó de las monedas. De «para el autobús». De las risas.
+
+[207] @valentina, street, crying
+«Te tiré monedas», susurró. «Te tiré monedas como a un perro. Y tú eras… tú eras…» No pudo terminar. Se le rompió la voz.
+
+[208] @dario, street, sad
+«Me sirvieron para cenar», dijiste. Ella se rio entre lágrimas, sin querer. «Eres idiota.» «Eso dice Toni.» Y por primera vez, tu hermana te sonrió.
+
+[209] @valentina, street, crying
+Luego se puso seria. Muy seria. Igual que tú cuando arreglabas algo. «Si papá hizo eso… yo quiero ayudar. Tiene un despacho en casa. Con una caja fuerte. Nunca me ha dejado entrar.»
+
+[210] @dario, street, cold
+«No», dijiste. «No te vas a jugar nada por mí. Todavía no.» Valentina levantó la barbilla. Con un gesto que acababas de ver en tu madre. «No te lo estoy preguntando, hermano.»
+
+[211] penthouse, neutral
+Esa misma noche, a las once, subiste al ático como siempre. Rafael ya tenía el té servido. Y el tablero preparado.
+
+[212] @rafael, penthouse, sad
+«Llegas tarde. Y traes cara de algo», dijo, sin mirarte. «Llevas cara de algo desde el día que me arreglaste el coche. ¿Me lo vas a contar hoy o espero a morirme?»
+
+[213] @dario, penthouse, neutral
+No dijiste nada. Sacaste del bolsillo la rosa de plata. Entera. Las dos mitades juntas. Y la dejaste encima del tablero, al lado del rey blanco.
+
+[214] @rafael, penthouse, shocked
+La taza de Rafael se cayó al suelo. Se rompió. Él no se movió. Miraba la rosa. La rosa que él mismo había comprado en París hace veintidós años. Para su hija.
+
+[215] @rafael, penthouse, sad
+Rafael escuchó toda tu historia sin decir una palabra. La cesta. La nieve. La escalera. La lavandería. La capilla. La cicatriz. Cuando terminaste, era otro hombre. Más viejo. Más pequeño.
+
+[216] @rafael, penthouse, sad
+«Tú eres… el hijo de Andrés.» Se tapó los ojos con la mano. «Dios mío. Te he tenido delante de mí un mes. Moviendo mis caballos. Arreglando mi coche. Con sus mismas manos.»
+
+[217] @rafael, penthouse, sad
+«Tengo que contarte una cosa, muchacho. Y después puedes no volver a subir nunca más.» Respiró hondo. «A tu padre lo eché yo. Le ofrecí dinero para que se fuera. No lo quiso.»
+
+[218] @rafael, penthouse, sad
+«Entonces amenacé con hundir el taller de su padre. Con dejar a su familia en la calle. Se fue a Alemania esa misma semana. Sin despedirse de Isabel. Para protegerlos a todos.»
+
+[219] @dario, penthouse, cold
+«¿Dónde está ahora?», preguntaste. Rafael tardó en contestar. «Murió hace diez años. Un accidente en una fábrica. Lo supe por un detective. Nunca se lo dije a Isabel. Me faltó valor.»
+
+[220] @dario, penthouse, sad
+Te diste la vuelta hacia la ventana. Un padre que no conociste, muerto en una fábrica lejos de casa. Por culpa del viejo con el que jugabas al ajedrez cada noche.
+
+[221] @rafael, penthouse, sad
+«Pero te juro por mi mujer que no sabía lo del niño», dijo Rafael. «Fernando me dijo que había nacido muerto. Que él se había encargado de todo. Y yo le pagué. Le pagué por su discreción.»
+
+[222] @rafael, penthouse, sad
+Abrió un cajón de su escritorio antiguo. Sacó una carpeta amarillenta. «Lo guardo todo. Manía de viejo. Aquí está el recibo. Lo firmó él, de su puño y letra.»
+
+[223] penthouse, neutral
+«Recibí de don Rafael del Castillo cincuenta mil euros por la gestión del asunto de la clínica y del niño. Fernando Valdés.» La fecha: quince de enero. El día después de la cesta.
+
+[224] @dario, penthouse, neutral
+«Y del niño.» Tres palabras. Dieciocho años escondidas en un cajón. Por ellas pagó Rafael. Y por ellas Fernando se convirtió en el yerno perfecto.
+
+[225] @rafael, penthouse, sad
+«Mañana a primera hora mi abogado buscará en el registro civil. Si ese niño murió, tiene que haber un certificado de defunción. Si no lo hay…» No terminó la frase. No hacía falta.
+
+[226] @rafael, penthouse, sad
+Luego te tendió la mano. Temblaba. «No te pido que me perdones. Te pido que me dejes ayudarte a acabar con él. Es lo único que todavía puedo hacer bien.»
+
+[227] @dario, penthouse, cold
+Te quedaste mirando esa mano un buen rato. La mano que echó a tu padre. La que te servía el té cada noche. «Me quitó a mi padre», dijiste. «Y me ha dado lo más parecido a un abuelo que he tenido.»
+
+[228] @dario, penthouse, cold
+«No sé qué hacer con eso todavía.» Le estrechaste la mano. «Pero sé lo que hay que hacer con Fernando.» Rafael apretó tu mano con una fuerza que no sabías que tenía.
+
+[229] street, neutral
+El sábado por la mañana, Toni te enseñó el periódico. Una foto tuya abriéndole la puerta del coche a Don Rafael. Y un titular: «El estafador de la escalera, ahora chófer del anciano millonario».
+
+[230] @toni, flat, angry
+«"Fuentes de la familia aseguran que el joven se aprovecha de la avanzada edad de Don Rafael para sacarle dinero"», leyó Toni. «Fuentes de la familia. O sea, Fernando.»
+
+[231] @dario, flat, cold
+Fernando había notado algo. Que Isabel estaba distinta. Que el viejo te defendía. Y había decidido atacar primero. Esa misma noche había gala benéfica en el hotel. Para la infancia.
+
+[232] ballroom, neutral
+Una gala para la infancia. Organizada por el hombre que dejó a un recién nacido en la nieve. Quinientos invitados. Prensa. Y en la mesa principal, Isabel, sonriendo como le habías pedido.
+
+[233] @dario, ballroom, neutral
+Tú habías venido como chófer de Don Rafael. Tu sitio estaba de pie, al fondo, junto a la pared. Pero en cuanto entraste, empezaron las miradas. Y los cuchicheos.
+
+[234] ballroom, neutral
+«Es él, el del periódico.» «¿Cómo se atreve a venir?» «Pobre Don Rafael, a su edad…» Una señora con perlas te señaló con el abanico, como quien señala una cucaracha.
+
+[235] ballroom, smug
+Un invitado joven pasó a tu lado y, «sin querer», te tiró una copa de vino tinto en los zapatos. «Uy. Perdona, chófer. Ya sabes limpiar, ¿no? Como en el hotel.» Sus amigos se rieron.
+
+[236] ballroom, neutral
+Y alguien, desde una mesa, te tiró una moneda. Rodó por el suelo hasta tus pies. «¡Para el autobús!», gritó. Media mesa se partió de risa. El vídeo seguía muy fresco.
+
+[237] @valentina, ballroom, crying
+En la mesa principal, Valentina apretaba la servilleta hasta hacerla un nudo. Tú le habías pedido que no hiciera nada. Que todavía no. Le estaba costando más que a ti.
+
+[238] @fernando, ballroom, neutral
+Entonces Fernando subió al escenario. Habló de los niños sin hogar. De la generosidad de la familia. Y luego, con la voz más triste del mundo, cambió de tema.
+
+[239] @fernando, ballroom, neutral
+«Hoy, amigos, también quiero hablar de los que se aprovechan de los débiles. Como ese joven de ahí, al fondo. El de la escalera. Que ahora engaña a mi suegro, un anciano enfermo.»
+
+[240] ballroom, neutral
+El foco del escenario giró y te iluminó de golpe. Quinientas cabezas se volvieron hacia ti. Y empezó el abucheo. Primero tímido. Luego fuerte. «¡Fuera! ¡Fuera!»
+
+[241] @dario, ballroom, neutral
+Te quedaste quieto bajo el foco, con el vino en los zapatos y una moneda a tus pies. Exactamente como en la escalera. Solo que esta vez no estabas en el suelo.
+
+[242] @fernando, ballroom, sad
+«Mis abogados presentarán mañana una denuncia contra él», siguió Fernando. «Y también, lamentablemente, mi esposa necesitará descansar una temporada. Esta familia ha sufrido demasiado.»
+
+[243] @isabel, ballroom, shocked
+Isabel sonrió. Sonrió mientras su marido la llamaba enferma delante de quinientas personas. Mientras abucheaban a su hijo. Debajo de la mesa, le temblaban las manos.
+
+[244] @rafael, ballroom, angry
+Pero Don Rafael no le había prometido nada a nadie. Se levantó despacio de la mesa, apoyado en el bastón. El salón se calló. Y caminó hacia el escenario.
+
+[245] @rafael, ballroom, sad
+Fernando no pudo negarle el micrófono. No delante de quinientas personas. Rafael lo cogió con la mano que no temblaba. «Mi yerno dice que soy un anciano enfermo. Tiene razón en lo de anciano.»
+
+[246] @rafael, ballroom, sad
+«Pero de la cabeza estoy mejor que nunca. Y les diré una cosa: ese chico no me ha pedido nunca un euro.»
+
+[247] @rafael, ballroom, sad
+«Me arregla el coche, me gana al ajedrez y me escucha. Que es más de lo que ha hecho nadie en esta sala en veinte años.»
+
+[248] ballroom, neutral
+El abucheo se apagó. Alguien bajó el móvil. La señora del abanico se abanicó más deprisa. Fernando sonreía, pero la sonrisa ya no le llegaba a los ojos.
+
+[249] @fernando, ballroom, happy
+«Claro, suegro. Pero quizá el chico quiera explicar de dónde sale, ¿no? Ya que tanto le quiere usted.» Te señaló. Te estaba retando. Delante de todos. Seguro de que te hundirías.
+
+[250] @dario, ballroom, neutral
+Caminaste hacia el escenario. Despacio. Los invitados se apartaban a tu paso. Subiste los tres escalones. Fernando te dio el micrófono con una sonrisa de lobo.
+
+[251] @dario, ballroom, neutral
+«Salgo de un orfanato», dijiste. Tu voz sonó tranquila en todo el salón. «Me dejaron en la nieve con tres días de vida. Durante dieciocho años creí que mi madre me había tirado.»
+
+[252] @dario, ballroom, neutral
+«Ahora sé que no. Que a ella también la engañaron. Que me la quitaron. Y que el que me la quitó está en esta sala esta noche.» Miraste a Fernando. Solo un segundo. Suficiente.
+
+[253] @fernando, ballroom, smug
+Fernando se rio, demasiado fuerte. «¿Lo ven? ¡Delirios! ¡Ahora resulta que es un príncipe secuestrado!» Algunos se rieron con él. Pero menos que antes. Mucho menos.
+
+[254] @dario, ballroom, neutral
+Le devolviste el micrófono. «No necesito que me crean hoy», dijiste, ya sin micrófono, pero se oyó igual. «Solo que se acuerden de esta noche. Dentro de poco, la van a recordar.»
+
+[255] @dario, ballroom, neutral
+Bajaste del escenario y saliste del salón con la cabeza alta. Nadie te tiró nada. Nadie se rio. Quinientas personas se quedaron calladas mirando una puerta cerrarse. Esta vez, detrás de ti.
+
+[256] @fernando, elevator, cold
+En el ascensor, al terminar la gala, Fernando acorraló a Isabel. «¿Lo conoces? ¿Has hablado con él? Mírame.» Isabel lo miró. Y mintió mejor que él en toda su vida. «Jamás.»
+
+[257] @fernando, elevator, cold
+Fernando no se lo creyó del todo. Esa misma noche llamó a su psiquiatra. «Doctor, el informe de mi mujer. Lo necesito para la junta. Ya.»
+
+[258] @ivan, elevator, smug
+En su piso, castigado y solo, Iván había visto la gala entera en directo por internet. Vio a su padre llamar loca a Isabel. Vio el foco. Y oyó tu frase: «el que me la quitó está en esta sala».
+
+[259] elevator, neutral
+Dos días después, el abogado de Rafael volvió del registro civil. En el catorce de enero de hace dieciocho años no había ninguna defunción de un bebé Del Castillo. Ninguna. Ni en ese registro ni en ningún otro.
+
+[260] elevator, neutral
+Y el médico al que Isabel llevó sus pastillas llamó el mismo día. «Señora, esto no son pastillas para los nervios. Es un sedante fuerte. Tres veces la dosis normal. Quien se lo da quiere que no piense.»
+
+[261] @isabel, street, shocked
+Isabel leyó el informe dentro del coche. Dos veces. Luego guardó el papel en el bolso, se retocó el maquillaje y volvió a casa a cenar con su marido. Sonriendo.
+
+[262] study, neutral
+Esa misma noche, mientras Fernando cenaba con Isabel, alguien entró en su despacho. Fernando no había tocado la caja fuerte: nadie más sabía el código. Eso creía. Valentina llevaba días pensando en él.
+
+[263] @valentina, study, neutral
+Probó el cumpleaños de Iván. No. El suyo. No. El de la boda de sus padres. Tampoco. Entonces se le ocurrió una fecha. Una que había oído en la capilla. Uno, cuatro, cero, uno.
+
+[264] study, neutral
+Clic. La caja fuerte se abrió. Catorce de enero. El día de la cesta. Valentina sintió un escalofrío. Su padre había guardado sus secretos detrás de la fecha en que te abandonó.
+
+[265] study, neutral
+Dentro, carpetas. Contratos. Y una hoja vieja de una clínica de montaña: «Parto. Varón. Vivo. Sano. 3,2 kilos». Firmada por un médico. Guardada dieciocho años. Como seguro contra Rafael.
+
+[266] study, neutral
+Debajo, papeles de bancos. Transferencias desde las cuentas de los hoteles a una empresa en Panamá. Millones. Durante años. Valentina hizo fotos de todo con las manos temblando.
+
+[267] @valentina, study, neutral
+Entonces oyó pasos en el pasillo. Pasos de hombre. Se acercaban al despacho. Valentina se quedó helada, con los papeles en la mano y la caja fuerte abierta.
+
+[268] @ivan, study, shocked
+La puerta se abrió. Pero no era Fernando. Era Iván, en sudadera, con cara de no dormir. Miró la caja fuerte. Miró a su hermana. Y se oyeron más pasos detrás de él.
+
+[269] @fernando, bedroom_mansion, cold
+«¿Iván? ¿Qué haces en mi despacho?» La voz de Fernando, al final del pasillo. Valentina cerró la caja fuerte sin hacer ruido y se escondió detrás de la cortina.
+
+[270] @ivan, bedroom_mansion, smug
+Iván se giró hacia el pasillo con cara de aburrido. «Buscaba un cargador, papá. El mío está roto.» Levantó uno de la mesa. Fernando lo miró un segundo. «Pues vete a dormir.»
+
+[271] @valentina, study, shocked
+Cuando los pasos se alejaron, Valentina salió de detrás de la cortina. Iván seguía allí, mirándola. «No le voy a decir nada», susurró. «Pero quiero saber qué buscas.»
+
+[272] @ivan, @valentina, study, shocked
+Se lo contó todo. Y Iván, en silencio, le enseñó el vídeo original de la escalera, con el volumen al máximo. «Te arrepentirás de haber nacido.» La voz de su padre.
+
+[273] @ivan, study, smug
+«Me tiró a los leones con lo del reloj», dijo Iván. «Delante de Don Rafael. "Mi hijo ha actuado solo." Como si yo fuera basura.» Apretó el móvil. «Ahora sé lo que se siente.»
+
+[274] shop, neutral
+Esa semana, Fernando también movió ficha. A las cuatro de la madrugada, alguien rompió de una pedrada el escaparate de la tienda de Toni.
+
+[275] shop, neutral
+En el suelo, entre los cristales, un ladrillo con una nota pegada con cinta: «Al que ayuda a un estafador, le pasan cosas». Sin firma. No hacía falta.
+
+[276] @toni, street, crying
+Toni barrió los cristales a las cinco de la mañana, en pijama. Cuando llegaste corriendo, te sonrió. «Tranquilo. El seguro me pone un escaparate nuevo. Este ya estaba feo.»
+
+[277] @toni, street, cold
+Luego se puso serio. «Darío, no te voy a dejar solo. Ni aunque me tiren la tienda entera. Me diste tu manta el primer día. Ahora te toca aguantarme.»
+
+[278] @isabel, shop, happy
+Esa misma noche, tu madre vino en taxi a la tienda de Toni. Sin escolta. Con una caja de pastelería en las manos. Y cara de no saber si estaba haciendo una tontería.
+
+[279] shop, neutral
+Dentro de la caja, una tarta de chocolate. Con dieciocho velas. «La noche de la escalera era tu cumpleaños», dijo. «Hoy he contado los que me faltan. Son todos. Empiezo por este.»
+
+[280] @dario, shop, crying
+Nunca te habían hecho una tarta. En el orfanato, los cumpleaños eran una magdalena y una canción. Te quedaste mirando las velas sin saber qué hacer. Toni, por supuesto, ya estaba llorando.
+
+[281] @isabel, shop, happy
+«Pide un deseo», dijo tu madre. Cerraste los ojos. No pediste dinero. Ni venganza. Pediste que, cuando todo terminara, esta mujer siguiera trayendo tartas. Y soplaste.
+
+[282] shop, happy
+Os comisteis la tarta entre cables y móviles rotos. Tu madre, con su abrigo de mil euros, sentada en una caja de herramientas. Era la mejor fiesta de tu vida.
+
+[283] shop, neutral
+Dos días después, en la tienda de Toni, con la persiana medio bajada y el escaparate nuevo, os reunisteis todos por primera vez. Una reunión muy rara.
+
+[284] shop, neutral
+Una monja, un millonario de setenta y cinco años, la presidenta de una cadena de hoteles, su hija, un pelirrojo, una recepcionista, el hijo del villano… y tú. Entre cables y móviles rotos.
+
+[285] @toni, shop, shocked
+Toni miró alrededor y susurró: «Esto parece el principio de un chiste malo.» Sor Inés le dio con el rosario en la cabeza. Todos se rieron. Hacía falta.
+
+[286] @rafael, shop, sad
+Rafael lo explicó. «La junta es el viernes. Fernando presentará un informe de un psiquiatra amigo suyo: que Isabel no está en condiciones. Si se aprueba, él gestionará sus acciones. Y será presidente.»
+
+[287] @isabel, shop, cold
+«Y entonces vaciará lo que quede y se irá a Panamá», dijo Isabel. «Lo he visto en los papeles de Valentina.» Ya no le temblaba la voz. Hacía tres días que no tomaba sus pastillas.
+
+[288] @paula, shop, happy
+Paula lo puso todo en orden encima de la mesa. El ADN. El recibo. El registro civil sin defunción. La hoja de la clínica. Las pastillas. Las transferencias. La declaración de sor Inés.
+
+[289] @ivan, shop, smug
+Y Iván dejó su móvil al lado. «El vídeo de la escalera. Entero. Con lo que dijo. Lo subí yo para reírme de ti.» Te miró a los ojos por primera vez. «Ahora quiero que lo vea todo el mundo.»
+
+[290] @dario, shop, determined
+Miraste a tu alrededor. Toda esa gente. Hace dos meses estabas solo, tirado al pie de una escalera. Ahora tenías un equipo. Y un plan.
+
+[291] @dario, shop, cold
+«El viernes», dijiste. «En la junta. Delante de todos los que se rieron. Igual que él hizo conmigo.»
+
+[292] boardroom, neutral
+El viernes, a las doce, la sala de juntas del último piso estaba llena. Cuarenta accionistas. Abogados. Y unos cuantos periodistas, invitados por Fernando. Quería que todo el mundo viera su coronación.
+
+[293] @fernando, boardroom, happy
+Fernando presidía la mesa, de pie, con su mejor traje. «Señores, gracias por venir. Por desgracia, mi esposa no puede acompañarnos. Su salud… no es la que era. Todos lo sabemos.»
+
+[294] boardroom, cold
+A su lado, un psiquiatra amigo suyo leyó un informe. «Confusión. Pérdidas de memoria. Episodios de llanto. La señora Del Castillo no está en condiciones de tomar decisiones empresariales.»
+
+[295] boardroom, sad
+Los accionistas se miraron. Algunos asintieron con pena. Llevaban meses oyendo rumores: que Isabel estaba rara, que lloraba en los pasillos. Fernando se había encargado de que los oyeran.
+
+[296] @fernando, boardroom, sad
+«Por eso propongo que, mientras dure su enfermedad, sus acciones las gestione su esposo. Y que la junta me nombre presidente. Por el bien de la empresa. Votemos.»
+
+[297] boardroom, neutral
+Las primeras manos empezaron a levantarse. Una. Tres. Siete. Los periodistas preparaban los titulares. Fernando sonreía. Faltaba muy poco.
+
+[298] boardroom, neutral
+Y entonces se abrieron las puertas de la sala. De par en par.
+
+[299] @isabel, boardroom, neutral
+Isabel entró primero. Traje blanco. El pelo recogido. Los ojos claros, despiertos, firmes. Y al cuello, por primera vez en dieciocho años, una rosa de plata. Entera.
+
+[300] @rafael, boardroom, sad
+Detrás de ella, Don Rafael del Castillo, con su bastón. Hacía cinco años que no pisaba una junta. Los accionistas más viejos se pusieron de pie sin darse cuenta.
+
+[301] @fernando, boardroom, happy
+Fernando palideció. Pero se recompuso en un segundo. «Cariño… ¿qué haces aquí? Deberías estar descansando. No te has tomado las pastillas, ¿verdad?»
+
+[302] @isabel, boardroom, cold
+«No, Fernando. Hace una semana que no me tomo tus pastillas.» Dejó un informe médico encima de la mesa. «Y nunca había pensado tan claro en toda mi vida.»
+
+[303] @isabel, boardroom, neutral
+«Antes de que votéis, quiero presentaros a alguien.» Se giró hacia la puerta. «Entra, hijo.»
+
+[304] @dario, boardroom, cold
+Y entraste tú. Con el traje negro de chófer. Sin corbata. Con las manos de mecánico. Cuarenta personas se giraron a mirarte a la vez.
+
+[305] boardroom, shocked
+«¿Ese no es…?» «¡Es el del vídeo! ¡El estafador de la escalera!» «¿Hijo? ¿Ha dicho hijo?» Los periodistas sacaron las cámaras. La sala era un enjambre.
+
+[306] @fernando, boardroom, angry
+«¡Seguridad!», gritó Fernando. «¡Este hombre es un estafador y un ladrón! ¡Tiene antecedentes! ¡Mi mujer está enferma y él la está manipulando! ¡Sacadlo de aquí!»
+
+[307] @guardia, boardroom, neutral
+El guardia de la puerta dio un paso hacia ti. Lo reconociste al instante. Ramón. El mismo que te empujó por la escalera. Él también te reconoció. Y se paró.
+
+[308] @rafael, boardroom, sad
+«Ramón», dijo Rafael, sin levantar la voz. «Quieto.» Y Ramón se quedó quieto. Después de treinta años de trabajar para los Del Castillo, sabía quién mandaba de verdad.
+
+[309] @toni, boardroom, smug
+En una esquina, Toni, con un traje prestado que le quedaba grande, conectó el portátil al proyector. Te miró y levantó el pulgar. La pantalla gigante de la sala se encendió.
+
+[310] boardroom, neutral
+Primera prueba. Un informe de ADN. «Probabilidad de maternidad: 99,98 %». Madre: Isabel del Castillo. Hijo: Darío Expósito. La sala se quedó en silencio.
+
+[311] @isabel, boardroom, determined
+«Hace dieciocho años di a luz en una clínica de la montaña. Me dijeron que mi hijo había muerto. El que me lo dijo fue mi entonces secretario de confianza.» Miró a Fernando. «Mi marido.»
+
+[312] boardroom, neutral
+Segunda prueba. El registro civil. Ninguna defunción. Ni ese día, ni ese mes, ni ese año. Si aquel bebé murió, nadie lo enterró nunca.
+
+[313] boardroom, neutral
+Tercera prueba. La hoja de la clínica. «Parto. Varón. Vivo. Sano. 3,2 kilos.» Encontrada ayer en la caja fuerte de Fernando. Detrás de la combinación uno, cuatro, cero, uno.
+
+[314] @valentina, boardroom, determined
+«La encontré yo», dijo Valentina desde el fondo, poniéndose de pie. Le temblaba la voz, pero no se calló. «En la caja fuerte de mi padre. El código es el día que abandonaron a mi hermano.»
+
+[315] @fernando, boardroom, shocked
+Fernando miró a su hija como si no la conociera. Abrió la boca. La cerró. Por primera vez en dieciocho años, no tenía preparada una frase.
+
+[316] boardroom, neutral
+Cuarta prueba. El recibo. «Cincuenta mil euros por la gestión del asunto de la clínica y del niño. Fernando Valdés.» Firmado por él. El día después de la nieve.
+
+[317] @rafael, boardroom, sad
+«Ese dinero se lo di yo», dijo Rafael ante toda la sala. «Creía que pagaba su discreción por un bebé muerto. Pagué el secuestro de mi propio nieto. Lo llevaré en la conciencia hasta que me muera.»
+
+[318] @ines, boardroom, determined
+Y entonces entró sor Inés. Despacio. Con su hábito y su farol de siempre, aunque era de día. Nadie entendía qué hacía una monja de setenta años en una junta de accionistas.
+
+[319] @ines, boardroom, determined
+«La noche del catorce de enero, el hombre que dejó la cesta en mi puerta se tapó la cara con la mano. Una mano con una cicatriz blanca. Como un anzuelo.» Levantó el dedo. «Esa mano.»
+
+[320] @fernando, boardroom, shocked
+Cuarenta cabezas se giraron hacia Fernando. Hacia su mano derecha. Y Fernando, sin pensarlo, hizo lo peor que podía hacer. Se la metió en el bolsillo.
+
+[321] boardroom, shocked
+Ese gesto valió más que todas las pruebas. Varios accionistas se levantaron de golpe. Una señora mayor se santiguó. Los periodistas no paraban de disparar fotos.
+
+[322] @fernando, boardroom, angry
+«¡Esto es un montaje!», gritó Fernando. «¡Papeles falsos! ¡Una monja senil! ¡Un huérfano que quiere dinero! ¡Señores, esto es lo que hace la gente para robar una fortuna!»
+
+[323] @ivan, boardroom, smug
+«Papá.» Una voz desde la esquina. Iván se había levantado. Con el móvil en la mano. «Ahora va lo mío.» Se lo dio a Toni. Y Toni le dio al botón.
+
+[324] boardroom, shocked
+En la pantalla, la escalera. La lluvia. La fiesta. El vídeo que había visto medio país. Pero esta vez, sin cortar. Y con el volumen al máximo.
+
+[325] boardroom, neutral
+«Si vuelves a acercarte a esta casa, te arrepentirás de haber nacido.» La voz de Fernando llenó la sala de juntas. Y luego, más flojo, otra voz. La de Isabel. «¡Espera!»
+
+[326] @fernando, boardroom, angry
+Fernando se giró hacia su hijo. «Iván… ¿qué has hecho?» Iván lo miró con los ojos rojos. «Lo mismo que tú hiciste conmigo con lo del reloj, papá. Pero al revés. Decir la verdad delante de todos.»
+
+[327] @paula, boardroom, determined
+En ese momento, Paula abrió las puertas de la sala. Detrás de ella, dos agentes de paisano. Los mismos que te esposaron en el hotel. Esta vez venían a por otro.
+
+[328] @policia, boardroom, cold
+«Fernando Valdés», dijo uno de ellos. «Queda detenido por apropiación indebida, por administrar sustancias a su esposa sin su consentimiento y por denuncia falsa. Lo de hace dieciocho años, lo verá el juez.»
+
+[329] @fernando, boardroom, neutral
+Le pusieron las esposas delante de los cuarenta accionistas. Delante de las cámaras. Delante de la presidenta a la que había querido declarar loca. Fernando buscó a Isabel con la mirada.
+
+[330] @fernando, boardroom, sad
+«Isabel… Lo hice por nosotros. Tu padre nunca me habría dejado casarme contigo con el hijo de otro en brazos. Lo hice porque te quería.»
+
+[331] @isabel, boardroom, smug
+Isabel lo miró como se mira algo que ya no importa. «Me robaste a mi hijo. Y luego me robaste dieciocho años de pensar. Eso no es querer, Fernando. Eso es ser dueño de algo.»
+
+[332] @fernando, boardroom, angry
+Al pasar a tu lado, Fernando se detuvo. Te miró con un odio que le salía de dentro. «Tenía que haberte dejado más lejos. Mucho más lejos.»
+
+[333] @dario, boardroom, neutral
+«Me dejó lo bastante lejos», dijiste. «Pero me echó de una puerta. Y la gente como yo siempre sabe volver a la puerta de la que la echan.» Se lo llevaron sin que pudiera contestar.
+
+[334] boardroom, neutral
+La votación se repitió. Cuarenta manos. Todas a la vez. Isabel del Castillo, presidenta por unanimidad. Algunos de los que la habían dado por loca no se atrevían ni a mirarla.
+
+[335] @isabel, boardroom, happy
+Isabel se puso al frente de la mesa. «Una última cosa, para la prensa.» Te puso la mano en el hombro. «Este es Darío del Castillo. Mi hijo. El que creí muerto dieciocho años. Ha vuelto a casa.»
+
+[336] boardroom, neutral
+Los flashes estallaron todos a la vez. Esa tarde, el vídeo de la escalera volvió a ser lo más visto del país. Pero esta vez, con otro título: «El hijo que volvió».
+
+[337] @ivan, boardroom, smug
+Cuando la sala se vació, Iván se te acercó. Despacio. Sin su sonrisa de siempre. «Sé que no vale de nada», dijo. «Pero lo siento. Lo de la escalera. Lo del champán. Lo del reloj.»
+
+[338] @dario, boardroom, cold
+Lo miraste. El chico que te bautizó con champán. El que te tiró a los leones. El que hoy había entregado a su propio padre. «Vale de algo», dijiste. «Pero el resto tendrás que demostrarlo.»
+
+[339] stairs_sun, neutral
+Un mes después, la mansión Del Castillo daba otra fiesta. Los mismos invitados. La misma escalera de mármol. Pero esta vez no llovía. Hacía sol.
+
+[340] stairs_sun, neutral
+Isabel había invitado a todos los que estuvieron aquella noche. A todos. Los que se rieron. Los que grabaron. Los que aplaudieron la gracia de las monedas. Ninguno se atrevió a faltar.
+
+[341] @dario, stairs_sun, neutral
+Llegaste a la verja a las seis. Igual que aquella noche. Pero esta vez no traías una mochila vieja. Traías un traje que tu madre había elegido contigo. Y no estabas solo.
+
+[342] orphanage, neutral
+Detrás de ti venían sor Inés, con su mejor hábito. Toni, con una corbata de dibujos. Y Paula, que no paraba de colocarte el cuello de la camisa.
+
+[343] @guardia, stairs_sun, sad
+En la verja estaba Ramón, el guardia. Te abrió sin decir nada. Luego, cuando pasabas, bajó la cabeza. «Perdóneme, señor. Aquella noche…» «Hacías tu trabajo», le dijiste. «Hoy también.»
+
+[344] @isabel, stairs_sun, shocked
+Y arriba, en lo alto de la escalera, tu madre. Con la rosa entera al cuello. Te esperaba con los brazos abiertos. En el mismo escalón desde el que la metieron dentro aquella noche.
+
+[345] stairs, neutral
+Miraste los doce escalones. Doce golpes. Uno por uno, recordaste cada uno. La lluvia. Las risas. El mármol duro. Las monedas en el charco.
+
+[346] @dario, stairs_sun, neutral
+Y empezaste a subir. Despacio. Escalón a escalón. Sin prisa. En silencio. Doscientas personas te miraban subir la misma escalera por la que te vieron caer.
+
+[347] stairs_sun, sad
+En el sexto escalón, alguien empezó a aplaudir. No sabías quién. Luego otro. Y otro. Cuando llegaste arriba, la escalera entera aplaudía. Algunos, con los ojos llenos de vergüenza.
+
+[348] @isabel, stairs_sun, crying
+Tu madre te abrazó arriba. Delante de todos. Tan fuerte como en la capilla. «Bienvenido a casa, hijo», susurró. «Esta vez, la puerta está abierta.»
+
+[349] @valentina, stairs_sun, happy
+Valentina se acercó con un tarro de cristal lleno de monedas. «Las monedas del autobús. Con intereses», dijo, colorada. «Me ha costado un mes juntarlas de mi paga. Para que me perdones.»
+
+[350] @dario, stairs_sun, happy
+Te echaste a reír. Cogiste el tarro. «Te perdono. Pero las monedas me las quedo.» Valentina se rio también. Y por primera vez, os parecisteis de verdad. La misma risa.
+
+[351] @rafael, stairs_sun, crying
+En la puerta, Don Rafael levantó una copa. «¡Por mi nieto! ¡Que me gana al ajedrez, me arregla el coche y me ha enseñado que un viejo todavía puede ser menos idiota!» Todos brindaron.
+
+[352] court, neutral
+Los meses siguientes, la justicia hizo su trabajo. Lo del dinero de Panamá. Lo de las pastillas. Lo del reloj. Y, aunque habían pasado dieciocho años, lo de la cesta.
+
+[353] @fernando, cell, sad
+A Fernando le cayeron once años. El día del juicio no miró a nadie. Solo se miraba la mano. La cicatriz blanca. Como si fuera la primera vez que la veía.
+
+[354] @ivan, cell, smug
+Iván aceptó su condena por la denuncia falsa: un año de trabajos para la comunidad. Después pidió trabajo en un hotel de la cadena. Desde abajo. Descargando cajas a las seis de la mañana.
+
+[355] @dario, cell, happy
+Un día lo viste en la puerta de atrás de un hotel, cargando cajas. Te miró. Tú lo miraste. Te saludó con la cabeza. Le devolviste el saludo. No erais hermanos. Pero ya no erais enemigos.
+
+[356] cemetery, neutral
+En primavera, viajaste con tu madre a Alemania. A un cementerio pequeño, junto a una fábrica. Una lápida sencilla. Andrés. Treinta y un años.
+
+[357] @dario, @isabel, cemetery, neutral
+Tu madre dejó unas rosas blancas. Tú dejaste otra cosa: una llave inglesa vieja, la primera que te regaló Matías en el taller. «Tenía tus manos», dijo ella. «Ahora ya lo sabe.»
+
+[358] @rafael, cemetery, crying
+Don Rafael fue con vosotros. Se quedó un rato solo delante de la tumba. Nadie oyó lo que dijo. Cuando volvió, tenía los ojos rojos. Y parecía, por fin, un poco más ligero.
+
+[359] court, neutral
+Con la parte de los hoteles que te dio tu abuelo, lo primero que hiciste no fue comprarte un coche. Fue arreglar el orfanato de Santa Clara. La calefacción. Las ventanas. Todo.
+
+[360] @ines, court, crying
+Sor Inés lloró cuando vio la caldera nueva. «Dieciocho años pasando frío por ti», dijo, «y tú me lo devuelves en calefacción. Esto es un milagro con factura.»
+
+[361] workshop, neutral
+Y en el barrio del orfanato abriste un taller. Lo llamaste «Taller Andrés». Con un cartel de madera hecho a mano. Y una norma: cada año, dos chicos del orfanato aprenderían el oficio allí.
+
+[362] @toni, shop, smug
+Toni se quedó con un rincón del taller para arreglar móviles. «Socio minoritario», decía, muy serio. «Pero socio.» Ganaba más que en su vida y seguía llorando en todas las películas.
+
+[363] @rafael, workshop, sad
+Don Rafael venía al taller cada mañana con un termo de té. Se sentaba en una silla vieja y daba consejos que nadie le pedía. Era el hombre más feliz del barrio.
+
+[364] @paula, workshop, happy
+Y Paula. Paula seguía en el hotel, ya de jefa de recepción. Pero cada tarde, al salir, cruzaba media ciudad para traerte un café al taller. Sin falta. Aunque lloviera.
+
+[365] @dario, @paula, workshop, happy
+«¿Por qué me ayudaste aquel primer día?», le preguntaste una tarde. «Ya te lo dije. Porque los que se reían no dejaban propina.» Luego sonrió. «Y porque me gustaba cómo no llorabas.»
+
+[366] @dario, workshop, happy
+«Pues ahora lloro mucho», dijiste. «Contigo, con mi madre, con mi hermana, con Toni…» Paula se rio. «Ya lo sé, tonto. Por eso me gustas más ahora.»
+
+[367] dining, happy
+Los domingos cenáis todos en la mansión. Tu madre. Tu abuelo. Tu hermana. Sor Inés. Toni. Paula. Una mesa demasiado grande para una familia. Ahora, justo del tamaño de la vuestra.
+
+[368] @isabel, dining, happy
+A veces, a mitad de la cena, tu madre se te queda mirando. Sin decir nada. Como si todavía no se creyera que estás ahí. Tú le guiñas un ojo. Y ella se ríe.
+
+[369] dining, neutral
+La rosa de plata ahora vive entera en una caja de terciopelo, en la mesilla de tu madre. Ya no hace falta que nadie la lleve partida. Lo que estaba roto, ya está junto.
+
+[370] @dario, stairs_sun, happy
+Algunas noches, al salir de la cena, te paras en lo alto de la escalera. Doce escalones. Ahora los bajas despacio. Sin nadie que te empuje. Y con la puerta abierta a tu espalda.
+
+[371] @dario, stairs_sun, happy
+Hace un año, un chico de dieciocho años llamó a esta puerta con veinte euros en la cartera y medio medallón en el bolsillo. Lo tiraron a la lluvia. Y él volvió.
+
+[372] stairs, neutral
+Porque hay puertas que se cierran para siempre. Y hay otras que solo esperan a que alguien tenga el valor de volver a llamar.
+
+[373] orphanage, neutral
+Si esta historia te ha llegado, cuéntanos en los comentarios: ¿tú habrías vuelto a llamar a esa puerta? Y suscríbete. Porque cada historia, como cada vida, puede cambiar en un solo momento.

@@ -18,6 +18,6 @@ repositorio) con una línea cada una. La skill `crear-historia` lo lee antes de 
 | El pastor del valle de oro | Daniel, ejecutivo de ciudad (piso 40), acaba de pastor en un valle; Marcos, del traje negro, quiere expropiarlo con un permiso del gobierno; Daniel es el verdadero dueño del valle. Identidad oculta + pueblo | **Terminada** (C:\videos\pastor_oro), ¿publicada? |
 
 Carpetas en `C:\videos` (31/10): `hijos_eligieron`, `renacido`, `chef_divino` (3 versiones), `pastor_oro`, `referencias`.
-Nombres ya usados en historias terminadas: Daniel, Lucía, Marcos, Elena, Ramiro. Evítalos en historias nuevas.
+Nombres ya usados en historias terminadas: Daniel, Lucía, Marcos, Elena, Ramiro, Pilar, Nico (niño), Irene, Javier, Sabrina, Nerea, Pablo, Carmen, Marco. Evítalos en historias nuevas.
 
 <!-- Añade debajo las historias que tienes fuera del repositorio: -->
