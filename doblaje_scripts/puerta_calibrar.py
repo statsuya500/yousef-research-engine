@@ -10,7 +10,12 @@ jobs = []
 CASOS = [("dario", "sudadera", "stairs"), ("dario", "botones", "lobby"), ("dario", "chofer", "penthouse"), ("isabel", None, "chapel"),
          ("isabel", "gala", "stairs"), ("fernando", None, "office"), ("ivan", None, "lobby"), ("valentina", None, "stairs"),
          ("ines", None, "orphanage"), ("toni", None, "shop"), ("paula", None, "lobby"), ("rafael", None, "penthouse"),
-         ("guardia", None, "stairs"), ("dario_nino", None, "orphanage")]
+         ("guardia", None, "stairs"), ("dario_nino", None, "orphanage"),
+         # el resto de conjuntos, para que cada uno salga siempre igual
+         ("dario", "mono", "workshop"), ("dario", "traje", "boardroom"), ("isabel", "blanco", "boardroom"),
+         ("fernando", "esmoquin", "ballroom"), ("ivan", "esmoquin", "stairs"), ("ivan", "sudadera", "study"),
+         ("valentina", "vestido", "ballroom"), ("paula", "casual", "cafe"), ("rafael", "traje", "boardroom"),
+         ("director", None, "hotel_office"), ("policia", None, "lobby")]
 for who, rp, loc in CASOS:
     tag = who + (f"-{rp}" if rp else "")
     if SOLO and tag not in SOLO: continue
