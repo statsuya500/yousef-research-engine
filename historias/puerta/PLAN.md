@@ -1,4 +1,4 @@
-# «A los 18 llamé a la puerta de mis padres… y fingieron no conocerme» — PLAN (pendiente de aprobación)
+# «A los 18 llamé a la puerta de mis padres… y fingieron no conocerme» — PLAN (aprobado, guion escrito)
 
 Idea del usuario: «A los 18 me presenté en la puerta de mis padres».
 Hecha con los parámetros de `historias/PARAMETROS.md`. Duración: ~80 min → ~13.500 palabras con `--rate +25%`
@@ -37,7 +37,7 @@ casarse con la heredera sin un hijo de otro por medio. Elena es otra víctima. E
 | **Elena del Castillo**, 37 | La madre. Presidenta de los hoteles. Cree que su hijo murió |
 | **Javier**, 45 | Su marido. El villano. Controla la empresa y a Elena |
 | **Marcos**, 20 | Hijo de Javier de un matrimonio anterior. Heredero arrogante. El que lo graba en la escalera |
-| **Valentina**, 16 | Hija de Elena y Javier. Al principio lo desprecia; luego es su aliada |
+| **Valentina**, 19 | Hija de Elena y Javier. Al principio lo desprecia; luego es su aliada |
 | **Sor Inés**, 70 | La monja del orfanato que guardó la pulsera 18 años. Le da la caja al irse |
 | **Nico**, 18 | Su mejor amigo del orfanato. Comic relief y lealtad |
 | **Paula**, 19 | Recepcionista del hotel donde Darío consigue trabajo de botones. El amor |
@@ -84,3 +84,37 @@ casarse con la heredera sin un hijo de otro por medio. Elena es otra víctima. E
 - **Villano:** ¿Javier, el marido, como propongo? ¿O prefieres que sea la madre quien lo abandonó de verdad?
 - **Final:** ¿se queda a vivir con su madre o vuelve al orfanato, como propongo?
 - **Título:** «A los 18 llamé a la puerta de mis padres… y fingieron no conocerme». Las 6 primeras palabras se leen en el móvil.
+
+## Decisiones tomadas al escribir (el usuario dijo «genera la historia» sin contestar las preguntas)
+
+- Protagonista chico (Darío). Villano: Javier. Final: se queda con su madre los domingos, abre el «Taller Andrés» y arregla el orfanato.
+- Valentina pasa de 16 a 19 años para que no haya menores en las imágenes.
+- Sofía no aparece: la trampa del reloj la hace Marcos (así su cambio de bando tiene más peso).
+
+## Autocrítica después de escribir
+
+**Datos:** 373 escenas y 11.001 palabras, con una media de 29,5 por escena y un máximo de 42. Duración: **~84 min a velocidad
+normal** (como los vídeos publicados) o ~67 min con `--rate +25%`.
+
+**Ritmo de humillaciones** (parámetro: una cada 8-10 min):
+
+| Minuto aprox. | Momento |
+|---|---|
+| 0 | La escalera |
+| ~10 | Los comentarios del vídeo viral |
+| ~20 | El champán en el vestíbulo |
+| ~32 | La detención por el reloj |
+| ~50 | La gala: el foco, las monedas y el abucheo |
+| ~62 | La junta: caída pública de Javier |
+
+En la primera versión faltaba la de la gala: había 25 minutos sin tensión. Se añadió el capítulo 8.
+
+| Problema encontrado al releer | Arreglo |
+|---|---|
+| La historia salía corta (~73 min) y sin tensión entre los minutos 35 y 60 | Capítulo nuevo «La gala»; infancia en el orfanato (asma, adopción fallida, coche de lata); azotea con Paula; tarta de 18 velas; ataque a la tienda de Nico |
+| La escena 30 adelantaba que Javier era el culpable antes de tiempo | Cambiada: Darío solo jura descubrir por qué lo dejaron |
+| ¿Por qué no vacía Javier la caja fuerte si Darío le ha avisado en la gala? | «Nadie más sabía el código. Eso creía.» |
+| La narración del escaparate roto había quedado bajo la imagen de la reunión | Separadas en dos escenas con su imagen |
+
+Casualidades: ninguna real. Que Darío trabaje en el hotel de la familia lo busca él; que Rafael viva en el ático lo cuenta
+el propio Rafael.

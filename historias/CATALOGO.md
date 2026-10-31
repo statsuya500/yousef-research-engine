@@ -13,4 +13,6 @@ repositorio) con una línea cada una. La skill `crear-historia` lo lee antes de 
 | Me despidieron con 11 euros en la cuenta… y esa noche desperté un sistema de cocina legendario | Despedido y arruinado; despierta un «sistema» de videojuego de cocina legendaria. Cocina + sistema | **Publicada** (1:18:11) |
 | Mi hermano me empujó desde la azotea… y desperté para vengarme de todos | Asesinado por su hermano, renace en el pasado y se venga de toda la familia. Regresión + venganza familiar | **Publicada** (1:21:48) · la que mejor funciona (7,2x) |
 
+| A los 18 llamé a la puerta de mis padres… y fingieron no conocerme | Huérfano tirado por la escalera de la mansión de su madre; el padrastro lo robó al nacer. Botones en el hotel familiar, gala, junta | Escrita (historias/puerta) |
+
 <!-- Añade debajo las historias que tienes fuera del repositorio: -->
