@@ -13,6 +13,7 @@ F = json.loads((P/'filtro.json').read_text()); plan = json.loads((H/'plan.json')
 EXC = set(json.loads((H/'excluir.json').read_text())) if (H/'excluir.json').exists() else set()
 ACE = json.loads((H/'aceptar_a_ojo.json').read_text()) if (H/'aceptar_a_ojo.json').exists() else {}
 for k in ACE: F[k]['ok'] = True
+from puerta_comun import NOCHE
 def pid(p): return "_".join(str(x) for x in p if x is not None)
 ok_by = {}
 for k, v in sorted(F.items()):
@@ -52,10 +53,10 @@ for n_s, seq in plan.items():
                 v = Image.new('RGB', (1344, 768), 'white'); v.paste(correct(L, mL, tgt), (0, 0)); v.paste(correct(R, mR, tgt), (672, 0))
                 ImageDraw.Draw(v).rectangle((669, 0, 675, 768), fill='white'); v.save(out)
                 reg[out.name] = dict(tipo='viñeta', izquierda=a[0], izq_volteado=a[1], derecha=b[0], der_volteado=b[1]); continue
-            sl = ['close', sl[1][1], sl[1][2], None, 'neutral']; notes.append(f'escena {n}: viñeta sin planos, sustituida por primer plano')
+            sl = ['close', sl[1][1], sl[1][2], sl[1][3] if sl[1][3] in NOCHE else None, 'neutral']; notes.append(f'escena {n}: viñeta sin planos, sustituida por primer plano')
         r = take(tuple(sl), n)
         if not r:
-            subs = [('close', sl[1], sl[2], None, sl[4])] if sl[0] not in ('scen', 'plato') else []
+            subs = [('close', sl[1], sl[2], sl[3] if sl[3] in NOCHE else None, sl[4])] if sl[0] not in ('scen', 'plato') else []
             loc = sl[3] or next((x[3] for x in seq if not isinstance(x[0], list) and x[3]), None)
             subs.append(('scen', None, None, loc, None))
             for s2 in subs:

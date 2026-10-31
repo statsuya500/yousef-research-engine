@@ -15,7 +15,7 @@ for who, rp, loc in CASOS:
     tag = who + (f"-{rp}" if rp else "")
     if SOLO and tag not in SOLO: continue
     for kind, act, n, lo in (("plano", f"solo, cowboy shot, three-quarter view, calm expression, {LUGAR[loc]}", 4, loc),
-                             ("primer", "solo, close-up, portrait, face focus, calm expression, soft blurry background, bokeh, pastel colors", 2, None)):
+                             ("primer", f"solo, close-up, portrait, face focus, calm expression, {fondo_cerca(loc if loc in NOCHE else None)}", 2, loc if loc in NOCHE else None)):
         p = ", ".join((ficha(who, rp), act, estilo(lo)))
         jobs += [images.Job(p, 500 + s, C/f"{tag}_{kind}_{s}.png", L, [], negative(who, ropa=rp, loc=lo), images.IP_SCALE) for s in range(n)]
 for k in [] if SOLO else ("stairs", "stairs_sun", "orphanage", "lobby", "boardroom", "ballroom"):
