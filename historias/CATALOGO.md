@@ -15,4 +15,9 @@ repositorio) con una línea cada una. La skill `crear-historia` lo lee antes de 
 
 | A los 18 llamé a la puerta de mis padres… y fingieron no conocerme | Huérfano tirado por la escalera de la mansión de su madre; el padrastro lo robó al nacer. Botones en el hotel familiar, gala, junta | Escrita (historias/puerta) |
 
+| El pastor del valle de oro | Daniel, ejecutivo de ciudad (piso 40), acaba de pastor en un valle; Marcos, del traje negro, quiere expropiarlo con un permiso del gobierno; Daniel es el verdadero dueño del valle. Identidad oculta + pueblo | **Terminada** (C:\videos\pastor_oro), ¿publicada? |
+
+Carpetas en `C:\videos` (31/10): `hijos_eligieron`, `renacido`, `chef_divino` (3 versiones), `pastor_oro`, `referencias`.
+Nombres ya usados en historias terminadas: Daniel, Lucía, Marcos, Elena, Ramiro. Evítalos en historias nuevas.
+
 <!-- Añade debajo las historias que tienes fuera del repositorio: -->
