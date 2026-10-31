@@ -39,6 +39,7 @@ COMMON = ("lowres, bad anatomy, bad hands, text, watermark, signature, japanese 
 OBJ = ["paper", "document", "phone", "bag", "book", "laptop", "cup", "mug", "glass", "knife", "food", "plate", "car", "watch"]
 NEG_CHAR = {
     "dario": "blonde hair, red hair, black hair, long hair, glasses, beard, stubble",
+    "dario_sudadera": "short sleeves, t-shirt, bare arms",
     "dario_botones": "hoodie, jeans, casual clothes",
     "dario_chofer": "hoodie, jeans, casual clothes, uniform",
     "isabel": "blonde hair, red hair, short hair, curly hair, glasses",
