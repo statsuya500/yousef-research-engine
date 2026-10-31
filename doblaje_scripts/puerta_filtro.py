@@ -12,7 +12,10 @@ def g(t, *ks): return max(t.get(k, 0) for k in ks)
 def rules(who, rp, close, t):
     w = []
     if who in ('dario', 'dario_nino', 'isabel', 'valentina'):
-        if t.get('brown_hair', 0) < 0.5: w.append('pelo')
+        if t.get('brown_hair', 0) < 0.5:   # dice qué color ha visto, para saber si es el dibujo o el detector
+            seen = sorted(((round(v, 2), k.replace('_hair', '')) for k, v in t.items() if k.endswith('_hair') and k.split('_')[0] in
+                           ('brown', 'black', 'blonde', 'red', 'grey', 'white', 'orange', 'pink', 'purple', 'blue')), reverse=True)[:2]
+            w.append('pelo ' + ' '.join(f'{k}={v}' for v, k in seen))
         if g(t, 'blonde_hair', 'red_hair', 'pink_hair', 'purple_hair') >= 0.4: w.append('pelo de otro color')
     if who == 'dario' and not close:
         if rp in ('chofer', 'traje') and g(t, 'suit', 'formal', 'necktie', 'collared_shirt') < 0.3: w.append('sin traje')
@@ -61,10 +64,12 @@ def check(im, kind, who, rp, land):
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'calibrar':
         for p in sorted((H/'calibracion').glob('*.png')):
-            parts = p.stem.split('_')
-            if len(parts) != 3: continue
-            who, rp = (parts[0].split('-') + [None])[:2]
-            why, _ = check(Image.open(p).convert('RGB'), 'close' if parts[1] == 'primer' else 'cow', who, rp, True)
+            if p.stem.startswith('escenario-'): who, rp, kind = 'escenario', None, 'scen'   # escenario-stairs_sun_0
+            else:
+                tag, kind, _ = p.stem.rsplit('_', 2)   # dario_nino_plano_0 → dario_nino, plano
+                who, rp = (tag.split('-') + [None])[:2]
+                kind = 'close' if kind == 'primer' else 'cow'
+            why, _ = check(Image.open(p).convert('RGB'), kind, who, rp, True)
             if why: print(p.stem, why)
         print('fin calibración'); sys.exit()
     cfg = json.loads((P/'configuracion.json').read_text())
