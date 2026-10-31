@@ -10,11 +10,11 @@
 # Personajes:
 #   Darío (tú)        - 18 años. Abandonado al nacer en un orfanato. Mecánico desde los 14.
 #   Isabel del Castillo - su madre, 37 años. Presidenta de los Hoteles Del Castillo. Cree que su hijo murió.
-#   Javier            - marido de Isabel. El villano. Tiene una cicatriz en el dorso de la mano derecha.
-#   Iván            - hijo de Javier, 20 años. Heredero arrogante.
-#   Valentina         - hija de Isabel y Javier, 19 años. Hermana de Darío por parte de madre.
+#   Fernando            - marido de Isabel. El villano. Tiene una cicatriz en el dorso de la mano derecha.
+#   Iván            - hijo de Fernando, 20 años. Heredero arrogante.
+#   Valentina         - hija de Isabel y Fernando, 19 años. Hermana de Darío por parte de madre.
 #   Sor Inés          - la monja que lo encontró en la puerta del orfanato.
-#   Nico              - su mejor amigo del orfanato.
+#   Toni              - su mejor amigo del orfanato.
 #   Paula             - recepcionista del hotel.
 #   Don Rafael        - el abuelo, padre de Isabel. Vive en el ático del hotel.
 
@@ -27,17 +27,17 @@
 
 @dario: 1boy, male focus, young adult man, 18 years old, handsome, clean-shaven, messy short dark brown hair, grey eyes, slim build, neutral expression
 @isabel: 1girl, mature woman, 37 years old, elegant, long straight dark brown hair, grey eyes, beautiful mature face, neutral expression
-@javier: 1boy, male focus, middle-aged man, 45 years old, clean-shaven, short black hair with grey temples, sharp brown eyes, thin lips, white scar on the back of his right hand, neutral expression
+@fernando: 1boy, male focus, middle-aged man, 45 years old, clean-shaven, short black hair with grey temples, sharp brown eyes, thin lips, white scar on the back of his right hand, neutral expression
 @ivan: 1boy, male focus, adult man, 20 years old, clean-shaven, styled blond hair, light brown eyes, arrogant face, neutral expression
 @valentina: 1girl, adult woman, 19 years old, long straight dark brown hair with a side part, grey eyes, pretty, neutral expression
 @ines: 1girl, old woman, 70 years old, catholic nun, black and white nun habit, veil, kind wrinkled face, small round glasses, neutral expression
-@nico: 1boy, male focus, adult man, 19 years old, clean-shaven, curly red hair, freckles, green eyes, cheerful face, slim build, neutral expression
+@toni: 1boy, male focus, adult man, 19 years old, clean-shaven, curly red hair, freckles, green eyes, cheerful face, slim build, neutral expression
 @paula: 1girl, adult woman, 20 years old, short black bob hair, warm brown eyes, gentle smile, neutral expression
 @rafael: 1boy, male focus, old man, 75 years old, clean-shaven, white hair neatly combed back, tired kind grey eyes, wrinkles, neutral expression
 
-# Miniatura: Darío empapado al pie de la escalera de mármol; arriba, Javier señalándolo. Darío a la izquierda.
-@miniatura: 2boys, @dario[soaked grey hoodie, old jeans], @javier[black tuxedo], young man soaked in rain at the bottom of a marble staircase looking up, older man at the top of the stairs pointing down with contempt, grand white mansion entrance at night, rain, {evitar=1girl, 3boys, extra person, hug}
-@miniatura_texto: @dario=PROTA | @javier=PADRASTRO | ¿Estafador?
+# Miniatura: Darío empapado al pie de la escalera de mármol; arriba, Fernando señalándolo. Darío a la izquierda.
+@miniatura: 2boys, @dario[soaked grey hoodie, old jeans], @fernando[black tuxedo], young man soaked in rain at the bottom of a marble staircase looking up, older man at the top of the stairs pointing down with contempt, grand white mansion entrance at night, rain, {evitar=1girl, 3boys, extra person, hug}
+@miniatura_texto: @dario=PROTA | @fernando=PADRASTRO | ¿Estafador?
 
 # ================= CAPÍTULO 1: La escalera =================
 
@@ -86,19 +86,19 @@ Se le borró la sonrisa. Se le fue el color de la cara. Se llevó la mano al cue
 [015] no humans, guests at the top of a marble staircase whispering to each other, shocked faces, glasses in hand, night, warm light, rain
 Un murmullo recorrió la escalera. Los invitados se miraron. Alguien dejó caer una copa. Isabel abrió la boca para decir algo…
 
-[016] solo, @javier[black tuxedo], stepping in front of a woman at the top of stairs, cold smile, raising a hand, grand mansion entrance, night, warm light
-…pero un hombre se le adelantó. Esmoquin negro. Sienes canosas. Sonrisa de hielo. Javier, su marido. «Isabel, cariño, vuelve dentro. Ya me encargo yo.»
+[016] solo, @fernando[black tuxedo], stepping in front of a woman at the top of stairs, cold smile, raising a hand, grand mansion entrance, night, warm light
+…pero un hombre se le adelantó. Esmoquin negro. Sienes canosas. Sonrisa de hielo. Fernando, su marido. «Isabel, cariño, vuelve dentro. Ya me encargo yo.»
 
-[017] solo, @javier, walking down marble stairs with a condescending smile, hands in pockets, rain, night
+[017] solo, @fernando, walking down marble stairs with a condescending smile, hands in pockets, rain, night
 Bajó los escalones despacio, como si le diera pereza. «A ver, chico. ¿Cuánto quieres? Porque esto es una estafa muy vieja. Un medallón comprado en un mercadillo y un cuento triste.»
 
 [018] solo, @dario, shaking his head firmly, holding the medallion, rain, night
-«No quiero dinero. Quiero saber quién soy.» Javier se rio. Los invitados se rieron con él. Como si tu vida fuera un chiste contado en una fiesta.
+«No quiero dinero. Quiero saber quién soy.» Fernando se rio. Los invitados se rieron con él. Como si tu vida fuera un chiste contado en una fiesta.
 
-[019] solo, @javier, grabbing someone's wrist tightly, white scar visible on the back of his right hand, close-up, rain, night
+[019] solo, @fernando, grabbing someone's wrist tightly, white scar visible on the back of his right hand, close-up, rain, night
 Entonces te agarró de la muñeca. Fuerte. Y la viste: una cicatriz blanca en el dorso de su mano derecha, como un anzuelo. Se acercó a tu oído.
 
-[020] solo, @javier, whispering with a cold threatening look, close-up, rain, night
+[020] solo, @fernando, whispering with a cold threatening look, close-up, rain, night
 «Escúchame bien, basura. Si vuelves a acercarte a esta casa, te arrepentirás de haber nacido.» Luego, en voz alta, sonriendo: «¡Seguridad! Este joven se va.»
 
 [021] solo, security guard, large man in a black suit, clean-shaven, bald, pushing forward with both hands, rain, night, motion blur
@@ -108,13 +108,13 @@ El guardia no te acompañó. Te empujó. Perdiste el equilibrio en el mármol mo
 Doce escalones. Cada uno, un golpe. La mochila por un lado. El medallón por otro. Y abajo, el suelo duro y el agua fría.
 
 [023] solo, @ivan[white tuxedo jacket, black bow tie], at the top of stairs filming with a smartphone, laughing loudly, night, warm light, rain
-«¡Ja! ¡El hijo perdido!», gritó un chico rubio de esmoquin blanco, grabando con el móvil. Iván, el hijo de Javier. «¡Saluda a la cámara, primo! ¡Te vas a hacer famoso!»
+«¡Ja! ¡El hijo perdido!», gritó un chico rubio de esmoquin blanco, grabando con el móvil. Iván, el hijo de Fernando. «¡Saluda a la cámara, primo! ¡Te vas a hacer famoso!»
 
 [024] solo, @valentina, throwing a few coins down the stairs with a bored face, night, warm light, rain
 Valentina sacó unas monedas del bolso y te las tiró escaleras abajo. «Para el autobús», dijo. Algunos invitados aplaudieron la gracia.
 
 [025] solo, @isabel, struggling to step forward, reaching out with one hand, being held back by an arm at her shoulder, anguished face, night, warm light, {evitar=2girls, clone}
-Solo una persona no se reía. Isabel dio un paso hacia ti. «¡Espera!», gritó. Pero Javier la cogió del brazo y la metió dentro. La puerta se cerró.
+Solo una persona no se reía. Isabel dio un paso hacia ti. «¡Espera!», gritó. Pero Fernando la cogió del brazo y la metió dentro. La puerta se cerró.
 
 [026] no humans, a large wooden mansion door closing, warm light disappearing, rain on marble, night
 La puerta se cerró. Sin más. Como se cierran las puertas de las casas a las que no perteneces. La música de la fiesta siguió sonando.
@@ -155,10 +155,10 @@ Creciste en Santa Clara. Un edificio viejo de piedra, con calefacción que falla
 Vinieron muchas familias. Ninguna te eligió. De bebé tenías asma y siempre estabas enfermo. Luego te hiciste mayor. Y la gente quiere bebés, no niños que ya saben lo que es esperar.
 
 [038] solo, little boy, 7 years old, curly red hair, freckles, crying, sitting on a metal bed, old orphanage dormitory, daylight, {evitar=teenager}
-A los siete años llegó Nico. Pelirrojo, pecoso, llorando sin parar. Lo dejaron unos tíos que ya no podían con él. Esa noche le diste tu manta. Desde entonces, no os separasteis.
+A los siete años llegó Toni. Pelirrojo, pecoso, llorando sin parar. Lo dejaron unos tíos que ya no podían con él. Esa noche le diste tu manta. Desde entonces, no os separasteis.
 
-[039] solo, @nico[green hoodie, jeans], laughing, sitting on a top bunk bed, old orphanage dormitory, daylight
-Nico creció siendo el gracioso. Tú, el serio. Él hablaba por los dos. Tú pegabas por los dos cuando hacía falta. Y él arreglaba cualquier móvil que le pusieras delante.
+[039] solo, @toni[green hoodie, jeans], laughing, sitting on a top bunk bed, old orphanage dormitory, daylight
+Toni creció siendo el gracioso. Tú, el serio. Él hablaba por los dos. Tú pegabas por los dos cuando hacía falta. Y él arreglaba cualquier móvil que le pusieras delante.
 
 [040] no humans, old stone orphanage at night in heavy snow, a single lit window, footprints in the snow leading away from the door
 A los seis años tuviste la peor crisis de asma de tu vida. Una noche de nieve, como la de la cesta. La ambulancia no podía subir la cuesta del orfanato.
@@ -208,20 +208,20 @@ En una revista de hace diecinueve años encontraste una foto. Una chica de dieci
 [055] solo, @dario, holding his half medallion next to a magazine photo, eyes widening, old library, daylight, close-up
 Pusiste tu mitad al lado de la foto. La forma del pétalo. El borde roto. Era la misma rosa. La chica de la foto se llamaba Isabel. Hoy tenía treinta y siete años.
 
-[056] solo, @nico[green hoodie, jeans], waiting outside a library with hands in pockets, cheerful, daylight, street
-Nico te esperaba en la puerta. Él había salido del orfanato el año anterior. Trabajaba en una tienda de reparación de móviles y vivía en un piso diminuto con otros tres chicos.
+[056] solo, @toni[green hoodie, jeans], waiting outside a library with hands in pockets, cheerful, daylight, street
+Toni te esperaba en la puerta. Él había salido del orfanato el año anterior. Trabajaba en una tienda de reparación de móviles y vivía en un piso diminuto con otros tres chicos.
 
-[057] solo, @nico, grinning, giving a thumbs up, street, daylight
+[057] solo, @toni, grinning, giving a thumbs up, street, daylight
 «¿Y? ¿Eres un príncipe perdido?» Le enseñaste la foto. Dejó de sonreír. «Darío… esa gente da una fiesta esta noche. Lo he visto en las noticias. Treinta años de los hoteles.»
 
 [058] solo, @dario, looking at the sky with a determined face, street, sunset
 Esa noche. Tu cumpleaños. No podías esperar ni un día más. Llevabas esperando toda la vida. Y ya sabes cómo acabó.
 
 [059] no humans, tiny shared apartment at night, a mattress on the floor, clothes drying on a chair, a small window with city lights, rain on the glass
-Esa noche dormiste en el suelo del piso de Nico, en un colchón que olía a humedad. Con la ropa mojada en una silla. Y la espalda llena de moratones.
+Esa noche dormiste en el suelo del piso de Toni, en un colchón que olía a humedad. Con la ropa mojada en una silla. Y la espalda llena de moratones.
 
-[060] solo, @nico, sitting on the floor looking at a smartphone screen, horrified face, tiny shared apartment, morning light
-A la mañana siguiente, Nico te despertó con el móvil en la mano. «Darío… tienes que ver esto.» Tenía la cara blanca.
+[060] solo, @toni, sitting on the floor looking at a smartphone screen, horrified face, tiny shared apartment, morning light
+A la mañana siguiente, Toni te despertó con el móvil en la mano. «Darío… tienes que ver esto.» Tenía la cara blanca.
 
 [061] no humans, smartphone screen showing a video of a young man falling down marble stairs in the rain, view counter, comments, close-up, no readable text
 Un vídeo. Tú, cayendo por la escalera. Grabado por Iván. Título: «El estafador de la escalera». Tres millones de visitas en una noche.
@@ -280,7 +280,7 @@ Tardaste veinte minutos. El carburador, sucio. Un cable suelto. Cuando el motor 
 Rafael. Rafael del Castillo. El fundador de los hoteles. Lo habías leído en la biblioteca. El padre de Isabel. Tu abuelo. Y te acababa de invitar a un té.
 
 [079] solo, @dario, standing in an elevator in a bellboy uniform, thinking hard, mirror walls, golden light
-Podías decírselo. Enseñarle el medallón. Pero ¿y si reaccionaba como Javier? ¿Y si te echaban del hotel? No. Primero, que te conociera. Que viera quién eras. Y después, la verdad.
+Podías decírselo. Enseñarle el medallón. Pero ¿y si reaccionaba como Fernando? ¿Y si te echaban del hotel? No. Primero, que te conociera. Que viera quién eras. Y después, la verdad.
 
 [080] no humans, luxury hotel penthouse living room, old furniture, a chessboard on a small table, two cups of tea, large windows with a night city view, warm lamps
 A las once de la noche subiste al ático. Muebles viejos. Fotos de una mujer sonriente. Un tablero de ajedrez. Y dos tazas de té esperando.
@@ -340,7 +340,7 @@ Alguien en el vestíbulo no pudo aguantarse la risa. Luego otro. Paula se tapó 
 Iván se puso rojo hasta las orejas. Pero no se atrevió a contestar. Al pasar a tu lado hacia el ascensor, te susurró: «Esto no se queda así. Mi padre se va a enterar.»
 
 [099] solo, @dario, watching someone walk away, calm cold eyes, dripping champagne, luxury hotel lobby, night
-Lo sabías. Y en el fondo, era lo que querías. Que Javier se enterara de que estabas allí. Que sintiera el mismo miedo que tú sentiste en esa escalera.
+Lo sabías. Y en el fondo, era lo que querías. Que Fernando se enterara de que estabas allí. Que sintiera el mismo miedo que tú sentiste en esa escalera.
 
 [100] solo, @paula, handing over a white towel with a soft smile, reception desk, luxury hotel lobby, night
 Paula te dio una toalla. «Sonríe aunque te escupan», te recordó. «Pero lo de "¿desea algo más?"… Eso ha sido mejor que sonreír.» Por primera vez en días, te reíste.
@@ -353,14 +353,14 @@ Esa noche, en el ático, Rafael movió un caballo y te miró por encima de las g
 
 # ================= CAPÍTULO 4: El medallón =================
 
-[103] solo, @javier[dark navy suit, white shirt], sitting behind a large desk in a luxury office, listening on the phone, eyes narrowing, modern luxury office, glass walls, city skyline, daylight
-Iván tardó menos de una hora en llamar a su padre. Javier escuchó sin interrumpir. Cuando colgó, se quedó mirando la ciudad por la ventana. Mucho rato. Demasiado para alguien que no tenía nada que temer.
+[103] solo, @fernando[dark navy suit, white shirt], sitting behind a large desk in a luxury office, listening on the phone, eyes narrowing, modern luxury office, glass walls, city skyline, daylight
+Iván tardó menos de una hora en llamar a su padre. Fernando escuchó sin interrumpir. Cuando colgó, se quedó mirando la ciudad por la ventana. Mucho rato. Demasiado para alguien que no tenía nada que temer.
 
-[104] solo, @javier, making a phone call with a cold commanding face, modern luxury office, daylight
-Llamó a la jefa de personal. «Ese botones, Expósito. Fuera.» Silencio al otro lado. «Señor… Don Rafael ha dado orden personal de que se quede.» Javier colgó sin despedirse.
+[104] solo, @fernando, making a phone call with a cold commanding face, modern luxury office, daylight
+Llamó a la jefa de personal. «Ese botones, Expósito. Fuera.» Silencio al otro lado. «Señor… Don Rafael ha dado orden personal de que se quede.» Fernando colgó sin despedirse.
 
-[105] solo, @javier, gripping a pen tightly, white scar on the back of his right hand, controlled anger, close-up, desk
-Contra Don Rafael no podía. El viejo seguía teniendo el treinta por ciento de los hoteles y el apellido. Javier apretó el bolígrafo hasta que se le pusieron blancos los nudillos.
+[105] solo, @fernando, gripping a pen tightly, white scar on the back of his right hand, controlled anger, close-up, desk
+Contra Don Rafael no podía. El viejo seguía teniendo el treinta por ciento de los hoteles y el apellido. Fernando apretó el bolígrafo hasta que se le pusieron blancos los nudillos.
 
 [106] no humans, luxury hotel lobby in the morning, staff in uniforms standing in a line, polished marble floor, golden light
 Una semana después, el hotel entero se puso nervioso. Venía la presidenta. Isabel del Castillo hacía una visita cada mes. Todo tenía que brillar.
@@ -414,9 +414,9 @@ Lo entendiste. Te arrancaste unos pelos y se los diste. «Haga la prueba. Yo tam
 Lo que ninguno de los dos vio fue a Iván, al fondo del pasillo del sótano. Había venido a por su coche al garaje. Y había visto a la presidenta entrar con el botones. A solas.
 
 [123] no humans, luxury mansion dining room at night, long table with two plates, crystal glasses, candles, tense atmosphere
-Esa noche, en la mansión, la cena duró cinco minutos. Javier dejó los cubiertos en la mesa. «Me han dicho que hoy has pasado media hora en una lavandería con un botones.»
+Esa noche, en la mansión, la cena duró cinco minutos. Fernando dejó los cubiertos en la mesa. «Me han dicho que hoy has pasado media hora en una lavandería con un botones.»
 
-[124] solo, @javier[dark navy suit, white shirt], sitting at a dining table, cold controlled smile, luxury mansion dining room, candles, night
+[124] solo, @fernando[dark navy suit, white shirt], sitting at a dining table, cold controlled smile, luxury mansion dining room, candles, night
 «Ese chico es un estafador profesional, Isabel. Te está manipulando. Eres una mujer sensible y él lo sabe. El médico te dijo que no te alteraras con el pasado.»
 
 [125] solo, @isabel[cream long-sleeve blouse], sitting at a dining table, looking down at her plate, silent, hands tight on her lap, luxury mansion dining room, candles, night
@@ -431,34 +431,34 @@ Buscó en internet. «Isabel del Castillo joven». Y encontró la misma foto que
 [128] no humans, underground hotel parking garage at three in the morning, fluorescent lights, a black luxury sedan with its headlights on, empty
 A las tres de la madrugada, al terminar tu turno, había un coche negro aparcado en el garaje del hotel. Con los faros encendidos. Apuntándote.
 
-[129] solo, @javier[black overcoat over dark suit], stepping out of a black luxury car, cold expression, holding a thick envelope, underground parking garage, fluorescent lights, night
-Javier bajó del coche. Sin chófer. Sin testigos. Llevaba en la mano un sobre gordo. «Darío, ¿verdad? O Expósito. Como prefieras. Vamos a hablar como adultos.»
+[129] solo, @fernando[black overcoat over dark suit], stepping out of a black luxury car, cold expression, holding a thick envelope, underground parking garage, fluorescent lights, night
+Fernando bajó del coche. Sin chófer. Sin testigos. Llevaba en la mano un sobre gordo. «Darío, ¿verdad? O Expósito. Como prefieras. Vamos a hablar como adultos.»
 
-[130] solo, @javier, holding out a thick envelope and a document with a pen, calm businesslike smile, parking garage, night
+[130] solo, @fernando, holding out a thick envelope and a document with a pen, calm businesslike smile, parking garage, night
 «Cincuenta mil euros. Tuyos. Firmas aquí que reconoces haber intentado estafar a mi familia, que te vas de la ciudad y que no vuelves a acercarte a mi mujer. Y todos contentos.»
 
 [131] solo, @dario[grey hoodie, old jeans], looking at an envelope without taking it, arms crossed, calm cold face, parking garage, night
-Cincuenta mil euros. Más dinero del que habías visto en tu vida. Miraste el sobre. Miraste a Javier. Y te hiciste una pregunta muy simple.
+Cincuenta mil euros. Más dinero del que habías visto en tu vida. Miraste el sobre. Miraste a Fernando. Y te hiciste una pregunta muy simple.
 
 [132] solo, @dario, speaking calmly, slight sharp smile, parking garage, night, close-up
 «¿Por qué un hombre tan rico paga cincuenta mil euros a un estafador? A los estafadores se les denuncia. A no ser que tenga miedo de que no lo sea.»
 
-[133] solo, @javier, smile disappearing, eyes turning cold and dangerous, parking garage, night
-La sonrisa de Javier se borró. Guardó el sobre. Dio un paso hacia ti. Tan cerca que olías su colonia cara.
+[133] solo, @fernando, smile disappearing, eyes turning cold and dangerous, parking garage, night
+La sonrisa de Fernando se borró. Guardó el sobre. Dio un paso hacia ti. Tan cerca que olías su colonia cara.
 
-[134] solo, @javier, pointing a finger close to someone's chest, white scar on the back of his right hand, threatening whisper, parking garage, night, close-up
+[134] solo, @fernando, pointing a finger close to someone's chest, white scar on the back of his right hand, threatening whisper, parking garage, night, close-up
 «Escúchame, huérfano. No sabes con quién juegas. Desaparece. O te desaparezco yo.» La cicatriz blanca de su mano estaba a un palmo de tu cara.
 
-[135] solo, @javier, getting back into a black car, slamming the door, cold profile, parking garage, night
+[135] solo, @fernando, getting back into a black car, slamming the door, cold profile, parking garage, night
 Subió al coche y arrancó. Te quedaste solo en el garaje, con el corazón a mil. No te había asustado. Te había dado una pista. Ese hombre sabía algo. Algo de hace dieciocho años.
 
 [136] no humans, small all-night café at four in the morning, three coffee cups on a table, neon-free warm light, rainy window, empty except one table
-A las cuatro de la mañana, en una cafetería de esas que no cierran nunca, se lo contaste todo a Nico y a Paula. El medallón. La lavandería. El sobre.
+A las cuatro de la mañana, en una cafetería de esas que no cierran nunca, se lo contaste todo a Toni y a Paula. El medallón. La lavandería. El sobre.
 
-[137] solo, @nico[green hoodie, jeans], leaning forward over a café table, serious for once, holding a smartphone, all-night café, night
-Nico, que nunca se tomaba nada en serio, se puso serio. «Ese tío te ha amenazado. La próxima vez, que no sea tu palabra contra la suya. Dame el móvil.»
+[137] solo, @toni[green hoodie, jeans], leaning forward over a café table, serious for once, holding a smartphone, all-night café, night
+Toni, que nunca se tomaba nada en serio, se puso serio. «Ese tío te ha amenazado. La próxima vez, que no sea tu palabra contra la suya. Dame el móvil.»
 
-[138] solo, @nico, typing on a smartphone, focused, all-night café, night, close-up
+[138] solo, @toni, typing on a smartphone, focused, all-night café, night, close-up
 Te instaló una aplicación. «Si mantienes pulsado el botón de volumen, graba vídeo con la pantalla apagada. Nadie lo nota. Lo uso para pillar a los clientes que me gritan en la tienda.»
 
 [139] solo, @paula[beige knitted cardigan, white blouse], holding a coffee cup with both hands, thinking seriously, all-night café, night
@@ -485,13 +485,13 @@ Paula se rio tan fuerte que una paloma salió volando de un depósito. Os quedas
 # ================= CAPÍTULO 5: La trampa =================
 
 [146] solo, @dario[burgundy bellboy uniform with gold buttons], hiding a smartphone and a small battery pack on the top shelf inside a metal staff locker, careful, hotel staff locker room, fluorescent light
-Desde aquella noche en el garaje hiciste una cosa cada día. Antes de empezar el turno, dejabas el móvil escondido arriba, en tu taquilla, grabando con la app de Nico y una batería extra.
+Desde aquella noche en el garaje hiciste una cosa cada día. Antes de empezar el turno, dejabas el móvil escondido arriba, en tu taquilla, grabando con la app de Toni y una batería extra.
 
-[147] solo, @nico[green hoodie, jeans], explaining with a raised finger, small phone repair shop with tools and broken phones on the counter, daylight
-Había sido idea de Nico. «Si ese tío quiere hundirte, no lo hará en la calle. Lo hará dentro. Y lo más fácil es meterte algo en la taquilla. Es lo que haría yo si fuera malo. Que no lo soy. Casi.»
+[147] solo, @toni[green hoodie, jeans], explaining with a raised finger, small phone repair shop with tools and broken phones on the counter, daylight
+Había sido idea de Toni. «Si ese tío quiere hundirte, no lo hará en la calle. Lo hará dentro. Y lo más fácil es meterte algo en la taquilla. Es lo que haría yo si fuera malo. Que no lo soy. Casi.»
 
 [148] no humans, luxury hotel lobby in the afternoon, busy with guests, marble floor, golden light, staff working
-Pasaron dos semanas tranquilas. Demasiado tranquilas. Isabel se había ido a Francia a cerrar un negocio. Don Rafael tenía revisión médica toda la mañana. Y Javier vino al hotel. «Por casualidad.»
+Pasaron dos semanas tranquilas. Demasiado tranquilas. Isabel se había ido a Francia a cerrar un negocio. Don Rafael tenía revisión médica toda la mañana. Y Fernando vino al hotel. «Por casualidad.»
 
 [149] solo, @ivan[expensive white blazer, black t-shirt], storming into a hotel lobby, shouting angrily, holding up an empty wrist, luxury hotel lobby, afternoon
 A las cinco de la tarde, Iván bajó al vestíbulo gritando. «¡Mi reloj! ¡Mi Rolex de veinte mil euros! ¡Ha desaparecido de mi suite! ¡Y el único que ha entrado hoy es el botones!»
@@ -499,8 +499,8 @@ A las cinco de la tarde, Iván bajó al vestíbulo gritando. «¡Mi reloj! ¡Mi 
 [150] no humans, hotel guests turning to look in a busy lobby, whispering, some taking out phones, golden afternoon light
 El vestíbulo se quedó en silencio. Los clientes se giraron. Algunos ya sacaban el móvil. El estafador de la escalera. Ahora, ladrón. Era demasiado bueno para no grabarlo.
 
-[151] solo, @javier[dark navy suit, white shirt], standing in a hotel lobby with a calm serious face, hands behind his back, golden afternoon light
-Javier apareció a su lado, serio, como un padre preocupado. «Calma, hijo. Que lo compruebe seguridad. Que abran las taquillas del personal. Delante de todos, para que nadie diga nada.»
+[151] solo, @fernando[dark navy suit, white shirt], standing in a hotel lobby with a calm serious face, hands behind his back, golden afternoon light
+Fernando apareció a su lado, serio, como un padre preocupado. «Calma, hijo. Que lo compruebe seguridad. Que abran las taquillas del personal. Delante de todos, para que nadie diga nada.»
 
 [152] no humans, row of metal staff lockers being opened by a security guard in a dark suit, staff watching in background, fluorescent light, hotel locker room
 Bajasteis todos al vestuario. El jefe de seguridad fue abriendo taquillas una a una. La tuya, la última. Con una palanca, porque «se había perdido» la llave maestra.
@@ -515,10 +515,10 @@ Te quedaste mirando el reloj. No te temblaron las manos. No gritaste. Porque, ju
 «¡Segunda parte, chicos! ¡El estafador de la escalera ahora es el ladrón del hotel!», gritaba Iván, grabando otra vez. «¡Dadle a me gusta!»
 
 [156] solo, two plainclothes detectives in dark jackets, middle-aged men, clean-shaven, serious, walking through a hotel lobby, golden light, {evitar=badge, uniform}
-Diez minutos después llegaron dos agentes de paisano. Javier los había llamado antes de que bajarais al vestuario. Eso lo pensaste después. En ese momento solo pensabas en no perder la calma.
+Diez minutos después llegaron dos agentes de paisano. Fernando los había llamado antes de que bajarais al vestuario. Eso lo pensaste después. En ese momento solo pensabas en no perder la calma.
 
 [157] solo, @dario, being led through a hotel lobby with his hands behind his back, head held high, calm face, guests watching in background, golden light
-Te esposaron en mitad del vestíbulo. Delante de los clientes. Delante de tus compañeros. Delante de Javier, que te miraba con una pena perfectamente ensayada.
+Te esposaron en mitad del vestíbulo. Delante de los clientes. Delante de tus compañeros. Delante de Fernando, que te miraba con una pena perfectamente ensayada.
 
 [158] solo, @paula[black hotel receptionist uniform with a white blouse], shouting from behind a reception desk, angry tears, luxury hotel lobby, golden light
 «¡Es inocente!», gritó Paula desde el mostrador. «¡Lleva aquí un mes y nunca ha cogido ni un caramelo!» El director le hizo un gesto para que se callara. Ella no se calló.
@@ -532,23 +532,23 @@ Pasaste la noche en un calabozo. Un banco de cemento. Una luz que no se apagaba 
 [161] solo, @paula, sneaking into an empty staff locker room at night, opening a broken metal locker, looking over her shoulder, dim light
 Paula esperó a que terminara su turno. La taquilla seguía abierta, con la cerradura rota por la palanca. Metió la mano hasta el fondo de la balda de arriba. Y lo encontró.
 
-[162] solo, @nico, sitting at a small workbench with a laptop and a smartphone connected by a cable, focused, small phone repair shop, night, desk lamp
-A medianoche, en la tienda de Nico, conectaron el móvil al ordenador. Siete horas de grabación. Nico las pasó a toda velocidad. Hasta que algo se movió en la pantalla.
+[162] solo, @toni, sitting at a small workbench with a laptop and a smartphone connected by a cable, focused, small phone repair shop, night, desk lamp
+A medianoche, en la tienda de Toni, conectaron el móvil al ordenador. Siete horas de grabación. Toni las pasó a toda velocidad. Hasta que algo se movió en la pantalla.
 
 [163] no humans, laptop screen showing a hidden camera view from inside a locker of a blond young man placing a gold watch on a folded uniform, close-up, no readable text
 Las tres y cuarto de la tarde. La puerta de tu taquilla se abre con una llave maestra. Un brazo con chaqueta blanca. Una cara rubia. Iván, dejando el reloj encima de tu uniforme.
 
-[164] solo, @nico, raising both fists in triumph, laughing, small phone repair shop, night, desk lamp
-«¡Lo tenemos!», gritó Nico, saltando de la silla. «¡Y encima mira a la cámara! ¡Mira a la cámara sin saber que es una cámara! ¡Es tontísimo!»
+[164] solo, @toni, raising both fists in triumph, laughing, small phone repair shop, night, desk lamp
+«¡Lo tenemos!», gritó Toni, saltando de la silla. «¡Y encima mira a la cámara! ¡Mira a la cámara sin saber que es una cámara! ¡Es tontísimo!»
 
 [165] no humans, sunrise over a city, soft orange light over rooftops, quiet streets
-A las seis de la mañana, Paula y Nico entraron en la comisaría con un portátil. A las ocho, te dejaron salir. Sin cargos. El reloj, devuelto a su dueño. Con vídeo incluido.
+A las seis de la mañana, Paula y Toni entraron en la comisaría con un portátil. A las ocho, te dejaron salir. Sin cargos. El reloj, devuelto a su dueño. Con vídeo incluido.
 
 [166] solo, @dario[grey hoodie, old jeans], walking out of a building at sunrise, tired but calm smile, two friends waiting outside blurred, morning light
-Paula y Nico te esperaban en la puerta con un café. Nico se puso a llorar. Paula le dio una colleja. «¡No llores, que me haces llorar a mí!» Y lloraron los dos.
+Paula y Toni te esperaban en la puerta con un café. Toni se puso a llorar. Paula le dio una colleja. «¡No llores, que me haces llorar a mí!» Y lloraron los dos.
 
 [167] no humans, hotel director's office, a large screen on the wall showing a security video, leather chairs, tense atmosphere, daylight
-Esa misma mañana, Don Rafael pidió ver el vídeo. En el despacho del director. Con el director, con Javier y con Iván. Y contigo, por expreso deseo del viejo.
+Esa misma mañana, Don Rafael pidió ver el vídeo. En el despacho del director. Con el director, con Fernando y con Iván. Y contigo, por expreso deseo del viejo.
 
 [168] solo, @rafael[dark grey wool cardigan over white shirt], watching a screen with a furious cold face, gripping his cane, hotel director's office, daylight
 Cuando Iván apareció en la pantalla dejando el reloj en tu taquilla, Rafael no dijo nada. Pero los nudillos se le pusieron blancos sobre el bastón.
@@ -556,14 +556,14 @@ Cuando Iván apareció en la pantalla dejando el reloj en tu taquilla, Rafael no
 [169] solo, @ivan, sweating, looking at his father for help, pale, hotel director's office, daylight
 Iván se puso blanco. Miró a su padre. Esperaba que lo salvara, como siempre. Que dijera algo. Que lo arreglara.
 
-[170] solo, @javier, turning to someone with a cold disappointed face, raising his voice, hotel director's office, daylight
-Pero Javier se giró hacia él con cara de asco. «¿Cómo has podido, Iván? ¿Una broma así? ¡Yo te he educado mejor! Don Rafael, le pido perdón. Mi hijo ha actuado solo.»
+[170] solo, @fernando, turning to someone with a cold disappointed face, raising his voice, hotel director's office, daylight
+Pero Fernando se giró hacia él con cara de asco. «¿Cómo has podido, Iván? ¿Una broma así? ¡Yo te he educado mejor! Don Rafael, le pido perdón. Mi hijo ha actuado solo.»
 
 [171] solo, @ivan, staring at his father in disbelief, mouth open, hurt eyes, hotel director's office, daylight
 Iván se quedó con la boca abierta. Solo. «Mi hijo ha actuado solo.» Su propio padre lo acababa de tirar escaleras abajo. Como a ti. Delante de todos.
 
 [172] solo, @rafael, pointing his cane at the door, stern voice, hotel director's office, daylight
-«Iván, fuera de este hotel. No vuelvas a pisarlo. Y tú, Javier…» Rafael lo miró largo rato. «Tú y yo hablaremos otro día. Cuando no haya testigos.»
+«Iván, fuera de este hotel. No vuelvas a pisarlo. Y tú, Fernando…» Rafael lo miró largo rato. «Tú y yo hablaremos otro día. Cuando no haya testigos.»
 
 [173] solo, @rafael, looking at someone with a warm proud smile, leaning on a cane, hotel director's office, daylight
 Luego se giró hacia ti. «Darío, se acabó el uniforme de mono. Desde hoy eres mi chófer y mi mecánico personal. Con sueldo de verdad. Si aceptas, claro.»
@@ -616,10 +616,10 @@ Isabel juntó las dos mitades de la rosa. «Me la regaló mi padre a los quince.
 «Mi padre no lo soportaba. Un mecánico con la heredera. Un día Andrés desapareció. Me dijeron que se había ido a Alemania. Luego supe que estaba embarazada. Y mi padre me mandó a una clínica en la montaña.»
 
 [189] no humans, isolated private clinic in the mountains at night, snow, a few lit windows, dark pine trees
-«Allí nadie sabría nada. Lo organizó todo su secretario. Un chico joven, muy atento, muy eficiente. Se llamaba Javier.» Lo dijo y se quedó callada. Mirándote.
+«Allí nadie sabría nada. Lo organizó todo su secretario. Un chico joven, muy atento, muy eficiente. Se llamaba Fernando.» Lo dijo y se quedó callada. Mirándote.
 
 [190] solo, @dario, staring at someone with a slowly darkening face, small chapel, candlelight, close-up
-Javier. El secretario. El que lo organizó todo. El que te tiró por la escalera. El que pagó cincuenta mil euros por que desaparecieras. Las piezas empezaron a encajar solas.
+Fernando. El secretario. El que lo organizó todo. El que te tiró por la escalera. El que pagó cincuenta mil euros por que desaparecieras. Las piezas empezaron a encajar solas.
 
 [191] solo, @isabel, shaking her head, trembling, small chapel, candlelight
 «Fue él quien me dijo que el niño había muerto. Me cogió de la mano. Lloró conmigo. Un año después, me pidió matrimonio. Pensé que era el hombre más bueno del mundo.»
@@ -628,7 +628,7 @@ Javier. El secretario. El que lo organizó todo. El que te tiró por la escalera
 En ese momento, la puerta de la capilla se abrió. Sor Inés, con su farol de siempre. «Perdón, hijo. Vi luz y…» Miró a Isabel. Y se quedó muy quieta.
 
 [193] solo, @dario, holding up a smartphone showing a photo to someone, serious, small chapel, candlelight
-Sacaste el móvil. Buscaste en la web de los hoteles una foto de Javier. Se la enseñaste. «Hermana, la noche de la cesta, ¿vio a alguien? ¿Algo? Lo que sea.»
+Sacaste el móvil. Buscaste en la web de los hoteles una foto de Fernando. Se la enseñaste. «Hermana, la noche de la cesta, ¿vio a alguien? ¿Algo? Lo que sea.»
 
 [194] solo, @ines, looking at a phone screen through her round glasses, frowning, trying to remember, candlelight
 Sor Inés miró la foto mucho rato. «La cara no la vi. Llevaba un abrigo caro, de pelo de camello. Cuando abrí la puerta, ya estaba en la verja. Se giró. Y se tapó la cara con la mano.»
@@ -649,7 +649,7 @@ Se levantó de golpe. «Voy a la policía. Ahora mismo. Voy a…» La paraste an
 «¿Con qué pruebas? Una monja que vio una mano hace dieciocho años. Él tiene los mejores abogados del país. Dirá que miles de personas tienen cicatrices. Y sabrá que vamos a por él.»
 
 [200] solo, @isabel, sitting back down slowly, wiping tears, nodding, small chapel, candlelight
-Isabel se sentó otra vez. Respiró. «Tienes razón. Y hay algo más.» Se miró las manos. «Dentro de tres semanas es la junta de accionistas. Y creo que Javier va a intentar quitarme la empresa.»
+Isabel se sentó otra vez. Respiró. «Tienes razón. Y hay algo más.» Se miró las manos. «Dentro de tres semanas es la junta de accionistas. Y creo que Fernando va a intentar quitarme la empresa.»
 
 [201] solo, @isabel, holding a small pill bottle, looking at it with suspicion, small chapel, candlelight, close-up
 Sacó un bote de pastillas del bolso. «Esto me lo da él. Para los nervios. Desde hace años. Últimamente me cuesta pensar. Se me olvidan las cosas. Y él va diciendo por ahí que no estoy bien.»
@@ -673,7 +673,7 @@ Se bajó del coche y se plantó delante de su madre. «Es él, ¿verdad? El de l
 «Te tiré monedas», susurró. «Te tiré monedas como a un perro. Y tú eras… tú eras…» No pudo terminar. Se le rompió la voz.
 
 [208] solo, @dario[black suit, white shirt, black tie], small sad smile, hands in pockets, night, streetlight
-«Me sirvieron para cenar», dijiste. Ella se rio entre lágrimas, sin querer. «Eres idiota.» «Eso dice Nico.» Y por primera vez, tu hermana te sonrió.
+«Me sirvieron para cenar», dijiste. Ella se rio entre lágrimas, sin querer. «Eres idiota.» «Eso dice Toni.» Y por primera vez, tu hermana te sonrió.
 
 [209] solo, @valentina, wiping her tears with determination, clenched fists, night, streetlight
 Luego se puso seria. Muy seria. Igual que tú cuando arreglabas algo. «Si papá hizo eso… yo quiero ayudar. Tiene un despacho en casa. Con una caja fuerte. Nunca me ha dejado entrar.»
@@ -714,16 +714,16 @@ Rafael escuchó toda tu historia sin decir una palabra. La cesta. La nieve. La e
 Te diste la vuelta hacia la ventana. Un padre que no conociste, muerto en una fábrica lejos de casa. Por culpa del viejo con el que jugabas al ajedrez cada noche.
 
 [221] solo, @rafael, standing up with difficulty, leaning on a cane, pleading face, luxury penthouse, warm lamps, night
-«Pero te juro por mi mujer que no sabía lo del niño», dijo Rafael. «Javier me dijo que había nacido muerto. Que él se había encargado de todo. Y yo le pagué. Le pagué por su discreción.»
+«Pero te juro por mi mujer que no sabía lo del niño», dijo Rafael. «Fernando me dijo que había nacido muerto. Que él se había encargado de todo. Y yo le pagué. Le pagué por su discreción.»
 
 [222] solo, @rafael, opening an old wooden desk drawer, taking out a yellowed folder, luxury penthouse, warm lamps, night
 Abrió un cajón de su escritorio antiguo. Sacó una carpeta amarillenta. «Lo guardo todo. Manía de viejo. Aquí está el recibo. Lo firmó él, de su puño y letra.»
 
 [223] no humans, old yellowed receipt with a handwritten signature and a stamp, lying in an open folder on a wooden desk, warm lamp light, close-up, no readable text
-«Recibí de don Rafael del Castillo cincuenta mil euros por la gestión del asunto de la clínica y del niño. Javier Valdés.» La fecha: quince de enero. El día después de la cesta.
+«Recibí de don Rafael del Castillo cincuenta mil euros por la gestión del asunto de la clínica y del niño. Fernando Valdés.» La fecha: quince de enero. El día después de la cesta.
 
 [224] solo, @dario, reading an old receipt with intense eyes, luxury penthouse, warm lamp, close-up
-«Y del niño.» Tres palabras. Dieciocho años escondidas en un cajón. Por ellas pagó Rafael. Y por ellas Javier se convirtió en el yerno perfecto.
+«Y del niño.» Tres palabras. Dieciocho años escondidas en un cajón. Por ellas pagó Rafael. Y por ellas Fernando se convirtió en el yerno perfecto.
 
 [225] solo, @rafael, looking at someone with a determined old fire in his eyes, luxury penthouse, warm lamps, night
 «Mañana a primera hora mi abogado buscará en el registro civil. Si ese niño murió, tiene que haber un certificado de defunción. Si no lo hay…» No terminó la frase. No hacía falta.
@@ -735,18 +735,18 @@ Luego te tendió la mano. Temblaba. «No te pido que me perdones. Te pido que me
 Te quedaste mirando esa mano un buen rato. La mano que echó a tu padre. La que te servía el té cada noche. «Me quitó a mi padre», dijiste. «Y me ha dado lo más parecido a un abuelo que he tenido.»
 
 [228] solo, @dario, shaking an old man's hand, serious, close-up of hands, warm lamp light, {evitar=2boys, clone}
-«No sé qué hacer con eso todavía.» Le estrechaste la mano. «Pero sé lo que hay que hacer con Javier.» Rafael apretó tu mano con una fuerza que no sabías que tenía.
+«No sé qué hacer con eso todavía.» Le estrechaste la mano. «Pero sé lo que hay que hacer con Fernando.» Rafael apretó tu mano con una fuerza que no sabías que tenía.
 
 # ================= CAPÍTULO 8: La gala =================
 
 [229] no humans, tabloid newspaper on a coffee table with a photo of a young chauffeur opening a car door for an old man, big headline, morning light, no readable text
-El sábado por la mañana, Nico te enseñó el periódico. Una foto tuya abriéndole la puerta del coche a Don Rafael. Y un titular: «El estafador de la escalera, ahora chófer del anciano millonario».
+El sábado por la mañana, Toni te enseñó el periódico. Una foto tuya abriéndole la puerta del coche a Don Rafael. Y un titular: «El estafador de la escalera, ahora chófer del anciano millonario».
 
-[230] solo, @nico[green hoodie, jeans], reading a newspaper aloud with an angry face, tiny shared apartment, morning light
-«"Fuentes de la familia aseguran que el joven se aprovecha de la avanzada edad de Don Rafael para sacarle dinero"», leyó Nico. «Fuentes de la familia. O sea, Javier.»
+[230] solo, @toni[green hoodie, jeans], reading a newspaper aloud with an angry face, tiny shared apartment, morning light
+«"Fuentes de la familia aseguran que el joven se aprovecha de la avanzada edad de Don Rafael para sacarle dinero"», leyó Toni. «Fuentes de la familia. O sea, Fernando.»
 
 [231] solo, @dario[black suit, white shirt, black tie], looking at a newspaper with a cold calm face, tiny shared apartment, morning light
-Javier había notado algo. Que Isabel estaba distinta. Que el viejo te defendía. Y había decidido atacar primero. Esa misma noche había gala benéfica en el hotel. Para la infancia.
+Fernando había notado algo. Que Isabel estaba distinta. Que el viejo te defendía. Y había decidido atacar primero. Esa misma noche había gala benéfica en el hotel. Para la infancia.
 
 [232] no humans, luxury hotel ballroom decorated for a charity gala at night, round tables with white tablecloths, crystal chandeliers, a stage with a podium, elegant guests, warm lights
 Una gala para la infancia. Organizada por el hombre que dejó a un recién nacido en la nieve. Quinientos invitados. Prensa. Y en la mesa principal, Isabel, sonriendo como le habías pedido.
@@ -766,10 +766,10 @@ Y alguien, desde una mesa, te tiró una moneda. Rodó por el suelo hasta tus pie
 [237] solo, @valentina[black long-sleeve evening dress], sitting at a gala table gripping her napkin, staring at someone with anguish, holding back tears, luxury ballroom, night
 En la mesa principal, Valentina apretaba la servilleta hasta hacerla un nudo. Tú le habías pedido que no hiciera nada. Que todavía no. Le estaba costando más que a ti.
 
-[238] solo, @javier[black tuxedo], standing at a podium on a stage with a microphone, solemn concerned face, spotlight, luxury ballroom, night
-Entonces Javier subió al escenario. Habló de los niños sin hogar. De la generosidad de la familia. Y luego, con la voz más triste del mundo, cambió de tema.
+[238] solo, @fernando[black tuxedo], standing at a podium on a stage with a microphone, solemn concerned face, spotlight, luxury ballroom, night
+Entonces Fernando subió al escenario. Habló de los niños sin hogar. De la generosidad de la familia. Y luego, con la voz más triste del mundo, cambió de tema.
 
-[239] solo, @javier, pointing from the stage toward the back of the room, sorrowful expression, spotlight, luxury ballroom, night
+[239] solo, @fernando, pointing from the stage toward the back of the room, sorrowful expression, spotlight, luxury ballroom, night
 «Hoy, amigos, también quiero hablar de los que se aprovechan de los débiles. Como ese joven de ahí, al fondo. El de la escalera. Que ahora engaña a mi suegro, un anciano enfermo.»
 
 [240] no humans, a spotlight beam swinging across a dark ballroom toward a back wall, guests turning their heads, dramatic lighting, night
@@ -778,8 +778,8 @@ El foco del escenario giró y te iluminó de golpe. Quinientas cabezas se volvie
 [241] solo, @dario, standing in a bright spotlight against a wall, calm unmoving face, red wine on his shoes, guests booing blurred, night
 Te quedaste quieto bajo el foco, con el vino en los zapatos y una moneda a tus pies. Exactamente como en la escalera. Solo que esta vez no estabas en el suelo.
 
-[242] solo, @javier, speaking into a microphone with fake regret, spotlight, stage, night
-«Mis abogados presentarán mañana una denuncia contra él», siguió Javier. «Y también, lamentablemente, mi esposa necesitará descansar una temporada. Esta familia ha sufrido demasiado.»
+[242] solo, @fernando, speaking into a microphone with fake regret, spotlight, stage, night
+«Mis abogados presentarán mañana una denuncia contra él», siguió Fernando. «Y también, lamentablemente, mi esposa necesitará descansar una temporada. Esta familia ha sufrido demasiado.»
 
 [243] solo, @isabel[elegant silver long-sleeve evening gown], sitting at a gala table with a frozen polite smile, hands trembling under the table, luxury ballroom, night
 Isabel sonrió. Sonrió mientras su marido la llamaba enferma delante de quinientas personas. Mientras abucheaban a su hijo. Debajo de la mesa, le temblaban las manos.
@@ -788,7 +788,7 @@ Isabel sonrió. Sonrió mientras su marido la llamaba enferma delante de quinien
 Pero Don Rafael no le había prometido nada a nadie. Se levantó despacio de la mesa, apoyado en el bastón. El salón se calló. Y caminó hacia el escenario.
 
 [245] solo, @rafael, taking a microphone from a podium, steady cold gaze, spotlight, stage, night
-Javier no pudo negarle el micrófono. No delante de quinientas personas. Rafael lo cogió con la mano que no temblaba. «Mi yerno dice que soy un anciano enfermo. Tiene razón en lo de anciano.»
+Fernando no pudo negarle el micrófono. No delante de quinientas personas. Rafael lo cogió con la mano que no temblaba. «Mi yerno dice que soy un anciano enfermo. Tiene razón en lo de anciano.»
 
 [246] solo, @rafael, speaking firmly into a microphone, looking at the audience, stage, spotlight, night
 «Pero de la cabeza estoy mejor que nunca. Y les diré una cosa: ese chico no me ha pedido nunca un euro.»
@@ -797,22 +797,22 @@ Javier no pudo negarle el micrófono. No delante de quinientas personas. Rafael 
 «Me arregla el coche, me gana al ajedrez y me escucha. Que es más de lo que ha hecho nadie en esta sala en veinte años.»
 
 [248] no humans, gala guests looking uncomfortable, some lowering their eyes, someone lowering a raised phone, luxury ballroom, night
-El abucheo se apagó. Alguien bajó el móvil. La señora del abanico se abanicó más deprisa. Javier sonreía, pero la sonrisa ya no le llegaba a los ojos.
+El abucheo se apagó. Alguien bajó el móvil. La señora del abanico se abanicó más deprisa. Fernando sonreía, pero la sonrisa ya no le llegaba a los ojos.
 
-[249] solo, @javier, leaning into the microphone with a strained smile, stage, spotlight, night
+[249] solo, @fernando, leaning into the microphone with a strained smile, stage, spotlight, night
 «Claro, suegro. Pero quizá el chico quiera explicar de dónde sale, ¿no? Ya que tanto le quiere usted.» Te señaló. Te estaba retando. Delante de todos. Seguro de que te hundirías.
 
 [250] solo, @dario, walking calmly toward a stage through a ballroom, guests parting to let him pass, spotlight following him, night
-Caminaste hacia el escenario. Despacio. Los invitados se apartaban a tu paso. Subiste los tres escalones. Javier te dio el micrófono con una sonrisa de lobo.
+Caminaste hacia el escenario. Despacio. Los invitados se apartaban a tu paso. Subiste los tres escalones. Fernando te dio el micrófono con una sonrisa de lobo.
 
 [251] solo, @dario, holding a microphone, speaking calmly to a large audience, spotlight, stage, night
 «Salgo de un orfanato», dijiste. Tu voz sonó tranquila en todo el salón. «Me dejaron en la nieve con tres días de vida. Durante dieciocho años creí que mi madre me había tirado.»
 
 [252] solo, @dario, looking directly at someone beside him on stage, calm intense grey eyes, spotlight, close-up
-«Ahora sé que no. Que a ella también la engañaron. Que me la quitaron. Y que el que me la quitó está en esta sala esta noche.» Miraste a Javier. Solo un segundo. Suficiente.
+«Ahora sé que no. Que a ella también la engañaron. Que me la quitaron. Y que el que me la quitó está en esta sala esta noche.» Miraste a Fernando. Solo un segundo. Suficiente.
 
-[253] solo, @javier, laughing loudly into the microphone, a bead of sweat on his temple, stage, spotlight, night
-Javier se rio, demasiado fuerte. «¿Lo ven? ¡Delirios! ¡Ahora resulta que es un príncipe secuestrado!» Algunos se rieron con él. Pero menos que antes. Mucho menos.
+[253] solo, @fernando, laughing loudly into the microphone, a bead of sweat on his temple, stage, spotlight, night
+Fernando se rio, demasiado fuerte. «¿Lo ven? ¡Delirios! ¡Ahora resulta que es un príncipe secuestrado!» Algunos se rieron con él. Pero menos que antes. Mucho menos.
 
 [254] solo, @dario, handing back a microphone with a polite small nod, calm, stage, spotlight, night
 Le devolviste el micrófono. «No necesito que me crean hoy», dijiste, ya sin micrófono, pero se oyó igual. «Solo que se acuerden de esta noche. Dentro de poco, la van a recordar.»
@@ -820,11 +820,11 @@ Le devolviste el micrófono. «No necesito que me crean hoy», dijiste, ya sin m
 [255] solo, @dario, walking out of a ballroom through tall doors, back straight, head high, guests watching in silence, night
 Bajaste del escenario y saliste del salón con la cabeza alta. Nadie te tiró nada. Nadie se rio. Quinientas personas se quedaron calladas mirando una puerta cerrarse. Esta vez, detrás de ti.
 
-[256] solo, @javier[black tuxedo], cornering a woman in an elevator, tense suspicious face, mirror walls, golden light, night
-En el ascensor, al terminar la gala, Javier acorraló a Isabel. «¿Lo conoces? ¿Has hablado con él? Mírame.» Isabel lo miró. Y mintió mejor que él en toda su vida. «Jamás.»
+[256] solo, @fernando[black tuxedo], cornering a woman in an elevator, tense suspicious face, mirror walls, golden light, night
+En el ascensor, al terminar la gala, Fernando acorraló a Isabel. «¿Lo conoces? ¿Has hablado con él? Mírame.» Isabel lo miró. Y mintió mejor que él en toda su vida. «Jamás.»
 
-[257] solo, @javier, staring at his own reflection in an elevator mirror, cold calculating face, golden light, night
-Javier no se lo creyó del todo. Esa misma noche llamó a su psiquiatra. «Doctor, el informe de mi mujer. Lo necesito para la junta. Ya.»
+[257] solo, @fernando, staring at his own reflection in an elevator mirror, cold calculating face, golden light, night
+Fernando no se lo creyó del todo. Esa misma noche llamó a su psiquiatra. «Doctor, el informe de mi mujer. Lo necesito para la junta. Ya.»
 
 [258] solo, @ivan[dark grey hoodie], sitting alone on a sofa watching a livestream of a gala on a laptop, troubled face, dark living room, night
 En su piso, castigado y solo, Iván había visto la gala entera en directo por internet. Vio a su padre llamar loca a Isabel. Vio el foco. Y oyó tu frase: «el que me la quitó está en esta sala».
@@ -841,7 +841,7 @@ Y el médico al que Isabel llevó sus pastillas llamó el mismo día. «Señora,
 Isabel leyó el informe dentro del coche. Dos veces. Luego guardó el papel en el bolso, se retocó el maquillaje y volvió a casa a cenar con su marido. Sonriendo.
 
 [262] no humans, dark home office at night, a large wooden desk, a framed painting on the wall slightly open revealing a small safe, moonlight through a window
-Esa misma noche, mientras Javier cenaba con Isabel, alguien entró en su despacho. Javier no había tocado la caja fuerte: nadie más sabía el código. Eso creía. Valentina llevaba días pensando en él.
+Esa misma noche, mientras Fernando cenaba con Isabel, alguien entró en su despacho. Fernando no había tocado la caja fuerte: nadie más sabía el código. Eso creía. Valentina llevaba días pensando en él.
 
 [263] solo, @valentina[oversized grey sweater, black leggings], standing in a dark office in front of a wall safe, nervous, holding a smartphone as a flashlight, night
 Probó el cumpleaños de Iván. No. El suyo. No. El de la boda de sus padres. Tampoco. Entonces se le ocurrió una fecha. Una que había oído en la capilla. Uno, cuatro, cero, uno.
@@ -859,13 +859,13 @@ Debajo, papeles de bancos. Transferencias desde las cuentas de los hoteles a una
 Entonces oyó pasos en el pasillo. Pasos de hombre. Se acercaban al despacho. Valentina se quedó helada, con los papeles en la mano y la caja fuerte abierta.
 
 [268] solo, @ivan[dark grey hoodie], standing in a doorway in the dark, surprised, looking at someone, hallway light behind him, night
-La puerta se abrió. Pero no era Javier. Era Iván, en sudadera, con cara de no dormir. Miró la caja fuerte. Miró a su hermana. Y se oyeron más pasos detrás de él.
+La puerta se abrió. Pero no era Fernando. Era Iván, en sudadera, con cara de no dormir. Miró la caja fuerte. Miró a su hermana. Y se oyeron más pasos detrás de él.
 
-[269] solo, @javier[dark navy suit, white shirt], walking down a dark mansion hallway toward a light, suspicious frown, night
-«¿Iván? ¿Qué haces en mi despacho?» La voz de Javier, al final del pasillo. Valentina cerró la caja fuerte sin hacer ruido y se escondió detrás de la cortina.
+[269] solo, @fernando[dark navy suit, white shirt], walking down a dark mansion hallway toward a light, suspicious frown, night
+«¿Iván? ¿Qué haces en mi despacho?» La voz de Fernando, al final del pasillo. Valentina cerró la caja fuerte sin hacer ruido y se escondió detrás de la cortina.
 
 [270] solo, @ivan, turning toward the hallway with a casual lazy face, holding up a phone charger, doorway, night
-Iván se giró hacia el pasillo con cara de aburrido. «Buscaba un cargador, papá. El mío está roto.» Levantó uno de la mesa. Javier lo miró un segundo. «Pues vete a dormir.»
+Iván se giró hacia el pasillo con cara de aburrido. «Buscaba un cargador, papá. El mío está roto.» Levantó uno de la mesa. Fernando lo miró un segundo. «Pues vete a dormir.»
 
 [271] solo, @valentina, stepping out from behind a curtain, pale and shaky, looking at someone with surprise, dark office, night
 Cuando los pasos se alejaron, Valentina salió de detrás de la cortina. Iván seguía allí, mirándola. «No le voy a decir nada», susurró. «Pero quiero saber qué buscas.»
@@ -877,25 +877,25 @@ Se lo contó todo. Y Iván, en silencio, le enseñó el vídeo original de la es
 «Me tiró a los leones con lo del reloj», dijo Iván. «Delante de Don Rafael. "Mi hijo ha actuado solo." Como si yo fuera basura.» Apretó el móvil. «Ahora sé lo que se siente.»
 
 [274] no humans, dark city street at four in the morning, a small phone repair shop with its lights off, a hooded figure throwing a brick at the window, streetlight, motion blur
-Esa semana, Javier también movió ficha. A las cuatro de la madrugada, alguien rompió de una pedrada el escaparate de la tienda de Nico.
+Esa semana, Fernando también movió ficha. A las cuatro de la madrugada, alguien rompió de una pedrada el escaparate de la tienda de Toni.
 
 [275] no humans, small phone repair shop at night with a shattered front window, broken glass on the sidewalk, a brick inside, streetlight
 En el suelo, entre los cristales, un ladrillo con una nota pegada con cinta: «Al que ayuda a un estafador, le pasan cosas». Sin firma. No hacía falta.
 
-[276] solo, @nico[green hoodie, jeans], sweeping broken glass on a sidewalk at dawn, trying to smile, tired, streetlight
-Nico barrió los cristales a las cinco de la mañana, en pijama. Cuando llegaste corriendo, te sonrió. «Tranquilo. El seguro me pone un escaparate nuevo. Este ya estaba feo.»
+[276] solo, @toni[green hoodie, jeans], sweeping broken glass on a sidewalk at dawn, trying to smile, tired, streetlight
+Toni barrió los cristales a las cinco de la mañana, en pijama. Cuando llegaste corriendo, te sonrió. «Tranquilo. El seguro me pone un escaparate nuevo. Este ya estaba feo.»
 
-[277] solo, @nico, suddenly serious, gripping a broom, looking at someone, dawn light
+[277] solo, @toni, suddenly serious, gripping a broom, looking at someone, dawn light
 Luego se puso serio. «Darío, no te voy a dejar solo. Ni aunque me tiren la tienda entera. Me diste tu manta el primer día. Ahora te toca aguantarme.»
 
 [278] solo, @isabel[long beige coat], stepping out of a taxi in front of a phone repair shop at night, holding a cake box carefully, nervous smile, streetlight
-Esa misma noche, tu madre vino en taxi a la tienda de Nico. Sin escolta. Con una caja de pastelería en las manos. Y cara de no saber si estaba haciendo una tontería.
+Esa misma noche, tu madre vino en taxi a la tienda de Toni. Sin escolta. Con una caja de pastelería en las manos. Y cara de no saber si estaba haciendo una tontería.
 
 [279] no humans, a simple chocolate birthday cake with eighteen lit candles on a workbench among broken phones and tools, warm light, close-up
 Dentro de la caja, una tarta de chocolate. Con dieciocho velas. «La noche de la escalera era tu cumpleaños», dijo. «Hoy he contado los que me faltan. Son todos. Empiezo por este.»
 
 [280] solo, @dario, staring at a birthday cake with candles, eyes filling with tears, warm candle light, close-up
-Nunca te habían hecho una tarta. En el orfanato, los cumpleaños eran una magdalena y una canción. Te quedaste mirando las velas sin saber qué hacer. Nico, por supuesto, ya estaba llorando.
+Nunca te habían hecho una tarta. En el orfanato, los cumpleaños eran una magdalena y una canción. Te quedaste mirando las velas sin saber qué hacer. Toni, por supuesto, ya estaba llorando.
 
 [281] solo, @isabel, smiling softly with wet eyes, candle light, phone repair shop, night
 «Pide un deseo», dijo tu madre. Cerraste los ojos. No pediste dinero. Ni venganza. Pediste que, cuando todo terminara, esta mujer siguiera trayendo tartas. Y soplaste.
@@ -904,16 +904,16 @@ Nunca te habían hecho una tarta. En el orfanato, los cumpleaños eran una magda
 Os comisteis la tarta entre cables y móviles rotos. Tu madre, con su abrigo de mil euros, sentada en una caja de herramientas. Era la mejor fiesta de tu vida.
 
 [283] no humans, small phone repair shop at night with the shutter half closed and a brand new front window, warm light inside, several people's silhouettes around a workbench
-Dos días después, en la tienda de Nico, con la persiana medio bajada y el escaparate nuevo, os reunisteis todos por primera vez. Una reunión muy rara.
+Dos días después, en la tienda de Toni, con la persiana medio bajada y el escaparate nuevo, os reunisteis todos por primera vez. Una reunión muy rara.
 
 [284] no humans, cramped phone repair shop interior at night, a workbench covered with documents and a laptop, warm desk lamp, many chairs of different kinds
 Una monja, un millonario de setenta y cinco años, la presidenta de una cadena de hoteles, su hija, un pelirrojo, una recepcionista, el hijo del villano… y tú. Entre cables y móviles rotos.
 
-[285] solo, @nico[green hoodie, jeans], looking around at everyone with wide eyes, then grinning nervously, phone repair shop, night
-Nico miró alrededor y susurró: «Esto parece el principio de un chiste malo.» Sor Inés le dio con el rosario en la cabeza. Todos se rieron. Hacía falta.
+[285] solo, @toni[green hoodie, jeans], looking around at everyone with wide eyes, then grinning nervously, phone repair shop, night
+Toni miró alrededor y susurró: «Esto parece el principio de un chiste malo.» Sor Inés le dio con el rosario en la cabeza. Todos se rieron. Hacía falta.
 
 [286] solo, @rafael, sitting on an old stool with his cane, explaining seriously, phone repair shop, night, warm desk lamp
-Rafael lo explicó. «La junta es el viernes. Javier presentará un informe de un psiquiatra amigo suyo: que Isabel no está en condiciones. Si se aprueba, él gestionará sus acciones. Y será presidente.»
+Rafael lo explicó. «La junta es el viernes. Fernando presentará un informe de un psiquiatra amigo suyo: que Isabel no está en condiciones. Si se aprueba, él gestionará sus acciones. Y será presidente.»
 
 [287] solo, @isabel[long beige coat], speaking with a calm cold determination, phone repair shop, night, warm desk lamp
 «Y entonces vaciará lo que quede y se irá a Panamá», dijo Isabel. «Lo he visto en los papeles de Valentina.» Ya no le temblaba la voz. Hacía tres días que no tomaba sus pastillas.
@@ -933,22 +933,22 @@ Miraste a tu alrededor. Toda esa gente. Hace dos meses estabas solo, tirado al p
 # ================= CAPÍTULO 10: La junta =================
 
 [292] no humans, large modern boardroom on a skyscraper top floor, long table with many executives seated, panoramic windows with a city view, a big screen on the wall, daylight
-El viernes, a las doce, la sala de juntas del último piso estaba llena. Cuarenta accionistas. Abogados. Y unos cuantos periodistas, invitados por Javier. Quería que todo el mundo viera su coronación.
+El viernes, a las doce, la sala de juntas del último piso estaba llena. Cuarenta accionistas. Abogados. Y unos cuantos periodistas, invitados por Fernando. Quería que todo el mundo viera su coronación.
 
-[293] solo, @javier[impeccable charcoal three-piece suit, dark red tie], standing at the head of a long boardroom table, confident smile, hands on the table, panoramic windows, daylight
-Javier presidía la mesa, de pie, con su mejor traje. «Señores, gracias por venir. Por desgracia, mi esposa no puede acompañarnos. Su salud… no es la que era. Todos lo sabemos.»
+[293] solo, @fernando[impeccable charcoal three-piece suit, dark red tie], standing at the head of a long boardroom table, confident smile, hands on the table, panoramic windows, daylight
+Fernando presidía la mesa, de pie, con su mejor traje. «Señores, gracias por venir. Por desgracia, mi esposa no puede acompañarnos. Su salud… no es la que era. Todos lo sabemos.»
 
 [294] solo, psychiatrist, older man in a grey suit with thin glasses, clean-shaven, reading from a document with a serious face, boardroom, daylight
 A su lado, un psiquiatra amigo suyo leyó un informe. «Confusión. Pérdidas de memoria. Episodios de llanto. La señora Del Castillo no está en condiciones de tomar decisiones empresariales.»
 
 [295] no humans, executives around a boardroom table looking at each other, murmuring, some nodding sadly, daylight, panoramic windows
-Los accionistas se miraron. Algunos asintieron con pena. Llevaban meses oyendo rumores: que Isabel estaba rara, que lloraba en los pasillos. Javier se había encargado de que los oyeran.
+Los accionistas se miraron. Algunos asintieron con pena. Llevaban meses oyendo rumores: que Isabel estaba rara, que lloraba en los pasillos. Fernando se había encargado de que los oyeran.
 
-[296] solo, @javier, raising his hand to call for a vote, solemn fake sad face, boardroom, daylight
+[296] solo, @fernando, raising his hand to call for a vote, solemn fake sad face, boardroom, daylight
 «Por eso propongo que, mientras dure su enfermedad, sus acciones las gestione su esposo. Y que la junta me nombre presidente. Por el bien de la empresa. Votemos.»
 
 [297] no humans, several executives at a boardroom table beginning to raise their hands to vote, daylight, panoramic windows
-Las primeras manos empezaron a levantarse. Una. Tres. Siete. Los periodistas preparaban los titulares. Javier sonreía. Faltaba muy poco.
+Las primeras manos empezaron a levantarse. Una. Tres. Siete. Los periodistas preparaban los titulares. Fernando sonreía. Faltaba muy poco.
 
 [298] no humans, tall double doors of a boardroom swinging open, bright light from the corridor, dramatic
 Y entonces se abrieron las puertas de la sala. De par en par.
@@ -959,11 +959,11 @@ Isabel entró primero. Traje blanco. El pelo recogido. Los ojos claros, despiert
 [300] solo, @rafael[dark navy suit, white shirt], walking into a boardroom leaning on a cane, stern proud face, daylight
 Detrás de ella, Don Rafael del Castillo, con su bastón. Hacía cinco años que no pisaba una junta. Los accionistas más viejos se pusieron de pie sin darse cuenta.
 
-[301] solo, @javier, smile freezing, then forcing a worried tender expression, standing at a boardroom table, daylight
-Javier palideció. Pero se recompuso en un segundo. «Cariño… ¿qué haces aquí? Deberías estar descansando. No te has tomado las pastillas, ¿verdad?»
+[301] solo, @fernando, smile freezing, then forcing a worried tender expression, standing at a boardroom table, daylight
+Fernando palideció. Pero se recompuso en un segundo. «Cariño… ¿qué haces aquí? Deberías estar descansando. No te has tomado las pastillas, ¿verdad?»
 
 [302] solo, @isabel, looking at someone with a cold calm smile, standing in a boardroom, daylight
-«No, Javier. Hace una semana que no me tomo tus pastillas.» Dejó un informe médico encima de la mesa. «Y nunca había pensado tan claro en toda mi vida.»
+«No, Fernando. Hace una semana que no me tomo tus pastillas.» Dejó un informe médico encima de la mesa. «Y nunca había pensado tan claro en toda mi vida.»
 
 [303] solo, @isabel, addressing a room of executives with authority, standing at a boardroom table, daylight
 «Antes de que votéis, quiero presentaros a alguien.» Se giró hacia la puerta. «Entra, hijo.»
@@ -974,8 +974,8 @@ Y entraste tú. Con el traje negro de chófer. Sin corbata. Con las manos de mec
 [305] no humans, executives and journalists whispering and pointing in shock around a boardroom table, some holding phones, daylight
 «¿Ese no es…?» «¡Es el del vídeo! ¡El estafador de la escalera!» «¿Hijo? ¿Ha dicho hijo?» Los periodistas sacaron las cámaras. La sala era un enjambre.
 
-[306] solo, @javier, shouting and pointing at someone, red-faced, boardroom, daylight
-«¡Seguridad!», gritó Javier. «¡Este hombre es un estafador y un ladrón! ¡Tiene antecedentes! ¡Mi mujer está enferma y él la está manipulando! ¡Sacadlo de aquí!»
+[306] solo, @fernando, shouting and pointing at someone, red-faced, boardroom, daylight
+«¡Seguridad!», gritó Fernando. «¡Este hombre es un estafador y un ladrón! ¡Tiene antecedentes! ¡Mi mujer está enferma y él la está manipulando! ¡Sacadlo de aquí!»
 
 [307] solo, security guard, large man in a black suit with an earpiece, clean-shaven, bald, stepping forward then hesitating, uncertain face, boardroom doorway, daylight
 El guardia de la puerta dio un paso hacia ti. Lo reconociste al instante. Ramón. El mismo que te empujó por la escalera. Él también te reconoció. Y se paró.
@@ -983,29 +983,29 @@ El guardia de la puerta dio un paso hacia ti. Lo reconociste al instante. Ramón
 [308] solo, @rafael, raising his cane with a commanding look, boardroom, daylight
 «Ramón», dijo Rafael, sin levantar la voz. «Quieto.» Y Ramón se quedó quieto. Después de treinta años de trabajar para los Del Castillo, sabía quién mandaba de verdad.
 
-[309] solo, @nico[white shirt, black tie, slightly too big suit], sitting at a laptop connected to a projector at the side of a boardroom, nervous grin, daylight
-En una esquina, Nico, con un traje prestado que le quedaba grande, conectó el portátil al proyector. Te miró y levantó el pulgar. La pantalla gigante de la sala se encendió.
+[309] solo, @toni[white shirt, black tie, slightly too big suit], sitting at a laptop connected to a projector at the side of a boardroom, nervous grin, daylight
+En una esquina, Toni, con un traje prestado que le quedaba grande, conectó el portátil al proyector. Te miró y levantó el pulgar. La pantalla gigante de la sala se encendió.
 
 [310] no humans, big boardroom screen showing a DNA laboratory report with a highlighted percentage, executives looking at it, daylight, no readable text
 Primera prueba. Un informe de ADN. «Probabilidad de maternidad: 99,98 %». Madre: Isabel del Castillo. Hijo: Darío Expósito. La sala se quedó en silencio.
 
 [311] solo, @isabel, speaking firmly to the room, hand resting on the silver medallion at her neck, boardroom, daylight
-«Hace dieciocho años di a luz en una clínica de la montaña. Me dijeron que mi hijo había muerto. El que me lo dijo fue mi entonces secretario de confianza.» Miró a Javier. «Mi marido.»
+«Hace dieciocho años di a luz en una clínica de la montaña. Me dijeron que mi hijo había muerto. El que me lo dijo fue mi entonces secretario de confianza.» Miró a Fernando. «Mi marido.»
 
 [312] no humans, big boardroom screen showing an official civil registry document with a stamp, executives reading, daylight, no readable text
 Segunda prueba. El registro civil. Ninguna defunción. Ni ese día, ni ese mes, ni ese año. Si aquel bebé murió, nadie lo enterró nunca.
 
 [313] no humans, big boardroom screen showing an old medical birth record from a mountain clinic with a doctor's signature, daylight, no readable text
-Tercera prueba. La hoja de la clínica. «Parto. Varón. Vivo. Sano. 3,2 kilos.» Encontrada ayer en la caja fuerte de Javier. Detrás de la combinación uno, cuatro, cero, uno.
+Tercera prueba. La hoja de la clínica. «Parto. Varón. Vivo. Sano. 3,2 kilos.» Encontrada ayer en la caja fuerte de Fernando. Detrás de la combinación uno, cuatro, cero, uno.
 
 [314] solo, @valentina[black long-sleeve dress], standing up at the back of a boardroom, speaking with a trembling but brave voice, daylight
 «La encontré yo», dijo Valentina desde el fondo, poniéndose de pie. Le temblaba la voz, pero no se calló. «En la caja fuerte de mi padre. El código es el día que abandonaron a mi hermano.»
 
-[315] solo, @javier, staring at his daughter in disbelief, pale, gripping the table, boardroom, daylight
-Javier miró a su hija como si no la conociera. Abrió la boca. La cerró. Por primera vez en dieciocho años, no tenía preparada una frase.
+[315] solo, @fernando, staring at his daughter in disbelief, pale, gripping the table, boardroom, daylight
+Fernando miró a su hija como si no la conociera. Abrió la boca. La cerró. Por primera vez en dieciocho años, no tenía preparada una frase.
 
 [316] no humans, big boardroom screen showing an old yellowed handwritten receipt with a signature, executives leaning forward to read, daylight, no readable text
-Cuarta prueba. El recibo. «Cincuenta mil euros por la gestión del asunto de la clínica y del niño. Javier Valdés.» Firmado por él. El día después de la nieve.
+Cuarta prueba. El recibo. «Cincuenta mil euros por la gestión del asunto de la clínica y del niño. Fernando Valdés.» Firmado por él. El día después de la nieve.
 
 [317] solo, @rafael, standing with his cane, speaking with a heavy guilty voice, boardroom, daylight
 «Ese dinero se lo di yo», dijo Rafael ante toda la sala. «Creía que pagaba su discreción por un bebé muerto. Pagué el secuestro de mi propio nieto. Lo llevaré en la conciencia hasta que me muera.»
@@ -1016,44 +1016,44 @@ Y entonces entró sor Inés. Despacio. Con su hábito y su farol de siempre, aun
 [319] solo, @ines, pointing a trembling finger at someone across the room, determined face behind round glasses, boardroom, daylight
 «La noche del catorce de enero, el hombre que dejó la cesta en mi puerta se tapó la cara con la mano. Una mano con una cicatriz blanca. Como un anzuelo.» Levantó el dedo. «Esa mano.»
 
-[320] solo, @javier, quickly hiding his right hand in his jacket pocket, panicked eyes, boardroom, daylight, close-up
-Cuarenta cabezas se giraron hacia Javier. Hacia su mano derecha. Y Javier, sin pensarlo, hizo lo peor que podía hacer. Se la metió en el bolsillo.
+[320] solo, @fernando, quickly hiding his right hand in his jacket pocket, panicked eyes, boardroom, daylight, close-up
+Cuarenta cabezas se giraron hacia Fernando. Hacia su mano derecha. Y Fernando, sin pensarlo, hizo lo peor que podía hacer. Se la metió en el bolsillo.
 
 [321] no humans, executives gasping and standing up from their chairs around a boardroom table, shocked faces, daylight
 Ese gesto valió más que todas las pruebas. Varios accionistas se levantaron de golpe. Una señora mayor se santiguó. Los periodistas no paraban de disparar fotos.
 
-[322] solo, @javier, recovering with a desperate furious smile, pointing at the screen, boardroom, daylight
-«¡Esto es un montaje!», gritó Javier. «¡Papeles falsos! ¡Una monja senil! ¡Un huérfano que quiere dinero! ¡Señores, esto es lo que hace la gente para robar una fortuna!»
+[322] solo, @fernando, recovering with a desperate furious smile, pointing at the screen, boardroom, daylight
+«¡Esto es un montaje!», gritó Fernando. «¡Papeles falsos! ¡Una monja senil! ¡Un huérfano que quiere dinero! ¡Señores, esto es lo que hace la gente para robar una fortuna!»
 
 [323] solo, @ivan[plain dark suit, white shirt], standing up from a chair in a corner, serious face, holding a smartphone, boardroom, daylight
-«Papá.» Una voz desde la esquina. Iván se había levantado. Con el móvil en la mano. «Ahora va lo mío.» Se lo dio a Nico. Y Nico le dio al botón.
+«Papá.» Una voz desde la esquina. Iván se había levantado. Con el móvil en la mano. «Ahora va lo mío.» Se lo dio a Toni. Y Toni le dio al botón.
 
 [324] no humans, big boardroom screen showing a video of a man in a tuxedo whispering into a young man's ear on wet marble stairs in the rain at night, executives watching in shock, daylight
 En la pantalla, la escalera. La lluvia. La fiesta. El vídeo que había visto medio país. Pero esta vez, sin cortar. Y con el volumen al máximo.
 
 [325] no humans, close-up of a big screen showing a man's mouth whispering near a young man's ear, rain drops, night, sound waves icon, no readable text
-«Si vuelves a acercarte a esta casa, te arrepentirás de haber nacido.» La voz de Javier llenó la sala de juntas. Y luego, más flojo, otra voz. La de Isabel. «¡Espera!»
+«Si vuelves a acercarte a esta casa, te arrepentirás de haber nacido.» La voz de Fernando llenó la sala de juntas. Y luego, más flojo, otra voz. La de Isabel. «¡Espera!»
 
-[326] solo, @javier, turning to his son with a betrayed furious face, boardroom, daylight
-Javier se giró hacia su hijo. «Iván… ¿qué has hecho?» Iván lo miró con los ojos rojos. «Lo mismo que tú hiciste conmigo con lo del reloj, papá. Pero al revés. Decir la verdad delante de todos.»
+[326] solo, @fernando, turning to his son with a betrayed furious face, boardroom, daylight
+Fernando se giró hacia su hijo. «Iván… ¿qué has hecho?» Iván lo miró con los ojos rojos. «Lo mismo que tú hiciste conmigo con lo del reloj, papá. Pero al revés. Decir la verdad delante de todos.»
 
 [327] solo, @paula[elegant navy blue blouse, black trousers], standing at the boardroom doors, gesturing to someone outside, determined face, daylight
 En ese momento, Paula abrió las puertas de la sala. Detrás de ella, dos agentes de paisano. Los mismos que te esposaron en el hotel. Esta vez venían a por otro.
 
 [328] solo, two plainclothes detectives in dark jackets, middle-aged men, clean-shaven, serious, walking into a boardroom, daylight, {evitar=badge, uniform}
-«Javier Valdés», dijo uno de ellos. «Queda detenido por apropiación indebida, por administrar sustancias a su esposa sin su consentimiento y por denuncia falsa. Lo de hace dieciocho años, lo verá el juez.»
+«Fernando Valdés», dijo uno de ellos. «Queda detenido por apropiación indebida, por administrar sustancias a su esposa sin su consentimiento y por denuncia falsa. Lo de hace dieciocho años, lo verá el juez.»
 
-[329] solo, @javier, being handcuffed, struggling, desperate face looking toward a woman, boardroom, daylight
-Le pusieron las esposas delante de los cuarenta accionistas. Delante de las cámaras. Delante de la presidenta a la que había querido declarar loca. Javier buscó a Isabel con la mirada.
+[329] solo, @fernando, being handcuffed, struggling, desperate face looking toward a woman, boardroom, daylight
+Le pusieron las esposas delante de los cuarenta accionistas. Delante de las cámaras. Delante de la presidenta a la que había querido declarar loca. Fernando buscó a Isabel con la mirada.
 
-[330] solo, @javier, pleading with a broken voice, handcuffed, boardroom, daylight
+[330] solo, @fernando, pleading with a broken voice, handcuffed, boardroom, daylight
 «Isabel… Lo hice por nosotros. Tu padre nunca me habría dejado casarme contigo con el hijo de otro en brazos. Lo hice porque te quería.»
 
 [331] solo, @isabel, looking at someone with cold contempt and sadness, hand on her medallion, boardroom, daylight
-Isabel lo miró como se mira algo que ya no importa. «Me robaste a mi hijo. Y luego me robaste dieciocho años de pensar. Eso no es querer, Javier. Eso es ser dueño de algo.»
+Isabel lo miró como se mira algo que ya no importa. «Me robaste a mi hijo. Y luego me robaste dieciocho años de pensar. Eso no es querer, Fernando. Eso es ser dueño de algo.»
 
-[332] solo, @javier, being led toward the door, turning his head toward a young man with hatred, boardroom, daylight
-Al pasar a tu lado, Javier se detuvo. Te miró con un odio que le salía de dentro. «Tenía que haberte dejado más lejos. Mucho más lejos.»
+[332] solo, @fernando, being led toward the door, turning his head toward a young man with hatred, boardroom, daylight
+Al pasar a tu lado, Fernando se detuvo. Te miró con un odio que le salía de dentro. «Tenía que haberte dejado más lejos. Mucho más lejos.»
 
 [333] solo, @dario, standing calmly face to face with someone, quiet strong voice, boardroom, daylight, close-up
 «Me dejó lo bastante lejos», dijiste. «Pero me echó de una puerta. Y la gente como yo siempre sabe volver a la puerta de la que la echan.» Se lo llevaron sin que pudiera contestar.
@@ -1085,7 +1085,7 @@ Isabel había invitado a todos los que estuvieron aquella noche. A todos. Los qu
 Llegaste a la verja a las seis. Igual que aquella noche. Pero esta vez no traías una mochila vieja. Traías un traje que tu madre había elegido contigo. Y no estabas solo.
 
 [342] no humans, a small group walking through an open mansion gate on a sunny day, an old nun, a red-haired young man, a short-haired young woman, seen from behind, flowers
-Detrás de ti venían sor Inés, con su mejor hábito. Nico, con una corbata de dibujos. Y Paula, que no paraba de colocarte el cuello de la camisa.
+Detrás de ti venían sor Inés, con su mejor hábito. Toni, con una corbata de dibujos. Y Paula, que no paraba de colocarte el cuello de la camisa.
 
 [343] solo, security guard, large man in a black suit with an earpiece, clean-shaven, bald, opening a gate and bowing his head, ashamed face, sunny day
 En la verja estaba Ramón, el guardia. Te abrió sin decir nada. Luego, cuando pasabas, bajó la cabeza. «Perdóneme, señor. Aquella noche…» «Hacías tu trabajo», le dijiste. «Hoy también.»
@@ -1117,8 +1117,8 @@ En la puerta, Don Rafael levantó una copa. «¡Por mi nieto! ¡Que me gana al a
 [352] no humans, empty stone courtroom with wooden benches and a judge's bench, daylight through tall windows, no flags, no emblems
 Los meses siguientes, la justicia hizo su trabajo. Lo del dinero de Panamá. Lo de las pastillas. Lo del reloj. Y, aunque habían pasado dieciocho años, lo de la cesta.
 
-[353] solo, @javier[plain grey sweatshirt], sitting alone in a bare room with a small barred window, looking at his scarred hand, defeated empty face, daylight
-A Javier le cayeron once años. El día del juicio no miró a nadie. Solo se miraba la mano. La cicatriz blanca. Como si fuera la primera vez que la veía.
+[353] solo, @fernando[plain grey sweatshirt], sitting alone in a bare room with a small barred window, looking at his scarred hand, defeated empty face, daylight
+A Fernando le cayeron once años. El día del juicio no miró a nadie. Solo se miraba la mano. La cicatriz blanca. Como si fuera la primera vez que la veía.
 
 [354] solo, @ivan[white kitchen uniform], carrying a heavy crate of vegetables in the back kitchen of a hotel, sweating, humble determined face, daylight
 Iván aceptó su condena por la denuncia falsa: un año de trabajos para la comunidad. Después pidió trabajo en un hotel de la cadena. Desde abajo. Descargando cajas a las seis de la mañana.
@@ -1144,8 +1144,8 @@ Sor Inés lloró cuando vio la caldera nueva. «Dieciocho años pasando frío po
 [361] no humans, new car repair workshop with big open doors, clean tools on the walls, a classic black car inside, a wooden sign above the door without readable text, sunny day
 Y en el barrio del orfanato abriste un taller. Lo llamaste «Taller Andrés». Con un cartel de madera hecho a mano. Y una norma: cada año, dos chicos del orfanato aprenderían el oficio allí.
 
-[362] solo, @nico[grey work overalls, green cap], fixing a smartphone at a workbench inside a car workshop, cheerful grin, daylight
-Nico se quedó con un rincón del taller para arreglar móviles. «Socio minoritario», decía, muy serio. «Pero socio.» Ganaba más que en su vida y seguía llorando en todas las películas.
+[362] solo, @toni[grey work overalls, green cap], fixing a smartphone at a workbench inside a car workshop, cheerful grin, daylight
+Toni se quedó con un rincón del taller para arreglar móviles. «Socio minoritario», decía, muy serio. «Pero socio.» Ganaba más que en su vida y seguía llorando en todas las películas.
 
 [363] solo, @rafael, sitting in a car workshop on an old chair watching someone work, contented smile, holding a thermos of tea, daylight
 Don Rafael venía al taller cada mañana con un termo de té. Se sentaba en una silla vieja y daba consejos que nadie le pedía. Era el hombre más feliz del barrio.
@@ -1157,10 +1157,10 @@ Y Paula. Paula seguía en el hotel, ya de jefa de recepción. Pero cada tarde, a
 «¿Por qué me ayudaste aquel primer día?», le preguntaste una tarde. «Ya te lo dije. Porque los que se reían no dejaban propina.» Luego sonrió. «Y porque me gustaba cómo no llorabas.»
 
 [366] solo, @dario, laughing softly, looking at someone with a tender gaze, workshop, sunset, golden light
-«Pues ahora lloro mucho», dijiste. «Contigo, con mi madre, con mi hermana, con Nico…» Paula se rio. «Ya lo sé, tonto. Por eso me gustas más ahora.»
+«Pues ahora lloro mucho», dijiste. «Contigo, con mi madre, con mi hermana, con Toni…» Paula se rio. «Ya lo sé, tonto. Por eso me gustas más ahora.»
 
 [367] no humans, a family dinner table in a warm mansion dining room at night, many people of different ages, candles, laughter, plates of food, cozy atmosphere
-Los domingos cenáis todos en la mansión. Tu madre. Tu abuelo. Tu hermana. Sor Inés. Nico. Paula. Una mesa demasiado grande para una familia. Ahora, justo del tamaño de la vuestra.
+Los domingos cenáis todos en la mansión. Tu madre. Tu abuelo. Tu hermana. Sor Inés. Toni. Paula. Una mesa demasiado grande para una familia. Ahora, justo del tamaño de la vuestra.
 
 [368] solo, @isabel, looking at someone across a dinner table with a soft loving smile, candlelight, night
 A veces, a mitad de la cena, tu madre se te queda mirando. Sin decir nada. Como si todavía no se creyera que estás ahí. Tú le guiñas un ojo. Y ella se ríe.
