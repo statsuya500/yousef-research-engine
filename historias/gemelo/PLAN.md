@@ -232,3 +232,21 @@ sacrificaron por su padre. Y la constructora de Ernesto es la misma que hundió 
 
 **Regla general:** la Unidad abre puertas, pero cada victoria la gana Mateo con una decisión, una prueba o una deducción.
 El general es el gran momento del final; el protagonista es Mateo.
+
+## Autocrítica después de escribir
+
+**Datos:** 374 escenas, 11.478 palabras (media 30,7 por escena; máximo 44). Duración: **~87 min a velocidad normal** (~70 min con `--rate +25%`).
+
+| Problema encontrado al releer | Arreglo |
+|---|---|
+| La carta del general aparecía en el cap. 9 sin haberse sembrado | En el cap. 3 el general le da la dirección y una carta cerrada: «Dásela cuando ya no la necesites para que te crea» |
+| Los bocetos de Clara en la inauguración salían de la nada | Cap. 2: «Tus cuadernos de bocetos acababan siempre en su casa» |
+| La detención del padre por el incendio no tenía prueba | Rocco encontró al que tiró las botellas y confesó quién pagó |
+| Si el guardia avisó a la Unidad, ¿por qué no lo buscaron? | Cap. 8: «El lobo llama. No se le busca. Esa era la orden» |
+| Años del general mezclados (ocho y nueve) | Contratos hace nueve años; condena y silencio de su familia, ocho |
+| Dos escenas de más de 45 palabras | Partidas en dos |
+| Imagen de Mateo con Amparo en brazos (dos cuerpos que se tocan) | Cambiada por Mateo saliendo solo del humo |
+
+**Victorias de Mateo (no de la Unidad):** deduce que la tarjeta escondía otra cosa (cap. 5), encuentra el fallo del permiso
+de derribo (cap. 8), lee las cuentas y elige comprar la deuda (cap. 10), pone la prueba de carga como condición (cap. 10)
+y sabe qué anclajes se rompen (cap. 11). La Unidad solo ejecuta.
