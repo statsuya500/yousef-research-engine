@@ -75,7 +75,7 @@ lo lleva manda sobre la Unidad. Hace ocho años que esperábamos a alguien con �
 | 4 | La agente Lena, que encuentra la tarjeta de verdad | Agentes secretos |
 | 5 | La banquera Victoria: el fondo de los veteranos tiene la deuda de la constructora | Finanzas |
 
-## El giro (min ~45)
+## El giro (min ~55)
 
 La tarjeta que escondió está vacía: alguien la cambió. La agente descubre la verdad: en el coche iban **dos**. El
 copiloto era **Ernesto**, borracho, que le dio las llaves a Bruno y huyó a pie. No lo sacrificaron por su hermano: lo
