@@ -209,3 +209,26 @@ sacrificaron por su padre. Y la constructora de Ernesto es la misma que hundió 
   Lo compensa que sean veteranos con trabajos normales, sin superpoderes, y que los golpes finales los dé Mateo con pruebas.
 - **Lo que tiene a favor:** traición de los padres (como «Mi hermano me empujó»), un agravio que se ve en un segundo (la
   fuente), gemelos idénticos (el ADN no los distingue: por eso bastó su confesión) y una promesa clara en el título.
+
+## Tres detalles cerrados antes de escribir (pedidos por el usuario al aprobar)
+
+1. **La Unidad Lobo en estos ocho años.** La última orden del general, desde el juzgado: «Disolveos. No me busquéis. No
+   toquéis el fondo. Esperad al lobo». El fondo de los veteranos estaba bajo investigación y cualquier movimiento los habría
+   hecho cómplices. No lo abandonaron: cada mes llegaba a la pensión un sobre sin remite con dinero, y Amparo lo devolvía
+   al buzón de correos (se siembra en el cap. 4 y se paga en el 8: eran ellos). Sin el lobo no podían actuar como
+   organización; solo esperar, cada uno en su trabajo.
+2. **La tarjeta vacía tiene recompensa.** Final del cap. 5: Mateo la saca de la maqueta y está vacía. No es un callejón:
+   abre **la pregunta que lleva al giro**, y la hace él, no la Unidad: «Yo ya había confesado. Si la tarjeta solo mostraba
+   a Bruno conduciendo, a nadie le hacía falta esconderla. Alguien la cambió porque en ella había **otra cosa**». Y otra:
+   «Solo una persona me vio esconderla esa noche: mi madre». En el cap. 9 Mateo une su pregunta con lo que dijo Óscar
+   («eran dos») y con lo que encuentra Lena. Gana él con la cabeza.
+3. **Clara, preparada desde el principio.** Esa noche, a las 2:47, Bruno la llamó desde el coche, borracho: «He hecho algo
+   horrible, Clara». Se siembra en el cap. 2 (en la cocina, el móvil de Bruno vibra con su nombre y Mateo lo ve). Clara calló
+   porque Mateo confesó y creyó que él lo había elegido; Bruno la consoló y se casó con ella. En el cap. 8 Clara le pide a
+   Bruno que le explique un detalle del edificio y no sabe; en el cap. 10 busca a Mateo a escondidas y le cuenta la llamada,
+   pero tiene miedo. En el cap. 12 lo dice en público, con el registro de llamadas de su móvil (hora y antena junto al lugar
+   del atropello). **Consecuencias para ella:** pierde su matrimonio y su puesto de directora de comunicación de la
+   constructora, y declara ante el juez por haber callado cinco años. Lo acepta: «Ya he callado bastante».
+
+**Regla general:** la Unidad abre puertas, pero cada victoria la gana Mateo con una decisión, una prueba o una deducción.
+El general es el gran momento del final; el protagonista es Mateo.
