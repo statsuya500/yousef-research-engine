@@ -1,0 +1,1193 @@
+# Mis padres me mandaron a la cárcel por mi gemelo… y salí con el ejército de un general
+# Canal: Bienvenido a Destino de Millones · historia original · ~85-95 min
+#
+# Formato: narración en segunda persona («tú»), frases cortas, diálogos entre «».
+# Se convierte al formato local con doblaje_scripts/gemelo_convertir.py (como «puerta»).
+#
+# Personajes:
+#   Mateo Lara (tú)   - 27 años. Arquitecto. Cinco años en la cárcel por el atropello que cometió su gemelo. Zurdo.
+#   Bruno Lara        - su gemelo. Peinado hacia atrás, traje caro. Se quedó con su edificio, su puesto y su novia.
+#   Ernesto Lara      - el padre, 58 años. Dueño de Construcciones Lara. El copiloto de esa noche.
+#   Montse            - la madre, 55 años. Le suplicó de rodillas. Escondió la tarjeta.
+#   Noa               - 26 años. Enfermera. Hermana de Óscar.
+#   Óscar             - 24 años. El chico atropellado. En silla de ruedas.
+#   Clara             - 27 años. Exnovia de Mateo, casada con Bruno. Directora de comunicación de la constructora.
+#   General Teodoro Alcázar - 68 años. Condenado por falsos cargos. El maestro de Mateo en la cárcel.
+#   Amparo            - 44 años. Hija del general. Lleva la pensión San Roque.
+#   Leo               - 19 años. Nieto del general.
+#   Gregorio          - 50 años. Capataz de la obra.
+#   Rocco             - 40 años. Jefe de los secuestradores; luego, escolta de Mateo. Exmiembro de la Unidad Lobo.
+#   Lena              - 35 años. Exagente de inteligencia de la Unidad Lobo.
+
+@estilo: masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest, sfw, modest, fully clothed, beautiful detailed eyes, shiny hair, cinematic lighting, depth of field, dramatic composition
+@negativo: lowres, bad anatomy, bad hands, missing legs, cropped legs, text, watermark, signature, japanese text, kanji, writing, logo, lettering, number, blurry, muscular, bodybuilder, abs, chibi, nsfw, cleavage, suggestive, revealing clothes, bare shoulders, barefoot, school uniform, teenager, beard, mustache, goatee, facial hair, stubble, worst quality, low quality, jpeg artifacts, flat shading, oversaturated, neon, rainbow
+@negativo_solo: multiple boys, 2boys, multiple girls, 2girls, clone, duplicate, twins, extra person, reflection
+@parecido: 0.3
+@retoque: si
+@planos: 2
+
+@mateo: 1boy, male focus, young adult man, 27 years old, handsome, clean-shaven, messy short dark brown hair, grey eyes, lean build, calm serious face, neutral expression
+@bruno: 1boy, male focus, young adult man, 27 years old, handsome, clean-shaven, dark brown hair slicked back, grey eyes, arrogant face, neutral expression
+@ernesto: 1boy, male focus, middle-aged man, 58 years old, clean-shaven, grey hair slicked back, cold brown eyes, stern face, neutral expression
+@montse: 1girl, mature woman, 55 years old, short brown bob hair with grey strands, brown eyes, elegant, worried face, neutral expression
+@noa: 1girl, young woman, 26 years old, long black hair in a low ponytail, dark brown eyes, pretty, neutral expression
+@oscar: 1boy, male focus, young man, 24 years old, clean-shaven, short curly black hair, brown eyes, kind face, sitting in a wheelchair, neutral expression
+@clara: 1girl, young woman, 27 years old, long wavy light brown hair, hazel eyes, elegant, beautiful, neutral expression
+@teodoro: 1boy, male focus, old man, 68 years old, clean-shaven, very short white hair, scar on the left eyebrow, piercing grey eyes, upright posture, neutral expression
+@amparo: 1girl, mature woman, 44 years old, dark brown hair in a bun, tired brown eyes, proud face, neutral expression
+@leo: 1boy, male focus, young man, 19 years old, clean-shaven, short black buzz cut hair, dark eyes, angry face, neutral expression
+@gregorio: 1boy, male focus, middle-aged man, 50 years old, clean-shaven, bald, thick neck, tanned skin, neutral expression
+@rocco: 1boy, male focus, adult man, 40 years old, clean-shaven, black crew cut hair, scar on the chin, tall broad build, neutral expression
+@lena: 1girl, adult woman, 35 years old, short platinum blonde hair, sharp blue eyes, serious face, neutral expression
+
+# Miniatura: Mateo empapado con ropa gris de preso junto a la fuente; detrás, Bruno con esmoquin riéndose con una copa. El lobo de bronce brilla en el pecho de Mateo.
+@miniatura: 2boys, @mateo[soaked grey tracksuit, bronze wolf pendant], @bruno[black tuxedo], soaked young man standing in front of a fountain at night with a bronze wolf pendant glowing on his chest, identical man in a tuxedo laughing behind him holding a champagne glass, mansion garden party lights, rain, {evitar=1girl, 3boys, extra person, hug}
+@miniatura_texto: @mateo=PROTA | @bruno=GEMELO | 5 años
+
+# ================= CAPÍTULO 1: La fuente =================
+
+[001] no humans, a heavy metal prison gate opening at dawn, grey concrete walls with barbed wire, rain, empty road, puddles
+El día que saliste de la cárcel llovía. La puerta de hierro se cerró a tu espalda con un golpe seco. Cinco años. Mil ochocientos veintiséis días. Y en la carretera no había nadie esperándote.
+
+[002] solo, @mateo[grey tracksuit, old black backpack], standing alone outside a prison gate in the rain, looking at an empty road, soaked, calm sad face, dawn
+Ni tu padre. Ni tu madre. Ni tu hermano. Ni la chica que te prometió esperarte. Solo la lluvia, una mochila con dos camisetas y un colgante de bronce bajo la camiseta.
+
+[003] no humans, a bronze pendant with a wolf head and a broken star on a leather cord, lying in an open palm, rain drops, close-up
+Un lobo y una estrella partida. Te lo había dado esa misma mañana un viejo de pelo blanco, en el patio. Sin explicarte nada. Ya llegaremos a eso.
+
+[004] solo, @mateo, sitting alone at a bus stop in the rain, looking at a cheap old phone, cold blue light, dawn
+Te llamas Mateo Lara. Tienes veintisiete años. Y hace cinco, dijiste ante un juez que conducías un coche que nunca conduciste. Para salvar a tu hermano gemelo.
+
+[005] no humans, a smartphone screen showing a news article with a photo of a modern building and a young architect receiving an award, blurred, no readable text, rain drops on the screen
+En el autobús, en un móvil viejo, viste la noticia. «Bruno Lara, premio nacional de arquitectura por la Torre Mirador. Gala esta noche en la finca de la familia.»
+
+[006] solo, @mateo, staring at a phone screen on a bus, frozen face, rain on the window behind him, grey morning light
+La Torre Mirador. Tú la dibujaste. Línea por línea, en la mesa de tu cuarto, durante dos años. La dejaste a medio presentar la noche que te detuvieron. Ahora llevaba el nombre de tu hermano.
+
+[007] no humans, a luxury mansion garden at night lit with string lights and lanterns, elegant guests with umbrellas, a large stone fountain in the center, a stage with an award ceremony banner, rain
+Esa noche fuiste a la finca. No a montar un escándalo. Solo querías mirarles a la cara. Que alguien de tu familia te dijera: «Bienvenido».
+
+[008] solo, @mateo[soaked grey tracksuit, old black backpack], walking through a crowd of elegant guests at a night garden party, everyone turning to look at him, rain, string lights
+Entraste por la verja de servicio, empapado, con la ropa de la cárcel. Los invitados se apartaban como si olieras mal. Y entonces empezaron a mirarte la cara. Y a mirar hacia el escenario.
+
+[009] solo, @bruno[black tuxedo], standing on a stage holding a glass award trophy, smiling proudly, applause, spotlight, garden party at night
+Porque en el escenario estaba tu misma cara. Peinada hacia atrás, con esmoquin, levantando un trofeo de cristal. Tu hermano gemelo. Bruno.
+
+[010] solo, elegant middle-aged woman in an evening dress, pointing with shock between a stage and someone in the crowd, other guests whispering behind her, night garden party
+«¿Son dos?», susurró una señora. «Ah, es el otro. El del atropello.» «¿Lo han soltado ya?» Los cuchicheos corrieron por el jardín más rápido que la lluvia.
+
+[011] solo, @bruno, freezing on a stage with a microphone, his smile slipping for a second, spotlight, night
+Bruno te vio. Se le congeló la sonrisa medio segundo. Solo medio. Luego volvió a sonreír, se acercó al micrófono y dijo: «Parece que tenemos un invitado sorpresa».
+
+[012] solo, @clara[elegant champagne evening dress, diamond earrings], standing beside a stage, holding her hand over her mouth, shocked face, night garden party lights
+A su lado, con un vestido de seda, estaba Clara. Tu Clara. La que te escribía cada semana el primer año. Llevaba un anillo que no era el tuyo. Era el de Bruno.
+
+[013] solo, @mateo, looking at someone on a stage, calm face but trembling jaw, rain dripping from his hair, night
+No dijiste nada. Solo miraste a tu madre, en la primera fila. Montse se puso pálida. Y bajó la vista. Como si no te conociera.
+
+[014] solo, @ernesto[black tuxedo, white shirt, black bow tie], walking toward the camera through a crowd of guests, cold furious face, night garden party
+Fue tu padre el que vino. Ernesto Lara, dueño de Construcciones Lara. Cruzó el jardín despacio, sonriendo a los invitados. Y cuando llegó a tu lado, dejó de sonreír.
+
+[015] solo, @mateo, looking at his father with hope and pain, soaked, close-up, rain, night
+«Papá», dijiste. Cinco años sin decir esa palabra. Él te miró de arriba abajo. La ropa gris, la mochila rota, los zapatos de la cárcel.
+
+[016] solo, @ernesto, speaking loudly to the crowd with a cold expression, raising his chin, night garden party, rain
+«Señores, disculpen», dijo en voz alta, para que lo oyera todo el jardín. «Este hombre no es mi hijo. Mi hijo murió el día que dejó a un chico en una silla de ruedas.»
+
+[017] no humans, shocked elegant guests at a night garden party, some covering their mouths, some raising phones to record, rain, string lights
+Un murmullo recorrió el jardín. Alguien aplaudió. Luego otro. Y otro más. Aplaudían a tu padre. Por echar de su fiesta al hijo que cumplió la condena de otro.
+
+[018] solo, large bald security guard in a black suit with an earpiece, grabbing someone off-screen by the arm, stern face, night garden party, rain
+«Seguridad.» Dos guardias te agarraron por los brazos. No te resististe. Habías aprendido en la cárcel que hay peleas que no se ganan con los puños.
+
+[019] solo, @mateo, being pushed backward toward a stone fountain, losing his balance, water splashing, night, rain
+Pero al llegar a la fuente, uno de ellos te empujó. Fuerte. Caíste de espaldas al agua helada, delante de trescientos invitados con copas de champán.
+
+[020] solo, @mateo, sitting in the water of a stone fountain, completely soaked, hair over his eyes, staring up silently, night, string lights
+Te quedaste sentado en la fuente. El agua por la cintura. Las luces de la fiesta reflejándose a tu alrededor. Y entonces oíste la risa.
+
+[021] solo, @bruno, laughing loudly while recording with his phone, holding a champagne glass in the other hand, night garden party
+Bruno. Riéndose a carcajadas, con el móvil en alto, grabándote. «¡Sonreíd, que esto va a ser viral!» Los invitados se rieron con él. Tu hermano. Por el que diste cinco años.
+
+[022] solo, @mateo, slowly standing up in a fountain, water streaming from his clothes, a bronze wolf pendant swinging out of his shirt, night, rain
+Te levantaste despacio. El agua te chorreaba por la ropa. Y con el movimiento, el colgante del lobo se te salió por fuera de la camiseta y brilló bajo las luces.
+
+[023] solo, large bald security guard in a black suit with an earpiece, staring at something with wide eyes, pale face, rain, night, close-up
+Uno de los guardias se quedó blanco. Miró el lobo. Te miró a ti. Dio un paso atrás, como si hubiera visto un fantasma. No dijo nada. Pero no volvió a tocarte.
+
+[024] solo, @mateo, climbing out of a fountain, calm cold face, soaked, guests laughing blurred behind him, night
+No lo entendiste. No entonces. Saliste de la fuente tú solo, sin ayuda. Recogiste la mochila del suelo. Y caminaste hacia la verja entre las risas.
+
+[025] solo, @montse[dark blue evening dress, pearl necklace], sitting at a gala table, tears in her eyes, looking away, hands clenched, night garden party
+Al pasar junto a la primera fila, tu madre seguía sin mirarte. Tenía los ojos llenos de lágrimas. Pero no se levantó. Esa noche, en la cocina, cinco años antes, sí se había arrodillado.
+
+[026] solo, @mateo, stopping at an iron gate and turning his head back toward a party, cold determined eyes, rain, night, close-up
+En la verja te diste la vuelta. Miraste a tu padre, a tu hermano, a tu madre, a Clara. A los trescientos invitados que aplaudían.
+
+[027] solo, @mateo, standing outside a mansion gate in the rain at night, fist clenched around a bronze wolf pendant, determined face
+Y dijiste, tan bajo que solo lo oyó la lluvia: «Me quitasteis cinco años. Ahora os voy a quitar la mentira. A todos».
+
+[028] solo, large bald security guard in a black suit, speaking quietly into an old phone in a dark corner of a garden, nervous serious face, rain, night
+Lo que no viste fue al guardia de la fuente. Escondido detrás de un seto, marcando un número que no marcaba desde hacía ocho años. «Ha aparecido el lobo», susurró.
+
+[029] no humans, the night garden party seen from the gate, string lights blurred by rain, the stone fountain in the middle, guests in the distance
+Esa noche, el vídeo de Bruno tuvo cien mil visitas. «El gemelo presidiario se cae a la fuente.» Pero para entender por qué estabas allí, hay que volver a una cocina. Cinco años antes.
+
+# ================= CAPÍTULO 2: La cocina =================
+
+[030] no humans, a young architect's bedroom at night, a desk covered with blueprints and pencils, a detailed white architectural scale model of a modern tower with a curved balcony, desk lamp light
+Cinco años antes, tenías veintidós años y una sola obsesión: la Torre Mirador. Un edificio de viviendas con un voladizo de cristal que parecía flotar sobre el río.
+
+[031] solo, @mateo[white t-shirt, grey sweatpants], drawing blueprints at a desk at night with his left hand, focused face, desk lamp, pencils, close-up
+Dibujabas con la mano izquierda. Siempre lo habías hecho. En el colegio te ataban la mano para que escribieras con la derecha, y tú la soltabas. Eras así desde niño.
+
+[032] solo, @clara[cream knitted sweater, jeans], sitting on a bed laughing, holding a cup of coffee, warm bedroom light, night
+Clara se quedaba contigo hasta tarde, mirando tus planos. «Cuando lo construyan, quiero el piso del voladizo», te decía. «Para ver el río desde la cama.» Tus cuadernos de bocetos acababan siempre en su casa.
+
+[033] solo, @bruno[white shirt, unbuttoned collar, expensive watch], laughing at a nightclub bar with a drink in his hand, colorful club lights, night
+Bruno era distinto. Bruno estudió lo mismo que tú, pero aprobó con la ayuda de los amigos de papá. Prefería las fiestas a los planos. Y aun así, era el favorito.
+
+[034] solo, @ernesto[dark grey suit, white shirt, dark red tie], sitting behind a large office desk, looking at blueprints with a satisfied smile, modern office, daylight
+Tu padre nunca lo dijo en voz alta. No hacía falta. A ti te pedía resultados. A Bruno le perdonaba todo. «Tu hermano es fuerte», te repetía. «Bruno es sensible. Hay que cuidarlo.»
+
+[035] no humans, a dark mansion kitchen at 4 in the morning, a single light above a marble island, rain on the window, a clock on the wall
+La noche del dieciocho de marzo, a las cuatro de la madrugada, tu madre te despertó. «Baja a la cocina. Ahora. Y no hagas ruido.»
+
+[036] solo, @bruno[wet white shirt with a small blood stain, loosened tie], sitting on the kitchen floor against a cabinet, shaking, drunk, terrified face, dim kitchen light, night
+Bruno estaba sentado en el suelo, temblando. Olía a whisky. Tenía la camisa mojada y una mancha de sangre en el puño. Y no paraba de repetir: «No lo vi. No lo vi. Salió de la nada».
+
+[037] no humans, the front of a dark grey car with a cracked windshield and a dented hood in a garage at night, a small dashcam behind the rear-view mirror, dim light
+En el garaje estaba tu coche. El tuyo, el gris. Con el parabrisas roto en forma de estrella y el capó hundido. Bruno te lo había cogido sin pedírtelo. Como siempre.
+
+[038] solo, @ernesto[dark navy pajamas, grey bathrobe], standing in a dark kitchen with his arms crossed, calm cold face, single overhead light, night
+Tu padre estaba de pie junto a la isla. Tranquilo. Demasiado tranquilo. «Un chico en una bici», dijo. «En la carretera del río. Bruno iba solo. Se asustó y huyó.»
+
+[039] solo, @mateo[white t-shirt, grey sweatpants], standing in a dark kitchen, horrified face, pale, night, single overhead light
+«¿Y el chico?», preguntaste. Nadie te contestó. Luego tu padre dijo: «Vivo. En el hospital. Lo han encontrado unos camioneros».
+
+[040] no humans, a smartphone lying on a marble kitchen counter, its screen lighting up with a notification in the dark, close-up, night
+Entonces el móvil de Bruno vibró sobre la encimera. Un mensaje. Viste el nombre en la pantalla: Clara. «¿Estás bien? Me has asustado. ¿Por qué me llamaste a las 2:47?»
+
+[041] solo, @mateo, frowning at a phone screen on a kitchen counter, confused face, dim light, night, close-up
+Clara. Tu novia. ¿Por qué Bruno la había llamado a las tres menos trece, borracho, en mitad de la noche? No tuviste tiempo de preguntarlo. Tu padre le dio la vuelta al móvil.
+
+[042] solo, @montse[light pink nightgown, beige cardigan], kneeling on a kitchen floor, crying, holding her hands together in a pleading gesture, looking up, night, single light
+Y entonces tu madre hizo algo que no habías visto nunca. Se arrodilló en el suelo de la cocina. Delante de ti. Con las manos juntas.
+
+[043] solo, @montse, crying and pleading on her knees, tears running down her face, close-up, dim kitchen light, night
+«Mateo, hijo. Tú eres el fuerte. Siempre lo has sido. Bruno no aguantaría ni una semana en la cárcel. Se mataría. Lo sabes. Tú no tienes nada que perder.»
+
+[044] solo, @mateo, looking down at someone off-screen with a broken expression, trembling lips, night, kitchen light, close-up
+Nada que perder. Tenías un proyecto. Una novia. Una carrera. Pero tu madre lloraba de rodillas, y tú tenías veintidós años y la querías.
+
+[045] solo, @ernesto, speaking calmly with one hand raised, cold persuasive expression, dark kitchen, night
+«Tienes el carné limpio, no habías bebido», dijo tu padre. «Pagaremos al mejor abogado. Con conformidad y buena conducta, dos años. Como mucho. Te lo juro por esta familia.»
+
+[046] solo, @bruno, looking up from the floor with red teary eyes, desperate face, dim kitchen light, night
+Bruno te miró desde el suelo. «Por favor, Mateo. Por favor.» Tu hermano. El que se metía en tu cama cuando había tormenta. Dijiste que sí.
+
+[047] solo, @mateo, kneeling in the dark beside a car, taking out a tiny memory card from a dashcam behind the windshield, secretive face, dim garage light, night
+Pero antes de que llegara la policía, bajaste al garaje. Sacaste la tarjeta de memoria de la cámara del coche. Ahí estaba la verdad. Tu seguro. Por si algún día te traicionaban.
+
+[048] no humans, hands hiding a tiny memory card inside a hidden slot in the base of a white architectural scale model of a tower, desk lamp, night, close-up
+La escondiste donde nadie miraría: en un hueco de la base de la maqueta de la Torre Mirador. Juraste no usarla nunca. Era solo para que nadie pudiera borrar lo que pasó.
+
+[049] no humans, a dark hallway outside a bedroom door at night, a thin line of light under a door, a shadow on the wall
+Al salir de tu cuarto oíste un crujido en el pasillo. Te asomaste. No había nadie. Pensaste que había sido la casa. Eso creíste durante cinco años.
+
+[050] no humans, flashing blue police lights reflected on the wet facade of a white mansion at night, rain
+A las seis llegó la policía. Dijiste: «Conducía yo». Sin temblar. Tu padre puso una mano en tu hombro, como si estuviera orgulloso de ti. Era la primera vez en años.
+
+[051] no humans, a hospital intensive care room seen through a glass window, a young man connected to machines in a bed, monitors, dim blue light
+El chico se llamaba Óscar. Diecinueve años. Volvía de su turno en una panadería. Estuvo tres semanas en coma. Cuando despertó, no podía mover las piernas. Nunca más.
+
+[052] no humans, a small courtroom with wooden benches, a judge's desk and a defendant's chair, cold daylight from tall windows
+No hubo juicio con testigos. Te declaraste culpable y hubo conformidad. Diez minutos. Nadie le preguntó nada a Óscar. Nadie preguntó nada a nadie.
+
+[053] solo, @mateo[cheap black suit, white shirt], signing a document at a courtroom table with his left hand, resigned face, cold daylight
+Firmaste tu condena con la mano izquierda. Cuatro años y medio. No dos. El abogado de tu padre no te miró a los ojos.
+
+[054] solo, @noa[navy blue nurse scrubs], standing at the back of a courtroom, glaring with hatred and tears in her eyes, fists clenched, cold daylight
+Al fondo de la sala había una chica con el uniforme de enfermera. La hermana de Óscar. Noa. Al pasar a su lado, te dijo: «Ojalá te pudras ahí dentro». Te lo merecías. Eso pensaste.
+
+[055] solo, @clara[beige coat], standing outside a courthouse, crying, holding a phone against her chest, grey daylight
+Clara lloró en la puerta del juzgado. «¿Por qué?», te preguntó. «Tú nunca bebes. Tú nunca corres.» No pudiste contestarle. Ella miró a Bruno. Y Bruno miró al suelo.
+
+[056] no humans, a prison corridor with metal doors and fluorescent lights, a guard walking away in the distance
+Esa misma tarde entraste en la prisión. La puerta se cerró detrás de ti con el mismo golpe seco con el que se abriría cinco años después.
+
+[057] no humans, a crowded prison courtyard surrounded by high concrete walls, inmates in grey tracksuits standing in groups, grey cloudy sky
+El primer mes nadie te tocó. El segundo, en el patio, tres presos te rodearon junto a la pared. Sin decir por qué.
+
+[058] solo, @mateo[grey tracksuit], lying on the ground of a prison courtyard covering his head, bruised face, grey daylight, from above
+Te dieron una paliza. Te rompieron dos costillas. Y al llegar los guardias, el informe dijo: «Pelea entre internos». A ti también te quitaron puntos de buena conducta.
+
+[059] solo, @mateo, sitting alone on a prison bunk bed, holding his ribs, bruised face, staring at a small barred window, night
+Esa noche, en la celda, entendiste algo. Ahí dentro, el que no sabe defenderse no sale nunca. Lo que no sabías era quién estaba pagando esas palizas.
+
+# ================= CAPÍTULO 3: El general =================
+
+[060] solo, @teodoro[grey tracksuit], sitting alone on a bench in a prison courtyard with a perfectly straight back, reading a worn book, calm face, grey daylight
+Dos semanas después de que llegaras, trasladaron a tu módulo a un preso nuevo. Un viejo de pelo blanco al rape, con una cicatriz en la ceja y la espalda recta como un palo.
+
+[061] no humans, inmates in grey tracksuits in a prison courtyard stepping aside nervously, making a path, grey daylight
+Nadie sabía por qué lo habían cambiado de prisión. Pero todos sabían quién era. Cuando pasaba, los presos más duros del patio se apartaban.
+
+[062] no humans, an old newspaper clipping on a cell wall with a photo of a decorated military general in uniform, big headline, no readable text, dim light
+El general Teodoro Alcázar. Treinta años de condena por vender armas del ejército a un grupo enemigo. Había salido en todos los periódicos. «El general traidor.»
+
+[063] solo, @teodoro, watching something from a distance in a prison courtyard with narrowed eyes, arms crossed, grey daylight
+Durante semanas no te dirigió la palabra. Pero notabas sus ojos grises clavados en ti. En el comedor. En el patio. En la biblioteca. Como si te estuviera estudiando.
+
+[064] solo, @mateo[grey tracksuit], cornered against a concrete wall in a prison shower room, raising his fists, bruised face, fear, fluorescent light
+La segunda paliza fue en las duchas. La tercera, cuatro meses después, en el pasillo de la lavandería. Los mismos tres hombres. Esa vez traían un calcetín con una pastilla de jabón dentro.
+
+[065] solo, @teodoro, stepping calmly into a prison laundry corridor, hands relaxed at his sides, cold focused eyes, fluorescent light
+Entonces apareció él. Sin prisa. Se puso entre ellos y tú. «Tres contra uno», dijo con voz tranquila. «En mi unidad eso se llamaba cobardía.»
+
+[066] no humans, a prison laundry corridor floor with a dropped sock and a bar of soap, a fallen inmate's hand in the corner of the frame, fluorescent light
+No viste bien lo que pasó. Tres movimientos. Un codo, una muñeca girada, un barrido. Diez segundos después, los tres estaban en el suelo, y el general ni siquiera respiraba fuerte.
+
+[067] solo, @teodoro, looking down at someone off-screen, calm stern face, adjusting the sleeve of his tracksuit, fluorescent light
+«Decidle a quien os paga», les dijo, «que este chico ahora es asunto mío.» Tú no entendiste esa frase. ¿Quién iba a pagar por pegarte a ti?
+
+[068] no humans, a small prison cell with two bunk beds, a small table with a chessboard, a barred window with morning light
+Esa noche te cambiaron de celda. A la suya. El director de la prisión no puso ninguna pega. Al general, en esa cárcel, nadie le ponía pegas.
+
+[069] solo, @teodoro, sitting at a small table in a prison cell, moving a chess piece, looking up with a sharp gaze, morning light
+«¿Por qué estás aquí?», te preguntó la primera noche. «Atropellé a un chico», contestaste. Él movió un peón. «No. Tú no conducías. Tienes las manos de alguien que no ha mentido nunca. Y mientes fatal.»
+
+[070] solo, @mateo, sitting on a prison bunk bed, looking down, ashamed and silent, dim cell light, night
+No le contaste nada. Ni esa noche, ni ese mes. Él tampoco insistió. Solo dijo: «Cuando quieras aprender a defenderte, levántate a las cinco».
+
+[071] no humans, an empty prison courtyard at dawn, wet ground, the first orange light on top of the concrete walls, mist
+A las cinco de la mañana siguiente estabas en el patio. Él ya estaba allí. Llevaba esperándote una hora. «Llegas tarde», dijo. Así empezaron cinco años.
+
+[072] solo, @teodoro, demonstrating a martial arts stance in a prison courtyard at dawn, one palm forward, perfect balance, focused face, mist
+No te enseñó a pegar. Te enseñó a no caerte. Durante tres meses solo hiciste posturas, respiraciones y caídas. Cien veces al día. Mil veces a la semana.
+
+[073] solo, @mateo, practicing a martial arts stance alone in a prison courtyard at dawn, sweating, focused face, mist
+«Un soldado golpea», te decía. «Un general espera a que el enemigo se equivoque. La fuerza es para el final. Lo primero es la paciencia.»
+
+[074] solo, @teodoro, sitting on a courtyard bench, pointing discreetly at inmates in the distance, explaining something with a calm face, daylight
+También te enseñó a leer a la gente. «Mira las manos, no la cara. La cara miente. Las manos, casi nunca.» Desde el banco del patio, adivinaba quién iba a pelear antes que los guardias.
+
+[075] no humans, a prison library with old wooden shelves, law books and accounting books stacked on a table, afternoon light
+Por las tardes, en la biblioteca, te hacía leer. Derecho penal. Contabilidad. Historia militar. «Tu enemigo tiene abogados y dinero», decía. «Tú vas a tener cabeza.»
+
+[076] solo, @mateo, reading a thick law book at a prison library table, taking notes with his left hand, focused face, afternoon light
+Y tú leías. Todo. Por primera vez desde la cocina, sentías que el tiempo no se te escapaba. Que cada día dentro era un día de preparación.
+
+[077] no humans, a stack of handwritten letters tied with a ribbon on a prison bunk, the last envelope unopened, dim light
+Las cartas de Clara llegaron cada semana durante un año. Luego, cada mes. Luego, ninguna. Tu madre vino a verte dos veces. Tu padre y tu hermano, ninguna.
+
+[078] no humans, a glossy society magazine page with a photo of a young couple at an engagement party, champagne, no readable text, close-up
+En el tercer año, un preso te enseñó una revista. Una foto en la sección de sociedad: «Compromiso de Bruno Lara y Clara Vidal». Ella sonreía. Él llevaba tu reloj.
+
+[079] solo, @mateo, sitting on a prison bunk holding a magazine, his hands trembling, eyes hidden by his hair, dim light, night
+Esa noche no dormiste. El general no dijo nada. Solo, al amanecer, te puso delante una taza de café de la máquina. «El dolor también es entrenamiento», dijo. «Úsalo.»
+
+[080] solo, @teodoro, looking at an old worn photograph in his hands with sad eyes, sitting on a prison bunk, dim lamp light, night
+Una noche de invierno, él también te habló de su vida. De una foto gastada que guardaba bajo el colchón. Una mujer joven con un niño en brazos.
+
+[081] no humans, an old worn photograph of a young woman holding a little boy in front of an old building with a sign, faded colors, close-up
+«Mi hija Amparo y mi nieto Leo», dijo. «Hace años que no me escriben. Ella cree lo que dijeron los periódicos. Que su padre vendió armas a quien mataba a sus propios soldados.»
+
+[082] solo, @teodoro, speaking quietly with a hard face, looking at the barred window, moonlight, night
+«No lo hice. Me tendieron una trampa porque descubrí quién se llevaba el dinero de los contratos de los cuarteles. Un ministro… y una empresa.» No te dijo cuál. Todavía no.
+
+[083] solo, @mateo, looking at the old general with respect and curiosity, sitting on a bunk bed, moonlight, night
+Fue entonces cuando le contaste la verdad. La cocina. Tu madre de rodillas. El coche gris. Él te escuchó sin interrumpirte. Al final, solo dijo: «Somos dos inocentes en una celda. Eso une más que la sangre».
+
+[084] no humans, a calendar on a prison cell wall with many days crossed out, a pencil hanging on a string, dim light
+Las peleas no pararon del todo. Cada vez que te ibas a ganar un permiso, alguien te provocaba en el patio. Cada pelea, meses de más. Los dos años prometidos se convirtieron en cinco.
+
+[085] solo, @mateo, blocking an attack with his forearm and twisting an attacker's wrist in a prison courtyard, calm focused face, motion lines, daylight
+Pero ya no te pegaban. En el cuarto año, cuando cuatro hombres te rodearon en el patio, los cuatro acabaron en la enfermería. Tú, sin un rasguño. Nadie volvió a intentarlo.
+
+[086] no humans, the prison courtyard at dawn, mist, the first light of the sun, empty, quiet
+Y llegó el último día. Al amanecer, como siempre, bajaste al patio. Pero esa mañana el general no estaba entrenando. Estaba sentado en el banco. Esperándote.
+
+[087] solo, @teodoro, holding out a bronze wolf pendant on a leather cord with an open hand, serious solemn face, dawn light, mist
+Te puso algo en la mano. Un colgante de bronce. Un lobo con una estrella partida. Viejo, gastado, caliente de haberlo llevado escondido años.
+
+[088] solo, @teodoro, speaking in a low firm voice, looking straight ahead, dawn light, close-up
+«No lo enseñes a cualquiera», te dijo. «Y no me preguntes qué es. Cuando lo necesites de verdad, ya sabrás qué hacer con él.» No te dijo nada más sobre el lobo.
+
+[089] solo, @mateo, holding a bronze wolf pendant tightly in his fist, looking at the old general with emotion, dawn light
+«Yo te salvé ahí dentro», siguió. «Ahora te pido algo a cambio. Ve a ver a mi hija y a mi nieto. Ayúdalos en lo que necesiten. Y no les digas que vas de mi parte hasta que te crean a ti.»
+
+[090] solo, @teodoro, standing straight in a prison courtyard, giving a slow military salute, a sealed envelope on the bench beside him, dawn light, mist
+Te dio una dirección, Pensión San Roque, calle del Molino, 14, y una carta cerrada para su hija: «Dásela cuando ya no la necesites para que te crea». Luego se puso recto y te hizo el saludo militar. «Vete, soldado.»
+
+[091] solo, @mateo, walking away across a misty prison courtyard toward a gate, back straight, wolf pendant hanging from his neck, dawn
+No miraste atrás. Pero tampoco podías saber que esa dirección, ese colgante y ese viejo iban a cambiar tu vida más que cinco años de cárcel. Y que el primero en descubrirlo sería el guardia de una fuente.
+
+# ================= CAPÍTULO 4: La pensión =================
+
+[092] no humans, an old narrow street in a poor neighborhood at night, old three-story buildings, a small hanging sign of a guesthouse, broken windows, graffiti on walls, rain
+Esa misma noche, empapado todavía por el agua de la fuente, caminaste hasta el barrio de San Roque. Calle del Molino, 14. Una pensión vieja de tres plantas.
+
+[093] no humans, the facade of an old guesthouse with several broken windows boarded with cardboard, red spray paint graffiti on the door, rain, night
+La mitad de las ventanas tenían cartones en vez de cristales. En la puerta, una pintada en rojo: «Vended ya». Y la luz de la entrada, parpadeando.
+
+[094] solo, @amparo[grey wool cardigan, dark blouse, apron], opening a door halfway with a suspicious tired face, holding the door with one hand, dim hallway light, night
+Te abrió una mujer de unos cuarenta y cinco años, con el pelo recogido y unas ojeras de no dormir. Te miró la ropa gris. Supo de dónde venías antes de que abrieras la boca.
+
+[095] solo, @mateo[soaked grey tracksuit, old black backpack], standing at a doorway in the rain at night, calm respectful face
+«Busco a Amparo Alcázar», dijiste. «Soy yo. ¿Qué quieres?» «Habitación. Trabajo. Lo que sea.» No le dijiste quién te mandaba. Esa era la orden.
+
+[096] solo, @amparo, frowning with contempt, half-closing a door, dim light, night
+«Otro preso», dijo. «Mi padre me mandaba a sus compañeros de celda cuando yo aún le escribía. Venían a pedirme dinero en su nombre. No. Aquí no hay sitio para gente como tú.»
+
+[097] no humans, an old wooden door closing in the rain at night, light disappearing behind it, close-up
+Y te cerró la puerta en la cara. No la culpaste. Tú también le habrías cerrado la puerta a un tipo empapado con ropa de la cárcel.
+
+[098] solo, @mateo, sitting on the floor of a building entrance, back against the wall, backpack as a pillow, wet clothes, cold dim light, night
+Esa noche dormiste en el portal. Sobre las baldosas. Con la mochila de almohada. Después de cinco años en una celda, el suelo de un portal te pareció casi un lujo.
+
+[099] no humans, an old basement boiler room with a broken rusty boiler, a puddle of water on the floor, tools scattered, a single bulb
+A las seis te despertó un ruido metálico y una palabrota. Venía del sótano. La caldera de la pensión había reventado. Otra vez. Ese invierno, la tercera.
+
+[100] solo, @amparo[grey wool cardigan, apron], kneeling next to a broken boiler with a wrench, frustrated tired face, a puddle on the floor, basement light
+Amparo estaba de rodillas en el agua, con una llave inglesa demasiado grande para sus manos. Los huéspedes ya bajaban quejándose: «¡Otra vez sin agua caliente!».
+
+[101] solo, @mateo, crouching next to a rusty boiler, examining a pipe with a focused face, sleeves rolled up, basement light
+No pediste permiso. Bajaste, miraste la caldera y viste el problema en diez segundos. Una válvula de presión rota. Y alguien había aflojado otra a propósito.
+
+[102] solo, @mateo, fixing a pipe on an old boiler with a wrench in his left hand, concentrated, sweat on his forehead, basement light
+Tardaste dos horas. Con piezas de una bicicleta vieja del patio y cinta de fontanero. Cuando la caldera volvió a arrancar, los huéspedes aplaudieron desde la escalera.
+
+[103] solo, @amparo, standing with crossed arms, looking at someone with suspicion and reluctant surprise, basement light
+Amparo no aplaudió. «¿Cuánto quieres?», preguntó. «Nada.» «Nadie hace nada por nada.» «Alguien aflojó la otra válvula», le dijiste. «Esto no se rompió solo.»
+
+[104] solo, @amparo, looking away with a hard proud face, holding an apron tightly, dim kitchen of an old guesthouse, morning light
+Ella apretó los labios. «Lo sé», dijo al fin. «Igual que sé quién me rompe los cristales. Y quién me corta la luz los viernes. Y quién me manda una inspección cada mes.»
+
+[105] no humans, an official eviction letter on a kitchen table with a company logo of a building crane, an expropriation notice, a cup of coffee beside it, close-up, no readable text
+Te enseñó una carta. Un requerimiento para vender la pensión. El barrio entero iba a ser derribado para la segunda fase de un gran proyecto. Abajo, el logotipo de una grúa.
+
+[106] solo, @mateo, staring at a letter with an icy expression, close-up, morning light
+Conocías ese logotipo desde que eras niño. Lo llevabas bordado en la mochila del colegio. Construcciones Lara. La empresa de tu padre.
+
+[107] no humans, an architectural billboard in a poor neighborhood showing a futuristic tower with a glass balcony over a river, a crane in the background, cloudy sky
+Y la segunda fase de un proyecto que conocías mejor que nadie: la Torre Mirador. Tu torre. La que habías dibujado para que la gente viera el río. Iban a levantarla sobre las casas de esta gente.
+
+[108] solo, @amparo, speaking bitterly with folded arms, looking out a broken window, grey morning light
+«Todos los vecinos han vendido», dijo Amparo. «Por miedo. Solo quedamos nosotros. No pienso irme. Esta pensión era de mi madre. Es lo único que mi padre no nos manchó.»
+
+[109] no humans, an old guesthouse mailbox at the entrance with a white envelope without sender, a woman's hand pushing it back into a public post box, close-up
+Al salir de la cocina, viste algo raro. Amparo cogió un sobre blanco del buzón, sin remite, lo miró y lo metió sin abrir en un sobre nuevo. «Devolver al remitente», escribió.
+
+[110] solo, @mateo, watching someone with curious eyes, leaning on a doorframe of an old hallway, morning light
+«Llega uno cada mes», dijo sin que preguntaras. «Desde hace ocho años. Con dinero. No sé quién lo manda. Y no quiero caridad de nadie.» Lo guardaste en la memoria. Como te enseñó el general.
+
+[111] solo, @leo[black hoodie, ripped jeans, boxing hand wraps], coming down an old staircase with an angry hostile face, glaring, morning light
+Por la escalera bajó un chico de diecinueve años con la cabeza rapada y las manos vendadas. Leo. El nieto. Te miró como se mira a un perro que se ha colado en casa.
+
+[112] solo, @leo, pointing a finger with hostility, aggressive stance, old hallway, morning light
+«¿Y este quién es? ¿Otro de los de la constructora?» «Es un preso», dijo su madre. Leo se rio. «Genial. Lo que nos faltaba. El nieto del traidor y un presidiario.»
+
+[113] solo, @leo, looking down with hurt eyes behind his anger, fists clenched, old staircase, dim light
+Más tarde te enterarías de que Leo había intentado entrar tres veces en la academia militar. Las tres le dijeron lo mismo con buenas palabras: «Con ese apellido, no».
+
+[114] solo, @amparo, handing an old key with a wooden tag, stern face but slightly softer, hallway of an old guesthouse, morning light
+Amparo te dio una llave vieja. «La habitación del tercero. La de las goteras. Gratis no: la pagas arreglando lo que se rompa. Y si robas algo, llamo a la policía antes de que llegues a la esquina.»
+
+[115] no humans, a tiny attic room with a slanted ceiling, an old iron bed, a bucket catching water from a leak, a small window with a view of rooftops, morning light
+Era la peor habitación de la pensión. Con un cubo para las goteras y una ventana desde la que, entre los tejados, se veía la grúa de tu torre.
+
+[116] solo, @mateo[grey tracksuit], sitting on an old iron bed in an attic room, looking out a small window at a distant construction crane, determined face, morning light
+Te sentaste en la cama y miraste la grúa. Tu padre derribaba el barrio de la familia del general para levantar tu edificio con el nombre de tu hermano. No era casualidad. Aún no sabías por qué.
+
+[117] solo, @mateo, writing a list in a small notebook with his left hand, sitting on a bed, focused calm face, morning light from a small window
+Abriste una libreta y escribiste tres cosas. Uno: entrar en la obra de la torre. Dos: recuperar lo que escondí en la maqueta. Tres: que nadie toque esta pensión.
+
+# ================= CAPÍTULO 5: Peón =================
+
+[118] no humans, a job center counter with a stack of rejected application forms, a stamped criminal record certificate on top, fluorescent light, close-up, no readable text
+Nadie contrata a un arquitecto con antecedentes penales. Lo comprobaste en una semana. Doce estudios. Doce sonrisas educadas. Doce «ya le llamaremos».
+
+[119] no humans, a large construction site at night under floodlights, a half-built modern tower with a curved cantilever balcony over a river, cranes, workers in helmets
+Así que fuiste a la única obra donde querías trabajar. La de la Torre Mirador. Una subcontrata buscaba peones para el turno de noche. Pagaban en mano y no hacían preguntas.
+
+[120] solo, @mateo[orange safety vest, white hard hat, grey work clothes], standing in line with other workers at a construction site entrance, calm face, floodlights, night
+Te apuntaste con el segundo apellido, el de tu madre: Mateo Soler. Con el casco y el chaleco, nadie se fija en la cara de un peón. Ni siquiera si es la cara del jefe.
+
+[121] solo, @gregorio[yellow safety vest, white hard hat, checked shirt], shouting with a red face, pointing at a pile of cement bags, construction site at night, floodlights
+El capataz se llamaba Gregorio. Cincuenta años, cuello de toro y una voz que se oía por encima de las hormigoneras. Leyó tu ficha y sonrió de lado.
+
+[122] solo, @gregorio, laughing mockingly with his arms crossed, construction site at night
+«Soler, recién salido del trullo», gritó para que lo oyeran todos. «Aquí no se roba, ¿eh? Vigiladle las herramientas, chicos.» Los peones se rieron. Tú cogiste el primer saco.
+
+[123] solo, @mateo, carrying a heavy cement bag on his shoulder up a construction stairway, sweating, focused calm face, floodlights, night
+Te dio los peores trabajos. Subir sacos de cemento por la escalera porque «el montacargas está reservado». Limpiar los baños químicos. Barrer escombros bajo la lluvia.
+
+[124] solo, @mateo, stopping in the middle of a half-built floor, looking up at the concrete structure of a cantilever with a frown, holding a broom, floodlights, night
+Pero mientras barrías, mirabas. Y la tercera noche, debajo del gran voladizo de cristal, te quedaste quieto. Algo estaba mal. Muy mal.
+
+[125] no humans, close-up of thin steel reinforcement bars and a few anchor bolts inside a concrete beam under construction, measuring tape, floodlight, night
+Los anclajes del voladizo. En tus planos había dieciséis por viga, de acero especial. Ahí había ocho. Y de un acero más barato. Alguien había recortado la estructura a la mitad.
+
+[126] solo, @mateo, calculating in a small notebook with his left hand under a floodlight, worried focused face, construction site, night
+Hiciste los cálculos en la libreta, sentado en un saco de cemento. Con la carga de la gente, los muebles y el viento, ese voladizo aguantaría unos meses. Luego, cedería.
+
+[127] no humans, an invoice document with numbers on a desk in a construction site office, a highlighter mark, dim light, close-up, no readable text
+En la caseta de la obra encontraste las facturas. El acero se pagaba como especial, pero llegaba el barato. La diferencia, varios millones, iba a una empresa de nombre raro. Firmaba Bruno Lara.
+
+[128] solo, @mateo, typing a letter on an old laptop in a small attic room at night, serious face, a bucket catching rain drops beside him
+Escribiste un informe técnico. Anónimo. Con los cálculos, las fotos y las facturas. Lo mandaste al departamento técnico de la constructora y al ayuntamiento.
+
+[129] solo, @gregorio, crumpling a piece of paper and throwing it in a trash bin, mocking face, construction site office, night
+Dos días después, Gregorio lo leyó en voz alta en la caseta, entre carcajadas. «Mirad, un listillo dice que el edificio se va a caer. ¡Seguro que es el de las ollas de la cárcel!» Y lo tiró a la basura.
+
+[130] no humans, a small old bar in a poor neighborhood at night, a wooden counter, a television, a few old men drinking, warm yellow light
+Esa madrugada, al salir de la obra, entraste a un bar del barrio a tomar un café. Te quitaste el chaleco. El colgante del lobo quedó a la vista.
+
+[131] solo, old man with grey hair in a worn veteran jacket, standing up from a bar stool and giving a trembling military salute, emotional face, warm bar light, night
+Un viejo de la barra se quedó mirándolo. Luego se levantó, despacio, apoyado en el bastón. Se puso recto. Y te hizo el saludo militar. Sin decir una palabra.
+
+[132] solo, @mateo, looking at someone with surprise and confusion, holding a coffee cup at a bar counter, warm light, night
+«¿Me conoce?», preguntaste. El viejo negó con la cabeza, con los ojos húmedos. Pagó tu café, dejó una moneda en la barra y salió. No entendiste nada. Otra vez.
+
+[133] no humans, a street outside a hospital at dawn, an ambulance parked, a bus stop, cold blue light
+Al amanecer, volviendo a la pensión, pasaste por delante del hospital. Una enfermera salía del turno de noche con prisa. Chocasteis en la esquina.
+
+[134] solo, @noa[navy blue nurse scrubs, black puffer jacket], recognizing someone with shock that turns into hatred, stepping back, dawn street, cold light
+Se le cayó el bolso. Te agachaste a recogerlo. Ella te miró la cara. Y la reconoció. Cinco años no borran la cara del hombre que dejó a tu hermano en una silla de ruedas.
+
+[135] solo, @noa, spitting on the ground in front of someone with hatred, tears of rage in her eyes, dawn street, cold light
+Te escupió a los pies. «Tú», dijo. «¿Ya estás fuera? ¿Cinco años? Mi hermano lleva cinco años sin poder ir solo al baño. Y tú ya estás fuera.»
+
+[136] solo, @mateo, standing still with his head slightly lowered, saying nothing, calm sad face, dawn street, cold light
+No dijiste nada. No podías decir «no fui yo». Lo habías jurado delante de un juez. Ella se fue sin mirar atrás. Te quedaste en la acera, con su bolso todavía en la mano.
+
+[137] no humans, a hospital ID badge inside a fallen handbag on a sidewalk, a photo of a nurse, close-up, no readable text
+Dentro del bolso había una tarjeta del hospital. Noa Rivas. Enfermera de rehabilitación. Y una foto de un chico en silla de ruedas sonriendo. Óscar. Le dejaste el bolso a la portera del hospital.
+
+[138] no humans, a construction site sales office at night, a glass display case with a white architectural scale model of a modern tower, a security light, empty
+Esa noche hiciste lo que habías venido a hacer. En la caseta de ventas de la obra, en una vitrina, estaba tu maqueta original. La de tu cuarto. Bruno la usaba para enseñarla a los compradores.
+
+[139] solo, @mateo[orange safety vest, grey work clothes], opening a glass display case carefully at night, focused tense face, security light
+A las tres de la madrugada, con la llave del guarda que Gregorio dejaba siempre colgada, abriste la vitrina. Le diste la vuelta a la maqueta. El hueco de la base seguía ahí.
+
+[140] no humans, fingers taking a tiny memory card out of a hidden slot in the base of a white architectural model, night, security light, close-up
+Y dentro, la tarjeta de memoria. Cinco años esperándote. Te temblaban las manos. La verdad de esa noche, por fin, en la palma de tu mano.
+
+[141] solo, @mateo, staring at an old laptop screen in a dark attic room at night, frozen shocked face, the screen light on his face
+En tu habitación la metiste en el portátil. Una carpeta. Ningún archivo. La formateaste por si acaso, buscaste archivos borrados con un programa. Nada. Vacía. Nunca había tenido nada.
+
+[142] no humans, a tiny memory card on a wooden table next to an old laptop, a small label sticker with a different brand, close-up, night
+Entonces te fijaste en la marca. La tarjeta de la cámara de tu coche era negra. Esta era azul. No era la tuya. Alguien la había cambiado.
+
+[143] solo, @mateo, sitting in the dark holding his head, thinking intensely, notebook open beside him, night, dim screen light
+Te quedaste a oscuras, pensando como te enseñó el general. Despacio. Sin rabia. Y llegaste a una pregunta que no te habías hecho en cinco años.
+
+[144] solo, @mateo, looking up slowly with sharp realization in his grey eyes, dim light, night, close-up
+Tú ya habías confesado. Si en la tarjeta solo salía Bruno conduciendo, a nadie le hacía falta esconderla. Alguien la cambió porque en esa grabación había otra cosa. Algo peor.
+
+[145] solo, @mateo, remembering a dark hallway, writing a single word in a notebook with his left hand, cold face, night
+Y otra pregunta. Esa noche, solo una persona pudo verte esconderla. El crujido del pasillo. Escribiste en la libreta una sola palabra: «Mamá».
+
+# ================= CAPÍTULO 6: Leo y Óscar =================
+
+[146] no humans, the old guesthouse entrance at night, a black van parked in front with its lights on, shadows of men with baseball bats, rain
+Una semana después, un viernes a medianoche, una furgoneta negra paró delante de la pensión. Se bajaron cuatro hombres con chaquetas de cuero y bates de béisbol.
+
+[147] solo, thug in a black leather jacket swinging a baseball bat at a guesthouse window, glass shattering, rain, night
+El primer bate rompió el cristal del comedor. El segundo, el de la entrada. «¡Firmad de una vez!», gritaban. «¡La próxima vez no serán los cristales!»
+
+[148] solo, @leo[black hoodie, ripped jeans, boxing hand wraps], running out of a door barefoot in the rain with raised fists, furious face, night
+Leo salió a la calle descalzo, con los puños vendados. Diecinueve años, mucho coraje y ninguna técnica. Se lanzó contra el más grande.
+
+[149] solo, @leo, lying on a wet street holding his stomach in pain, rain, night, streetlight
+Duró diez segundos. Un golpe con el mango del bate en el estómago y Leo cayó de rodillas en un charco. El más grande levantó el bate otra vez.
+
+[150] solo, @amparo[grey wool cardigan, nightgown], screaming in a doorway with her hands over her mouth, terrified face, rain, night
+«¡Leo!», gritó Amparo desde la puerta. Los otros tres se rieron. Uno de ellos sacó el móvil para grabarlo. «Para que lo vea el jefe.»
+
+[151] solo, @mateo[grey hoodie, jeans], walking calmly out of a door into the rain at night, hands relaxed at his sides, cold focused eyes
+Tú bajaste la escalera sin prisa. Saliste a la lluvia con las manos en los costados. «Es un chaval», dijiste. «Si queréis pegar a alguien, aquí estoy.»
+
+[152] solo, thug in a black leather jacket grinning and swinging a baseball bat, rain, night, streetlight
+«Mira, el presidiario», dijo el grande. «El de la fuente. Te vi en internet.» Y te lanzó el bate a la cabeza.
+
+[153] solo, @mateo, dodging a baseball bat swing by stepping inside, catching an attacker's wrist, calm face, rain splashing, motion blur, night
+Un soldado golpea. Un general espera a que el enemigo se equivoque. El grande se equivocó: lanzó con todo el cuerpo. Entraste por dentro, le cogiste la muñeca y giraste.
+
+[154] no humans, a baseball bat falling onto a wet street, splashing in a puddle, rain, streetlight, close-up
+El bate cayó al charco. El grande, detrás. Al segundo le barriste las piernas. El tercero se quedó quieto, mirando. El cuarto ya estaba subiendo a la furgoneta.
+
+[155] solo, @mateo, standing in the rain over fallen thugs, calm breathing, a baseball bat at his feet, streetlight, night
+Recogiste el bate. Lo partiste con la rodilla. «Decidle a quien os paga», dijiste, con la voz del general, «que esta pensión ahora es asunto mío.»
+
+[156] no humans, a black van driving away fast on a wet street at night, red tail lights, rain
+La furgoneta se fue derrapando. Los vecinos asomados a las ventanas no aplaudieron. Tenían miedo. Pero algunos encendieron la luz por primera vez en meses.
+
+[157] solo, @leo, sitting on a wet sidewalk staring up at someone with amazement, holding his stomach, rain, night
+Leo te miraba desde el suelo con la boca abierta. «¿Dónde… dónde has aprendido eso?» «En la cárcel. Me enseñó un viejo.» No dijiste más.
+
+[158] solo, @amparo, wrapping a blanket around her son's shoulders, looking at someone else with a mix of suspicion and gratitude, doorway, rain, night
+Amparo te miró largo rato. Luego le echó una manta a Leo y, sin mirarte, dijo: «Mañana te cambio a la habitación del segundo. Esa no tiene goteras».
+
+[159] no humans, the small backyard of an old guesthouse at dawn, wet ground, clothes lines, a brick wall, mist
+A las cinco de la mañana siguiente, bajaste al patio de la pensión. Leo ya estaba allí, con las manos vendadas. Llevaba una hora esperándote. «Llegas tarde», le dijiste. Él no entendió la broma.
+
+[160] solo, @mateo, correcting a young man's martial arts stance by pointing at his feet, calm teacher face, small backyard at dawn, mist
+No le enseñaste a pegar. Le enseñaste a no caerse. Posturas, respiraciones, caídas. Como el general te enseñó a ti. Leo se quejaba. Pero volvía cada mañana.
+
+[161] solo, @leo, practicing a martial arts stance in a backyard at dawn, sweating, focused face, mist
+«Mi abuelo era militar», te contó una mañana, entre serie y serie. «Dicen que traidor. Yo no me lo creo. Tenía una foto en el salón, con sus hombres. Todos con un lobo como el tuyo.»
+
+[162] solo, @mateo, freezing slightly and touching a bronze wolf pendant under his shirt, guarded face, backyard at dawn
+Te llevaste la mano al pecho sin querer. «Es un recuerdo», dijiste. Leo no insistió. Pero desde ese día, a veces le pillabas mirando tu colgante.
+
+[163] no humans, a small rehabilitation center building with a ramp and parallel bars visible through the windows, afternoon light
+Esa tarde hiciste algo que llevabas cinco años debiendo. Fuiste al centro de rehabilitación donde trabajaba Noa. A ver a Óscar.
+
+[164] solo, @oscar[blue tracksuit], sitting in a wheelchair beside parallel bars in a rehabilitation room, sweaty tired face, afternoon light
+Estaba entre dos barras paralelas, sudando, intentando ponerse de pie con los brazos. Veinticuatro años. Los brazos fuertes de cinco años empujando una silla.
+
+[165] solo, @mateo, standing at the door of a rehabilitation room, holding a small paper bag, nervous humble face, afternoon light
+No sabías qué decirle. «Perdón» no servía. Y no podías decir la verdad. Así que le dijiste solo eso: «Soy Mateo Lara. Vengo a pedirte perdón».
+
+[166] solo, @noa[navy blue nurse scrubs], storming through a door with fury, pointing at the exit, rehabilitation center, afternoon light
+Noa apareció como un rayo. «¡Fuera! ¡¿Cómo te atreves?! ¡Fuera de aquí o llamo a seguridad!» Te empujó hacia la puerta. Tú no te resististe.
+
+[167] solo, @oscar, raising a hand to stop someone, looking with a strange intense curiosity, sitting in a wheelchair, afternoon light
+Pero Óscar levantó la mano. «Espera, Noa.» Te estaba mirando la mano. La izquierda. La que sujetaba la bolsa de papel. Y la que habías usado para quitarte el casco al entrar.
+
+[168] solo, @oscar, speaking slowly with a frown, remembering something, sitting in a wheelchair, close-up, afternoon light
+«Tú eres zurdo», dijo. «Esa noche, tirado en la carretera, vi al conductor. Se bajó. Me miró. Y marcó un número con la derecha. Con el pulgar derecho. Me acuerdo porque pensé que iba a llamar a una ambulancia.»
+
+[169] solo, @noa, freezing with a confused face, looking from one person to another, rehabilitation room, afternoon light
+Noa se quedó quieta. «Óscar, estabas en shock. Tenías un traumatismo.» «Sí», dijo él. «Eso me decían también de lo otro.» «¿Qué otro?» Óscar negó con la cabeza. «Nada. Da igual. Ya me dijeron que lo soñé.»
+
+[170] solo, @mateo, looking at a young man in a wheelchair with a tense intense gaze, trying to hide his emotion, afternoon light
+Lo otro. Quisiste preguntar. Pero Noa ya te sacaba por la puerta. Y en la puerta, en voz baja, te dijo algo que no esperabas.
+
+[171] solo, @noa, standing in a hospital corridor with crossed arms, doubtful serious face, whispering, afternoon light
+«Si no fuiste tú», susurró, furiosa, «¿por qué confesaste?» No contestaste. «Eso pensaba», dijo ella. Pero no lo dijo con odio. Lo dijo con duda. Era la primera vez.
+
+[172] no humans, a medical report on a clipboard with an expensive surgery quote, a wheelchair wheel in the background, close-up, no readable text
+En el mostrador viste una carpeta abierta. Un presupuesto. Una operación de columna en una clínica privada que podría devolverle a Óscar algo de movilidad. Ochenta mil euros. Imposible para ellos.
+
+[173] solo, @noa, sitting at a computer at night in a hospital nurses' station, filling out an official request form, determined face, dim light
+Esa noche, después del turno, Noa hizo algo que no había hecho en cinco años. Pidió por escrito al juzgado una copia completa del expediente de tu caso. Quería saber qué había firmado el hombre zurdo.
+
+[174] solo, @ernesto[dark grey suit, white shirt, dark red tie], reading a message on his phone in a dark office at night, his face turning cold and dangerous, city lights behind him
+Dos días después, en un despacho del piso cuarenta, alguien recibió un aviso de un funcionario amigo del juzgado. «La hermana de la víctima ha pedido el expediente Lara.» Tu padre dejó el móvil sobre la mesa. Y marcó otro número.
+
+# ================= CAPÍTULO 7: El secuestro =================
+
+[175] no humans, a grey sedan parked across the street from a rehabilitation center at night, two silhouettes inside, streetlight, rain
+Lo viste antes que nadie porque el general te había enseñado a mirar. Un coche gris, aparcado frente al centro de rehabilitación. Martes. Miércoles. Jueves. Siempre a la salida del turno de Noa.
+
+[176] solo, @mateo[dark grey hoodie, jeans], standing in the shadow of a doorway across a street at night, watching a parked car, focused cold eyes, rain
+Dos hombres dentro. No fumaban. No miraban el móvil. Esperaban como espera alguien que ha hecho guardias. Eso no eran matones de barrio. Eran profesionales.
+
+[177] no humans, an office with a security company logo of a shield on a glass door at night, a phone on a desk, dim light
+No sabías quién los mandaba. Pero sabías una cosa: Noa había pedido tu expediente hacía cuatro días. Y en esta historia, todo el que hacía preguntas acababa con los cristales rotos.
+
+[178] solo, @noa[navy blue nurse scrubs, black puffer jacket], walking alone out of a hospital building at night, tired face, holding her bag, wet street, streetlight
+El viernes, a las dos de la madrugada, Noa salió sola. Cansada, con los auriculares puestos. El coche gris arrancó despacio. Y por la otra esquina apareció una furgoneta blanca.
+
+[179] no humans, a white van with its sliding door opening on a dark wet street at night, headlights, rain
+La furgoneta frenó a su lado. La puerta lateral se abrió. Dos hombres con pasamontañas la agarraron por los brazos. Fue tan rápido que Noa no tuvo tiempo de gritar.
+
+[180] solo, @noa, being pulled by the arm by a masked man in black, screaming, terrified face, wet street, headlights, night
+Bueno, gritó. Un grito corto, ahogado por una mano con guante. Su bolso cayó al suelo. El mismo bolso que tú le habías recogido una semana antes.
+
+[181] solo, @mateo, sprinting across a wet street toward a van at night, determined furious face, rain splashing, headlights
+Corriste. No pensaste. El general te habría reñido: «Un general espera». Pero esa vez no había tiempo de esperar.
+
+[182] solo, @mateo, pulling a masked man away from a van door by the collar, fierce face, rain, headlights, motion blur, night
+Arrancaste al primero de la puerta de la furgoneta. Cayó de espaldas. Noa se soltó y se arrastró hasta la acera. Y entonces salieron los otros tres.
+
+[183] solo, @rocco[black tactical jacket, black gloves, balaclava rolled up on his head], stepping forward into a fighting stance, calm professional face, rain, headlights, night
+El que los mandaba se subió el pasamontañas. Cuarenta años, una cicatriz en la barbilla, hombros de armario. Se colocó en guardia. Una guardia que conocías. Igual que la tuya.
+
+[184] solo, @mateo, blocking a powerful punch with both forearms and sliding backward on a wet street, gritting his teeth, rain, night
+El primer golpe lo paraste con los antebrazos y te hizo retroceder dos metros. Ese hombre sabía lo que hacía. Y los otros dos te rodeaban por los lados.
+
+[185] solo, @mateo, taking a hit to the ribs, bending over in pain but keeping his guard up, rain, streetlight, night
+Te dieron en las costillas. Las mismas que te rompieron en el patio, cinco años antes. Respiraste. Caíste como te enseñaron. Te levantaste.
+
+[186] solo, @mateo, throwing a masked man over his shoulder onto the wet ground, intense face, rain, motion lines, night
+Tumbaste a uno con una llave de cadera. A otro le doblaste la muñeca hasta que soltó la porra. Pero el jefe volvió a entrar, y esta vez te dio de lleno.
+
+[187] solo, @mateo, falling backward onto a wet street, his shirt torn, a bronze wolf pendant flying out on its cord, rain, streetlight, night
+Caíste de espaldas en el asfalto. La sudadera se rasgó. Y el colgante del lobo salió volando sobre tu pecho, brillando bajo la farola.
+
+[188] solo, @rocco, freezing mid-step with wide shocked eyes, staring at something on the ground, rain, streetlight, close-up
+El jefe se quedó con el puño en el aire. Miraba el lobo. Lo miraba como el guardia de la fuente. Como el viejo del bar. Pero él sí sabía lo que veía.
+
+[189] solo, @rocco, raising one hand and shouting a command, rain, streetlight, night
+«¡Alto!», gritó. Con una voz que no era de matón. Era de cuartel. Los otros tres se quedaron quietos al instante, como si les hubieran apagado.
+
+[190] no humans, four pairs of black boots kneeling on a wet street in the rain at night, a streetlight reflection in the puddles, close-up
+Y entonces pasó algo que Noa recordaría toda su vida. Los cuatro hombres se arrodillaron en el asfalto mojado. Delante de ti. Bajo la lluvia.
+
+[191] solo, @rocco, kneeling on one knee on a wet street, head bowed respectfully, hand on his chest, rain, streetlight, night
+«Perdóneme, señor», dijo el jefe, con la cabeza baja. «Soy Rocco. Sargento primero de la Unidad Lobo. No sabíamos que la chica estaba bajo su protección.»
+
+[192] solo, @mateo, sitting up on a wet street, holding his ribs, staring at someone with total confusion, rain, night
+«¿Mi protección?», dijiste, sentado en el suelo, con la boca sangrando. «¿Qué unidad? Yo no soy nadie. Soy un peón.» Rocco levantó la vista. Miró el lobo. Te miró a ti.
+
+[193] solo, @rocco, kneeling and speaking with a serious face, pointing at a pendant off-screen, rain, streetlight, night
+«Ese colgante es del general Alcázar», dijo. «Es la insignia de la Unidad Lobo. Cuarenta hombres. Luchamos con él en la guerra. Le juramos lealtad a él… y a quien lleve el lobo.»
+
+[194] solo, @rocco, speaking with emotion in his eyes, kneeling in the rain, close-up, night
+«Cuando lo condenaron, desde el juzgado, nos dio su última orden: disolveos, no me busquéis, no toquéis el fondo, esperad al lobo. Hace ocho años que esperamos a alguien con él.»
+
+[195] solo, @mateo, looking down at a bronze wolf pendant in his palm, realization dawning on his face, rain dripping from his hair, night, close-up
+Te miraste la mano. El colgante. «Cuando lo necesites de verdad, ya sabrás qué hacer con él.» El viejo no te había dado un recuerdo. Te había dado un ejército.
+
+[196] solo, @mateo, standing up slowly in the rain, cold commanding face, looking down at someone, streetlight, night
+Te levantaste. Y te salió una voz que no sabías que tenías. «¿Quién os ha contratado? ¿Y por qué una enfermera?»
+
+[197] solo, @rocco, answering with a guilty face, still kneeling, rain, night
+«Una empresa de seguridad privada. Alfa. Muchos de los nuestros acabamos ahí cuando se disolvió la Unidad. Nos dijeron que esta mujer extorsionaba a una familia con documentos robados de un juzgado.»
+
+[198] solo, @rocco, speaking with a hard face, looking straight up at someone, rain, streetlight, night
+«El cliente es Ernesto Lara», dijo. «Construcciones Lara. Pidió que la asustáramos y que le quitáramos los papeles. Y que, si hacía falta, desapareciera unos días.»
+
+[199] solo, @mateo, frozen in the rain with an icy expression, fists trembling, streetlight, night, close-up
+Ernesto Lara. Tu padre. Había mandado secuestrar a la hermana del chico al que dejaron en silla de ruedas. Solo por pedir un expediente.
+
+[200] solo, @rocco, lowering his eyes with shame, kneeling, rain, night
+Y Rocco dijo algo más. Algo que no le habías preguntado. «Señor… Alfa ya había trabajado para Lara. Hace años. Un encargo en la cárcel. Pagar a unos presos para que un interno no saliera antes de tiempo.»
+
+[201] solo, @mateo, closing his eyes in pain, rain running down his face, streetlight, night, close-up
+Cerraste los ojos. Las costillas rotas en el patio. Las duchas. La lavandería. Los permisos perdidos. Los dos años convertidos en cinco. No fue mala suerte. Fue tu padre.
+
+[202] solo, @noa, sitting on a wet sidewalk hugging her knees, staring at someone with wide eyes and trembling lips, her bag beside her, rain, night
+Detrás de ti, Noa lo había oído todo. Sentada en la acera, empapada, temblando. Te miraba como se mira a alguien que no se entiende. «¿Quién eres tú?», susurró.
+
+[203] solo, @mateo, kneeling down to offer a hand to someone off-screen, gentle tired face, bleeding lip, rain, streetlight, night
+Te agachaste y le tendiste la mano. «Alguien que no conducía», dijiste. Ella no la cogió. Pero tampoco se apartó. Y esa noche, por primera vez, dejó que la acompañaras a casa.
+
+[204] solo, @rocco, standing at attention in the rain with three men behind him blurred, serious loyal face, night
+Rocco y sus hombres os siguieron a diez metros, en silencio. Al llegar al portal de Noa, Rocco se cuadró. «¿Órdenes, señor?» Tú lo pensaste un momento. Como un general.
+
+[205] solo, @mateo, giving an order with a calm cold face, rain, streetlight, night, close-up
+«Volved con Lara», dijiste. «Decidle que la chica no tenía papeles y que no la encontrasteis. Que crea que todo va bien.» Rocco sonrió por primera vez. «Sí, señor.»
+
+# ================= CAPÍTULO 8: La Unidad =================
+
+[206] no humans, an old boxing gym inside a warehouse at night, a worn ring, punching bags, a long wooden table with chairs, a military flag with a wolf emblem on the wall, warm light
+Dos noches después, Rocco te llevó a un gimnasio de boxeo viejo, en un polígono. Dentro te esperaban veintitrés hombres y mujeres de entre cuarenta y setenta años. Los que quedaban de la Unidad Lobo.
+
+[207] no humans, a group of middle-aged veterans in ordinary clothes standing at attention in a row inside an old gym, warm light, seen from behind
+Un cirujano. Una directora de banco. Un abogado. Dos policías jubilados. Un taxista. Un cocinero. Rocco. Al entrar tú, se pusieron todos en pie. A la vez. Como un cuartel.
+
+[208] solo, @mateo[black jacket, grey hoodie], standing at the head of a long table in an old gym, uncomfortable but steady face, holding a bronze wolf pendant, warm light
+Tú no sabías qué hacer con las manos. Hacía tres semanas dormías en un portal. «No soy el general», dijiste. «Soy un expresidiario con un colgante. No os voy a pedir que hagáis nada que él no haría.»
+
+[209] solo, silver-haired distinguished man in a grey suit with round glasses, standing at a table, speaking calmly, old gym, warm light
+Habló el abogado, un hombre de pelo plateado. «Entonces sabe usted la regla de la Unidad. Nunca contra inocentes. Nunca para matar. Quien rompe la regla, pierde el lobo. Hasta el general la cumplía.»
+
+[210] solo, @mateo, nodding seriously, hand on a table, old gym, warm light, close-up
+«Me parece bien», dijiste. «Porque yo no quiero un ejército para pegar a nadie. Quiero la verdad. Y la verdad no se consigue a golpes.»
+
+[211] no humans, a stack of white envelopes without sender tied with a rubber band on a wooden table, returned mail stamps, warm light, close-up
+Antes de irte, preguntaste por los sobres. Los de la pensión. El abogado sonrió con tristeza. «Éramos nosotros. Ocho años, un sobre al mes. Ella los devolvía todos. Es igual de orgullosa que su padre.»
+
+[212] solo, @mateo, looking at a stack of returned envelopes with a soft understanding expression, old gym, warm light
+Te contaron también que sabían de ti desde la noche de la fuente. El guardia los avisó. El viejo del bar, también. «Pero el lobo llama», dijo el abogado. «No se le busca. Esa era la orden.»
+
+[213] solo, @mateo, holding a returned envelope, thoughtful moved face, old gym, warm light
+No la habían abandonado. Habían obedecido. Y la habían cuidado como podían, a escondidas, sin que ella lo supiera. Igual que el general en la cárcel había cuidado de ti.
+
+[214] solo, @mateo, sitting on the edge of a ring in an empty gym, thinking deeply with a notebook on his knee, night, dim light
+Esa noche, solo en el gimnasio vacío, pensaste en qué usar primero el lobo. Podías ir a por tu padre. Podías ir a por Bruno. Era lo que te pedía la rabia.
+
+[215] solo, @mateo, writing in a notebook with his left hand, calm decided face, dim gym light, night
+Pero el general no te había dado el lobo para tu venganza. Te lo había dado con una misión. Tachaste dos líneas de la libreta. Y subrayaste la tercera: «Que nadie toque esta pensión».
+
+[216] no humans, a city hall archive room with metal shelves full of files, an open folder of urban planning documents under a desk lamp, close-up
+Te pasaste tres noches en el archivo del ayuntamiento, con lo que aprendiste en la biblioteca de la cárcel. Y lo encontraste. El permiso de derribo del barrio de San Roque tenía un fallo.
+
+[217] no humans, an old architectural plan of a neighborhood with a building highlighted in red ink, a protected heritage stamp, desk lamp, close-up
+La pensión estaba en un edificio catalogado de 1910. Protegido. Nadie podía tirarlo sin un informe de patrimonio. Tu padre se lo había saltado. Y nadie se había dado cuenta. Hasta ahora.
+
+[218] solo, silver-haired distinguished man in a grey suit with round glasses, filing documents at a courthouse window, satisfied face, daylight
+Tú encontraste el fallo. El abogado de la Unidad lo convirtió en una demanda. En cuarenta y ocho horas, un juez paralizó el derribo de todo San Roque. Sin violencia. Sin un solo golpe.
+
+[219] solo, @amparo[grey wool cardigan, apron], reading an official court letter in the doorway of an old guesthouse, hand over her mouth, tears of disbelief, daylight
+Amparo leyó la notificación tres veces en la puerta de la pensión. Luego se sentó en el escalón. Hacía ocho años que nadie le daba una buena noticia.
+
+[220] solo, @amparo, looking at someone with suspicious searching eyes, holding a letter, sitting on a doorstep, daylight
+«¿Has sido tú?», te preguntó. «Un abogado que conozco», dijiste. No mentías del todo. Ella te miró largo rato. Como su padre en el patio. Como si te estudiara.
+
+[221] no humans, a modern private hospital operating room with bright lights, surgical instruments on a tray, a surgical team in blue scrubs blurred, no faces
+Y luego, Óscar. El cirujano de la Unidad era jefe de columna en la mejor clínica privada de la ciudad. Le enseñaste el informe. Lo leyó en dos minutos. «Esto se puede operar», dijo. «Mañana.»
+
+[222] solo, @noa[navy blue nurse scrubs], standing in a hospital corridor holding a clipboard, shocked confused face, looking at someone off-screen, bright light
+Noa se enteró por el cirujano. «Su hermano entra en quirófano mañana a las ocho. Todo pagado.» «¿Por quién?» El cirujano solo dijo: «Por un amigo de la familia».
+
+[223] no humans, a clinic waiting room at dawn, empty plastic chairs, a vending machine, a large window with the sunrise, quiet
+Pasaste la noche en la sala de espera. No te tocaba estar allí. Pero no podías estar en otro sitio. Siete horas de operación. Noa, al otro lado de la sala, sin mirarte.
+
+[224] solo, silver-haired doctor in surgical scrubs with a surgical cap, coming out of an operating room, tired but satisfied smile, hospital corridor, morning light
+A las tres de la tarde salió el cirujano. «Ha ido bien. No volverá a correr. Pero con rehabilitación, podrá ponerse de pie con muletas. Y andar unos pasos.» Noa se tapó la cara con las manos.
+
+[225] solo, @noa, walking toward someone in a hospital corridor with tears on her face, confused emotional expression, afternoon light
+Cuando el cirujano se fue, Noa cruzó la sala hasta ti. Te miró a los ojos, muy cerca. Con las lágrimas aún en la cara. «¿Quién eres de verdad?», te preguntó.
+
+[226] solo, @mateo, looking at someone with a calm sad gentle face, hospital corridor, afternoon light, close-up
+«Todavía no te lo puedo decir», contestaste. «Pero te prometo una cosa. Cuando te lo diga, lo podré demostrar. Y tu hermano será el primero en saberlo.»
+
+[227] solo, @noa, looking at someone with conflicting emotions, biting her lip, hospital corridor, afternoon light
+Ella no dijo nada. Pero esa tarde, al irte, te alcanzó en la puerta. «El expediente llega el lunes», te dijo bajito. «Lo voy a leer contigo.»
+
+[228] no humans, the luxurious living room of a modern penthouse at night, a large window with city lights, a white architectural model of a tower on a glass table, a wine glass
+Mientras tanto, en un ático del centro, otra persona empezaba a hacerse preguntas. Clara. Esa noche tenía que presentar la torre a unos inversores. Y Bruno tenía que explicarle el voladizo.
+
+[229] solo, @clara[cream silk blouse, dark trousers], pointing at a detail of an architectural model with a curious face, penthouse living room, night
+«Explícame por qué flota», le pidió, señalando el voladizo de la maqueta. «Los inversores siempre preguntan. Tú lo diseñaste. Dímelo con tus palabras.»
+
+[230] solo, @bruno[white shirt, loosened tie, expensive watch], scratching his neck nervously, forced smile, avoiding eye contact, penthouse living room, night
+Bruno se rascó el cuello. «Es… por el cálculo. Por los materiales. Ya te lo pasaré por escrito.» «Lo diseñaste tú», insistió ella. «Que te lo pase el técnico, Clara. Estoy cansado.»
+
+[231] solo, @clara, staring at a man with sudden cold suspicion, holding a wine glass, penthouse at night, city lights behind
+Clara se quedó mirándolo. Cinco años de matrimonio. Y por primera vez se preguntó cuántas cosas de su marido eran suyas de verdad. Y en qué otra noche había oído a Bruno decir «no lo sé».
+
+[232] no humans, an old smartphone in a drawer under folded clothes, its screen lit showing a call log, dim bedroom light, night, close-up, no readable text
+Esa noche, cuando él se durmió, Clara abrió un cajón. Al fondo guardaba un móvil viejo. El que tenía hace cinco años. Nunca había borrado una llamada. La de las 2:47.
+
+# ================= CAPÍTULO 9: El copiloto =================
+
+[233] solo, @mateo[grey hoodie], sitting at a small desk in an attic room at night, staring at a notebook full of notes and arrows, intense thinking face, lamp light
+Había algo que no encajaba, y no te dejaba dormir. Tu padre había mandado secuestrar a una enfermera por pedir un expediente. Un caso cerrado. Con un culpable que había confesado: tú.
+
+[234] solo, @mateo, drawing a circle around a word in a notebook with his left hand, sharp eyes, lamp light, night, close-up
+Nadie arriesga tanto por proteger una mentira que ya nadie discute. Salvo que en ese expediente hubiera algo que pusiera en peligro a otra persona. No a Bruno. A él.
+
+[235] no humans, a thick court file with tabs and police reports spread on a kitchen table, two cups of coffee, a lamp, night
+El lunes, en la cocina de Noa, abristeis el expediente. Cuatrocientas páginas. Ella leía los informes médicos. Tú, los policiales. En silencio. Hasta la una de la madrugada.
+
+[236] no humans, a police statement page with a handwritten margin note circled in red ink, close-up, lamp light, no readable text
+Y en la página trescientos doce lo encontraste. Una declaración de Óscar en el hospital, tres semanas después del accidente. Dos líneas. Y una nota a mano del agente al margen: «Testigo desorientado. No tener en cuenta».
+
+[237] solo, @noa[oversized grey sweater], reading a document aloud with a trembling voice, kitchen at night, lamp light
+Noa la leyó en voz alta. «El declarante afirma que del coche bajaron dos hombres. Uno joven, que hizo una llamada. Y otro mayor, de pelo gris, que salió por el lado del copiloto, lo miró y se fue andando.»
+
+[238] solo, @noa, covering her mouth with her hand, shocked face, kitchen at night, lamp light
+«Lo otro», susurró Noa. «Lo que le dijeron que había soñado.» Se le cayeron los papeles de las manos. «Mateo… ¿quién era el de pelo gris?»
+
+[239] solo, @mateo, staring into the distance with a pale cold face, kitchen at night, lamp light, close-up
+No contestaste. No hacía falta. Volviste a ver la cocina de esa noche. Tu padre en bata, tranquilo, de brazos cruzados. Y su frase: «Bruno iba solo». Nadie le había preguntado nada.
+
+[240] solo, @lena[black turtleneck, grey long coat], sitting in a dark car with a laptop on her knees, focused sharp face, screen light, night
+Rocco te presentó a la persona que necesitabas. Lena. Treinta y cinco años, pelo platino corto, la mirada de alguien que ha pasado diez años en inteligencia militar. La más joven de la Unidad.
+
+[241] solo, @lena, pointing at a laptop screen showing an old taxi trip record and a map, serious face, inside a car at night
+En dos días encontró lo que la policía no buscó. Un taxi. La madrugada del dieciocho de marzo, a las 2:58. Recogió a un hombre que caminaba por el arcén, a un kilómetro de la carretera del río.
+
+[242] no humans, an old taxi receipt printout with a company credit card payment, close-up, laptop light, no readable text
+«Pagó con tarjeta», dijo Lena. «Una tarjeta de empresa. Construcciones Lara. A nombre de Ernesto Lara.» Lo dijo sin cambiar el tono. Como se dan las malas noticias en el ejército.
+
+[243] solo, @mateo, gripping the edge of a car door with white knuckles, eyes closed, night, close-up
+En el coche iban dos. Tu padre era el copiloto. Borracho, como Bruno. Le dio las llaves a su hijo favorito, vio al chico en el suelo, y se fue andando a buscar un taxi.
+
+[244] solo, @mateo, speaking slowly with a cold realization, inside a car at night, dim light
+Y entonces todo encajó. La tarjeta. Las cámaras de los coches graban el sonido. En esa grabación estaba la voz de tu padre. Diciéndole a Bruno: «Conduce tú, que no pasa nada».
+
+[245] solo, @mateo, looking at his own reflection in a dark car window, haunted face, night
+Por eso alguien cambió la tarjeta. No para salvar a Bruno. Tú ya cargabas con la culpa de Bruno. La cambiaron para salvar a Ernesto Lara. Y la única que pudo hacerlo fue tu madre. El crujido del pasillo.
+
+[246] solo, @mateo, whispering with tears he refuses to let fall, jaw clenched, night, close-up
+«No me sacrificaron por mi hermano», dijiste en voz baja. «Me sacrificaron por mi padre. Tenía un concurso público de cien millones. Un socio de la constructora en la cárcel lo habría perdido todo.»
+
+[247] solo, @lena, opening another folder on a laptop with a grim face, inside a car at night, screen light
+Pero Lena no había terminado. «Hay más», dijo. «He cruzado el nombre de tu padre con el caso del general. Los contratos de los cuarteles de hace nueve años. ¿Sabes qué empresa se los quedó?»
+
+[248] no humans, an old government contract document with a construction company logo of a crane and a minister's signature, close-up, laptop light, no readable text
+Construcciones Lara. Con un ministro que cobraba un tres por ciento. El general lo descubrió. Iba a denunciarlo. Un mes después, aparecieron armas del ejército en un almacén a su nombre.
+
+[249] solo, @mateo, looking at a document on a screen with a stunned face, inside a car at night
+Tu padre no solo te había metido en la cárcel. Había metido al general. Al hombre que te salvó la vida en esa misma cárcel. Dos inocentes en una celda. Y el mismo culpable fuera.
+
+[250] solo, @lena, speaking calmly while closing a laptop, inside a car at night, dim light
+«Y otra cosa», dijo Lena. «El general pidió el traslado a tu módulo dos semanas después de que entraras. Pidió estar con el hijo de Ernesto Lara.» Te miró. «No fue casualidad, Mateo. Te buscó.»
+
+[251] solo, @mateo, sitting in silence remembering, with a complicated expression of hurt and understanding, night
+Te acordaste de sus ojos grises clavados en ti, el primer año. Te vigilaba. Al hijo de su enemigo. Y aun así, cuando te vio en el suelo de la lavandería, se puso delante. Y te lo enseñó todo.
+
+[252] no humans, a smartphone screen in a woman's hand showing a viral video of a soaked young man in a fountain at night with a view counter, close-up, no readable text
+Esa misma noche, al volver a la pensión, Amparo te esperaba en el comedor. Con el móvil en la mano. El vídeo de la fuente. «El gemelo presidiario de los Lara».
+
+[253] solo, @amparo[grey wool cardigan], standing in a dim dining room holding a phone, furious betrayed face, tears of anger, night
+«Lara», dijo. «Eres un Lara. Los que nos rompen los cristales. Los que quieren tirar mi casa. ¿Para qué viniste? ¿Para espiarnos? ¿Para convencernos de vender?»
+
+[254] solo, @mateo, standing still with a calm sad face, taking a sealed envelope out of his jacket, dim dining room, night
+No te defendiste. Sacaste de la chaqueta lo único que no le habías dado. Una carta cerrada. El general te la dio con la dirección: «Dásela cuando ya no la necesites para que te crea».
+
+[255] no humans, an old handwritten letter on yellowed paper with a small drawing of a wolf at the bottom, held in trembling hands, dim light, close-up, no readable text
+Amparo reconoció la letra antes de abrirla. Llevaba ocho años devolviendo sus cartas sin leerlas. Esta la leyó de pie, en el comedor, con la luz del pasillo.
+
+[256] solo, @amparo, reading a letter with tears streaming down her face, hand over her mouth, dim dining room, night
+«Hija: el chico que te da esta carta es un Lara. Su padre me metió aquí. Y él es el hombre más honrado que he conocido. Si te ha ayudado sin pedir nada, ya sabes que no miento. Yo tampoco vendí esas armas.»
+
+[257] solo, @amparo, sitting down slowly on a chair, holding a letter to her chest, crying silently, dim dining room, night
+«Los sobres de cada mes eran de mis hombres», seguía la carta. «Perdóname por no haberte podido proteger. Él lo hará por mí.» Amparo se sentó. Lloró como se llora después de ocho años.
+
+[258] solo, @leo[black hoodie], standing on a staircase looking down with wet eyes, gripping the railing, dim light, night
+Leo lo había oído todo desde la escalera. Bajó despacio. Miró la carta. Te miró a ti. «Lo sabía», dijo, con la voz rota. «Sabía que mi abuelo no era un traidor.»
+
+[259] solo, @mateo, looking at a young man and his mother with a solemn determined face, dim dining room, night
+«No lo es», dijiste. «Y lo vamos a demostrar. Los dos casos tienen el mismo culpable. Y en tres semanas, ese culpable va a cortar una cinta delante de toda la ciudad.»
+
+# ================= CAPÍTULO 10: El banco =================
+
+[260] no humans, a desk covered with company annual reports and balance sheets, a calculator, a highlighter, a lamp, night, close-up, no readable text
+Para ganar a tu padre no bastaba con la verdad. Tu padre tenía abogados, jueces amigos y dinero. Así que hiciste lo que el general te enseñó: buscar dónde era débil.
+
+[261] solo, @mateo[grey hoodie], reading financial statements at a desk at night, underlining numbers with his left hand, focused face, lamp light
+Leíste las cuentas de Construcciones Lara de cinco años. Con lo que aprendiste en la biblioteca de la cárcel. Y encontraste el agujero. La torre se había comido la empresa.
+
+[262] no humans, a chart on a paper showing a rising debt line, a red circle around a date, close-up, lamp light, no readable text
+Cuarenta millones de deuda con un solo banco, por los sobrecostes de la torre y el dinero que Bruno desviaba con el acero barato. Vencía en un mes. Tu padre contaba con renovarla. Como siempre.
+
+[263] solo, elegant woman in her fifties in a navy suit with grey hair in a bun, sitting at a bank office desk, listening carefully, modern bank office, daylight
+Se lo llevaste a la directora de banco de la Unidad. Ella escuchó, hizo números y te miró por encima de las gafas. «El fondo de la Unidad lleva nueve años congelado. Pero con el lobo despierto, se puede mover.»
+
+[264] solo, elegant woman in a navy suit, signing a document with a fountain pen, confident smile, bank office, daylight
+En diez días, el fondo de los veteranos compró la deuda de Construcciones Lara al banco, que estaba deseando quitársela de encima. Sin ruido. A través de una sociedad con un nombre que nadie conocía: Estrella Partida.
+
+[265] no humans, a luxurious conference room on a high floor with a long glass table and a panoramic city view, empty leather chairs, daylight
+Tres semanas antes de la inauguración, tu padre pidió una reunión con el nuevo acreedor. Necesitaba una prórroga. Si no, la empresa entraba en quiebra antes de cortar la cinta.
+
+[266] solo, @ernesto[dark grey suit, white shirt, dark red tie], walking confidently into a conference room with a leather folder, arrogant smile, daylight
+Entró en la sala de juntas del banco con su mejor traje y su sonrisa de cerrar tratos. Con dos abogados. «Vengo a ver al representante de Estrella Partida», dijo. «Tengo prisa.»
+
+[267] solo, @mateo[charcoal grey suit, white shirt, no tie], sitting at the head of a long glass table, calm cold face, hands folded, panoramic city view behind, daylight
+Tú estabas sentado en la cabecera. Con un traje gris que te había prestado Rocco. Sin corbata. «Siéntate, papá», dijiste. «No tienes tanta prisa como crees.»
+
+[268] solo, @ernesto, stopping dead in a doorway, his smile disappearing, shocked pale face, daylight
+Tu padre se quedó en la puerta. Por primera vez en tu vida, lo viste sin palabras. Los dos abogados se miraron entre ellos. Uno empezó a recoger los papeles.
+
+[269] solo, @ernesto, gripping the back of a chair, forcing a cold smile, conference room, daylight
+«¿Qué broma es esta?», dijo al fin. «¿Te has hecho de seguridad del banco?» «Soy el representante de tu acreedor», contestaste. «Tus cuarenta millones son nuestros. Vencen en catorce días.»
+
+[270] solo, @ernesto, sitting down slowly at a table, controlled fury on his face, hands trembling slightly, conference room, daylight
+Se sentó. Despacio. Ernesto Lara, el hombre que te echó a la fuente, tenía que pedirle una prórroga a su hijo. Delante de sus abogados. «¿Cuánto quieres?», preguntó.
+
+[271] solo, @mateo, sliding a document across a glass table, calm calculating face, conference room, daylight
+«No quiero dinero», dijiste. «Te doy la prórroga hasta después de la inauguración. Con una condición: antes de abrir, una prueba de carga del voladizo, con un técnico independiente. Delante de la prensa.»
+
+[272] solo, @ernesto, laughing coldly in relief, leaning back in a chair, conference room, daylight
+Tu padre se rio. Pensaba que era un capricho de hijo dolido. «¿Eso es todo? La torre es perfecta. La diseñó tu hermano.» Firmó sin leer la letra pequeña. Como siempre había hecho con todo.
+
+[273] solo, @mateo, watching someone leave a room with a calm patient face, conference room, daylight
+No sabía que acababa de firmar el día y la hora de su caída. Un general espera a que el enemigo se equivoque. Y tu padre acababa de equivocarse.
+
+[274] no humans, police car lights in front of an old guesthouse at dawn, a police officer holding handcuffs, wet street
+Pero tu padre tampoco era tonto. Dos días después, a las seis de la mañana, la policía llamó a la puerta de la pensión. Una denuncia por robo en la obra de la torre. Contra Mateo Soler.
+
+[275] no humans, a security camera still image showing a man in a safety vest opening a glass display case at night, timestamp in the corner, grainy, no readable text
+Tenían una grabación: tú abriendo la vitrina de la maqueta de madrugada. Y una lista de lo robado: herramientas, cable, un ordenador. Nada de eso lo habías tocado.
+
+[276] solo, @mateo, sitting in a police interrogation room with handcuffs on the table, calm face, cold fluorescent light
+Pasaste el día en un calabozo. Con las mismas paredes grises que conocías. Tu padre quería que te revocaran la libertad condicional. Volver a empezar. Otros cinco años.
+
+[277] solo, silver-haired distinguished man in a grey suit with round glasses, presenting documents to a police officer at a desk, confident face, police station, daylight
+Pero a las siete de la tarde entró el abogado de la Unidad. Con el inventario real de la obra: no faltaba nada. Y con la grabación entera, que la denuncia había recortado: no te llevabas nada de la vitrina.
+
+[278] no humans, a police station exit door opening at night, a streetlight outside, rain
+A las nueve estabas en la calle. La denuncia, archivada. Y el abogado ya preparaba otra: por denuncia falsa. Contra la constructora. Tu padre había perdido su primera jugada. Pero aún le quedaba otra.
+
+[279] no humans, an old guesthouse on fire at night, orange flames coming out of the ground floor windows, smoke, a dark empty street
+Esa misma noche, a las tres, alguien tiró dos botellas con gasolina por la ventana rota del comedor de la pensión. El fuego subió por la escalera de madera en minutos.
+
+[280] solo, @mateo[grey t-shirt, jeans], running up a smoky wooden staircase with a wet towel over his mouth, orange firelight, determined face, night
+Te despertó el humo. Bajaste del segundo con una toalla mojada en la boca. Abajo, el fuego. Arriba, seis huéspedes, Leo y Amparo.
+
+[281] solo, @leo[black t-shirt], guiding an old man down a smoky hallway, holding him by the arm, determined face, orange firelight, night
+Leo ya estaba despierto. Llevaba a un huésped mayor del brazo por el pasillo, agachado, como le habías enseñado en las caídas. «¡Por la ventana del patio!», le gritaste. «¡Yo voy a por tu madre!»
+
+[282] solo, @mateo, kicking open a wooden door in a smoky hallway, orange firelight, night
+La puerta del cuarto de Amparo estaba atascada por el calor. La abriste de una patada. Ella estaba en el suelo, mareada por el humo, abrazada a una caja de lata.
+
+[283] solo, @mateo, stepping out of a smoky back door into a courtyard, coughing, soot on his face, firelight behind him, night
+La sacaste en brazos por la escalera de atrás, entre el humo. Al salir al patio, Leo ya había bajado a los seis huéspedes por la ventana. Todos vivos. Todos.
+
+[284] no humans, an old tin box on wet ground lit by firelight, containing old photographs and letters, close-up, night
+En el patio, Amparo abrió los ojos y lo primero que hizo fue buscar la caja de lata. Dentro estaban las fotos de su madre. Y la carta de su padre. Lo único que había salvado.
+
+[285] solo, @amparo[nightgown, blanket over her shoulders], sitting on wet ground holding a tin box, looking at someone with deep gratitude, firelight, night
+«Me has salvado la vida», dijo, tosiendo. «Él te ha enseñado bien.» Detrás, la pensión de su madre ardía. Pero la fachada de 1910 seguía en pie. Las piedras viejas no arden.
+
+[286] solo, @mateo, standing in front of a burning building at night, fists clenched, cold furious face, firelight on his face
+Mirabas el fuego y pensabas en tu padre. Un incendio con gente dentro. Seis huéspedes, una mujer y un chico. Ya no era un villano de despacho. Y ya no habría prórrogas.
+
+[287] no humans, a quiet small church at night with candles, empty wooden pews, dim warm light
+Al día siguiente, alguien te mandó un mensaje desde un número desconocido. «Iglesia de San Roque. A las diez de la noche. Sola o no vengo.» Firmaba con una sola letra: C.
+
+[288] solo, @clara[beige trench coat, scarf], sitting alone in a church pew at night, nervous scared face, hands holding an old phone, candle light
+Era Clara. Escondida bajo un pañuelo, sentada en el último banco. Tenía en las manos un móvil viejo. Te miró como se mira a alguien a quien se le debe una disculpa de cinco años.
+
+[289] solo, @clara, whispering with tears in her eyes, holding up an old phone with a call log, church at night, candle light
+«Esa noche Bruno me llamó a las 2:47», susurró. «Borracho. Llorando. "He hecho algo horrible, Clara. Papá dice que conduzca yo." Y colgó. Cuando confesaste tú, pensé que me había equivocado.»
+
+[290] solo, @clara, crying silently in a church pew, looking down in shame, candle light, night
+«Luego creí que habías elegido proteger a tu hermano antes que casarte conmigo», siguió. «Y Bruno estaba ahí. Consolándome.» Se tapó la cara. «Lo he guardado cinco años. Y tengo miedo, Mateo. Mucho miedo.»
+
+[291] solo, @mateo, sitting in a church pew looking at someone with calm compassion, candle light, night
+No le pediste nada. Ni que declarara, ni que le dejara. Solo le dijiste: «El día de la inauguración voy a contar la verdad. Si quieres estar, estarás. Si no, no te lo reprocharé nunca».
+
+# ================= CAPÍTULO 11: La prueba de carga =================
+
+[292] no humans, a modern glass tower with a curved cantilever balcony over a river on a sunny morning, press vans parked below, a crowd behind a barrier, cranes
+La víspera de la inauguración, la Torre Mirador brillaba sobre el río como en tus dibujos. Abajo, cámaras de televisión, periodistas y cien obreros. La prueba de carga que tu padre había firmado sin leer.
+
+[293] solo, middle-aged woman engineer in a white hard hat and a grey jacket, holding a tablet and checking instruments, serious professional face, construction site, daylight
+La técnica independiente la había elegido el Colegio de Arquitectos, no la Unidad. Ni tú ni tu padre la conocíais. Así tenía que ser. La verdad no vale nada si la compras.
+
+[294] solo, @bruno[navy suit, white hard hat], talking to reporters with a confident smile, gesturing toward a tower, construction site, daylight
+Bruno daba entrevistas al pie de la torre, con un casco blanco que no se había puesto nunca en cinco años de obra. «Una formalidad», decía a las cámaras. «Mi diseño está calculado al milímetro.»
+
+[295] no humans, large plastic water tanks being lifted by a crane onto a cantilever balcony of a glass tower, workers guiding them, daylight
+El protocolo era sencillo. Llenar el voladizo con tanques de agua hasta el peso de cincuenta personas, muebles y nieve. Y medir cuánto bajaba. Si bajaba más de dos centímetros, la torre no abría.
+
+[296] solo, @bruno, whispering urgently to a foreman, nervous face behind a forced smile, construction site, daylight
+Bruno se acercó a Gregorio en voz baja. «Llena los tanques a la mitad. Nadie lo va a comprobar.» Gregorio lo miró. Y miró hacia donde estabas tú, junto a la técnica, con un traje gris y un casco blanco.
+
+[297] solo, @gregorio[yellow safety vest, white hard hat], looking at someone with a conflicted face, hesitating, construction site, daylight
+Gregorio te reconoció. El peón Soler. El de la cárcel. El del informe que él tiró a la basura riéndose. Y ahora estabas al lado de la técnica, con los papeles del acreedor en la mano.
+
+[298] solo, @mateo[charcoal grey suit, white hard hat], speaking firmly to a foreman, calm serious face, construction site, daylight
+«Llénalos enteros, Gregorio», le dijiste. «Y saca a tu gente del voladizo en cuanto estén colocados. No es una formalidad. Es tu vida y la de tus hombres.»
+
+[299] no humans, close-up of a concrete beam joint with a hairline crack appearing, dust falling, daylight
+Con el sexto tanque, se oyó el primer crujido. Seco. Como una rama al partirse. La técnica miró su pantalla. Un centímetro. Dos. Tres.
+
+[300] solo, middle-aged woman engineer in a white hard hat, staring at a tablet with alarm, shouting, construction site, daylight
+«¡Está bajando!», gritó la técnica. «¡Cuatro centímetros! ¡Todo el mundo fuera del voladizo!» Pero arriba quedaban seis obreros, colocando el último tanque.
+
+[301] no humans, construction workers on a high cantilever balcony freezing in fear as dust falls from cracks, view from below, daylight
+Los seis se quedaron quietos. Paralizados. A cuarenta metros sobre el río. Y el voladizo seguía crujiendo bajo sus pies.
+
+[302] solo, @mateo, running up a concrete stairway of a building under construction, determined face, dust in the air, daylight
+Tú ya estabas subiendo. Sabías algo que nadie más sabía: dónde estaban los ocho anclajes que quedaban, y cuáles iban a romperse primero. Porque los habías contado de noche, con una escoba en la mano.
+
+[303] solo, @mateo, shouting instructions and pointing, standing at the edge of a cracking cantilever, dust, wind, daylight
+«¡Por la izquierda, pegados al muro!», gritaste. «¡Por la derecha no, está la viga rota! ¡Despacio, de uno en uno!» Los obreros te obedecieron. Ninguno sabía quién eras. Pero tu voz no dudaba.
+
+[304] no humans, steel emergency props being placed under a cracking concrete cantilever, dust in the air, daylight, dramatic angle from below
+Cuando el último obrero salió, cogiste los puntales de emergencia del montacargas. Los colocaste en los tres puntos que ya tenías marcados en tu libreta desde hacía semanas.
+
+[305] solo, @mateo, tightening a steel emergency prop with all his strength, sweat and dust on his face, gritting his teeth, daylight
+Apretaste el último puntal con las dos manos. El crujido paró. El voladizo se había hundido veintidós centímetros. Pero no cayó.
+
+[306] no humans, a crowd of journalists and workers behind a barrier looking up at a building, cameras raised, shocked faces blurred, daylight
+Abajo, nadie respiraba. Las cámaras de televisión lo habían grabado todo. El voladizo bajando. Los obreros saliendo. Y un hombre del traje gris apuntalándolo solo.
+
+[307] solo, @gregorio, taking off his hard hat and lowering his head in front of someone, ashamed emotional face, construction site, daylight
+Al bajar, Gregorio te esperaba al pie de la escalera. Se quitó el casco delante de todos. «Leí tu informe», dijo, con la voz ronca. «Lo tiré a la basura. Y hoy le has salvado la vida a mis chavales. Perdóname.»
+
+[308] no humans, construction workers in vests and helmets applauding, a sunny construction site, blurred background
+Y entonces los cien obreros empezaron a aplaudir. Los mismos que se reían cuando subías sacos por la escalera. Esta vez aplaudían al peón Soler.
+
+[309] solo, middle-aged woman engineer in a white hard hat, holding a printed report and questioning someone off-screen, stern face, daylight
+La técnica fue directa a Bruno, con los datos en la tableta. «Los anclajes son la mitad de los del proyecto. Y de otro acero. ¿Por qué cambió usted el cálculo de su propio diseño?»
+
+[310] solo, @bruno, sweating under a hard hat in front of cameras, stammering, panicked face, daylight
+Bruno abrió la boca delante de diez cámaras. Y no le salió nada. «Yo… es… fue el técnico. Los materiales. No lo sé.» No lo sabía. Nunca lo había sabido. Porque nunca fue suyo.
+
+[311] solo, @mateo, handing a folder with documents to an engineer, calm face, construction site, daylight
+Tú le diste a la técnica una carpeta. Tu informe anónimo, con fecha de hacía dos meses. Los cálculos. Las facturas del acero. «Lo mandé a la constructora y al ayuntamiento», dijiste. «Nadie lo leyó.»
+
+[312] solo, @ernesto[dark grey suit], talking angrily on a phone in the back seat of a black car, pale furious face, daylight
+Tu padre lo vio todo desde el coche. Hizo cuatro llamadas. Y a las dos horas, la constructora sacó un comunicado: «Incidente técnico menor. La inauguración se mantiene. El voladizo queda clausurado temporalmente».
+
+[313] solo, @mateo, reading a phone message with a faint cold smile, standing by a river at sunset
+Leíste el comunicado y casi sonreíste. Tu padre no podía suspenderla. Habría reconocido el error. Y tú lo necesitabas allí mañana. Con los mismos invitados de la fuente. Y el general había dicho: deja que el enemigo se equivoque.
+
+[314] no humans, a city rooftop at sunset overlooking a river and a distant glass tower, an old bench, warm orange sky
+Al atardecer, Noa te encontró en la azotea del hospital. Había visto el vídeo en las noticias como toda la ciudad. Se sentó a tu lado en el banco, sin decir nada.
+
+[315] solo, @noa[navy blue nurse scrubs, black puffer jacket], sitting on a rooftop bench at sunset, looking at someone with soft tired eyes, warm light
+«Óscar ha dado hoy tres pasos con las muletas», te dijo. «Tres. Se ha reído como cuando tenía diecinueve años.» Y luego, más bajo: «Lo he visto en la tele. Eras tú el que sabía dónde se iba a romper».
+
+[316] solo, @noa, looking down at her hands with a serious face, sunset rooftop, warm light
+«Te creo», dijo. «Del todo. Desde hoy.» Se quedó callada un momento. «Y no sé qué hacer con eso. Porque durante cinco años te odié. Y ahora no sé lo que siento.»
+
+[317] solo, @mateo, looking at someone with a gentle quiet smile, sunset rooftop, warm orange light, close-up
+«No tienes que saberlo hoy», dijiste. Ella apoyó la cabeza en tu hombro. Solo un momento. El sol se ponía detrás de tu torre herida. Mañana era la inauguración.
+
+# ================= CAPÍTULO 12: La inauguración =================
+
+[318] no humans, the plaza in front of a modern glass tower decorated for an inauguration at night, a red ribbon across the entrance, a stage with a big screen, elegant guests, warm lights, a river behind
+La noche de la inauguración, la plaza de la Torre Mirador estaba llena. Trescientos invitados. Los mismos de la fuente. Las mismas copas. La misma señora de las perlas.
+
+[319] solo, @ernesto[black tuxedo, white shirt, black bow tie], giving a speech at a podium with a confident smile, big screen behind him, night, warm lights
+Tu padre habló desde el escenario. «Un incidente técnico no va a empañar el mayor proyecto de esta ciudad. Esta torre es el sueño de mi hijo Bruno. De esta familia.» Aplausos.
+
+[320] solo, @bruno[black tuxedo], standing on a stage holding giant golden scissors, nervous smile, dark circles under his eyes, night
+Bruno subió con unas tijeras doradas para cortar la cinta. Sonreía. Pero tenía ojeras de no dormir. Llevaba una semana viendo su cara balbuceando en todos los telediarios.
+
+[321] no humans, a group of people walking toward a plaza at night seen from behind, a young man on crutches, construction workers in vests, warm lights
+Entonces llegasteis vosotros. Tú delante. Detrás, Noa y Óscar, de pie con sus muletas. Amparo y Leo. Gregorio y cuarenta obreros con los chalecos puestos. Y Rocco con sus hombres, a diez metros.
+
+[322] solo, large bald security guard in a black suit with an earpiece, stepping aside and giving a discreet military salute, night, warm lights
+En la entrada, un guardia intentó pararos. Pero otro, uno grande y calvo, se le adelantó. El de la fuente. Se apartó, se cuadró y te hizo el saludo. «Señor.» Te dejó pasar.
+
+[323] solo, @mateo[charcoal grey suit, white shirt, no tie, bronze wolf pendant over his shirt], walking calmly through a crowd of elegant guests at night, guests stepping aside, serious calm face
+Caminaste entre los invitados como la noche de la fuente. Pero ahora nadie se reía. Te reconocían de la tele. El del voladizo. El colgante del lobo, esta vez, por fuera de la camisa.
+
+[324] solo, @ernesto, gripping a podium with a strained smile, looking at someone approaching, night, warm lights
+Tu padre te vio llegar al escenario. No podía echarte delante de las cámaras. No esta vez. «Mi otro hijo», dijo al micrófono, forzando una sonrisa. «Ha venido a felicitar a su hermano.»
+
+[325] solo, @mateo, holding a microphone on a stage, speaking calmly to a crowd, big screen behind him, night
+«Vengo como representante de Estrella Partida», dijiste. «El acreedor de esta empresa. Y el contrato que firmaste me da derecho a hablar antes del corte de la cinta. Página nueve. No la leíste.»
+
+[326] no humans, a big screen on a stage showing old pencil architectural sketches of a tower with a curved balcony and dates in the corner, night, no readable text
+En la pantalla aparecieron unos dibujos a lápiz. La torre, el voladizo, el río. Con fechas de hace seis años. Y una firma: M. Lara. Los había guardado alguien durante cinco años. Clara.
+
+[327] solo, @clara[dark green evening dress], standing up in the audience holding an old sketchbook, pale determined face, night, warm lights
+Clara se levantó de la primera fila con el cuaderno en la mano. El cuaderno que te dejaste en su casa la semana antes del accidente. «Estos son los planos originales», dijo. «Los dibujó Mateo. Yo los vi nacer.»
+
+[328] no humans, a big screen showing a night video of a soaked young man in a fountain and a laughing man recording him, garden party lights, no readable text
+Luego pusiste en la pantalla el vídeo de la fuente. El de Bruno. Tú, empapado en el agua. Él riéndose. Los invitados se miraron entre ellos. Algunos bajaron la vista. Habían aplaudido.
+
+[329] solo, @mateo, speaking into a microphone with a firm calm face, stage, night, close-up
+«Hace cinco años», dijiste, «me declaré culpable de un atropello que no cometí. Lo hice porque mi madre me lo pidió de rodillas. Hoy voy a contar quién conducía. Y quién iba al lado.»
+
+[330] solo, @oscar[navy jacket], standing on crutches in front of a crowd, speaking with a steady brave voice, night, warm lights
+Óscar habló de pie, apoyado en las muletas. «Esa noche bajaron dos hombres de ese coche. El conductor marcó con la mano derecha. Mateo es zurdo. El otro era mayor, de pelo gris. Se fue andando. Me dijeron que lo había soñado.»
+
+[331] no humans, a big screen showing a taxi receipt and a company credit card record with a map of a river road, night, no readable text
+Detrás de él, en la pantalla, el recibo del taxi de las 2:58. A un kilómetro del atropello. Pagado con la tarjeta de empresa de Ernesto Lara. Un murmullo recorrió la plaza.
+
+[332] solo, @ernesto, laughing coldly into a microphone, contemptuous face, stage, night
+Tu padre se rio en el micrófono. «¿Un taxi? Esa noche cené fuera y volví en taxi. ¿Y qué? Un chico en shock y un recibo. Sin pruebas, esto es difamación. Mis abogados…»
+
+[333] solo, @montse[dark blue evening dress, pearl necklace], standing up slowly from a front row seat, trembling, holding a small black memory card, night, warm lights
+Entonces tu madre se levantó. Montse. En la primera fila. Temblando. Con algo pequeño y negro entre los dedos. Una tarjeta de memoria. La de tu coche.
+
+[334] solo, @montse, speaking with tears and a broken voice, holding a memory card up, night, close-up
+«Esa noche te vi esconderla en la maqueta, hijo», dijo. «Y la cambié por otra. Porque en ella estaba la voz de tu padre. La guardé cinco años, como tú.»
+
+[335] solo, @montse, turning to look at her husband with tears and anger, holding a memory card tightly, night, warm lights
+Miró a su marido. «Por si un día me hacía falta. Y ese día llegó cuando vi arder una pensión con gente dentro.»
+
+[336] solo, @ernesto, turning pale and taking a step back on a stage, his mouth open, night, close-up
+Tu padre se quedó blanco. Había creído toda la vida que su mujer la había destruido. Que esa noche había acabado en la basura.
+
+[337] no humans, a sound waveform on a big screen over a black video image of a car interior at night, a dashboard, headlights on a dark road, no readable text
+La pusiste. La pantalla se quedó negra. Y luego, la carretera del río de noche. Y dos voces. La de Bruno, borracho: «Papá, no puedo conducir». Y la de tu padre: «Conduce tú, que no pasa nada. Yo no puedo perder el carné ahora».
+
+[338] no humans, a crowd of elegant guests frozen in shock at night, some covering their mouths, phones raised, warm lights blurred
+Un golpe. Un frenazo. Un silencio horrible. Y otra vez tu padre: «Me voy andando. Tú llévate el coche a casa. Aquí no ha pasado nada». En la plaza no se oía ni una copa.
+
+[339] solo, @clara, holding up an old phone with a call log on its screen, speaking firmly with tears in her eyes, night, warm lights
+Y Clara dio un paso adelante. Con el móvil viejo en alto. «A las 2:47, Bruno me llamó desde la carretera del río. Me dijo: "Papá dice que conduzca yo".»
+
+[340] solo, @clara, standing straight with a brave sad face, lowering an old phone, night, warm lights
+«Lo callé cinco años», siguió. «Sé lo que me va a pasar por haberlo callado. Lo acepto. Ya he callado bastante.»
+
+[341] solo, @bruno, dropping golden scissors on a stage and falling to his knees, crying, broken face, night, spotlight
+Las tijeras doradas cayeron al suelo. Bruno se derrumbó. De rodillas, en el escenario, delante de las cámaras. «Conducía yo», sollozó. «Papá me dio las llaves. Mateo no hizo nada. Nunca hizo nada.»
+
+[342] solo, @lena[black turtleneck, grey long coat], walking onto a stage handing a thick folder to a man in a suit, serious face, night, warm lights
+Pero aún no había terminado. Lena subió al escenario con una carpeta. Y se la entregó a un hombre de traje que había entrado discretamente por un lateral: el fiscal anticorrupción.
+
+[343] no humans, old government contracts and bank transfer documents spread on a podium with a minister's signature and a construction company logo, close-up, warm light, no readable text
+Los contratos de los cuarteles de hace nueve años. Las comisiones al ministro. Y el almacén de armas a nombre del general, alquilado por una empresa pantalla de Construcciones Lara. Todo con fechas y firmas.
+
+[344] solo, @mateo, speaking into a microphone with a solemn face, looking at the crowd, stage, night
+«Hace nueve años», dijiste, «mi padre metió en la cárcel a un general que lo descubrió robando a los soldados. Y hace cinco, me metió a mí. Ese general me salvó la vida ahí dentro. Se llama Teodoro Alcázar. Y es inocente.»
+
+[345] solo, @amparo[simple black dress], standing in a crowd crying with pride, holding her son's arm, night, warm lights
+Entre la gente, Amparo se tapó la boca con las dos manos. Leo, a su lado, lloraba sin esconderse. Ocho años siendo la familia del traidor. Y alguien acababa de decir delante de toda la ciudad que no lo era.
+
+[346] no humans, police officers walking onto a stage at night, flashing blue lights reflecting on a glass tower, guests stepping back
+Subieron los policías. Por el atropello y la omisión de socorro. Por los contratos. Y por el incendio: Rocco había encontrado al que tiró las botellas, y había confesado quién pagó. Tu padre no se resistió.
+
+[347] solo, @ernesto, being led away in handcuffs, looking back over his shoulder with hatred, flashing blue lights, night
+Al pasar a tu lado, te miró con odio. «Eres un desagradecido», escupió. «Te lo di todo.» Tú no te apartaste. «Me echaste a una fuente, papá», dijiste. «Hoy te has caído tú. Delante de los mismos.»
+
+[348] no humans, the elegant crowd from the side, all heads turned toward the police leaving, silent, warm lights, the glass tower glowing behind
+Los trescientos invitados le vieron irse. Nadie aplaudió esta vez. Nadie grabó riéndose. La señora de las perlas bajó la cabeza cuando pasaste a su lado.
+
+[349] solo, @mateo, picking up golden scissors from the stage floor, calm face, the red ribbon in front of him, night, warm lights
+Recogiste del suelo las tijeras doradas. Miraste la cinta roja. Y no la cortaste. «Esta torre no abre hasta que esté bien hecha», dijiste. «Como la diseñé. Con sus dieciséis anclajes.»
+
+# ================= CAPÍTULO 13: El lobo =================
+
+[350] no humans, a courtroom with tall windows and wooden benches on a sunny morning, a judge's bench, an empty defendant chair
+Tres meses después, el Tribunal Supremo revisó tu condena. Con la grabación, la confesión de Bruno, la llamada de Clara y la declaración de Óscar. Tardó una mañana.
+
+[351] solo, @mateo[charcoal grey suit, white shirt], standing in a courtroom with his eyes closed, deep breath, sunlight from tall windows on his face
+«Se anula la condena de Mateo Lara Soler.» Cinco años. Mil ochocientos veintiséis días. Y una frase que se tardaba tres segundos en leer. Cerraste los ojos. Respiraste.
+
+[352] no humans, a prison visiting room with a glass partition and two phones, two empty plastic chairs facing each other, fluorescent light
+Una semana después fuiste a la cárcel. Por primera vez, de visita. Al otro lado del cristal estaba tu misma cara. Con la ropa gris. Sin peinar hacia atrás.
+
+[353] solo, @bruno[grey tracksuit], sitting behind a glass partition holding a phone, crying with shame, messy hair, fluorescent light
+Bruno no podía mirarte. «Me merezco esto», dijo por el teléfono. «Y más. Te quité cinco años, tu torre, tu novia… y me reía.» Se tapó la cara. «¿Por qué has venido?»
+
+[354] solo, @mateo, holding a phone behind a glass partition, calm tired face, fluorescent light, close-up
+«Porque eres mi hermano», dijiste. «Y porque aquí dentro se aprende mucho, si alguien te enseña.» Le pasaste por la ranura una libreta. La primera página decía: «Levántate a las cinco».
+
+[355] solo, @montse[beige coat], sitting alone on a bench outside a courthouse, holding a tissue, ashamed sad face, cloudy daylight
+Tu madre declaró contra su marido. Le cayó una condena pequeña por encubrimiento, sin cárcel. Te pidió perdón por carta, tres veces. La tercera, le contestaste. Una sola línea: «Empieza por pedírselo a Óscar».
+
+[356] solo, @clara[beige trench coat], walking alone on a city street carrying a cardboard box with office things, sad but relieved face, daylight
+Clara perdió su puesto en la constructora y su matrimonio el mismo mes. Declaró ante el juez por haber callado. Se fue a trabajar a otra ciudad. Antes de irse te dejó una nota: «Gracias por no odiarme».
+
+[357] no humans, a newspaper front page with a photo of an old general in uniform and a big headline, on a kitchen table with a cup of coffee, morning light, no readable text
+Y en primavera llegó la noticia que más esperabas. La Audiencia anuló la condena del general Teodoro Alcázar. El ministro, detenido. Ocho años después, la palabra «traidor» desapareció de los periódicos.
+
+[358] no humans, a heavy metal prison gate at dawn, grey concrete walls, light rain, puddles on an empty road
+El día que salió llovía. Como el día que saliste tú. La puerta de hierro se abrió con el mismo golpe seco. Y esta vez, en la carretera, sí había alguien esperando.
+
+[359] solo, @teodoro[old grey coat, white shirt], stepping out of a prison gate in the rain at dawn, stopping in surprise, emotional face
+El general salió con una bolsa de plástico y el abrigo con el que entró ocho años antes. Se paró en seco. Al otro lado de la carretera había veintitrés personas bajo la lluvia.
+
+[360] no humans, a row of middle-aged men and women in ordinary clothes standing at attention in the rain on a roadside at dawn, saluting, seen from behind
+La Unidad Lobo. En fila. El cirujano, la directora del banco, el abogado, Lena, Rocco, el viejo del bar con su bastón. Todos se cuadraron a la vez. Y le hicieron el saludo.
+
+[361] solo, @amparo[dark coat], standing in the rain at dawn holding an umbrella, crying with a trembling smile, looking at someone ahead
+Y delante de todos, con un paraguas, estaba Amparo. La hija que llevaba ocho años sin escribirle. Dio un paso. Luego otro. Y echó a correr.
+
+[362] solo, @teodoro, standing still in the rain with tears running down his weathered face, opening his arms, dawn
+El general, el hombre que tumbó a tres presos sin despeinarse, se echó a llorar en mitad de la carretera. «Hija», dijo solo. Y no pudo decir nada más.
+
+[363] solo, @leo[military academy uniform], standing at attention in the rain and giving a perfect military salute, proud emotional face, dawn
+Leo esperó su turno. Se cuadró delante de su abuelo con el uniforme de la academia militar. Lo habían admitido en su cuarto intento. Ya nadie decía «con ese apellido, no».
+
+[364] solo, @teodoro, returning a military salute with emotion, rain, dawn, close-up
+El general le devolvió el saludo. Despacio. Con la mano temblando. «Has aprendido a ponerte recto», le dijo. Leo miró hacia ti. «Me enseñó él. A las cinco de la mañana.»
+
+[365] solo, @mateo[dark coat], standing a little apart in the rain at dawn, holding out a bronze wolf pendant in his palm, calm smile
+Tú esperaste el último. Te acercaste con el colgante en la mano. «Esto es suyo, mi general. Ya no lo necesito.» Se lo ofreciste. Él no lo cogió.
+
+[366] solo, @teodoro, closing someone's hand around a pendant with both of his hands, warm smile, rain, dawn, close-up
+Te cerró la mano con las suyas. «Un lobo solo tiene un dueño», dijo. «Y no es el que lo fabrica. Es el que lo usa sin romper la regla. Tú no la rompiste ni una vez. El lobo es tuyo, soldado.»
+
+[367] solo, @teodoro, smiling with tired kind eyes, putting a hand on someone's shoulder, rain, dawn
+Luego te miró como en el patio el primer año. «Te vigilé porque eras su hijo», te confesó. «Y luego te enseñé porque eras el mejor hombre de esa cárcel. Yo también tenía que pedirte perdón.» «Ya está pagado», dijiste.
+
+[368] no humans, a restored old guesthouse facade from 1910 with new windows and flower boxes, a new sign, sunny day, a quiet street
+Ese verano reconstruiste la pensión San Roque con tus manos. La fachada de 1910, intacta. Cristales nuevos. Una caldera nueva. Y en la puerta, un letrero pequeño: «Aquí siempre hay sitio».
+
+[369] no humans, a modern glass tower with a curved cantilever balcony over a river on a sunny day, people walking on a riverside promenade, a plaque at the entrance
+La Torre Mirador abrió en otoño. Con sus dieciséis anclajes de acero especial. Y en la placa de la entrada, por fin, el nombre de quien la dibujó: Mateo Lara.
+
+[370] solo, @oscar[casual blue sweater], standing with crutches on a glass balcony overlooking a river, laughing, sunny day
+El piso del voladizo, el más alto, no lo vendiste. Lo adaptaste para una silla de ruedas y se lo diste a Óscar. «Para ver el río desde la cama», le dijiste. Él se rio y dio cinco pasos hasta la barandilla.
+
+[371] solo, @noa[white blouse, light cardigan], standing on a glass balcony at sunset with the wind in her hair, smiling softly, river behind her, warm light
+Noa estaba en el balcón, mirando el río. Ya no llevaba el uniforme. Te sonrió como no te había sonreído nunca. La misma chica que un día te escupió a los pies en una esquina.
+
+[372] solo, @noa, laughing softly and taking someone's hand, sunset balcony, warm light, close-up
+«Durante cinco años te odié», te dijo. «Y ahora no sé cómo se deja de querer a alguien así.» «No se deja», contestaste. Ella se rio. Y esta vez fue ella la que te besó.
+
+[373] no humans, two hands holding each other on a glass railing above a river at sunset, a bronze wolf pendant hanging from one wrist, warm light, close-up
+Abajo, el río. Arriba, tu edificio. Y en tu muñeca, el lobo y la estrella partida. Cinco años en la cárcel por otro. Y saliste con lo único que nadie te podía quitar: la gente que eliges.
+
+[374] solo, @mateo, looking at the camera with a calm warm smile on a balcony at sunset, river and city behind him, close-up
+Esta fue mi historia. Ahora te pregunto a ti: si tu madre se arrodillara en la cocina a las cuatro de la madrugada y te pidiera cargar con la culpa de tu hermano… ¿qué harías? Te leo en los comentarios.
