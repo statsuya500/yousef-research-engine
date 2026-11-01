@@ -1,4 +1,4 @@
-# «Cumplí 5 años de cárcel por mi hermano gemelo… y salí con el amuleto de un general» — PLAN v4 (pendiente del título)
+# «Mis padres me mandaron a la cárcel por mi gemelo… y salí con el ejército de un general» — PLAN v4
 
 Idea elegida por el usuario: la 1 de las cinco propuestas, con su cambio: en la cárcel, un general condenado injustamente
 le enseña artes marciales y al salir le regala un amuleto sin decirle qué significa. Ese amuleto manda sobre una red de
@@ -149,4 +149,63 @@ sacrificaron por su padre. Y la constructora de Ernesto es la misma que hundió 
 - Noa acaba con Mateo.
 - Duración: 80 min o más.
 - El amuleto no se entiende hasta salvar a Noa; los secuestradores son agentes de la Unidad y se lo explican.
-- Título: no le vale el primero; pendiente de elegir.
+- Título: «Mis padres me mandaron a la cárcel por mi gemelo… y salí con el ejército de un general».
+
+## Análisis antes de escribir (revisar-guion sobre el plan v4)
+
+### Rompen la historia si no se arreglan
+
+| # | Hueco | Arreglo |
+|---|---|---|
+| 1 | Si la Unidad Lobo es tan poderosa, ¿por qué no ha sacado al general en 8 años? | Al ser condenado, el general ordenó no moverse: cualquier ayuda los habría hecho pasar por cómplices del tráfico de armas. «Esperad al lobo». El colgante es la orden de despertar, y el general solo se lo da a alguien de fuera |
+| 2 | Que el compañero de celda de Mateo sea justo la víctima de la empresa de su padre es mucha casualidad | No es casualidad: el general pidió el traslado a su módulo al saber que entraba un Lara. Al principio lo vigila como al hijo del enemigo; por eso tarda un año en enseñarle nada. Se revela en el giro |
+| 3 | ¿Por qué Mateo tarda hasta el capítulo 9 en mirar la tarjeta? | La escondió dentro de la maqueta del edificio, que ahora está en el despacho de Bruno. La recupera en el cap. 5, cuando trabaja en la obra, y está vacía: final del cap. 5. En el giro (cap. 9) se descubre quién la cambió y qué había en ella |
+| 4 | ¿Por qué Ernesto guardaría una prueba contra sí mismo? | No la guarda él: la cambió **Montse** esa noche y la escondió sin decírselo a nadie. Ernesto cree que se destruyó. Así su entrega en la inauguración pesa más |
+| 5 | ¿Cómo sabe Óscar que el conductor no era zurdo, y por qué no habló en el juicio? | El conductor bajó, le miró y marcó con la derecha antes de huir. Óscar estuvo tres semanas en coma y Mateo se declaró culpable: hubo **conformidad**, no juicio, y nadie le tomó declaración. Cuando contó que eran dos, le dijeron que era el trauma |
+| 6 | Agentes de la Unidad secuestrando a una enfermera rompen su propia regla | Les dijeron que Noa extorsionaba a la familia con documentos robados. Al ver el lobo y escuchar a Mateo, entienden que les mintieron. Además, eran del grupo que se fue a la seguridad privada al disolverse la Unidad |
+
+### Se notarían
+
+| # | Problema | Arreglo |
+|---|---|---|
+| 7 | El guardia de la fuente ve el lobo y no hace nada | Avisa a la Unidad: desde esa noche lo vigilan. Explica que los agentes reaccionen tan rápido en el cap. 7 |
+| 8 | ¿Cuándo descubre Mateo que su padre pagó las palizas? | En el cap. 7, los secuestradores lo cuentan: la misma empresa «gestionó» las palizas en la cárcel. Golpe doble antes del giro |
+| 9 | Clara se queda sin función | Cap. 12: declara que Bruno llegó borracho esa noche con las llaves del coche. Su arco: creyó la confesión de Mateo y se casó con el hermano «bueno» |
+| 10 | El barrio de la pensión, segunda casualidad | Ernesto sabe quién es Amparo. Derribar su pensión es su forma de seguir castigando al general |
+| 11 | Demasiados nombres (~17) para un vídeo narrado | Solo llevan nombre los que vuelven: Lena (la agente) y Rocco (el jefe de los secuestradores, luego su escolta). El cirujano, la banquera y el abogado van por su cargo |
+| 12 | ¿Por qué Bruno firma como arquitecto? | Los dos estudiaron Arquitectura; Bruno es mediocre. El proyecto se presentó a nombre del estudio de la empresa y Bruno, como director, lo firmó. Los bocetos de Mateo tienen fecha |
+| 13 | Noa se enamora del hombre que cree que dejó a su hermano en silla de ruedas | Escalones claros: escupe (5), duda por Óscar (6), él la salva (7), la verdad (9), y solo después el amor (11-13) |
+
+### Detalles de imagen (formato local)
+
+- **Gemelos:** nunca los dos en la misma imagen (el filtro lo toma como «2 rostros»). Se usa la viñeta doble: Bruno, peinado
+  hacia atrás y con traje; Mateo, pelo corto descuidado, ropa de obra o sudadera.
+- **El amuleto:** objeto pequeño. Planos de solo el objeto: «bronze pendant with a wolf head and a broken star, close-up».
+- **Peleas y los cuatro arrodillados:** en planos de un solo personaje o de escenario, nunca con cuerpos que se tocan.
+- **Fuego, lluvia y fuente:** lugares de noche nuevos con la misma luz que la escalera de «puerta».
+- **Cárcel:** patio, celda, comedor y biblioteca. Uniforme naranja o gris fijo para todos.
+
+### Ritmo (vuelta de tortilla o humillación cada 7-10 min)
+
+| Min | Momento |
+|---|---|
+| 0 | La fuente |
+| ~10 | La primera paliza en la cárcel |
+| ~20 | El general lo salva |
+| ~25 | Amparo le cierra la puerta |
+| ~32 | Gregorio lo humilla; Noa le escupe; la tarjeta vacía |
+| ~40 | Los matones en la pensión |
+| ~45 | El secuestro y el «¡Alto!» |
+| ~55 | El giro: el padre era el copiloto |
+| ~62 | El padre pidiéndole una prórroga a su hijo |
+| ~68 | El fuego en la pensión |
+| ~75 | La prueba de carga |
+| ~82 | La inauguración |
+| ~88 | El general sale libre |
+
+### Riesgo de fondo
+
+- **El ejército secreto se aleja del «cero fantasía»** que pide PARAMETROS.md (el vídeo que mejor funcionó era realista).
+  Lo compensa que sean veteranos con trabajos normales, sin superpoderes, y que los golpes finales los dé Mateo con pruebas.
+- **Lo que tiene a favor:** traición de los padres (como «Mi hermano me empujó»), un agravio que se ve en un segundo (la
+  fuente), gemelos idénticos (el ADN no los distingue: por eso bastó su confesión) y una promesa clara en el título.
