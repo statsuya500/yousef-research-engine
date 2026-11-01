@@ -1,4 +1,4 @@
-# «Cumplí 5 años de cárcel por mi hermano gemelo… y salí con el amuleto de un general» — PLAN v2 (pendiente de aprobación)
+# «Cumplí 5 años de cárcel por mi hermano gemelo… y salí con el amuleto de un general» — PLAN v3 (pendiente de aprobación)
 
 Idea elegida por el usuario: la 1 de las cinco propuestas, con su cambio: en la cárcel, un general condenado injustamente
 le enseña artes marciales y al salir le regala un amuleto sin decirle qué significa. Ese amuleto manda sobre una red de
@@ -34,6 +34,22 @@ Mateo dice que conducía él. Esconde la tarjeta de memoria de la cámara del co
   «Un soldado golpea. Un general espera a que el enemigo se equivoque».
 - **El amuleto:** el día que sale, el general le da un colgante de bronce con un lobo y una estrella partida. Solo le dice:
   «No lo enseñes a cualquiera. Cuando lo necesites de verdad, ya sabrás qué hacer con él». Nada más.
+- **La misión (el favor al revés):** el general le salvó de los presos; ahora le pide algo a cambio. «Mi hija y mi nieto
+  creen que soy un traidor. No me escriben desde hace ocho años. Ve a verlos. Ayúdalos en lo que necesiten. Y no les digas
+  que vas de mi parte hasta que te crean a ti.»
+
+## La familia del general (la misión)
+
+- **Amparo**, 44, la hija. Lleva una pensión vieja en el barrio de San Roque. Desde la condena la miran como «la hija
+  del traidor»; perdió su trabajo de profesora. Dura, orgullosa, no quiere caridad.
+- **Leo**, 19, el nieto. Quiere ser militar como su abuelo, pero lo rechazan por el apellido. Se mete en peleas.
+- **Su problema:** la constructora de Ernesto quiere derribar el barrio para la segunda fase del edificio. A los vecinos
+  que no venden les cortan la luz, les rompen los cristales y les mandan inspecciones. La pensión es la última en pie.
+- **El cruce:** ayudar a la familia del general es pelear directamente contra su propia familia. Las dos venganzas se juntan.
+- **Qué hace Mateo por ellos (de menos a más):** se aloja en la pensión y arregla lo que está roto (es arquitecto); se
+  pone delante cuando llegan los matones; entrena a Leo como el general lo entrenó a él, para que pelee con cabeza; usa
+  el amuleto por primera vez **por ellos, no por él** (el abogado de la Unidad para frenar el derribo); y al final les
+  devuelve lo que más necesitan: la prueba de que el general es inocente.
 
 ## Qué es el amuleto (se descubre poco a poco)
 
@@ -71,29 +87,35 @@ sacrificaron por su padre. Y la constructora de Ernesto es la misma que hundió 
 | **Óscar**, 24 | El chico atropellado, en silla de ruedas. «Tú eres zurdo; el que conducía no» |
 | **General Teodoro Alcázar**, 68 | El maestro. Condenado por falsos cargos. Sale libre al final |
 | **Gregorio**, 50 | Capataz de obra. Humilla a Mateo y luego lo respeta |
+| **Amparo**, 44 | Hija del general. Lleva una pensión vieja. Cree que su padre es un traidor |
+| **Leo**, 19 | Nieto del general. Quiere ser militar; Mateo lo entrena |
 | **Los Lobos** | El cirujano Dr. Salvador, la banquera Victoria, la agente Lena, el escolta Rocco, el abogado Ferrán |
 
-## Capítulos (~8 min cada uno)
+## Capítulos (~7-8 min cada uno)
 
 1. **La fuente (gancho).** Sale bajo la lluvia; no va nadie. Esa noche, Bruno recibe un premio por el edificio de Mateo.
    Dos caras iguales. Ernesto: «Este no es mi hijo». Lo tiran a la fuente; Bruno lo graba riéndose. Al guardia se le
    cae la cara al ver el lobo. La promesa.
 2. **La cocina, cinco años antes.** El atropello, la madre de rodillas, el juicio, la primera paliza en la cárcel.
-3. **El general.** Las palizas, el general que lo salva, cinco años de entrenamiento al amanecer, el amuleto.
-4. **Peón.** Trabaja de noche en la obra de su propio edificio. Gregorio lo humilla. Descubre que Bruno ha cambiado la
+3. **El general.** Las palizas, el general que lo salva, cinco años de entrenamiento al amanecer, el amuleto y la misión.
+4. **La pensión.** Busca a Amparo. Le cierra la puerta: «Otro preso de mi padre. No». Mateo duerme en el portal. Al día
+   siguiente le arregla la caldera rota sin pedir nada. Ve los cristales rotos y las pintadas de la constructora.
+5. **Peón.** Trabaja de noche en la obra de su propio edificio. Gregorio lo humilla. Descubre que Bruno ha cambiado la
    estructura para ahorrar. Noa lo reconoce y le escupe.
-5. **El cirujano.** Óscar necesita una operación que no pueden pagar. El cirujano jefe ve el lobo y opera gratis. Noa no
-   entiende nada. Óscar: «Tú eres zurdo…».
-6. **Los escoltas.** Bruno lo echa de la obra y manda a dos matones a darle una paliza. Mateo pelea como le enseñó el
-   general, y aparecen los escoltas de la Unidad. Primera vez que entiende qué lleva colgado.
-7. **El giro (min ~45).** La tarjeta, vacía. La agente Lena: el padre era el copiloto. Y la constructora hundió al general.
-8. **El banco.** Victoria: el fondo de los veteranos compra la deuda de la constructora. Ernesto, que se reía, tiene que
-   pedirle una prórroga… a su hijo. Ernesto contraataca con una denuncia falsa; el abogado Ferrán la deshace en un día.
-9. **La prueba de carga.** El voladizo empieza a ceder. Mateo saca a los obreros y lo apuntala. Gregorio y la prensa lo ven.
-10. **La inauguración.** Los mismos invitados de la fuente. Los bocetos con fecha, el informe del error, el vídeo de la
-    fuente y la tarjeta de verdad (que Montse saca de la caja fuerte). Bruno confiesa. Ernesto, detenido.
-11. **El lobo.** Se reabre su caso y el del general. Mateo espera al general en la puerta de la cárcel, bajo la lluvia,
-    como nadie le esperó a él. Noa. Pregunta final a los comentarios.
+6. **El cirujano.** Óscar necesita una operación. El cirujano jefe ve el lobo y opera gratis. Óscar: «Tú eres zurdo…».
+7. **Leo.** Los matones de la constructora van a la pensión. Leo pelea y pierde. Mateo los echa con tres movimientos del
+   general. Empieza a entrenar a Leo al amanecer. Aparecen los escoltas de la Unidad: entiende qué lleva colgado.
+   Primera vez que usa el amuleto, **por la familia del general**: el abogado Ferrán frena el derribo.
+8. **El giro (min ~45).** La tarjeta, vacía. La agente Lena: el padre era el copiloto. Y la constructora hundió al general.
+   Amparo descubre de dónde viene Mateo; se siente engañada. Él le enseña la carta del general.
+9. **El banco.** Victoria: el fondo de los veteranos compra la deuda de la constructora. Ernesto tiene que pedirle una
+   prórroga… a su hijo. Ernesto contraataca: denuncia falsa y fuego en la pensión. Mateo saca a Amparo y a Leo.
+10. **La prueba de carga.** El voladizo empieza a ceder. Mateo saca a los obreros y lo apuntala. Gregorio y la prensa lo ven.
+11. **La inauguración.** Los mismos invitados de la fuente. Los bocetos con fecha, el informe del error, el vídeo de la
+    fuente y la tarjeta de verdad (que Montse saca de la caja fuerte). Bruno confiesa. Ernesto, detenido. Y los papeles de
+    los contratos de los cuarteles: el general era inocente.
+12. **El lobo.** Se reabre su caso y el del general. Mateo espera al general en la puerta de la cárcel, bajo la lluvia, con
+    Amparo y Leo: la familia que no le escribía está ahí. La pensión, reconstruida por Mateo. Noa. Pregunta final.
 
 ## Autocrítica
 
@@ -106,7 +128,9 @@ sacrificaron por su padre. Y la constructora de Ernesto es la misma que hundió 
 4. **Realismo:** sin poderes mágicos. Una red de veteranos leales es exagerada pero creíble; las artes marciales, de cinco años
    de entrenamiento diario.
 5. **Gemelos en imágenes:** Bruno siempre peinado hacia atrás y con traje; Mateo, pelo corto y ropa de obra o sudadera.
-6. **Promesas sembradas → pagadas:** el guardia pálido (cap. 1 → era un Lobo, cap. 6), la tarjeta (2 → 7 → 10), zurdo
+6. **¿Por qué la familia del general?** Le da a Mateo algo que proteger además de vengarse: el espectador lo ve hacer el
+   bien antes de destruir a nadie. Y el primer uso del amuleto es por otros, no por él (cumple la regla de la Unidad).
+7. **Promesas sembradas → pagadas:** la carta del general (cap. 3 → 8), el derribo de San Roque (cap. 4 → 11), el guardia pálido (cap. 1 → era un Lobo, cap. 6), la tarjeta (2 → 7 → 10), zurdo
    (1 → 5), el voladizo (4 → 9), el vídeo de la fuente (1 → 10), la lluvia en la puerta de la cárcel (1 → 11).
 
 ## Preguntas
